@@ -1,0 +1,59 @@
+/* src/pages/Losers.css */
+.losers-wrapper {
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+}
+
+.losers-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px red;
+}
+
+.loser-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.loser-card {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+  width: 300px;
+}
+
+.loser-banner {
+  width: 75%;
+  border-radius: 8px;
+}
+
+.loser-info {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #ff6666;
+}
+.rainbow-border {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 15px;
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 1400% 1400%;
+  animation: rainbowMove 6s linear infinite;
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.loser-banner {
+  display: block;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}

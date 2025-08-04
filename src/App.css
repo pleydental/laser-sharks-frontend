@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+.app {
+  min-height: 100vh;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  background-size: cover;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: #39ff14;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: relative;
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+.navbar a:hover {
+  color: #fff44d;
+}
+
+/* Neon Pulse Animation */
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14;
+  }
+  50% {
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+  }
+  100% {
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14;
+  }
+}
+
+/* Global background */
+.app-container {
+  min-height: 100vh;
+  background: url('./assets/bg-shark.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 10px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: 2rem auto;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #fff44d;
+  text-shadow: 0 0 10px #fff44d;
+}
+
+/* List styles */
+ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Manager grid */
+.manager-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.manager-card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid lime;
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.manager-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px lime;
+}
+
+.manager-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.manager-aliases {
+  font-size: 0.95rem;
+}
+
+/* Pulse Glow for special elements */
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px limegreen, 0 0 40px #00ffff;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #00ffff, 0 0 80px limegreen;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px limegreen, 0 0 40px #00ffff;
+  }
+}
+
+/* Global responsive layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* prevent sideways scrolling */
+}
+
+/* Global text adjustments */
+h1, h2, h3, p {
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+/* Containers auto-scale */
+.app-container, .page-content, .content-wrapper {
+  max-width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.draft-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 1rem;
+  background: white;
+  color: black;
+}
+
+.draft-order-table th,
+.draft-order-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.draft-order-table th {
+  background: #f8f8f8;
+  font-weight: bold;
+}
+
+/* 📌 NEW: Draft Info Box */
+.draft-info-box {
+  background: #ffffff;
+  color: #000;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1.5rem auto;
+  max-width: 600px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.draft-info-box h2::before {
+  content: "🍗 "; /* chicken wing emoji */
+}
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+  .content-wrapper, .info-box, .pay-dues-box {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  .payment-icons {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .payment-icon {
+    width: 45px;
+  }
+
+  .draft-order-box, .draft-info-box {
+    font-size: 0.85rem;
+  }
+}
+
+/* Phone breakpoint */
+@media (max-width: 480px) {
+  .content-wrapper, .info-box, .pay-dues-box {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .payment-icons {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .payment-icon {
+    width: 35px;
+  }
+
+  ol, ul {
+    padding-left: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .draft-order-box, .draft-info-box {
+    font-size: 0.75rem;
+  }
+}
+.white-card {
+  background: #fff;
+  color: #000;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  color: black;
+  font-size: 1rem;
+}
+
+.rules-table th,
+.rules-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.rules-table th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.rules-table ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.status {
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.status.paid {
+  color: green;
+}
+
+.status.unpaid {
+  color: red;
+}

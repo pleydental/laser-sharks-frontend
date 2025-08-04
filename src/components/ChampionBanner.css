@@ -1,0 +1,40 @@
+.champ-banner-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.champ-banner {
+  position: relative;
+  width: 300px;
+  height: auto;
+  border: 3px solid #00ff88;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #00ff88;
+}
+
+.champ-banner-media {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.champ-banner-overlay {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+.champ-banner-overlay h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.champ-banner-overlay h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}

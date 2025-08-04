@@ -1,0 +1,168 @@
+.managers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.manager-card {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ff00;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px #00ff00;
+  transition: transform 0.3s;
+}
+
+.manager-card:hover {
+  transform: scale(1.05);
+}
+
+.manager-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain; 
+  object-position: center top; 
+  margin-bottom: 10px;
+  border: 3px solid #00ff00;
+  border-radius: 0px;
+}
+
+
+.manager-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffff66;
+}
+
+.manager-aliases {
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+.manager-img-bio {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+  border: 2px solid #39ff14;
+}
+.manager-bio-wrapper {
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bio-text {
+  white-space: pre-wrap;
+  font-family: 'Orbitron', sans-serif;
+  margin: 2rem auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: white;
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.bio-nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.shark-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #00e6e6;
+  background-color: black;
+}
+
+.nav-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #00e6e6;
+}
+.bio-text {
+  white-space: pre-wrap;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: white;
+  line-height: 1.8;
+}
+
+/* Highlight the section titles like tabs */
+.bio-text strong {
+  color: #00ff00;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0 0 6px #00ff00;
+}
+.bio-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* spacing between banners and image */
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.champion-badge-container,
+.loser-badge-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.manager-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto; /* keeps manager fixed, doesn't shrink or grow */
+}
+
+.manager-img-bio {
+  width: 320px;   /* fixed width */
+  height: 420px;  /* fixed height */
+  object-fit: contain; /* show the full image without cropping */
+  border-radius: 0;     /* remove circle mask */
+  border: 4px solid #39ff14;
+  box-shadow: 0px 0px 25px #39ff14;
+}
+
+.champ-banner,
+.loser-banner {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px #ff0000;
+}
+.manager-stats {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00ffcc;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px #00ffcc;
+}
+
+
+
+

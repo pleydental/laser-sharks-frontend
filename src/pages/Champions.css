@@ -1,0 +1,46 @@
+.champ-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.champ-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.champ-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.champ-media {
+  width: 100%;
+  max-width: 380px;
+  display: block;
+  border-radius: 0;
+  box-shadow: 0 0 20px #00ff00;
+}
+
+.champ-card img {
+  background: transparent;
+}
+
+/* Trophy Spinner */
+.trophy-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.trophy-video {
+  width: 300px;
+  height: auto;
+  border: 5px solid gold;
+  border-radius: 12px;
+  box-shadow: 0 0 25px gold, 0 0 50px #ffcc00;
+}

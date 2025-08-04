@@ -1,0 +1,19 @@
+.champ-rules-content p {
+  margin-bottom: 1.5rem; /* space between rules */
+  line-height: 1.8;      /* make text easier to read */
+}
+.glow-green {
+  color: #39ff14;
+  font-weight: bold;
+  text-shadow: 0 0 8px #39ff14, 0 0 15px #00ff88;
+  margin-right: 0.5rem;
+}
+
+.champ-rules-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+.rules-container {
+  padding: 1rem;
+  overflow-x: hidden;
+}

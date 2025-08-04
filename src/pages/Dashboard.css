@@ -1,0 +1,261 @@
+.dashboard {
+  padding: 20px;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.navbar button {
+  background: #111;
+  color: #39ff14;
+  border: 2px solid #39ff14;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.navbar button:hover {
+  background: #39ff14;
+  color: #111;
+  box-shadow: 0 0 15px #39ff14;
+}
+
+.content-wrapper {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px limegreen;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/* Shark Button + GIF Section */
+.shark-button-container {
+  margin-top: 2rem;
+}
+
+.shark-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.shark-button-img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 20px #39ff14);
+  transition: transform 0.3s ease;
+}
+
+.shark-button:hover .shark-button-img {
+  transform: scale(1.1);
+}
+
+.shark-button-text {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #39ff14;
+  text-shadow: 0 0 15px #39ff14, 0 0 25px limegreen;
+}
+
+.gif-container {
+  margin-top: 2rem;
+}
+
+.mood-gif {
+  width: 300px;
+  height: auto;
+  border: 4px solid #39ff14;
+  border-radius: 10px;
+  box-shadow: 0 0 25px #39ff14;
+}
+/* General info boxes */
+.info-box {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1.5rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px limegreen;
+  max-width: 500px;
+  color: white;
+  text-align: center;
+  border: 2px solid #39ff14;
+}
+
+.info-box h2 {
+  color: #ffff66;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #ffff66;
+  font-size: 1.6rem;
+}
+
+/* Draft Order List */
+.info-box ol {
+  list-style: decimal;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 300px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #00ffff;
+}
+
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* ✅ This finally adds spacing */
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.payment-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* stops them from squishing together */
+}
+
+.payment-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.payment-icon img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px #39ff14, 0 0 25px #00ffff;
+}
+
+
+/* 📱 responsive */
+@media (max-width: 768px) {
+  .payment-icon {
+    width: 45px;
+  }
+  .payment-icons {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-icon {
+    width: 35px;
+  }
+  .payment-icons {
+    gap: 0.75rem;
+  }
+}
+.draft-order-box {
+  background: #fff;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: #111;
+}
+
+.draft-order-box h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: none;
+}
+
+.draft-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+}
+
+.draft-order-table th, 
+.draft-order-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.draft-order-table th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.draft-order-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.draft-order-table .status {
+  font-weight: bold;
+  color: #444;
+}
+.draft-info-box {
+  background: #fff;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: #111;
+}
+
+.draft-info-box h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: none;
+}
+
+.draft-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+}
+
+.draft-info-table th,
+.draft-info-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+.draft-info-table th {
+  background: #f4f4f4;
+  font-weight: bold;
+  width: 30%;
+  text-align: right;
+}
+
+.draft-info-table tr:nth-child(even) {
+  background: #fafafa;
+}
+.draft-order-box table,
+.draft-info-box table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.draft-order-box, .draft-info-box {
+  overflow-x: auto;
+}

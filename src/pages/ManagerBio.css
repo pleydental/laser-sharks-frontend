@@ -1,0 +1,162 @@
+/* ManagerBio.css */
+.content-wrapper {
+  padding: 2rem;
+  color: #fff;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap');
+
+.content-wrapper {
+  padding: 2rem;
+  color: #fff;
+}
+
+.manager-bio-wrapper {
+  padding: 2rem;
+  font-family: 'Rajdhani', sans-serif;
+  color: #ffffff;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 0 15px limegreen;
+  text-align: center;
+}
+
+/* ManagerBio.css */
+.content-wrapper {
+  padding: 2rem;
+  color: #fff;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap');
+
+.content-wrapper {
+  padding: 2rem;
+  color: #fff;
+}
+
+.manager-bio-wrapper {
+  padding: 2rem;
+  font-family: 'Rajdhani', sans-serif;
+  color: #ffffff;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 0 15px limegreen;
+  text-align: center;
+}
+
+/* Manager Image - Always Full & Centered */
+.manager-img-bio {
+  width: 350px;   /* fixed size */
+  height: 450px;  /* portrait ratio */
+  object-fit: contain;
+  border-radius: 0; /* no crop */
+  border: 4px solid #39ff14;
+  box-shadow: 0px 0px 25px #39ff14;
+  display: block;
+  margin: 20px auto;
+}
+.manager-bio img {
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+
+/* Bio header with strict 3-column layout */
+.bio-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* left banners - manager - right banners */
+  align-items: start;
+  justify-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* Centered manager image - never moves */
+.manager-img-bio {
+  width: 350px;
+  height: 450px;
+  object-fit: contain;
+  border-radius: 0;
+  border: 4px solid #39ff14;
+  box-shadow: 0px 0px 25px #39ff14;
+  grid-column: 2;
+}
+
+/* Left side champ banners */
+.champion-badge-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Loser banners on the right */
+.loser-badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start; /* push towards center */
+  align-items: center;
+  grid-column: 3; /* right side */
+}
+
+/* Champ banners stay normal */
+.champ-banner {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.6);
+}
+
+/* Loser banners keep rainbow */
+.loser-banner {
+  width: 160px;
+  height: auto;
+  border-radius: 8px;
+  padding: 5px;
+  background: linear-gradient(
+    270deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  background-size: 300% 300%;
+  animation: rainbowBorder 6s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.7),
+              0 0 40px rgba(0, 255, 255, 0.5),
+              0 0 60px rgba(255, 255, 0, 0.3);
+}
+
+.loser-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: black;
+}
+
+
+@keyframes rainbowBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.runnerup-banner {
+  width: 150px;
+  height: auto;
+  border-radius: 0;         /* remove rounded corners if you want */
+  box-shadow: none;         /* 🚫 removes glow */
+  background: transparent;  /* keep it clean */
+  padding: 0;               /* no padding */
+  border: none;             /* no border outline */
+}
