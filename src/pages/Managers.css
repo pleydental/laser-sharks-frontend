@@ -1,6 +1,14 @@
+.manager-bio-wrapper {
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .managers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
   padding: 20px;
 }
@@ -23,53 +31,94 @@
 .manager-img {
   width: 100%;
   height: 200px;
-  object-fit: contain; 
-  object-position: center top; 
+  object-fit: contain;
+  object-position: center;
   margin-bottom: 10px;
   border: 3px solid #00ff00;
-  border-radius: 0px;
+  border-radius: 6px;
 }
-
 
 .manager-name {
   font-size: 1.1rem;
   font-weight: bold;
   color: #ffff66;
+  margin-top: 0.5rem;
 }
 
 .manager-aliases {
   font-size: 0.95rem;
   color: #ffffff;
 }
-.manager-img-bio {
-  width: 200px;
-  height: auto;
-  display: block;
-  margin: 1rem auto;
-  border-radius: 8px;
-  border: 2px solid #39ff14;
+
+
+/* Desktop bio layout */
+.bio-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; 
+  margin-top: 2rem;
+  width: 100%;
 }
-.manager-bio-wrapper {
-  text-align: center;
-  padding: 2rem;
-  color: white;
-  max-width: 900px;
-  margin: 0 auto;
+
+.champion-badge-container,
+.runnerup-loser-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.manager-img-bio {
+  width: 320px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  border: 4px solid #39ff14;
+  box-shadow: 0px 0px 25px #39ff14;
+}
+
+.champ-banner,
+.runnerup-banner,
+.loser-banner {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px #ff0000;
+}
+
+/* Stats + bio */
+.manager-stats {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00ffcc;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px #00ffcc;
 }
 
 .bio-text {
   white-space: pre-wrap;
   font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: white;
+  line-height: 1.8;
   margin: 2rem auto;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 1.5rem;
   border-radius: 10px;
-  color: white;
-  line-height: 1.6;
-  font-size: 1rem;
   text-align: left;
 }
 
+.bio-text strong {
+  color: #00ff00;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0 0 6px #00ff00;
+}
+
+/* Navigation */
 .bio-nav-container {
   display: flex;
   justify-content: center;
@@ -98,71 +147,54 @@
   font-size: 1rem;
   color: #00e6e6;
 }
-.bio-text {
-  white-space: pre-wrap;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1rem;
-  color: white;
-  line-height: 1.8;
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+  .bio-header {
+    flex-direction: column; /* stack vertically */
+    gap: 1rem;
+  }
+
+  .manager-img-bio {
+    width: 70%;
+    max-width: 250px;
+  }
+
+  .champion-badge-container,
+  .runnerup-loser-container {
+    flex-direction: row; /* show banners in a row */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .champ-banner,
+  .runnerup-banner,
+  .loser-banner {
+    width: 90px;
+  }
 }
 
-/* Highlight the section titles like tabs */
-.bio-text strong {
-  color: #00ff00;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-shadow: 0 0 6px #00ff00;
-}
-.bio-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; /* spacing between banners and image */
-  margin-top: 2rem;
-  width: 100%;
-}
+@media (max-width: 480px) {
+  .manager-img-bio {
+    width: 90%;
+    max-width: 200px;
+  }
 
-.champion-badge-container,
-.loser-badge-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex: 1;
-}
+  .champ-banner,
+  .runnerup-banner,
+  .loser-banner {
+    width: 70px;
+  }
 
-.manager-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 0 0 auto; /* keeps manager fixed, doesn't shrink or grow */
-}
+  .bio-text {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
 
-.manager-img-bio {
-  width: 320px;   /* fixed width */
-  height: 420px;  /* fixed height */
-  object-fit: contain; /* show the full image without cropping */
-  border-radius: 0;     /* remove circle mask */
-  border: 4px solid #39ff14;
-  box-shadow: 0px 0px 25px #39ff14;
+  .manager-stats {
+    font-size: 1rem;
+  }
 }
-
-.champ-banner,
-.loser-banner {
-  width: 140px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0px 0px 15px #ff0000;
-}
-.manager-stats {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #00ffcc;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 0 8px #00ffcc;
-}
-
-
 
 
