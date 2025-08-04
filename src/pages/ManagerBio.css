@@ -1,4 +1,9 @@
 /* ManagerBio.css */
+.manager-bio-wrapper {
+  border: 2px solid red !important;
+}
+
+
 .content-wrapper {
   padding: 2rem;
   color: #fff;
@@ -159,4 +164,7 @@
   background: transparent;  /* keep it clean */
   padding: 0;               /* no padding */
   border: none;             /* no border outline */
+}
+.manager-bio-wrapper {
+  border: 5px solid red !important;
 }
