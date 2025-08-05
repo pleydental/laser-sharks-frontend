@@ -9,7 +9,6 @@ import Losers from './Losers';
 import leagueConfig from '../config/leagueConfig';
 import './Dashboard.css';
 
-
 import bgShark from '../assets/bg-shark.png';
 import moodGif from '../assets/mood-middle-finger-GIF.gif';
 import venmoIcon from '../assets/venmo.png';
@@ -19,12 +18,11 @@ import zelleIcon from '../assets/zelle-icon.png';
 import applecashIcon from '../assets/applecash.png';
 
 const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab] = useState('dashboard');
   const [showGif, setShowGif] = useState(false);
   const [draftCountdown, setDraftCountdown] = useState('');
   const [playoffCountdown, setPlayoffCountdown] = useState('');
 
-  // Update countdowns every second
   useEffect(() => {
     const draftDate = new Date('2025-08-22T20:00:00-04:00');
     const playoffDate = new Date('2025-12-11T20:15:00-05:00');
@@ -95,11 +93,7 @@ const Dashboard = () => {
             >
               <button
                 onClick={() => setShowGif(!showGif)}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                }}
+                style={{ background: 'none', border: 'none', cursor: 'pointer' }}
               >
                 <img
                   src={bgShark}
@@ -109,7 +103,6 @@ const Dashboard = () => {
                     height: '200px',
                     borderRadius: '50%',
                     boxShadow: '0 0 40px limegreen, 0 0 80px #00ffff',
-                    display: 'block',
                   }}
                 />
               </button>
@@ -127,15 +120,7 @@ const Dashboard = () => {
 
             {/* Mood GIF */}
             {showGif && (
-              <div
-                style={{
-                  marginBottom: '2rem',
-                  width: '100%',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
+              <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
                 <img
                   src={moodGif}
                   alt="Mood GIF"
@@ -143,8 +128,7 @@ const Dashboard = () => {
                     width: '300px',
                     maxWidth: '90%',
                     borderRadius: '12px',
-                    boxShadow:
-                      '0 0 20px #ff4500, 0 0 40px #ff1493, 0 0 60px #00ffff',
+                    boxShadow: '0 0 20px #ff4500, 0 0 40px #ff1493, 0 0 60px #00ffff',
                   }}
                 />
               </div>
@@ -152,145 +136,68 @@ const Dashboard = () => {
 
             {/* Countdown Timers */}
             <div style={{ marginTop: '2rem' }}>
-              <div
-                style={{
-                  width: '375px',
-                  margin: '20px auto',
-                  padding: '1.5rem',
-                  fontSize: '1.6rem',
-                  color: '#000',
-                  background: 'linear-gradient(90deg, limegreen, #00ffff)',
-                  borderRadius: '15px',
-                  boxShadow: '0 0 40px limegreen, 0 0 60px #00ffff',
-                  fontWeight: 'bold',
-                  textTransform: 'uppercase',
-                  animation: 'pulseGlow 2s infinite',
-                }}
-              >
-                🏈 Draft Countdown🏈 <br />
-                <span style={{ fontSize: '2rem', color: '#000' }}>{draftCountdown}</span>
+              <div className="countdown-box" style={{ background: 'linear-gradient(90deg, limegreen, #00ffff)' }}>
+                🏈 Draft Countdown 🏈 <br />
+                <span>{draftCountdown}</span>
               </div>
 
-              <div
-                style={{
-                  width: '375px',
-                  margin: '20px auto',
-                  padding: '1.5rem',
-                  fontSize: '1.6rem',
-                  color: '#000',
-                  background: 'linear-gradient(90deg, #ff1493, purple)',
-                  borderRadius: '15px',
-                  boxShadow: '0 0 40px #ff1493, 0 0 60px purple',
-                  fontWeight: 'bold',
-                  textTransform: 'uppercase',
-                  animation: 'pulseGlow 2s infinite',
-                }}
-              >
-                 Playoff Countdown <br />
-                <span style={{ fontSize: '2rem', color: '#000' }}>{playoffCountdown}</span>
+              <div className="countdown-box" style={{ background: 'linear-gradient(90deg, #ff1493, purple)' }}>
+                Playoff Countdown <br />
+                <span>{playoffCountdown}</span>
               </div>
             </div>
 
-               {/* Draft Day Info Box */}
-<div className="draft-info-box">
-  <h2>🍗 Draft Day Info 🍗 🍗 </h2>
-  <table className="draft-info-table">
-    <tbody>
-      <tr>
-        <th>Date</th>
-        <td>{leagueConfig.draft.date}</td>
-      </tr>
-      <tr>
-        <th>Location</th>
-        <td>{leagueConfig.draft.location}</td>
-      </tr>
-      <tr>
-        <th>Address</th>
-        <td>{leagueConfig.draft.address}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+            {/* Draft Day Info Box */}
+            <div className="countdown-box" style={{ background: '#fff', color: '#000' }}>
+              <h2 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '1rem' }}>🍗 Draft Day Info 🍗 🍗</h2>
+              <table className="draft-info-table" style={{ margin: '0 auto' }}>
+                <tbody>
+                  <tr><th>Date</th><td>{leagueConfig.draft.date}</td></tr>
+                  <tr><th>Location</th><td>{leagueConfig.draft.location}</td></tr>
+                  <tr><th>Address</th><td>{leagueConfig.draft.address}</td></tr>
+                </tbody>
+              </table>
+            </div>
 
+            {/* Draft Order Box */}
+            <div className="countdown-box" style={{ background: '#fff', color: '#000' }}>
+              <h2 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '1rem' }}>📋 Draft Order 2025 📋</h2>
+              <table className="draft-order-table" style={{ margin: '0 auto' }}>
+                <thead>
+                  <tr><th>#</th><th>Manager</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  {leagueConfig.draftOrder.map((entry, i) => (
+                    <tr key={i}>
+                      <td>{i + 1}</td>
+                      <td>{entry.manager}</td>
+                      <td>
+                        {entry.paid
+                          ? <span className="status paid">✅ Paid</span>
+                          : <span className="status unpaid">❌ Unpaid</span>}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-{/* Draft Order Box */}
-<div className="draft-order-box">
-  <h2>📋 Draft Order 2025 📋</h2>
-  <table className="draft-order-table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Manager</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      {leagueConfig.draftOrder.map((entry, i) => (
-        <tr key={i}>
-          <td>{i + 1}</td>
-          <td>{entry.manager}</td>
-          <td>
-           {entry.paid ? (
-  <span className="status paid">✅ Paid</span>
-) : (
-  <span className="status unpaid">❌ Unpaid</span>
-)}
-
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
-
-
-
-{/* Pay Dues Section */}
-<div
-  className="pay-dues-box"
-  style={{
-    margin: '20px auto',
-    padding: '1.5rem',
-    background: 'rgba(0, 0, 0, 0.7)',
-    borderRadius: '15px',
-    boxShadow: '0 0 30px limegreen',
-    maxWidth: '650px',
-    textAlign: 'center',
-  }}
->
-  <h2
-    style={{
-      color: '#ffff00',
-      textShadow: '0 0 15px #ffff00',
-      marginBottom: '0.5rem',
-    }}
-  >
-    💵 Click Icon To Pay Your $100 Dues 💵 
-  </h2>
-  <p style={{ color: '#ccc', fontSize: '0.9rem', marginBottom: '1rem' }}>
-    Links for Google Wallet and Apple Cash Do Not Exist Because They Just Don't, Click on Those Icons For More Info
-  </p>
-
-<div className="payment-icons">
-  <a href={leagueConfig.payments.venmo} target="_blank" rel="noopener noreferrer">
-    <div className="payment-icon"><img src={venmoIcon} alt="Venmo" /></div>
-  </a>
-  <a href={leagueConfig.payments.paypal} target="_blank" rel="noopener noreferrer">
-    <div className="payment-icon"><img src={paypalIcon} alt="Paypal" /></div>
-  </a>
-  <a href="/googlepay">
-    <div className="payment-icon"><img src={googlepayIcon} alt="Google Pay" /></div>
-  </a>
-  <a href="/zelle">
-    <div className="payment-icon"><img src={zelleIcon} alt="Zelle" /></div>
-  </a>
-  <a href="/applecash">
-    <div className="payment-icon"><img src={applecashIcon} alt="Apple Cash" /></div>
-  </a>
-</div>
-
-</div>
-
+            {/* Pay Dues Section */}
+            <div className="countdown-box" style={{ background: 'rgba(0,0,0,0.7)', color: '#fff' }}>
+              <h2 style={{ color: '#ffff00', textShadow: '0 0 15px #ffff00' }}>
+                💵 Click Icon To Pay Your $100 Dues 💵 
+              </h2>
+              <p style={{ color: '#ccc', fontSize: '0.9rem', marginBottom: '1rem' }}>
+                Links for Google Wallet and Apple Cash Do Not Exist Because They Just Don't, Click on Those Icons For More Info
+              </p>
+              <div className="payment-icons">
+                <a href={leagueConfig.payments.venmo} target="_blank" rel="noopener noreferrer"><div className="payment-icon"><img src={venmoIcon} alt="Venmo" /></div></a>
+                <a href={leagueConfig.payments.paypal} target="_blank" rel="noopener noreferrer"><div className="payment-icon"><img src={paypalIcon} alt="Paypal" /></div></a>
+                <a href="/googlepay"><div className="payment-icon"><img src={googlepayIcon} alt="Google Pay" /></div></a>
+                <a href="/zelle"><div className="payment-icon"><img src={zelleIcon} alt="Zelle" /></div></a>
+                <a href="/applecash"><div className="payment-icon"><img src={applecashIcon} alt="Apple Cash" /></div></a>
+              </div>
+            </div>
           </div>
         );
     }
@@ -298,7 +205,6 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      {/* Removed navbar tabs */}
       <main>{renderContent()}</main>
     </div>
   );

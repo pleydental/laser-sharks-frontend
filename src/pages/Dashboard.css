@@ -110,7 +110,7 @@
   margin: 0 auto;
   padding: 0;
   max-width: 300px;
-  font-size: 2.0rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #00ffff;
 }
@@ -259,15 +259,82 @@
 .draft-order-box, .draft-info-box {
   overflow-x: auto;
 }
-/* Container tweak for mobile */
+/* Dashboard wrapper wider and keeps everything inside */
 .dashboard .content-wrapper {
-  max-width: 95%; /* make it wider on mobile */
+  max-width: 98%; /* ✅ closer to screen edge */
   margin: 0 auto;
   border: 3px solid limegreen;
   border-radius: 15px;
   box-shadow: 0 0 25px limegreen;
   padding: 1rem;
+  box-sizing: border-box; /* ✅ keeps content inside borders */
 }
+
+/* Countdown boxes */
+.countdown-box {
+  max-width: 95%;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 25px limegreen;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  animation: pulseGlow 2s infinite;
+}
+
+.countdown-box span {
+  display: block;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+/* Draft Info, Draft Order, and Payment sections */
+.draft-info-box,
+.draft-order-box,
+.pay-dues-box {
+  max-width: 95%;
+  margin: 1rem auto;
+  box-sizing: border-box;
+}
+
+/* Tables fit wrapper */
+.draft-info-table,
+.draft-order-table {
+  width: 100%;
+  font-size: 0.9rem;
+  color: #000;
+  border-collapse: collapse;
+}
+
+.draft-order-table th,
+.draft-order-table td,
+.draft-info-table th,
+.draft-info-table td {
+  color: #000;
+  background-color: #fff;
+  padding: 0.6rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Responsive for phones */
+@media (max-width: 600px) {
+  .dashboard .content-wrapper {
+    padding: 0.6rem;
+  }
+
+  .countdown-box {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .draft-info-table,
+  .draft-order-table {
+    font-size: 0.8rem;
+  }
+}
+
 
 /* Draft Order Table text black */
 .draft-order-table th,
@@ -315,5 +382,15 @@
   .draft-order-table th,
   .draft-order-table td {
     font-size: 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .countdown-box {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .countdown-box span {
+    font-size: 1.5rem;
   }
 }
