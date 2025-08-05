@@ -15,7 +15,7 @@ const ChampRules = () => {
         <p><strong className="glow-green">2021:</strong> JD – Removed defensive position</p>
         <p><strong className="glow-green">2022:</strong> Scham – Added a flex position (WR/TE/RB)</p>
         <p><strong className="glow-green">2023:</strong> Shaw – Winner from previous year chooses draft position; down line from there</p>
-        <p><strong className="glow-green">2024:</strong> Scham – TBD</p>
+        <p><strong className="glow-green">2024:</strong> Scham – Cornell Rule: During the draft order picking, if current draftee does not respond within 12hrs, they automatically get the lowest pick left and the draft order picking resumes with the next up</p>
       </ul>
     </div>
   );

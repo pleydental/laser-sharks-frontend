@@ -278,16 +278,17 @@ const Dashboard = () => {
   <a href={leagueConfig.payments.paypal} target="_blank" rel="noopener noreferrer">
     <div className="payment-icon"><img src={paypalIcon} alt="Paypal" /></div>
   </a>
-  <a href={leagueConfig.payments.googlePay} target="_blank" rel="noopener noreferrer">
+  <a href="/googlepay">
     <div className="payment-icon"><img src={googlepayIcon} alt="Google Pay" /></div>
   </a>
   <a href="/zelle">
     <div className="payment-icon"><img src={zelleIcon} alt="Zelle" /></div>
   </a>
-  <a href={leagueConfig.payments.appleCash} target="_blank" rel="noopener noreferrer">
+  <a href="/applecash">
     <div className="payment-icon"><img src={applecashIcon} alt="Apple Cash" /></div>
   </a>
 </div>
+
 </div>
 
           </div>

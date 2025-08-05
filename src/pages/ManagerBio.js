@@ -352,13 +352,14 @@ Off limit trash talk: any insult or factual evidence of IU's recent inferiority 
       />
     ))}
     {manager.losers && manager.losers.map((year, idx) => (
-      <img
-        key={`loser-${idx}`}
-        src={require(`../assets/loser-banners/loser-${year}.png`)}
-        alt={`Loser ${year}`}
-        className="loser-banner"
-      />
-    ))}
+  <div key={`loser-${idx}`} className="loser-banner">
+    <img
+      src={require(`../assets/loser-banners/loser-${year}.png`)}
+      alt={`Loser ${year}`}
+    />
+  </div>
+))}
+
   </div>
 </div>
 

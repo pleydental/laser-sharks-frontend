@@ -1,0 +1,54 @@
+.payment-page {
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.payment-page h1 {
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
+  margin-bottom: 1rem;
+}
+
+.payment-page p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.payment-img {
+  width: 300px;
+  max-width: 90%;
+  border-radius: 12px;
+  border: 3px solid #39ff14;
+  box-shadow: 0 0 20px #39ff14;
+}
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  color: #39ff14;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 2px solid #39ff14;
+  box-shadow: 0 0 15px limegreen, 0 0 25px #00ffff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.back-button img {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 8px #00ffff;
+}
+
+.back-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px limegreen, 0 0 35px #00ffff;
+}

@@ -11,6 +11,9 @@ import Champions from './pages/Champions';
 import ManagerBio from './pages/ManagerBio';
 import Losers from './pages/Losers';
 import ZellePage from './pages/ZellePage';
+import Zelle from './pages/Zelle';
+import GooglePay from './pages/GooglePay';
+import AppleCash from './pages/AppleCash';
 import './App.css';
 import MatchupRecap from './pages/MatchupRecap'; // we’ll keep this but it won’t break styling
 
@@ -31,6 +34,9 @@ function App() {
             <Route path="/losers/" element={<Losers />} />
             <Route path="/matchup-recap/:year" element={<MatchupRecap />} />
             <Route path="/zelle" element={<ZellePage />} />
+            <Route path="/zelle" element={<Zelle />} />
+            <Route path="/googlepay" element={<GooglePay />} />
+            <Route path="/applecash" element={<AppleCash />} />
           </Routes>
         </div>
       </div>
