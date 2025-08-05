@@ -375,32 +375,26 @@ const MatchupRecap = () => {
 
   return (
     <div className="matchup-recap-page">
+      <h1>{year} Matchup Recap</h1>
+
+      {/* Navigation buttons side by side */}
       <div className="recap-navigation">
         {prevYear && (
-          <button
-            className="recap-button"
-            onClick={() => navigate(`/matchup-recap/${prevYear}`)}
-          >
-            <img
-              src={fingerButton}
-              alt="Prev"
-              className="finger-icon flipped"
-            />
-            Previous
-          </button>
+          <div className="recap-button" onClick={() => navigate(`/matchup-recap/${prevYear}`)}>
+            <img src={fingerButton} alt="Previous" className="finger-icon flipped" />
+            <div className="recap-label">Previous</div>
+          </div>
         )}
+
         {nextYear && (
-          <button
-            className="recap-button"
-            onClick={() => navigate(`/matchup-recap/${nextYear}`)}
-          >
-            Next
+          <div className="recap-button" onClick={() => navigate(`/matchup-recap/${nextYear}`)}>
             <img src={fingerButton} alt="Next" className="finger-icon" />
-          </button>
+            <div className="recap-label">Next</div>
+          </div>
         )}
       </div>
 
-      <h1>{year} Matchup Recap</h1>
+      {/* Recap text */}
       <div
         className="recap-text"
         dangerouslySetInnerHTML={{

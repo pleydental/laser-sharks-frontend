@@ -2,3 +2,45 @@
   padding: 1rem;
   overflow-x: hidden;
 }
+/* League Rules Table Styles */
+.rules-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem auto;
+  background: #fff; /* white background */
+  color: #000;      /* black text */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px limegreen;
+}
+
+.rules-container th,
+.rules-container td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+  color: #000; /* black text */
+}
+
+.rules-container th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.rules-container tr:nth-child(even) {
+  background: #fafafa;
+}
+.rules-container h2 {
+  color: #000; /* black text */
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: none; /* remove glowing effect */
+  text-align: center;
+}
+.rules-title {
+  color: #000; /* black text */
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: none; /* kill the glow */
+}

@@ -2,8 +2,8 @@ import React from 'react';
 
 const Rules = () => {
   return (
-    <div className="info-box white-card">
-      <h2>📜 League Rules 📜 </h2>
+    <div className="rules-container">
+      <h2 className="rules-title">📜 League Rules 📜 </h2>
       <p style={{ fontStyle: 'italic', marginBottom: '1.5rem' }}>
         These are the Yahoo settings for scoring, points, etc.
       </p>

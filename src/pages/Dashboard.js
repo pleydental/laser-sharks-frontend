@@ -214,7 +214,7 @@ const Dashboard = () => {
 
 
 {/* Draft Order Box */}
-<div className="info-box white-card">
+<div className="draft-order-box">
   <h2>📋 Draft Order 2025 📋</h2>
   <table className="draft-order-table">
     <thead>
@@ -268,7 +268,7 @@ const Dashboard = () => {
     💵 Click Icon To Pay Your $100 Dues 💵 
   </h2>
   <p style={{ color: '#ccc', fontSize: '0.9rem', marginBottom: '1rem' }}>
-    Links for Google Wallet and Apple Cash Do Not Exist Because They Just Don't, Trust Me I Tried
+    Links for Google Wallet and Apple Cash Do Not Exist Because They Just Don't, Click on Those Icons For More Info
   </p>
 
 <div className="payment-icons">

@@ -110,7 +110,7 @@
   margin: 0 auto;
   padding: 0;
   max-width: 300px;
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   line-height: 1.8;
   color: #00ffff;
 }
@@ -258,4 +258,62 @@
 
 .draft-order-box, .draft-info-box {
   overflow-x: auto;
+}
+/* Container tweak for mobile */
+.dashboard .content-wrapper {
+  max-width: 95%; /* make it wider on mobile */
+  margin: 0 auto;
+  border: 3px solid limegreen;
+  border-radius: 15px;
+  box-shadow: 0 0 25px limegreen;
+  padding: 1rem;
+}
+
+/* Draft Order Table text black */
+.draft-order-table th,
+.draft-order-table td {
+  color: #000;
+  background-color: #fff; /* white background so text is readable */
+  padding: 0.6rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Countdown boxes responsive */
+@media (max-width: 768px) {
+  .dashboard .content-wrapper {
+    padding: 1rem;
+  }
+
+  .dashboard .content-wrapper > div {
+    width: 100% !important;
+    margin: 0 auto 1.2rem auto !important;
+  }
+
+  .draft-info-box,
+  .info-box.white-card {
+    width: 100% !important;
+    max-width: 95%;
+    margin: 1rem auto;
+  }
+
+  .draft-info-table,
+  .draft-order-table {
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .draft-order-table th,
+  .draft-order-table td {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .draft-order-table th,
+  .draft-order-table td {
+    font-size: 0.8rem;
+  }
 }
