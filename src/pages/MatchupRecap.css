@@ -70,18 +70,19 @@
 /* -- Mobile Fixes -- */
 @media (max-width: 600px) {
   .recap-navigation {
-    flex-direction: row; /* keep them side by side */
+    flex-direction: row;
     justify-content: center;
-    gap: 25px;
- }
+    gap: 30px;
+    flex-wrap: wrap;
+  }
 
-
-.recap-button {
+  .recap-button {
     font-size: 1rem;
     text-align: center;
   }
 
-.finger-icon {
+  .finger-icon {
     width: 80px;
- }
+  }
 }
+
