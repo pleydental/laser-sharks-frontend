@@ -53,7 +53,7 @@ const bios = {
     aliases: ['Biggie Pauls', 'Mish', 'Shit talking mofo'],
     stats: 'Seasons: 9 -||- Win rate: 54% -||- Record: 110-92 -||- High Scores Per Season: 2.13 -||- Lifetime Earnings: $700',
     championships: [2016], 
-    runnerUps: [2021, 2020, 2017],
+    runnerUps: [2021, 2020, 2019, 2017],
     bio: `-Connection to commish: It’s me!!!
 
 -Likes: football, super-hero movies, tiny baby corn in stir-fry’s, golf, hiking, pocket lint, upside down punctuation, being (former) champion, celery, pina coladas, over-using exclamation points!!!
