@@ -82,10 +82,15 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .navbar {
-    justify-content: flex-start; /* move hamburger left */
+    justify-content: flex-start; /* move hamburger + MENU to the left */
   }
+
+  .hamburger-container {
+    margin-left: 10px; /* optional, spacing from edge */
+  }
+
   .nav-links {
+    left: 0;
     right: auto;
-    left: 0; /* slide menu from left instead of right */
   }
 }
