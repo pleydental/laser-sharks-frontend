@@ -17,6 +17,23 @@
   gap: 5px;
 }
 
+/* Container for hamburger and MENU label */
+.hamburger-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #39ff14;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 0 0 6px #00ffcc;
+}
+
+/* MENU label spacing */
+.menu-label {
+  margin-left: 10px;
+  color: #39ff14;
+}
+
 .hamburger .bar {
   width: 25px;
   height: 3px;
@@ -59,5 +76,16 @@
   }
   .nav-links.open {
     display: flex;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start; /* move hamburger left */
+  }
+  .nav-links {
+    right: auto;
+    left: 0; /* slide menu from left instead of right */
   }
 }

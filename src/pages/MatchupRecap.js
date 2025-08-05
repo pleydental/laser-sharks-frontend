@@ -339,7 +339,7 @@ Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 second
 
 <p>Debo knowing there was still some work to do, called up some of his TSA buddies and planted some heroin on Shaw-Balls right before he was about to take off on a flight. Shaw-balls found the contraband and ran through the airport like an old British comedy. No one laughed.<p>
 
-<p>Fisher and Debo thought they were in the clear but they forgot about 1 time champ and 3-time runner up Mish. They didn’t see him as much of a threat. Turns out they were right. Mish was blacked out for the draft and spent most of his time dicking around with this website to pay much attention to football. Mish ended up with the Tutu<p>
+<p>Fischer and Debo thought they were in the clear but they forgot about 1 time champ and 4-time runner up Mish. They didn’t see him as much of a threat. Turns out they were right. Mish was blacked out for the draft and spent most of his time dicking around with this website to pay much attention to football. Mish ended up with the Tutu<p>
 
 <p>McCool thought he was safe with his boy blue Debo but Debo made a pack with the devil and tipped off the FBI with some questionable browser history content. McCool didn’t stand a chance. The planted material was just too fucked up. McCool moved to Uruguay and became a banana farmer.<p>
 
