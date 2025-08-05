@@ -383,7 +383,7 @@ const MatchupRecap = () => {
           >
             <img
               src={fingerButton}
-              alt="Previous"
+              alt="Prev"
               className="finger-icon flipped"
             />
             Previous
