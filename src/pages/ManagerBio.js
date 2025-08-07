@@ -263,7 +263,7 @@ const bios = {
   },
   'aaron-fischer': {
     name: 'Aaron Fischer',
-    aliases: ['I love lamp', 'that got out of hand quickly'],
+    aliases: ['Dice Roll Aaron', 'I love lamp', 'that got out of hand quickly'],
     stats: 'Seasons: 0 -||- Win rate: 0% -||- Record: 0-0 -||- High Scores Per Season: 0 -||- Lifetime Earnings: $0',
     bio: `Connection to commish: brutha from another mutha
 
@@ -295,7 +295,7 @@ Off limit trash talk: any insult or factual evidence of IU's recent inferiority 
     managerImg = managerImages(`./${slug}.png`);
   } catch (err) {
     console.warn(`Manager image not found for ${slug}, using fallback.`);
-    managerImg = sharkImage; // fallback
+    managerImg = sharkImage;
   }
 
   if (!manager) {
@@ -307,10 +307,54 @@ Off limit trash talk: any insult or factual evidence of IU's recent inferiority 
     );
   }
 
-   return (
+  return (
     <div className="manager-bio-wrapper">
-      {/* Navigation buttons */}
-      <div className="bio-nav-container">
+
+      {/* Main Manager Info */}
+      <div className="bio-header">
+        <div className="champion-badge-container">
+          {manager.championships && manager.championships.map((year, idx) => (
+            <video
+              key={idx}
+              src={require(`../assets/champ-banners/champ-${year}.mp4`)}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="champ-banner"
+            />
+          ))}
+        </div>
+
+        <img src={managerImg} alt={manager.name} className="manager-img-bio" />
+
+        <div className="runnerup-loser-container">
+          {manager.runnerUps && manager.runnerUps.map((year, idx) => (
+            <img
+              key={`runnerup-${idx}`}
+              src={require(`../assets/runner-up-banners/runner-up-${year}.png`)}
+              alt={`Runner Up ${year}`}
+              className="runnerup-banner"
+            />
+          ))}
+          {manager.losers && manager.losers.map((year, idx) => (
+            <div key={`loser-${idx}`} className="loser-banner">
+              <img
+                src={require(`../assets/loser-banners/loser-${year}.png`)}
+                alt={`Loser ${year}`}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h1>{manager.name}</h1>
+      <h3>{manager.aliases.join(', ')}</h3>
+      {manager.stats && <p className="manager-stats">{manager.stats}</p>}
+      <pre className="bio-text">{styleBio(manager.bio)}</pre>
+
+      {/* Navigation Buttons (NOW AT BOTTOM) */}
+      <div className="bio-nav-container bottom-nav">
         <button className="nav-arrow" onClick={() => navigate(`/managers/${prevSlug}`)}>
           <img src={sharkImage} alt="shark" className="shark-icon" />
         </button>
@@ -322,54 +366,6 @@ Off limit trash talk: any insult or factual evidence of IU's recent inferiority 
         </button>
       </div>
 
-<div className="bio-header">
-  {/* Left column: Champ banners */}
-  <div className="champion-badge-container">
-    {manager.championships && manager.championships.map((year, idx) => (
-      <video
-        key={idx}
-        src={require(`../assets/champ-banners/champ-${year}.mp4`)}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="champ-banner"
-      />
-    ))}
-  </div>
-
-  {/* Center: Manager image */}
-  <img src={managerImg} alt={manager.name} className="manager-img-bio" />
-
-  {/* Right column: Runner-up and Loser banners */}
-  <div className="runnerup-loser-container">
-    {manager.runnerUps && manager.runnerUps.map((year, idx) => (
-      <img
-        key={`runnerup-${idx}`}
-        src={require(`../assets/runner-up-banners/runner-up-${year}.png`)}
-        alt={`Runner Up ${year}`}
-        className="runnerup-banner"
-      />
-    ))}
-    {manager.losers && manager.losers.map((year, idx) => (
-  <div key={`loser-${idx}`} className="loser-banner">
-    <img
-      src={require(`../assets/loser-banners/loser-${year}.png`)}
-      alt={`Loser ${year}`}
-    />
-  </div>
-))}
-
-  </div>
-</div>
-
-
-
-      {/* Manager Info */}
-      <h1>{manager.name}</h1>
-      <h3>{manager.aliases.join(', ')}</h3>
-      {manager.stats && <p className="manager-stats">{manager.stats}</p>}
-      <pre className="bio-text">{manager.bio}</pre>
     </div>
   );
 };

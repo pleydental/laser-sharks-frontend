@@ -160,3 +160,63 @@
     width: 90px;
   }
 }
+@media (max-width: 768px) {
+  .manager-card {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .manager-card button {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.4;
+  }
+}
+
+.bio-nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.nav-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #00ffcc;
+  text-align: center;
+}
+
+.nav-arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.shark-icon {
+  width: 40px;
+  height: auto;
+}
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+  .nav-label {
+    font-size: 0.9rem;
+    max-width: 120px;
+  }
+
+  .shark-icon {
+    width: 30px;
+  }
+
+  .bio-nav-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
