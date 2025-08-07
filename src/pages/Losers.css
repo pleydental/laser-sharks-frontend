@@ -1,59 +1,73 @@
-/* src/pages/Losers.css */
+/* LOSERS PAGE STYLES */
+
 .losers-wrapper {
   text-align: center;
-  padding: 2rem;
-  color: #fff;
+  padding: 20px;
 }
 
-.losers-title {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  text-shadow: 0 0 10px red;
+.loser-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 20px;
 }
 
-.loser-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.loser-card {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-  width: 300px;
-}
-
-.loser-banner {
-  width: 75%;
-  border-radius: 8px;
-}
-
-.loser-info {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  color: #ff6666;
-}
-.rainbow-border {
-  display: inline-block;
-  padding: 5px;
+/* UNICORN BANNER with MOVING RAINBOW BORDER */
+.rainbow-frame {
+  padding: 8px;
   border-radius: 15px;
   background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
   background-size: 1400% 1400%;
   animation: rainbowMove 6s linear infinite;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
 }
 
+.rainbow-frame img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  display: block;
+}
+
+/* SEMI-TRANSPARENT LOSER TEXT BOX */
+.loser-card {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+  color: #ff6666;
+  font-size: 1rem;
+  max-width: 250px;
+  margin-top: 10px;
+}
+
+/* TITLE */
+.losers-title {
+  font-size: 2.5rem;
+  color: #ffcc00;
+  text-shadow: 0 0 10px orange;
+  margin-bottom: 2rem;
+}
+
+/* ANIMATED RAINBOW BACKGROUND */
 @keyframes rainbowMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-.loser-banner {
-  display: block;
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
+/* MOBILE SCALING */
+@media (max-width: 768px) {
+  .losers-title {
+    font-size: 2rem;
+  }
+
+  .loser-card {
+    font-size: 0.9rem;
+  }
+
+  .rainbow-frame img {
+    max-width: 200px;
+  }
 }

@@ -29,7 +29,7 @@ const managers = [
   { name: 'Marcello Polidori', slug: 'marcello-polidori', aliases: ['Slippery Jack'], image: marcelloImg },
   { name: 'Don "DD" Debone', slug: 'don-debone', aliases: ["Double D's"], image: donImg },
   { name: 'Brian Debo', slug: 'brian-debo', aliases: ['Happy Hour'], image: brianImg },
-  { name: 'Aaron Fischer', slug: 'aaron-fischer', aliases: ['Team Name TBD'], image: aaronImg },
+  { name: 'Aaron Fischer', slug: 'aaron-fischer', aliases: ['Dice Roll Aaron'], image: aaronImg },
 ];
 
 const Managers = () => {

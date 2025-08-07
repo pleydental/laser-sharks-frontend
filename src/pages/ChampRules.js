@@ -7,6 +7,8 @@ const ChampRules = () => {
     <div className="content-wrapper">
       <h2 className="champ-rules-title">Champ Rules - WINNER EACH YEAR GETS TO PICK A NEW RULE OR GET RID OF ONE OF THE RULES BELOW</h2>
       <ul className="champ-rules-list">
+        <p><strong className="glow-green">League rule:</strong> High score each week gets $25, goes through playoffs</p>
+        <p><strong className="glow-green">Bare minimum rule:</strong> Everyone is expected to set a line-up each week, any one who doesn't will be called out and humiliated. And if it becomes a habit, potentially removed from the league. Ask Ben Adams, though he went to jail before I could remove him</p>
         <p><strong className="glow-green">2016:</strong> Mish – 1 win for head-to-head win, 1 win for top 6 weekly score</p>
         <p><strong className="glow-green">2017:</strong> Shaw – Ummmmmm, I have no record of this rule, Shaw do you remember?</p>
         <p><strong className="glow-green">2018:</strong> Welsch – Added SuperFlex (QB/WR/RB/TE)</p>

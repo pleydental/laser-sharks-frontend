@@ -51,7 +51,7 @@ const bios = {
   'paul-ley': {
     name: 'Paul Ley',
     aliases: ['Biggie Pauls', 'Mish', 'Shit talking mofo'],
-    stats: 'Seasons: 9 -||- Win rate: 54% -||- Record: 110-92 -||- High Scores Per Season: 2.13 -||- Lifetime Earnings: $700',
+    stats: 'Seasons: 9 -||- Win rate: 54% -||- Record: 110-92 -||- High Scores Per Season: 2.13 -||- Earnings Per Season: $11',
     championships: [2016], 
     runnerUps: [2021, 2020, 2019, 2017],
     bio: `-Connection to commish: It’s me!!!
@@ -72,7 +72,7 @@ const bios = {
   'ryan-schamerloh': {
     name: 'Ryan Schamerloh',
     aliases: ['Team Steiners', 'Scham-balls'],
-    stats: 'Seasons: 8 -||- Win rate: 51% -||- Record: 97-92 -||- High Scores Per Season: 1.14 -||- Lifetime Earnings: $1575',
+    stats: 'Seasons: 8 -||- Win rate: 51% -||- Record: 97-92 -||- High Scores Per Season: 1.14 -||- Earnings Per Season: $128',
     championships: [2024, 2022, 2019], 
     bio: `-Connection to commish: Cousin
 
@@ -91,7 +91,7 @@ const bios = {
   'mark-williams': {
     name: 'Mark Williams',
     aliases: ['unfollowbobo', 'Just here for the bitches'],
-    stats: 'Seasons: 9 -||- Win rate: 53% -||- Record: 108-94 -||- High Scores Per Season: 1.38 -||- Lifetime Earnings: $300',
+    stats: 'Seasons: 9 -||- Win rate: 53% -||- Record: 108-94 -||- High Scores Per Season: 1.38 -||- Earnings Per Season: -$33',
     runnerUps: [2019, 2016],
     bio: `-Connection to commish: College
 
@@ -110,7 +110,7 @@ const bios = {
   'ryan-shaw': {
     name: 'Ryan Shaw',
     aliases: ['Kenny Powers', 'Shaw-balls', 'Ronald Reagan Is a Damn Hero'],
-    stats: 'Seasons: 9 -||- Win rate: 50% -||- Record: 102-100 -||- High Scores Per Season: 1.88 -||- Lifetime Earnings: $1050',
+    stats: 'Seasons: 9 -||- Win rate: 50% -||- Record: 102-100 -||- High Scores Per Season: 1.88 -||- Earnings Per Season: $50',
     championships: [2023, 2017], 
     bio: `-Connection to commish: friends-giving crew
 
@@ -129,7 +129,7 @@ const bios = {
   'justin-gus-miller': {
     name: 'Justin "Gus" Miller',
     aliases: ['Prison Panther', 'Tofurker? I barely know er'],
-    stats: 'Seasons: 9 -||- Win rate: 53% -||- Record: 101-88 -||- High Scores Per Season: 0.88 -||- Lifetime Earnings: $250',
+    stats: 'Seasons: 9 -||- Win rate: 53% -||- Record: 101-88 -||- High Scores Per Season: 0.88 -||- Earnings Per Season: -$39',
     bio: `-Connection to commish: Kirkland Light brewery tour
 
 -Likes: bikes, tofurkey, crappy beer, not so crappy beer, kites, Weird-Al, oil wrestling, kayaking, Rom-Com’s, #2 pencils, The Sound of Music but not Music of Sound The
@@ -147,7 +147,7 @@ const bios = {
   'matt-welsch': {
     name: 'Matt Welsch',
     aliases: ['smakdown', 'I wear TuTu(s)', 'I Also Champ'],
-    stats: 'Seasons: 9 -||- Win rate: 44% -||- Record: 88-114 -||- High Scores Per Season: 1.25 -||- Lifetime Earnings: $275',
+    stats: 'Seasons: 9 -||- Win rate: 44% -||- Record: 88-114 -||- High Scores Per Season: 1.25 -||- Earnings Per Season: -$36',
     championships: [2018], 
     losers: [2023, 2022],
     bio: `-Connection to commish: Former neighbor
@@ -167,7 +167,7 @@ const bios = {
   'shawn-mccool': {
     name: 'Shawn McCool',
     aliases: ['HingleMcCringleberry', 'Suns Out Guns Out'],
-    stats: 'Seasons: 7 -||- Win rate: 62% -||- Record: 109-67 -||- High Scores Per Season: 2.67 -||- Lifetime Earnings: $500',
+    stats: 'Seasons: 7 -||- Win rate: 62% -||- Record: 109-67 -||- High Scores Per Season: 2.67 -||- Earnings Per Season: $0',
     championships: [2020],
     runnerUps: [2018],
     bio: `-Connection to commish: Brookside
@@ -187,7 +187,7 @@ const bios = {
   'jd-ley': {
     name: 'JD Ley',
     aliases: ['Pound It Noggin', 'I would put it in her butt'],
-    stats: 'Seasons: 7 -||- Win rate: 44% -||- Record: 77-99 -||- High Scores Per Season: 1.00 -||- Lifetime Earnings: $350',
+    stats: 'Seasons: 7 -||- Win rate: 44% -||- Record: 77-99 -||- High Scores Per Season: 1.00 -||- Earnings Per Season: -$21',
     championships: [2021],
     bio: `-Connection to commish: best brother ever
 
@@ -206,7 +206,7 @@ const bios = {
   'marcello-polidori': {
     name: 'Marcello Polidori',
     aliases: ['Slippery Jack', 'Truffle King', 'I am Italian Dammit', 'also I am Moist'],
-    stats: 'Seasons: 7 -||- Win rate: 50% -||- Record: 102-100 -||- High Scores Per Season: 1.88 -||- Lifetime Earnings: $250',
+    stats: 'Seasons: 7 -||- Win rate: 50% -||- Record: 102-100 -||- High Scores Per Season: 1.88 -||- Earnings Per Season: -$36',
     runnerUps: [2024],
     bio: `Connection to commish: brutha from anotha mutha
 
@@ -225,7 +225,7 @@ const bios = {
   'don-debone': {
     name: 'Don "DD" Debone',
     aliases: ["Double D's", 'I wear TuTu'],
-    stats: 'Seasons: 5 -||- Win rate: 58% -||- Record: 72-52 -||- High Scores Per Season: 1.5 -||- Lifetime Earnings: $325',
+    stats: 'Seasons: 5 -||- Win rate: 58% -||- Record: 72-52 -||- High Scores Per Season: 1.5 -||- Earnings Per Season: -$15',
     losers: [2024],
     runnerUps: [2022],
     bio: `-Connection to commish- Brookside 
@@ -245,7 +245,7 @@ const bios = {
   'brian-debo': {
     name: 'Brian Debo',
     aliases: ['Happy Hour', 'Bottoms Up'],
-    stats: 'Seasons: 3 -||- Win rate: 60% -||- Record: 50-34 -||- High Scores Per Season: 0.67 -||- Lifetime Earnings: $225',
+    stats: 'Seasons: 3 -||- Win rate: 60% -||- Record: 50-34 -||- High Scores Per Season: 0.67 -||- Earnings Per Season: -$25',
     runnerUps: [2023],
     bio: `Connection to commish: Brookside, case races
 
@@ -264,7 +264,7 @@ const bios = {
   'aaron-fischer': {
     name: 'Aaron Fischer',
     aliases: ['Dice Roll Aaron', 'I love lamp', 'that got out of hand quickly'],
-    stats: 'Seasons: 0 -||- Win rate: 0% -||- Record: 0-0 -||- High Scores Per Season: 0 -||- Lifetime Earnings: $0',
+    stats: 'Seasons: 0 -||- Win rate: 0% -||- Record: 0-0 -||- High Scores Per Season: 0 -||- Earnings Per Season: $0',
     bio: `Connection to commish: brutha from another mutha
 
 Likes: Red and white striped pants, diet coke, bobby knight, IU, rocks, chia pets, corn, corn dogs, corn bread, creamed corn, corn, creepy collages of old school game show talents (think Vanna White)
