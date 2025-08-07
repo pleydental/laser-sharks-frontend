@@ -74,7 +74,7 @@ const bios = {
     aliases: ['Team Steiners', 'Scham-balls'],
     stats: 'Seasons: 8 -||- Win rate: 51% -||- Record: 97-92 -||- High Scores Per Season: 1.14 -||- Earnings Per Season: $128',
     championships: [2024, 2022, 2019], 
-    bio: `-Connection to commish: Cousin
+    bio: `-Connection to commish: Cousin, brutha from anotha mutha
 
 -Likes: Bedazzling non-cloth items such as napkins and sheet metal, bubble wrap, marinades, hairless cats, fireworks, unicycle(s), that sticky stuff that holds a new credit card to the paper that you can pull off and roll up into a little ball, eyes
 
@@ -150,7 +150,7 @@ const bios = {
     stats: 'Seasons: 9 -||- Win rate: 44% -||- Record: 88-114 -||- High Scores Per Season: 1.25 -||- Earnings Per Season: -$36',
     championships: [2018], 
     losers: [2023, 2022],
-    bio: `-Connection to commish: Former neighbor
+    bio: `-Connection to commish: Former neighbor/vegas vet
 
 -Likes: super-heroes, bikes, beer, wine, movies, figure skating, running, tough man shots, paper clips but not the ones with the different colored veneers…just the silver ones, colored veneer paper clips (he’s confused), hockey
 
@@ -170,7 +170,7 @@ const bios = {
     stats: 'Seasons: 7 -||- Win rate: 62% -||- Record: 109-67 -||- High Scores Per Season: 2.67 -||- Earnings Per Season: $0',
     championships: [2020],
     runnerUps: [2018],
-    bio: `-Connection to commish: Brookside
+    bio: `-Connection to commish: Brookside/neighbor/vegas vet
 
 -Likes: long walks in the rain, short walks in the snow, medium walks in sand-storms, goggles, constellations, kite surfing, knittin’ mittens, singin in the rain, Reading Rainbow song remixes
 
@@ -189,7 +189,7 @@ const bios = {
     aliases: ['Pound It Noggin', 'I would put it in her butt'],
     stats: 'Seasons: 7 -||- Win rate: 44% -||- Record: 77-99 -||- High Scores Per Season: 1.00 -||- Earnings Per Season: -$21',
     championships: [2021],
-    bio: `-Connection to commish: best brother ever
+    bio: `-Connection to commish: best brother ever, used to date Don...see 2025 predictions
 
 -Likes: putting vegetables in water for flavor, hiking, beer, garbage pail kids, Nilla wafers, shaving cats so they have one long Mohawk from front to tail, yogging, crop dusting during hot yoga
 
@@ -228,7 +228,7 @@ const bios = {
     stats: 'Seasons: 5 -||- Win rate: 58% -||- Record: 72-52 -||- High Scores Per Season: 1.5 -||- Earnings Per Season: -$15',
     losers: [2024],
     runnerUps: [2022],
-    bio: `-Connection to commish- Brookside 
+    bio: `-Connection to commish: Brookside, used to date my brother...see 2025 predictions
 
 -Likes: Golfing every day, humidity, barometric pressure, salt-water, chlorophyll, nutritional yeast, cutting out and saving bar codes from granola bar boxes, Uno (not the game, the number)
 
@@ -240,7 +240,7 @@ const bios = {
 
 -Location: Westfield, IN
 
---Off limit trash talk: TuTu references`
+-Off limit trash talk: TuTu references`
   },
   'brian-debo': {
     name: 'Brian Debo',
