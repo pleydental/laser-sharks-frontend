@@ -46,11 +46,20 @@
 /* Global background */
 .app-container {
   min-height: 100vh;
-  background: url('./assets/bg-shark.png') no-repeat center center fixed;
+  background: url('./assets/bg-shark.png') no-repeat center top fixed;
   background-size: cover;
   color: #fff;
   font-family: 'Orbitron', sans-serif;
 }
+
+/* Mobile override: scale background without zooming in */
+@media (max-width: 768px) {
+  .app-container {
+    background-size: contain;
+    background-position: center top;
+  }
+}
+
 
 /* Content Wrapper */
 .content-wrapper {
