@@ -185,7 +185,7 @@ h1, h2, h3, p {
 }
 
 .draft-info-box h2::before {
-  content: "🍗 "; /* chicken wing emoji */
+  content: "🍗 🍗 "; /* chicken wing emoji */
 }
 
 /* Tablet breakpoint */

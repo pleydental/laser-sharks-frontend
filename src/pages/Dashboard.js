@@ -142,7 +142,7 @@ const Dashboard = () => {
               </div>
 
               <div className="countdown-box" style={{ background: 'linear-gradient(90deg, #ff1493, purple)' }}>
-                Playoff Countdown <br />
+                🏈 Playoff Countdown 🏈 <br />
                 <span>{playoffCountdown}</span>
               </div>
             </div>
@@ -188,7 +188,7 @@ const Dashboard = () => {
                 💵 Click Icon To Pay Your $100 Dues 💵 
               </h2>
               <p style={{ color: '#ccc', fontSize: '0.9rem', marginBottom: '1rem' }}>
-                Links for Google Wallet and Apple Cash Do Not Exist Because They Just Don't, Click on Those Icons For More Info
+                Links for Google Wallet and Apple Cash Do Not Exist Because They Just Don't, Trust Me I Tried. Click on Those Icons For More Info
               </p>
               <div className="payment-icons">
                 <a href={leagueConfig.payments.venmo} target="_blank" rel="noopener noreferrer"><div className="payment-icon"><img src={venmoIcon} alt="Venmo" /></div></a>
