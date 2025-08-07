@@ -95,4 +95,36 @@
     right: auto;
     left: 0;
   }
+  @media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.9); /* Keeps background behind text */
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+  }
+
+  body {
+    padding-top: 70px; /* Add space so content doesn’t hide under fixed navbar */
+  }
+}
+@media (max-width: 768px) {
+  .hamburger {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10000;
+  }
+}
+
+
 }
