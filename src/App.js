@@ -1,6 +1,7 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 import Navbar from './Navbar';
 import Dashboard from './pages/Dashboard';
 import Standings from './pages/Standings';
@@ -20,6 +21,7 @@ import MatchupRecap from './pages/MatchupRecap'; // we’ll keep this but it won
 function App() {
   return (
     <Router>
+      <ScrollToTop /> {/* Add this right after <Router> */}
       <div className="app-container">
         <Navbar />
         <div className="page-content">
