@@ -52,13 +52,14 @@
   font-family: 'Orbitron', sans-serif;
 }
 
-/* Mobile override: scale background without zooming in */
-@media (max-width: 768px) {
-  .app-container {
-    background-size: contain;
-    background-position: center top;
-  }
+.app-container {
+  min-height: 100vh;
+  background: url('./assets/bg-shark.png') no-repeat center center fixed;
+  background-size: cover; /* ← This is what gives you the zoomed-in full cover look */
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
 }
+
 
 
 /* Content Wrapper */
