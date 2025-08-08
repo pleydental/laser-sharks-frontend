@@ -25,7 +25,8 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="login-container">
-      <h1 className="login-title">Laser Sharks Fantasy Football League</h1>
+      <h1 className="login-title">Laser Sharks<br />
+      Fantasy Football League</h1>
       <img src={pyramid} alt="Pyramid" className="pyramid-img" />
 
       <div className="login-form">
