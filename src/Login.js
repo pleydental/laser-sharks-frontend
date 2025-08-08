@@ -27,7 +27,18 @@ const Login = ({ onLogin }) => {
     <div className="login-container">
       <h1 className="login-title">Laser Sharks<br />
       Fantasy Football League</h1>
-      <img src={pyramid} alt="Pyramid" className="pyramid-img" />
+      <img src={pyramid} alt="Pyramid" className="pyramid-img" 
+      style={{
+        width: '100%',
+        maxWidth: '500px',
+        height: 'auto',
+        display: 'block',
+        margin: '0 auto',
+        boxShadow: '0 0 20px #0ff',
+      }}
+      />
+
+    
 
       <div className="login-form">
         <input

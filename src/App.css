@@ -43,14 +43,6 @@
   }
 }
 
-/* Global background */
-.app-container {
-  min-height: 100vh;
-  background: url('./assets/bg-shark.png') no-repeat center top fixed;
-  background-size: cover;
-  color: #fff;
-  font-family: 'Orbitron', sans-serif;
-}
 
 .app-container {
   min-height: 100vh;
