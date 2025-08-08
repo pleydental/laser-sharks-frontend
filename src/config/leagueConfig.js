@@ -7,7 +7,7 @@ const leagueConfig = {
   },
   draftOrder: [
     { manager: "JD", paid: true },
-    { manager: "Marcello", paid: false },
+    { manager: "Marcello", paid: true },
     { manager: "Matt", paid: true },
     { manager: "Scham-Balls", paid: false },
     { manager: "Mish", paid: true },
