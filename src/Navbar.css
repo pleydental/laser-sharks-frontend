@@ -102,3 +102,18 @@
   }
 }
 
+.logout-button {
+  background: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  padding: 0.3rem 0.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 4px red;
+}
+
+.logout-button:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
