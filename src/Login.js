@@ -19,7 +19,7 @@ const Login = ({ onLogin }) => {
       onLogin();
       navigate('/');
     } else {
-      alert('Wrong password, try again.');
+      alert('Ah shit, wrong password.');
     }
   };
 
@@ -32,7 +32,7 @@ const Login = ({ onLogin }) => {
       <div className="login-form">
         <input
           type="password"
-          placeholder="Enter universal password"
+          placeholder="Universal Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
