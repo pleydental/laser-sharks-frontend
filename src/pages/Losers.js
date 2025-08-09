@@ -23,7 +23,7 @@ const losers = [
 },
   { 
     year: 2021, 
-    name: 'Jayson Wickencamp record not found but it was bad. No picture, debate about regular season vs. full season standings. Scham-Balls clarified.', banner: loser2021 },
+    name: '**Jayson Wickencamp record not found but it was bad. No picture, debate about regular season vs. full season standings. Scham-Balls clarified.', banner: loser2021 },
   { 
     year: 2022, 
     name: 'Matt Welsch ......... 6-22. Shoveling Horse Shit in a TuTu', 
