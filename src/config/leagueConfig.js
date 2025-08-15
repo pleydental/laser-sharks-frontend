@@ -14,7 +14,7 @@ const leagueConfig = {
     { manager: "Debo", paid: true },
     { manager: "Mark", paid: true },
     { manager: "McCool", paid: true },
-    { manager: "Fischer", paid: false },
+    { manager: "Fischer", paid: true },
     { manager: "DD", paid: true },
     { manager: "Shaw", paid: true },
     { manager: "Gus", paid: true },
