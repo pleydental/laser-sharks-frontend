@@ -479,7 +479,7 @@ Couldn't figure out how to upload the video but JD jerks off to it every night, 
 [gif file="loser.gif" size="md" align="center"]
 <p>McCool thought he was safe with his boy blue Debo but Debo made a pack with the devil and tipped off the FBI with some questionable browser history content. McCool didn’t stand a chance. The planted material was just too fucked up. McCool moved to Uruguay and became a banana farmer.<p>
 [gif file="banana.gif" size="md" align="center"]
-<p>JD made an early season pack with Fischer to collude on some one sided trades. JD was promised a baby oil bath at Fischer’s “White Party” but he quickly realized DD was promised the same thing and the two of them hit it off and ran away to Croatia so they could be themselves with each other<p>
+<p>JD made an early season pact with Fischer to collude on some one sided trades. JD was promised a baby oil bath at Fischer’s “White Party” but he quickly realized DD was promised the same thing and the two of them hit it off and ran away to Croatia so they could be themselves with each other<p>
 [gif file="gay.gif" size="md" align="center"]
 <p>Mark got off clean and was left alone. This was an oversight by Fischer and Debo and Mark was left to spend all of his free time pouring over his lineups and waiver wire. They didn’t see it coming. He finished 11th. Mark was later seen living his life like nothing ever happened.<p>
 [gif file="dont-give-a-shit.gif" size="md" align="center"]
