@@ -3,10 +3,78 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './MatchupRecap.css';
 import fingerButton from '../assets/middle-finger-button.png';
+import Gif from "../components/Gif";
+
+// --- Local file resolver ---
+// Pass just the filename (e.g. turkey-dance.gif) in your shortcode
+// --- Local file resolver ---
+function resolveLocalGif(filename) {
+  if (!filename) return '';
+  // Webpack/CRA: require() may return a string (images) or a module object (videos)
+  try {
+    const mod = require(`../assets/gifs/${filename}`);
+    return typeof mod === 'string' ? mod : (mod && mod.default ? mod.default : '');
+  } catch (e) {
+    // Vite/ESM fallback (safe to keep even if you’re on CRA)
+    try {
+      return new URL(`../assets/gifs/${filename}`, import.meta.url).href;
+    } catch {
+      console.warn(`GIF/MP4 not found in src/assets/gifs: ${filename}`);
+      return '';
+    }
+  }
+}
+
+
+// --- Shortcode parser ---
+// Use inside your recap HTML strings like:
+// [gif file="turkey-dance.gif" size="md" align="center"]
+// [gif file="ref-whiff.mp4" size="sm" align="right" type="video"]
+function parseGifShortcodes(html) {
+  if (typeof html !== 'string') return html;
+
+  html = html.replace(/<\s*Gif\b[^>]*>(?:<\/\s*Gif\s*>|)/gi, '');
+
+  const re = /\[gif\s+([^\]]+)\]/gi;
+  return html.replace(re, (_, attrStr) => {
+    const attrs = {};
+    attrStr.replace(/(\w+)\s*=\s*"([^"]*)"/g, (_, k, v) => {
+      attrs[k.toLowerCase()] = v;
+    });
+
+    const file = attrs.file || '';
+    const src = file ? resolveLocalGif(file) : '';
+    const size = /^(sm|md|lg|full)$/i.test(attrs.size || '') ? attrs.size.toLowerCase() : 'md';
+    const align = /^(left|center|right)$/i.test(attrs.align || '') ? attrs.align.toLowerCase() : 'center';
+    const forcedType = /^(image|video)$/i.test(attrs.type || '') ? attrs.type.toLowerCase() : null;
+
+    const isVideo = forcedType === 'video' || (!forcedType && /\.mp4($|\?)/i.test(file));
+
+    if (!src) return '';
+
+if (isVideo) {
+  return `
+    <figure class="gif-figure gif-${align}">
+      <video class="gif-media gif-${size}" muted playsinline loop autoplay>
+        <source src="${src}" type="video/mp4" />
+      </video>
+    </figure>
+  `;
+}
+
+
+    return `
+      <figure class="gif-figure gif-${align}">
+        <img class="gif-media gif-${size}" src="${src}" alt="" loading="lazy" />
+      </figure>
+    `;
+  });
+}
 
 const recaps = {
   2016: `
     <p>MARK VS MISH<p>
+
   
     <p>It looked like Chad had it locked up heading in to the playoffs dominating much of the season but Mark and Ben put on strong showings towards the end and all three ended up 9-4 and essentially tied for 1st place. Only Ben and Chad got the BYE's. Myself, Matt and Gus barely made it with only one more loss putting our playoff bids in jeopardy.</p>
 
@@ -34,6 +102,7 @@ const recaps = {
 <p>TE: GRONK by a mile but hoping Engram gets me 15, Shaw get it<p>
 <p>FLEX: Shaw, i've got Duke Johnson in there for crying out loud<p>
 <p>K: Kind of tie I guess. Shaw’s K is also playing Monday night and if I lose because of a 4th quarter field goal I might just eat my regurgitated vomit out of self loathing. If it’s regurgitated does that mean I threw up, ate it, threw up then ate it again? If yes then that is exactly what I was trying to say. In case you couldn't visualize it, this guy is half way there:<p>
+[gif file="vomit.gif" size="md" align="center"]
 
  <p>That's what I will do if that happens, and I hope Shaw's reaction is like the other guy, if he has a soul that is<p>
 
@@ -44,6 +113,9 @@ const recaps = {
 <p>Last year Wick was 1 of 3 teams that hadn't won a high score prize yet and he got it in week 16. So make sure you set your lineups and keep playing till the very end!<p>
 
 <p>Can't wait to see what happens!!<p>
+
+[gif file="gopher-evil.gif" size="md" align="center"]
+
 
 <p>Wait found it: <p>
 
@@ -73,10 +145,12 @@ const recaps = {
 
 <p>NEXT YEAR a couple of things I would like to change<p>
 <p>
-1. Winner gets to change or add a rule that will improve the league in their mind. They can also remove a rule that a previous winner put in place. If the rule will significantly increase my time burden (see rule change #2 below) I may discuss other options with the winner. In the end if the winner is set on his/her suggestion I will comply. 
-2. Until then I would like to change how the playoffs positions are decided. Rather than a standard 13 wk regular season record a team will get an extra win if they are in the top 6 of point scoring for the week or an extra loss if they are in the bottom 6 in scoring. It wouldn’t have made a difference this year but I know in years past there have been frustrating situations where a team(s) had way more points than the final spot, but just got unlucky with their schedule. For example Chad barely made it the playoffs this year because his ‘points against’ were the 2nd highest in the league. If he had just 1 regular season loss more he would have been out despite having a point advantage over the 2 teams that could have supplanted him. With the new format it would be more likely that the 6 playoff teams would in fact be the best performing teams of the year 
-3. It is now ok to talk about Fight Club
+1. Winner gets to change or add a rule that will improve the league in their mind. They can also remove a rule that a previous winner put in place. If the rule will significantly increase my time burden (see rule change #2 below) I may discuss other options with the winner. In the end if the winner is set on his/her suggestion I will comply. <p>
+<p>2. Until then I would like to change how the playoffs positions are decided. Rather than a standard 13 wk regular season record a team will get an extra win if they are in the top 6 of point scoring for the week or an extra loss if they are in the bottom 6 in scoring. It wouldn’t have made a difference this year but I know in years past there have been frustrating situations where a team(s) had way more points than the final spot, but just got unlucky with their schedule. For example Chad barely made it the playoffs this year because his ‘points against’ were the 2nd highest in the league. If he had just 1 regular season loss more he would have been out despite having a point advantage over the 2 teams that could have supplanted him. With the new format it would be more likely that the 6 playoff teams would in fact be the best performing teams of the year <p>
+<p>3. It is now ok to talk about Fight Club
 <p>
+[gif file="fight-club.gif" size="md" align="center"]
+
  
 <p>As always, I am open to suggestions. Any of you opposed to one or more of these 3 rule changes speak up, I consider silence a vote for yes. If it’s close I may ask all of you for an up or down vote so all voices are heard.<p>
 
@@ -89,28 +163,48 @@ const recaps = {
 
 <p>Wow, just wow is all I have to say. What a great final matchup between Matty Ice and The Mac Train, either team could have won but in the end Matty Ice made TMT his little...<p>
 
+[gif file="bitch.gif" size="md" align="center"]
+
+
 
 <p>Here's how it went down:<p>
 
 <p>First game was Saturday between the overrated Titans and hapless Redskins. No surprise, the only starter between these two championship teams was the Tennessee Titans DEF (TMT). Wasn't looking so good until TEN got a pick 6 in the final 6 seconds of the game to give TMT a nice 13pt cozy start to the week. <p>
 
+[gif file="chewy-pissed.gif" size="md" align="center"]
+
+
 
 <p>Next game was Saturday afternoon between LAC and BAL. Again only one starter between the two and that was the LAC K for TMT. MI smartly benched Philip Rivers who only ended up with 5pts, which sometimes is a good thing for the kicker but in this instance only meant 4 more pts for TMT. So TMT averaged 8.5pts for his DEF/K and probably not soooper stoked about it. Sorry Flossie<p>
 
+[gif file="not-one-bit.gif" size="md" align="center"]
+
+
 
 <p>Sunday afternoon games up next. MI had 6 players: D Adams (WR), Cooks (WR), Cohen (RB), Kamara (RB), Ertz (TE) and Elliot (K). TMT had 4 players: Trub Train (QB), Julio (WR), Barkley (RB), Engram (TE). By the end of the early afternoon games MI had a 4pt lead over TMT, thanks in large part to MI's 36 points by Ball Zach Ertz and a pedestrian performance by Barkley and Julio for TMT. TMT got a respectable 17 points from Engram but he did not see Ball Zach coming, sorry....<p>
+
+[gif file="ball-zach.gif" size="md" align="center"]
+
 
 <p>New low for me...moving on<p>
 
 <p>Sunday late afternoon games. MI got another great performance by Kamara (26.5pts) but only 12 points combined between Cohen and Cooks. Only 3 players left in the primetime games for MI. TMT had Trub train in the late afternoon game but he came up small somehow against a cake SF matchup. MI now has a 27pt lead with 1 player Sunday night and 2 on Monday. TMT still has T Hill, D Williams, and Carson going Sunday night so still some hope at this point but not looking good. Sunday 8:15pm MI is at the party ready to celebrate, excited to eat some horse cake, but still a liiiiiiittle nervous<p>
 
+[gif file="vomit-cake.gif" size="md" align="center"]
+
 
 <p>Sunday night game: With TMT down 27 points and 3 players in this game he needs about 25 points from each of them to feel comfortable going into Monday night. Well he got 13 from Hill, 25 from Carson, and 27 from Williams. Not too shabby right? WRONG!! MI's Russel Wilson ends up getting 34 points as well, and for those keeping track that's 29 points more than Rivers got on his bench. Well at this stage TMT ends up taking the lead 146 to 142 over MI but MI still has 2 players Monday night that need to average 2.05 pts to walk home with the championship. Right now he's happier than a unicorn on crossbars<p>
+[gif file="unicorn-crossbars.gif" size="md" align="center"]
 
 <p>Right now Mac is sadder than Trump walking into a Democratic rally by mistake<p>
+[gif file="trump-lightning.gif" size="md" align="center"]
+
 
 
 <p>Monday night game: Mac has 4 pt lead, no players left. MI's Phillip Lindsay get's 7.7 pts, DEN Def gets 1pt. Matty Ice wins the Championship and justly posts 56 GIF's celebrating on Yahoo app, well done smakdown! <p>
+[gif file="wrestle-1.gif" size="md" align="center"]
+[gif file="wrestle-2.gif" size="md" align="center"]
+[gif file="aint-first-last.gif" size="md" align="center"]
 
 
 <p>His season was reminiscent of Shaw-Balls last year, dominating almost every week including through the playoffs and definitely deserved the win. Mac was no slouch especially the last half of the season coming on strong through the end and put up a great fight. For the championship to come down to 5 pts is always a good thing. <p>
@@ -129,10 +223,21 @@ const recaps = {
 </p>Last. Hack.......$25*</p>
 </p>Last. Scham....$0</p>
 </p>Last. Mark.......$0</p>
+
+<p>MATT YOU ALSO NEED TO PICK A NEW RULE FOR NEXT YEARS SEASON OR CHANGE A CURRENT RULE, sooner the better
+<p>
+<p>Well sadly that's it folks, until next year!!! Thanks for a great season and hopefully we'll see you all back for 2019
+<p>
+<p>Mish out, I gots stuff to do<p>
+[gif file="everybody-doing-it.gif" size="md" align="center"]
+
   `,
   2019: `
     <p>SCHAM vs. MARK<p>
 
+<p>Congratulations to Ryan Schamerloh as the season 4 Laser Sharks Champion!!<p>
+
+[gif file="you-win.gif" size="md" align="center"]
 <p>Here's how it all went down, see last email for road to playoffs<p>
 
 <p>Mark had been dominant all season racking up 3 high scores along the way, 3 head to head losses and only 1 week in which he wasn't in the top 6 for points. Ryan racked up 2 high scores along the way, but after his 2 losses in week 11 he never looked back.<p>
@@ -140,18 +245,27 @@ const recaps = {
 <p>Saturday
 Mark had Winston and Watson as his QB's which should have easily gotten him 50pts but he got 28pts instead, not a great start. Winston threw 4 frikin picks. His 2 RB's on the bench also ended up outscoring his RB2. Mark could not be feeling very good at this point.<p>
 
+[gif file="r2d2-vomit.gif" size="md" align="center"]
 <p>Ryan did not have a great start either. He had been riding NE defense for awhile but they only got him 5pts this week. A good 11pts from his kicker so not bad. Ryan was probably feeling "meh."<p>
 
+[gif file="meh.gif" size="md" align="center"]
 
 <p>Sunday 
 Mark could have made up some ground with his defense, PIT was a solid play against the Jets but it didn't pan out, again, and only got him 5pts. He had CMAC (aka the Panthers) going against the Colts and got his usual 30+ pts so finally something good happened for him. Nevermind, he had DJ Moore going in the same game and he got 1 catch for 1 yard. Goedert got him 24pts in the afternoon game but things aren't looking good for the regular season champion. Mark needs some help at this point, his only hope is Dan Bailey and Diggs Monday night to get him 70pts?<p>
 
+[gif file="take-my-hand.gif" size="md" align="center"]
+
 <p>We already talked about Mark's QB's but Ryan's QB's (Mahomes and Tannehill, yes, that Tannehill) got him a combined 60pts, 32pts more than Mark's. The rest is history as Ryan's team outperformed Mark's in every position except RB. Ryan had racked up 188pts by the end of Sunday night and had an ~70pt lead. He's feeling pretty confident right now!<p>
+
+[gif file="flair.gif" size="md" align="center"]
 
 <p>Monday night
 Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 seconds per play to get a pass off and couldn't get anything else going. Dan Bailey scored 4pts. Ryan ends up with high score for the week....aaaaaaannddddddd<p>
 
 <p>WE HAVE A NEW CHAMPION!! - Ryan Schamerloh<p>
+
+[gif file="new-champion.gif" size="md" align="center"]
+[gif file="brady-crying.gif" size="md" align="center"]
 
 <p>Great job to both of you and the rest of league. Ryan you get to pick a new rule for next season or get rid of an old one. Let me know when you decide!<p>
 
@@ -160,23 +274,25 @@ Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 second
 <p>Till next year!<p>
 
 <p>-Mish out<p>
+[gif file="pretzels.gif" size="md" align="center"]
+
   `,
   2020: `
     <p>McCOOL vs. MISH<p>
-
+[gif file="randy-savage.gif" size="md" align="center"]
 <p>Mr. McCool, the crown is yours!<p>
 
 <p>Wow, just wow, what a crazy year. In case any of you checked Monday morning and saw that I had a 39 point lead and McCool only had Diggs left, you probably assumed that I was going to win. Hell, I did. Well I didn't...<p>
-
+[gif file="bottle-break.gif" size="md" align="center"]
 
 <p>Here's how it went down. Yahoo's original projections had McCool beating me 171-157, which is fair because his team was way better than mine. It started off Christmas Day, Saints vs. the Vikings. I had Kirk Cousins and Dalvin Cook. I was very happy with Cousins and content with Cook but McCool still had the higher projected total. I was probably happiest that McCool didn't have Kamara, I mean really, that would suck to lose to someone in the championship because one player scored 40 plus points!<p>
-
+[gif file="swanson-really.gif" size="md" align="center"]
 <p>The next big set of games Saturday were TB/DET, SF/AZ, MIA/LV. I had Godwin in the 2nd game and he did NOT disappoint. I had TB's kicker. And since TB could only score 7 TD's in this game, I only got 5 points...that's right, he missed two of his PAT's. I HATE KICKERS IN FANTASY FOOTBALL! I had DHop and George Kittle and McCool had Kyler Murray and Aiyuk in the 2nd game. DHop and Kittle were somewhat disappointing for me with 26 combined points but Kyler and Aiyuk were even more of a let down for McCool, Aiyuk got hurt so he only got 4pts out of him.. The final game of Saturday McCool had Waller and I didn't have anybody. Well, I had Agholor (27pts) but didn't feel comfortable playing him over Corey Davis (0pts). Waller had a nice game for McCool and I think we were pretty even in the projections at this point, I finally had closed the gap thanks to Godwin and lackluster performances from McCool's team.<p>
-
+[gif file="truck.gif" size="md" align="center"]
 <p>The rest of the games were on Sunday except the Monday night game. I was able to build on my lead with a great performance from Trubisky and an average performance from WAS defense. McCool had some nice pointage from his *$*(#)'ing kicker but got 0 points from his DEF. He actually would have gotten negative points for his defense in most leagues but not Laser Sharks! Tyreek only got him 10points but Matt Ryan was able to put together a nice game. The big surprise was the GB-TEN game in the SNOW. This left AJ Brown (McCool) and Davis (Mish) without much to do. Luckily, AJ Brown is a beast and was able to get 8pts for McCool but I got blanked with Davis. Still, by the end of Sunday night I had a 39pt lead and was feeling....pretty....darn....good. <p>
-
+[gif file="foreboding-music.gif" size="md" align="center"]
 <p>Well then came Monday night. Buffalo finally got to kick the shit out of New England for a change  and that they did. They were up 31 to 9 thanks to two TD's from Diggs, who happens to be on McCools team. I am begging the Bills to rest their starters. They didn't, they had to get ONE more TD out of Diggs to go up 38-9. That's when they decided to cool it and just ride the game out with backups. That also gave Diggs 42 total points for the game and McCool with a 3point lead and OUR NEW CHAMPION!!!!!!!!<p>
-
+[gif file="champion-belt.gif" size="md" align="center"]
 <p>It all worked out in the end, for sure the best team won here, I got lucky beating Cello and thought I was going to get lucky with McCool but it did not happen.<p>
 
 <p>Well done sir!<p>
@@ -184,10 +300,12 @@ Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 second
 <p>Ben had high score (209) this week and got some money back!<p>
 
 <p>Final payouts below, if you don't get it by the end of today let me know!<p>
+[gif file="standings.png" size="md" align="center"]
 
 
 <p>It's been fun! Until next year fellas!!<p>
 <p>-Mish out<p>
+[gif file="peace-out.gif" size="md" align="center"]
   `,
 2021: `
     <p>JD VS. MISH, brother vs. brother<p>
@@ -195,19 +313,25 @@ Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 second
 <p>I would love to say that was close but that would be the most ridiculous thing I have said in my entire life! <p>
 
 <p>JD get the lotion out, someone wanted to say congrats to you:<p>
+[gif file="cameo.mp4" size="sm" align="right" type="video"]
+[gif file="erin-andrews.gif" size="md" align="center"]
+
 
 <p>It's legit, trust me<p>
+
+Couldn't figure out how to upload the video but JD jerks off to it every night, he still sends me pictures
 
 <p>Here's how it went down:<p>
 
 <p>Yes...JD did have Ja'Marr Chase but even if he didn't, he still would have whipped me. In case you didn't know Chase had 266 yards and 3 TD's for a grand total of 59pts, that's roughly 2/3rds of my point total. Then he got 36pts from St Brown (waiver wire), 34pts from Penny (waiver wire), 26pts from Murray, 15pts from Mike Williams (who I dropped, waiver wire). I nicely asked him to stop scoring points Sunday afternoon but he humbly replied:<p>
-
+[gif file="damn-jd.png" size="md" align="center"]
 <p>So JD backed up his high score last week with another high score this week, so I am not even going to say how unlucky I was because the dude TORE IT UP and it was a hell of a finish to the season for him. He would have beat any of us on our best days these past two weeks. Nice job Broseph!! <p>
 
 <p>That being said...<p>
 
 <p>Well, the most exciting thing that happened on my team was when halfway through his game, Antonio Brown took all(most) of his clothes off, did a dance in the endzone half naked, tried to get an Uber to leave the stadium but then ended up with a police escort to the airport so he could quit football, during an in progress game. And in case anyone wasn't watching football yesterday and thinks I am making that up...I. am. not. Here is a picture a fan caught of the situation, looks sus<p>
-
+[gif file="screw-you-paul.png" size="md" align="center"]
+[gif file="antonio-brown.gif" size="md" align="center"]
 <p>Again, it didn't make a damn difference, JD still would have whooped me if AB had an identical game to Chase, just thought it was funny. So glad I threw away my kids Antonio Brown jerseys 3 years ago.<p>
 
 <p>JD WON 203.32 to 99.56 (Mish), holy hell that hurts to write<p>
@@ -234,6 +358,8 @@ Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 second
 <p>Ok, that's it for this year. Your mish thanks you for another great season, see you next year! Congrats again JD!! Hope you enjoyed the video :)<p>
 
 <p>-Mish out<p>
+[gif file="ab-leaving.gif" size="md" align="center"]
+[gif file="ab-incident.jpeg" size="md" align="center"]
 
   `,
 2022: `
@@ -244,7 +370,7 @@ Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 second
 <p>Ryan aka Scham-balls has become the 1st laser shark member to win twice, quite the accomplishment amongst all of you fine upstanding gentlemen!<p>
 
 <p>I actually leveled up the league this year and will be shipping this trophy out to Ryan :)<p>
-
+[gif file="trophy.jpeg" size="md" align="center"]
 <p>And sorry for the delay, DD ceded the win to Ryan last week I, just hadn't gotten around to making the announcement<p>
 
 <p>The following payouts should be coming in the next 24-48hrs<p>
@@ -267,26 +393,28 @@ Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 second
 <p>Great season guys and great job Ryan! Sorry it had to end on such a tragic note.<p>
 
 <p>-Mish out till next time<p>
+[gif file="batman-out.gif" size="md" align="center"]
 
   `,
 2023: `
     <p>SHAW VS. DEBO<p>
 
 <p>We have a "new" champion. I write "new" because he has won it before, like 15 years ago it seems, but nonetheless he's done it again. Mr. Ryan Shaw, aka Shaw Balls has come out of nowhere and nabbed the trophy. He did in style too with the high score for the week!<p>
-
+[gif file="omg.gif" size="md" align="center"]
 <p>Debo had a solid season and his final performance was respectable with the 2nd highest score in the league for the week. He was pretty dominant the last few weeks and it was going to take a monster performance to take him down and that's what we got folks.<p>
-
+[gif file="very-very-sorry.gif" size="md" align="center"]
 <p>The genius of Debo had him picking up Flacco a few weeks ago (yes, I made fun of him) but he has been balling and outscored Shaw's QB 30 to 22. <p>
-
+[gif file="cat-wow.gif" size="md" align="center"]
 <p>Debo also picked up an early WW darling in Puca Nacua and he put up 20 for him. Thielen had an ok game for Ryan but Aiyuk made up for it with 25 pts.<p>
-
+[gif file="dwight-big-deal.gif" size="md" align="center"]
 <p>Debo won the RB battle as well, outscoring Shaw 35 to 25. <p>
-
+[gif file="al-bundy.gif" size="md" align="center"]
 <p>TE for both was meh but an extra disappointing 5pts from Kelce for Debo.<p>
-
+[gif file="not-impressed.gif" size="md" align="center"]
 <p>The big one for Shaw was in the FLEX getting 44pts from CeeDee Lamb and the final cherry on top was a whopping 24pts from Harrison Butker after getting five field goals yesterday afternoon. <p>
-
+[gif file="cat-what.gif" size="md" align="center"]
 <p>Congrats Shaw!<p>
+[gif file="leo-congrats.gif" size="md" align="center"]
 
 <p>Well that's how it all went down but what everyone really wants to know is how much they are getting paid and here is how it shakes out.<p>
 
@@ -306,19 +434,26 @@ Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 second
 <p>Been a great season, looking forward to the next! Shaw needs a new rule or get rid of a rule, and Matt I'll be sending another TUTU for you and we'll be looking forward to the pictures!<p>
 
 <p>-Mish out with love<p>
+[gif file="step-brothers-running.gif" size="md" align="center"]
 
   `,
   2024: `
     <p>MARCELLO VS. SCHAM<p>
+    [gif file="payout.png" size="md" align="center"]
 
+
+<p></p>High score is still up in the air for week 17 but it looks like Shaw-balls has a pretty sizable lead on that one, I'll wait to pay out until tomorrow just to be safe. That would be 4 high scores for Shaw and he basically played for free this year. Not a complete loss for the reigning champ.
+<p>
+<p></p>Debo and Gus got jack-shit, sorry fellas. Everybody else will be getting paid.
+<p>
 <p>On to the Super Gay I Can't Quit You Texas Cowboys Laser Shark Championship<p>
 
 <p>This is Scham-balls and Marcello getting all jazzed up prior to the championship game<p>
-
+ [gif file="assless-chaps.gif" size="md" align="center"]
 <p>It was actually a good matchup as both teams put up some pretty big numbers. In the end, I don't think Marcello polished his saddle enough because he had some seriously bad luck. James Conner got hurt in the 1st quarter and gave him less than 3 points and his TE Hunter Henry gave him 0 pts with only 2 targets. That's not to take away from Scham-balls victory, his team did great. This is his 3rd Laser Shark Championship. <p>
-
+ [gif file="southpark-gay-cowboys.gif" size="md" align="center"]
 <p>For those of you that don't know Scham-balls or Marcello, these two cowboys are actually really good representations of them.<p>
-
+[gif file="cowboys.gif" size="md" align="center"]
 <p>Shaw, I am going to need that trophy back so I can send it...again...to Texas<p>
 
 <p>DD, I think that address you gave me for the TuTu was made-up, I can't seem to find it on a map<p>
@@ -326,6 +461,7 @@ Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 second
 <p>Thanks for a great season fellas, this is officially 3 years with this crew (out of 9 seasons) without anybody dropping out or going to jail, happy to have you all!<p>
 
 <p>-Mish out<p>
+ [gif file="gay-cowboys.gif" size="md" align="center"]
 
   `,
   2025: `
@@ -334,37 +470,38 @@ Mark's Diggs gets a TD and has decent game but Kirk Cousins had about 0.5 second
 <p>Fischer Vs. Debo<p>
 
 <p>The two newest members of Laser Sharks find themselves head to head at the end of the 2025 season vying for the 2025 Laser Sharks Trophy.<p>
-
+ [gif file="lets-go.gif" size="md" align="center"]
 <p>Both men had something to prove, Fischer, the new guy approached the season like a prison newby. He got some advice from Gus and was told to shiv the big dog in the group. He flew out to Texas and and shivved Scham-Balls in the most obvious place when he bent down to pick up the soap. Scham-balls is now known as Scham-shaft.<p>
-
+[gif file="prison-mike.gif" size="md" align="center"]
 <p>Debo knowing there was still some work to do, called up some of his TSA buddies and planted some heroin on Shaw-Balls right before he was about to take off on a flight. Shaw-balls found the contraband and ran through the airport like an old British comedy. No one laughed.<p>
-
+[gif file="benny-hill.gif" size="md" align="center"]
 <p>Fischer and Debo thought they were in the clear but they forgot about 1 time champ and 4-time runner up Mish. They didn’t see him as much of a threat. Turns out they were right. Mish was blacked out for the draft and spent most of his time dicking around with this website to pay much attention to football. Mish ended up with the Tutu<p>
-
+[gif file="loser.gif" size="md" align="center"]
 <p>McCool thought he was safe with his boy blue Debo but Debo made a pack with the devil and tipped off the FBI with some questionable browser history content. McCool didn’t stand a chance. The planted material was just too fucked up. McCool moved to Uruguay and became a banana farmer.<p>
-
+[gif file="banana.gif" size="md" align="center"]
 <p>JD made an early season pack with Fischer to collude on some one sided trades. JD was promised a baby oil bath at Fischer’s “White Party” but he quickly realized DD was promised the same thing and the two of them hit it off and ran away to Croatia so they could be themselves with each other<p>
-
+[gif file="gay.gif" size="md" align="center"]
 <p>Mark got off clean and was left alone. This was an oversight by Fischer and Debo and Mark was left to spend all of his free time pouring over his lineups and waiver wire. They didn’t see it coming. He finished 11th. Mark was later seen living his life like nothing ever happened.<p>
-
+[gif file="dont-give-a-shit.gif" size="md" align="center"]
 <p>Fischer, not forgetting the advice that Gus gave him about the prison shiv knew he had to make good on the help he got. He flew him out to Vegas to a Coldplay concert and Gus was caught on the kiss cam with an inflatable Gumby doll. Gus denied any ill-intent to the national media but when the Gumby doll deflated from some un-natural holes it was clear he was in trouble. Gus went into isolation and replied insessantly to critical social media posts that “you just don’t understand!”<p>
-
+[gif file="coldplay.gif" size="md" align="center"]
 <p>Matt and Marcello were also overlooked. They forgot that Matt had won a championship and Marcello had been a runner-up. “Matt-Cello” was smart and could see what was going on. They decided to band together and put a stop to this pathetic attempt for the noobs to prove themselves. They devised a MacGyver type plan involving truffles, horse hair, sutures, bubble gum and paper clips. They ended up making an effigy of Epstein with the intention of luring Debo and Fischer into a scandalous trap but pictures of the effigy were leaked prematurely and “Matt-Cello” were cancelled and relegated to an abandoned island once used for people with leprosy.<p>
-
+[gif file="clinton.gif" size="md" align="center"]
 <p>With all of that craziness we found their evil plans paid off and Fischer and Debo found themselves head to head in the 2025 Laser Sharks Championship! It came down to the wire down to Monday Night Football. Debo came out victorious but later found himself committed to a mental asylum, not because he felt guilty about all that he had done. But because Fischer had been slowly poisoning him during their weekly Tuesday night “wine Wednesdays” they had together. Fischer, unsatisfied with his failure, committed himself as well so he could form another league with easier prey.<p>
-
+[gif file="excellent.gif" size="md" align="center"]
 <p>And that is how I see 2025 going, I can’t see any other way that it goes down<p>
 
 <p>Though I guess I could be wrong….<p>
 
 <p>-Mish out!<p>
+[gif file="rogers-finger.gif" size="md" align="center"]
   `,
   // You can add more recaps here for other years
 };
 
 const years = Object.keys(recaps).map(Number).sort((a, b) => a - b);
 
-const MatchupRecap = () => {
+export default function MatchupRecap() {
   const { year } = useParams();
   const navigate = useNavigate();
   const currentYear = parseInt(year, 10);
@@ -373,11 +510,33 @@ const MatchupRecap = () => {
   const prevYear = years[currentIndex - 1];
   const nextYear = years[currentIndex + 1];
 
+  const recapEntry = recaps[currentYear];
+  let recapNode = null;
+
+  if (typeof recapEntry === 'function') {
+    recapNode = <div className="recap-text">{recapEntry()}</div>;
+  } else if (typeof recapEntry === 'string') {
+    const processed = parseGifShortcodes(recapEntry);
+    recapNode = (
+      <div
+        className="recap-text"
+        dangerouslySetInnerHTML={{
+          __html: processed || '<p>No recap available for this year yet.</p>',
+        }}
+      />
+    );
+  } else {
+    recapNode = (
+      <div className="recap-text">
+        <p>No recap available for this year yet.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="matchup-recap-page">
       <h1>{year} Matchup Recap</h1>
 
-      {/* Navigation buttons side by side */}
       <div className="recap-navigation">
         {prevYear && (
           <div className="recap-button" onClick={() => navigate(`/matchup-recap/${prevYear}`)}>
@@ -385,7 +544,6 @@ const MatchupRecap = () => {
             <div className="recap-label">Previous</div>
           </div>
         )}
-
         {nextYear && (
           <div className="recap-button" onClick={() => navigate(`/matchup-recap/${nextYear}`)}>
             <img src={fingerButton} alt="Next" className="finger-icon" />
@@ -394,15 +552,7 @@ const MatchupRecap = () => {
         )}
       </div>
 
-      {/* Recap text */}
-      <div
-        className="recap-text"
-        dangerouslySetInnerHTML={{
-          __html: recaps[year] || '<p>No recap available for this year yet.</p>',
-        }}
-      />
+      {recapNode}
     </div>
   );
-};
-
-export default MatchupRecap;
+}

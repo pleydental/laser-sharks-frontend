@@ -307,3 +307,67 @@ h1, h2, h3, p {
 .status.unpaid {
   color: red;
 }
+/* === Recap content (scoped) === */
+.recap { max-width: 980px; margin: 0 auto; }
+.recap-h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.recap-p {
+  margin: 0.85rem 0;
+  line-height: 1.65;
+  font-size: clamp(0.98rem, 0.9rem + 0.3vw, 1.1rem);
+}
+.recap-figure { margin: 1rem 0 1.25rem; }
+.recap-figure.align-center { text-align: center; }
+.recap-figure.align-left { text-align: left; }
+.recap-figure.align-right { text-align: right; }
+
+.recap-media {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.recap-media.size-sm  { max-width: 420px; }
+.recap-media.size-md  { max-width: 720px; }
+.recap-media.size-lg  { max-width: 1000px; }
+.recap-media.size-full{ max-width: none; width: 100%; }
+
+.recap-caption {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Optional: small screens tighten spacing */
+@media (max-width: 640px) {
+  .recap-p { line-height: 1.55; }
+  .recap-figure { margin: 0.75rem 0 1rem; }
+}
+/* === GIF / recap media (scoped, safe) === */
+.gif-figure { margin: 1rem 0 1.25rem; }
+.gif-center { text-align: center; }
+.gif-left { text-align: left; }
+.gif-right { text-align: right; }
+
+.gif-media {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+}
+
+.gif-sm   { max-width: 420px; }
+.gif-md   { max-width: 720px; }
+.gif-lg   { max-width: 1000px; }
+.gif-full { width: 100%; max-width: none; }
+
+@media (max-width: 640px) {
+  .gif-figure { margin: 0.75rem 0 1rem; }
+}
