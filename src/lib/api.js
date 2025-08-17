@@ -1,12 +1,15 @@
 // src/lib/api.js
-const BASE = process.env.REACT_APP_AUTH_BASE || "http://localhost:4000";
+const BASE =
+  (typeof window !== "undefined" && window.__AUTH_BASE) ||
+  process.env.REACT_APP_AUTH_BASE ||
+  "http://localhost:4000";
 
 export const api = {
   async login(password, remember) {
     const res = await fetch(`${BASE}/api/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      credentials: "include",           // <— cookie comes back
+      credentials: "include",
       body: JSON.stringify({ password, remember }),
     });
     if (!res.ok) throw new Error("login_failed");
@@ -15,7 +18,7 @@ export const api = {
 
   async me() {
     const res = await fetch(`${BASE}/api/me`, {
-      credentials: "include",           // <— send cookie
+      credentials: "include",
     });
     if (!res.ok) throw new Error("not_authed");
     return res.json();

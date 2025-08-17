@@ -703,3 +703,9 @@ h1, h2, h3, p {
 .login-form button {
   width: 100%;
 }
+/* OVERRIDE: bigger pyramid on phones only */
+@media (max-width: 480px) {
+  .login-hero .login-pyramid {
+    width: clamp(260px, 80vw, 460px) !important;
+  }
+}
