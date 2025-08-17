@@ -134,55 +134,68 @@ const Dashboard = () => {
               </div>
             )}
 
-            {/* Countdown Timers */}
-            <div style={{ marginTop: '2rem' }}>
-              <div className="countdown-box" style={{ background: 'linear-gradient(90deg, limegreen, #00ffff)' }}>
-                🏈 Draft Countdown 🏈 <br />
-                <span>{draftCountdown}</span>
+            {/* Row 1: Countdown Timers side-by-side on desktop */}
+            <div className="dash-grid">
+              <div className="countdown-card">
+                <div className="countdown-box" style={{ background: 'linear-gradient(90deg, limegreen, #00ffff)' }}>
+                  🏈 Draft Countdown 🏈 <br />
+                  <span>{draftCountdown}</span>
+                </div>
               </div>
 
-              <div className="countdown-box" style={{ background: 'linear-gradient(90deg, #ff1493, purple)' }}>
-                🏈 Playoff Countdown 🏈 <br />
-                <span>{playoffCountdown}</span>
+              <div className="countdown-card">
+                <div className="countdown-box" style={{ background: 'linear-gradient(90deg, #ff1493, purple)' }}>
+                  🏈 Playoff Countdown 🏈 <br />
+                  <span>{playoffCountdown}</span>
+                </div>
               </div>
             </div>
 
-            {/* Draft Day Info Box */}
-            <div className="countdown-box" style={{ background: '#fff', color: '#000' }}>
-              <h2 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '1rem' }}>🍗 Draft Day Info 🍗 🍗</h2>
-              <table className="draft-info-table" style={{ margin: '0 auto' }}>
-                <tbody>
-                  <tr><th>Date</th><td>{leagueConfig.draft.date}</td></tr>
-                  <tr><th>Location</th><td>{leagueConfig.draft.location}</td></tr>
-                  <tr><th>Address</th><td>{leagueConfig.draft.address}</td></tr>
-                </tbody>
-              </table>
+            {/* Row 2: Draft Day Info + Draft Order side-by-side on desktop */}
+            <div className="dash-grid">
+              <div>
+                <div className="countdown-box card-dark">
+                  <h2 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '1rem' }}>
+                    🍗🍗 Draft Day Info 🍗🍗
+                  </h2>
+                  <table className="draft-info-table" style={{ margin: '0 auto' }}>
+                    <tbody>
+                      <tr><th>Date</th><td>{leagueConfig.draft.date}</td></tr>
+                      <tr><th>Location</th><td>{leagueConfig.draft.location}</td></tr>
+                      <tr><th>Address</th><td>{leagueConfig.draft.address}</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <div className="countdown-box card-dark">
+                  <h2 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '1rem' }}>
+                    📋 Draft Order 2025 📋
+                  </h2>
+                  <table className="draft-order-table" style={{ margin: '0 auto' }}>
+                    <thead>
+                      <tr><th>#</th><th>Manager</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                      {leagueConfig.draftOrder.map((entry, i) => (
+                        <tr key={i}>
+                          <td>{i + 1}</td>
+                          <td>{entry.manager}</td>
+                          <td>
+                            {entry.paid
+                              ? <span className="status paid">✅ Paid</span>
+                              : <span className="status unpaid">❌ Unpaid</span>}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
 
-            {/* Draft Order Box */}
-            <div className="countdown-box" style={{ background: '#fff', color: '#000' }}>
-              <h2 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '1rem' }}>📋 Draft Order 2025 📋</h2>
-              <table className="draft-order-table" style={{ margin: '0 auto' }}>
-                <thead>
-                  <tr><th>#</th><th>Manager</th><th>Status</th></tr>
-                </thead>
-                <tbody>
-                  {leagueConfig.draftOrder.map((entry, i) => (
-                    <tr key={i}>
-                      <td>{i + 1}</td>
-                      <td>{entry.manager}</td>
-                      <td>
-                        {entry.paid
-                          ? <span className="status paid">✅ Paid</span>
-                          : <span className="status unpaid">❌ Unpaid</span>}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Pay Dues Section */}
+            {/* Pay Dues Section (unchanged) */}
             <div className="countdown-box" style={{ background: 'rgba(0,0,0,0.7)', color: '#fff' }}>
               <h2 style={{ color: '#ffff00', textShadow: '0 0 15px #ffff00' }}>
                 💵 Click Icon To Pay Your $100 Dues 💵 

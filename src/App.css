@@ -371,3 +371,250 @@ h1, h2, h3, p {
 @media (max-width: 640px) {
   .gif-figure { margin: 0.75rem 0 1rem; }
 }
+/* --- Header banner --- */
+.header-pyramid {
+  width: 50px;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+  .header-pyramid { width: 38px; }
+}
+/* === Login-only hero === */
+.login-hero {
+  display: flex;
+  flex-direction: column;           /* title above image */
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 8px;
+}
+
+.login-league-title {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff44d;
+  text-shadow: 0 0 10px #fff44d;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  font-size: clamp(1rem, 0.8rem + 1.2vw, 1.6rem);
+  text-align: center;
+}
+
+.login-pyramid {
+  width: clamp(90px, 22vw, 220px);  /* not enormous; scales for mobile/desktop */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.35);
+}
+/* === Login-only hero (final) === */
+.login-hero {
+  display: flex;
+  flex-direction: column;   /* title above image */
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 10px;
+}
+
+.login-league-title {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff44d;
+  text-shadow: 0 0 10px #fff44d;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  font-size: clamp(1rem, 0.8rem + 1.2vw, 1.6rem);
+  text-align: center;
+}
+
+/* Hard cap the image size so it can't be huge */
+/* Change vw to change image size, min, preferred, max */
+.login-hero .login-pyramid {
+  width: clamp(110px, 35vw, 500px) !important;
+  height: auto !important;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.35);
+}
+/* === Login page sizing/tweaks === */
+.login-card {
+  max-width: 340px;          /* smaller card */
+  padding: 1rem 1.25rem;     /* tighter padding */
+  margin-top: 0.5rem;
+}
+
+/* Tone down the huge H1 on the card */
+.login-card h1 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.5rem);
+}
+
+/* Inputs/buttons a bit more compact */
+.login-card input[type="password"] {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.95rem;
+}
+.login-card button {
+  padding: 0.5rem 0.9rem;
+  font-weight: 700;
+}
+
+/* Keep checkbox label tidy */
+.login-card label {
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+/* Mobile: let the card breathe but stay narrow */
+@media (max-width: 480px) {
+  .login-card { max-width: 88vw; }
+}
+/* Login card sizing + one-line title */
+.login-card {
+  width: min(92vw, 420px);   /* smaller, centered card */
+  max-width: 420px;
+  padding: 1rem 1.25rem;
+  margin: 0.5rem auto 1.25rem;  /* centers the card */
+}
+
+.login-card h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.2rem, 1rem + 0.9vw, 1.6rem); /* smaller so it fits */
+  white-space: nowrap;  /* force one line */
+  text-align: center;
+}
+/* Ensure inputs don't overflow the card */
+.login-card .login-form {
+  display: grid;
+  gap: 10px;
+}
+
+.login-card input[type="password"] {
+  box-sizing: border-box;  /* includes border/padding in the width */
+  width: 100%;             /* fill the card, but no overflow */
+  display: block;
+  margin: 0;
+}
+/* === Dashboard responsive rows === */
+.dash-grid {
+  display: grid;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+/* Desktop: two columns */
+@media (min-width: 960px) {
+  .dash-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Safety: children don't overflow and can shrink nicely */
+.dash-grid > * { min-width: 0; }
+
+/* Optional: make cards stretch to equal height if their outermost element is a card */
+.dash-grid > * > .white-card,
+.dash-grid > * > .content-wrapper {
+  height: 100%;
+}
+/* Dark card variant for Dashboard info/order boxes */
+.card-dark {
+  background: rgba(0, 0, 0, 0.78);
+  color: #eee;
+}
+
+/* Override the inline h2 color safely */
+.card-dark h2 {
+  color: #fff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+/* Tables inside dark cards */
+.card-dark .draft-info-table,
+.card-dark .draft-order-table {
+  background: transparent;
+  color: #eee;
+}
+
+.card-dark .draft-info-table th,
+.card-dark .draft-order-table th {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.card-dark .draft-info-table th,
+.card-dark .draft-info-table td,
+.card-dark .draft-order-table th,
+.card-dark .draft-order-table td {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Status pills remain readable */
+.card-dark .status.paid { color: #3bd16f; }
+.card-dark .status.unpaid { color: #ff5454; }
+
+/* --- Dark tables inside the dark cards --- */
+.card-dark .draft-info-table,
+.card-dark .draft-order-table {
+  background: transparent !important;
+  color: #eee !important;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.card-dark .draft-info-table th,
+.card-dark .draft-info-table td,
+.card-dark .draft-order-table th,
+.card-dark .draft-order-table td {
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+/* Headers + left column (your Draft Info left cells are <th>) */
+.card-dark .draft-info-table th,
+.card-dark .draft-order-table th {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+}
+
+/* Body cells */
+.card-dark .draft-info-table td,
+.card-dark .draft-order-table td {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: #eee !important;
+}
+
+/* Optional zebra for readability */
+.card-dark .draft-order-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Status pills stay readable */
+.card-dark .status.paid { color: #3bd16f; }
+.card-dark .status.unpaid { color: #ff5454; }
+
+/* === Dark zebra rows (override any white backgrounds) === */
+.card-dark .draft-order-table td,
+.card-dark .draft-order-table th,
+.card-dark .draft-info-table td,
+.card-dark .draft-info-table th {
+  color: #eee !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* base row */
+.card-dark .draft-order-table tr:nth-child(odd) td,
+.card-dark .draft-order-table tr:nth-child(odd) th,
+.card-dark .draft-info-table tr:nth-child(odd) td,
+.card-dark .draft-info-table tr:nth-child(odd) th {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* zebra row — slightly lighter, not white */
+.card-dark .draft-order-table tr:nth-child(even) td,
+.card-dark .draft-order-table tr:nth-child(even) th,
+.card-dark .draft-info-table tr:nth-child(even) td,
+.card-dark .draft-info-table tr:nth-child(even) th {
+  background: rgba(255, 255, 255, 0.08) !important;
+}

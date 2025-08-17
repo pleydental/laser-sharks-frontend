@@ -393,3 +393,46 @@
     font-size: 1.5rem;
   }
 }
+/* --- DARK TABLES inside the dark cards on Dashboard --- */
+
+/* Reset any row/cell backgrounds that might be set globally */
+.card-dark .draft-order-table,
+.card-dark .draft-info-table {
+  background: transparent !important;
+  color: #eee !important;
+  border-collapse: collapse;
+}
+.card-dark .draft-order-table tbody tr,
+.card-dark .draft-info-table tbody tr {
+  background: transparent !important;
+}
+
+/* Header cells */
+.card-dark .draft-order-table thead th,
+.card-dark .draft-info-table thead th {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* Base cell styles */
+.card-dark .draft-order-table tbody tr > td,
+.card-dark .draft-order-table tbody tr > th,
+.card-dark .draft-info-table tbody tr > td,
+.card-dark .draft-info-table tbody tr > th {
+  color: #eee !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  background: rgba(255, 255, 255, 0.03) !important; /* odd row look */
+}
+
+/* Zebra rows (slightly lighter, but NOT white) */
+.card-dark .draft-order-table tbody tr:nth-child(even) > td,
+.card-dark .draft-order-table tbody tr:nth-child(even) > th,
+.card-dark .draft-info-table tbody tr:nth-child(even) > td,
+.card-dark .draft-info-table tbody tr:nth-child(even) > th {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Status pills stay readable */
+.card-dark .status.paid   { color: #3bd16f !important; }
+.card-dark .status.unpaid { color: #ff5454 !important; }
