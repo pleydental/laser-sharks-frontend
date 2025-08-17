@@ -10,7 +10,9 @@
     Expires = "0"
 
 # Redirect all routes to index.html (for React Router)
+# Proxy all /api/* calls to Render
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/api/*"
+  to = "https://laser-sharks-auth.onrender.com/api/:splat"
   status = 200
+  force = true
