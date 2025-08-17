@@ -1,10 +1,16 @@
 // src/lib/api.js
-const isLocal = typeof window !== "undefined" && window.location.hostname === "localhost";
-const BASE = isLocal ? "http://localhost:4000" : "/api";   // <-- production uses the Netlify proxy
+// In prod, use the Netlify env var. In dev, fall back to local server.
+const BASE =
+  (process.env.NODE_ENV === "production"
+    ? process.env.REACT_APP_AUTH_BASE
+    : "http://localhost:4000");
+
+// optional helper so you can check in DevTools
+if (typeof window !== "undefined") window.__AUTH_BASE = BASE;
 
 export const api = {
   async login(password, remember) {
-    const res = await fetch(`${BASE}/login`, {
+    const res = await fetch(`${BASE}/api/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -15,12 +21,15 @@ export const api = {
   },
 
   async me() {
-    const res = await fetch(`${BASE}/me`, { credentials: "include" });
+    const res = await fetch(`${BASE}/api/me`, { credentials: "include" });
     if (!res.ok) throw new Error("not_authed");
     return res.json();
   },
 
   async logout() {
-    await fetch(`${BASE}/logout`, { method: "POST", credentials: "include" });
+    await fetch(`${BASE}/api/logout`, {
+      method: "POST",
+      credentials: "include",
+    });
   },
 };
