@@ -430,7 +430,7 @@ h1, h2, h3, p {
 /* Hard cap the image size so it can't be huge */
 /* Change vw to change image size, min, preferred, max */
 .login-hero .login-pyramid {
-  width: clamp(110px, 35vw, 500px) !important;
+  width: clamp(110px, 45vw, 500px) !important;
   height: auto !important;
   display: block;
   border-radius: 8px;
@@ -617,4 +617,89 @@ h1, h2, h3, p {
 .card-dark .draft-info-table tr:nth-child(even) td,
 .card-dark .draft-info-table tr:nth-child(even) th {
   background: rgba(255, 255, 255, 0.08) !important;
+}
+/* ===== Login page: mobile/desktop tuning ===== */
+
+/* Title sits on one line but scales nicely */
+.login-card h1 {
+  white-space: nowrap;
+  text-align: center;
+  font-size: clamp(1.1rem, 2.8vw, 1.6rem);
+  margin-top: 0;
+}
+
+/* Make the pyramid bigger (but sensible) */
+.login-hero .login-pyramid {
+  /* desktop/tablet defaults */
+  width: clamp(200px, 28vw, 520px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.35);
+}
+
+/* Keep the login card tidy by default */
+.login-card {
+  max-width: 520px;
+  margin: 0.75rem auto 1.25rem;
+  padding: 1.25rem 1.25rem;
+  border-radius: 12px;
+}
+
+/* --- Mobile tweaks --- */
+@media (max-width: 480px) {
+  /* Bigger pyramid on phones */
+  .login-hero .login-pyramid {
+    width: clamp(240px, 72vw, 380px);
+  }
+
+  /* Smaller login card on phones */
+  .login-card {
+    max-width: 360px;
+    padding: 0.9rem 1rem;
+    margin: 0.75rem auto;
+  }
+
+  /* Slightly smaller title to keep it one line */
+  .login-card h1 {
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
+  }
+
+  /* Comfortable input tap targets without making the box huge */
+  .login-form input[type="password"] {
+    padding: 0.6rem;
+  }
+}
+/* ==== OVERRIDE: login title size only (safe) ==== */
+:root {
+  /* tweak this one line to change the size everywhere */
+  --login-title-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+/* only affects the login page title */
+.login-hero .login-league-title {
+  font-size: var(--login-title-size) !important;
+}
+
+/* optional: a different size on small phones */
+@media (max-width: 480px) {
+  :root { --login-title-size: clamp(1.6rem, 7vw, 2.4rem); }
+}
+/* ==== OVERRIDE: make login box shrink with screen ==== */
+.login-card {
+  /* grows up to the cap, shrinks smoothly below it */
+  width: clamp(260px, 60vw, 420px);
+  max-width: none;                  /* override any earlier max-width */
+  box-sizing: border-box;           /* include padding in width */
+  padding: clamp(0.75rem, 2.5vw, 1.25rem) clamp(0.75rem, 3vw, 1.25rem);
+  margin-left: auto;
+  margin-right: auto;               /* stay centered */
+}
+
+/* ensure inner inputs scale too */
+.login-form,
+.login-form input[type="password"],
+.login-form button {
+  width: 100%;
 }
