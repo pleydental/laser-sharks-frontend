@@ -1,11 +1,13 @@
 // src/lib/api.js
-// In prod, use the Netlify env var. In dev, fall back to local server.
+// Robust BASE resolver: prod -> Render; dev -> localhost
+const PROD_BASE = "https://laser-sharks-auth.onrender.com";
+const ENV_BASE = (process.env.REACT_APP_AUTH_BASE || "").replace(/\/$/, "");
 const BASE =
-  (process.env.NODE_ENV === "production"
-    ? process.env.REACT_APP_AUTH_BASE
-    : "http://localhost:4000");
+  (typeof window !== "undefined" && ENV_BASE) ||
+  (typeof window !== "undefined" && PROD_BASE) || // safety for static hosts
+  "http://localhost:4000";
 
-// optional helper so you can check in DevTools
+// Optional: quick debug in DevTools
 if (typeof window !== "undefined") window.__AUTH_BASE = BASE;
 
 export const api = {
@@ -13,7 +15,7 @@ export const api = {
     const res = await fetch(`${BASE}/api/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      credentials: "include",
+      credentials: "include", // bring back/set cookie
       body: JSON.stringify({ password, remember }),
     });
     if (!res.ok) throw new Error("login_failed");
@@ -21,7 +23,9 @@ export const api = {
   },
 
   async me() {
-    const res = await fetch(`${BASE}/api/me`, { credentials: "include" });
+    const res = await fetch(`${BASE}/api/me`, {
+      credentials: "include",
+    });
     if (!res.ok) throw new Error("not_authed");
     return res.json();
   },
@@ -33,3 +37,4 @@ export const api = {
     });
   },
 };
+export default api;
