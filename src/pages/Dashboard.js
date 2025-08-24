@@ -39,7 +39,7 @@ const Dashboard = () => {
         const s = Math.floor((draftDiff / 1000) % 60);
         setDraftCountdown(`${d}d ${h}h ${m}m ${s}s`);
       } else {
-        setDraftCountdown('🚨 Draft is LIVE! 🚨');
+        setDraftCountdown('🚨 Draft is OVER BITCHES! 🚨');
       }
 
       if (playoffDiff > 0) {
