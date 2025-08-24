@@ -38,15 +38,25 @@ const Managers = () => {
   return (
     <div className="content-wrapper">
       <h1 className="section-title">League Managers</h1>
-      <p className="click-instruction">Click on pic for a random dick pic or manager info, which will it be? The choice is yours</p>
+      <p className="click-instruction">
+        Click on pic for a random dick pic or manager info, which will it be? The choice is yours
+      </p>
+
       <div className="managers-grid">
-        {managers.map((manager, index) => (
+        {managers.map((manager) => (
           <div
             className="manager-card"
-            key={index}
+            key={manager.slug}
             onClick={() => navigate(`/managers/${manager.slug}`)}
           >
-            <img src={manager.image} alt={manager.name} className="manager-img" />
+            <img
+              src={manager.image}
+              alt={manager.name}
+              className="manager-img"
+              loading="lazy"
+              decoding="async"
+              sizes="(max-width: 480px) 100vw, (max-width: 1024px) 33vw, 300px"
+            />
             <div className="manager-name">{manager.name}</div>
             <div className="manager-aliases">{manager.aliases.join(', ')}</div>
           </div>

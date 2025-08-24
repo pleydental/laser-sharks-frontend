@@ -1,11 +1,5 @@
 // src/pages/Dashboard.js
-import React, { useState, useEffect } from 'react';
-import Standings from './Standings';
-import Managers from './Managers';
-import Rules from './Rules';
-import ChampRules from './ChampRules';
-import Champions from './Champions';
-import Losers from './Losers';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import leagueConfig from '../config/leagueConfig';
 import './Dashboard.css';
 
@@ -16,6 +10,14 @@ import paypalIcon from '../assets/paypal.png';
 import googlepayIcon from '../assets/googlewallet.png';
 import zelleIcon from '../assets/zelle-icon.png';
 import applecashIcon from '../assets/applecash.png';
+
+/* 🚀 Lazy-load heavy pages so dashboard ships fast */
+const Standings   = lazy(() => import('./Standings'));
+const Managers    = lazy(() => import('./Managers'));
+const Rules       = lazy(() => import('./Rules'));
+const ChampRules  = lazy(() => import('./ChampRules'));
+const Champions   = lazy(() => import('./Champions'));
+const Losers      = lazy(() => import('./Losers'));
 
 const Dashboard = () => {
   const [activeTab] = useState('dashboard');
@@ -29,8 +31,8 @@ const Dashboard = () => {
 
     const updateCountdowns = () => {
       const now = new Date();
-      const draftDiff = draftDate - now;
-      const playoffDiff = playoffDate - now;
+      const draftDiff = draftDate.getTime() - now.getTime();
+      const playoffDiff = playoffDate.getTime() - now.getTime();
 
       if (draftDiff > 0) {
         const d = Math.floor(draftDiff / (1000 * 60 * 60 * 24));
@@ -53,24 +55,20 @@ const Dashboard = () => {
       }
     };
 
+    // set immediately, then tick every second
+    updateCountdowns();
     const interval = setInterval(updateCountdowns, 1000);
     return () => clearInterval(interval);
   }, []);
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'standings':
-        return <Standings />;
-      case 'managers':
-        return <Managers />;
-      case 'rules':
-        return <Rules />;
-      case 'champRules':
-        return <ChampRules />;
-      case 'champions':
-        return <Champions />;
-      case 'losers':
-        return <Losers />;
+      case 'standings':   return <Standings />;
+      case 'managers':    return <Managers />;
+      case 'rules':       return <Rules />;
+      case 'champRules':  return <ChampRules />;
+      case 'champions':   return <Champions />;
+      case 'losers':      return <Losers />;
       default:
         return (
           <div className="content-wrapper">
@@ -98,6 +96,8 @@ const Dashboard = () => {
                 <img
                   src={bgShark}
                   alt="Shark Button"
+                  /* keep this eager: it's your primary CTA image */
+                  decoding="async"
                   style={{
                     width: '200px',
                     height: '200px',
@@ -118,12 +118,13 @@ const Dashboard = () => {
               </h2>
             </div>
 
-            {/* Mood GIF */}
+            {/* Mood GIF (only loads when shown) */}
             {showGif && (
               <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
                 <img
                   src={moodGif}
                   alt="Mood GIF"
+                  decoding="async"
                   style={{
                     width: '300px',
                     maxWidth: '90%',
@@ -134,7 +135,7 @@ const Dashboard = () => {
               </div>
             )}
 
-            {/* Row 1: Countdown Timers side-by-side on desktop */}
+            {/* Row 1: Countdown Timers */}
             <div className="dash-grid">
               <div className="countdown-card">
                 <div className="countdown-box" style={{ background: 'linear-gradient(90deg, limegreen, #00ffff)' }}>
@@ -151,7 +152,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            {/* Row 2: Draft Day Info + Draft Order side-by-side on desktop */}
+            {/* Row 2: Draft Info + Order */}
             <div className="dash-grid">
               <div>
                 <div className="countdown-box card-dark">
@@ -195,7 +196,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            {/* Pay Dues Section (unchanged) */}
+            {/* Pay Dues Section */}
             <div className="countdown-box" style={{ background: 'rgba(0,0,0,0.7)', color: '#fff' }}>
               <h2 style={{ color: '#ffff00', textShadow: '0 0 15px #ffff00' }}>
                 💵 Click Icon To Pay Your $100 Dues 💵 
@@ -204,11 +205,31 @@ const Dashboard = () => {
                 Links for Google Wallet and Apple Cash Do Not Exist Because They Just Don't, Trust Me I Tried. Click on Those Icons For More Info
               </p>
               <div className="payment-icons">
-                <a href={leagueConfig.payments.venmo} target="_blank" rel="noopener noreferrer"><div className="payment-icon"><img src={venmoIcon} alt="Venmo" /></div></a>
-                <a href={leagueConfig.payments.paypal} target="_blank" rel="noopener noreferrer"><div className="payment-icon"><img src={paypalIcon} alt="Paypal" /></div></a>
-                <a href="/googlepay"><div className="payment-icon"><img src={googlepayIcon} alt="Google Pay" /></div></a>
-                <a href="/zelle"><div className="payment-icon"><img src={zelleIcon} alt="Zelle" /></div></a>
-                <a href="/applecash"><div className="payment-icon"><img src={applecashIcon} alt="Apple Cash" /></div></a>
+                <a href={leagueConfig.payments.venmo} target="_blank" rel="noopener noreferrer">
+                  <div className="payment-icon">
+                    <img src={venmoIcon} alt="Venmo" loading="lazy" decoding="async" />
+                  </div>
+                </a>
+                <a href={leagueConfig.payments.paypal} target="_blank" rel="noopener noreferrer">
+                  <div className="payment-icon">
+                    <img src={paypalIcon} alt="Paypal" loading="lazy" decoding="async" />
+                  </div>
+                </a>
+                <a href="/googlepay">
+                  <div className="payment-icon">
+                    <img src={googlepayIcon} alt="Google Pay" loading="lazy" decoding="async" />
+                  </div>
+                </a>
+                <a href="/zelle">
+                  <div className="payment-icon">
+                    <img src={zelleIcon} alt="Zelle" loading="lazy" decoding="async" />
+                  </div>
+                </a>
+                <a href="/applecash">
+                  <div className="payment-icon">
+                    <img src={applecashIcon} alt="Apple Cash" loading="lazy" decoding="async" />
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -218,7 +239,10 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <main>{renderContent()}</main>
+      {/* Suspense so lazy routes show a quick fallback if navigated */}
+      <Suspense fallback={<div className="page-content"><p>Loading…</p></div>}>
+        <main>{renderContent()}</main>
+      </Suspense>
     </div>
   );
 };

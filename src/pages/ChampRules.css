@@ -17,3 +17,16 @@
   padding: 1rem;
   overflow-x: hidden;
 }
+/* Ensure media doesn’t cause layout shift while loading */
+.champ-media, .trophy-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Denser grid on small screens to reduce simultaneous downloads */
+@media (max-width: 480px) {
+  .champ-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
