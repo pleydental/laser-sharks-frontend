@@ -1,40 +1,68 @@
-import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
-import { api } from "../lib/api";
+// src/context/AuthContext.js
+import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { api } from "../lib/api"; // keep this path
 
-const AuthCtx = createContext(null);
-export const useAuth = () => useContext(AuthCtx);
+/**
+ * Status:
+ *  - "checking": verifying cookie/session with backend
+ *  - "in": authenticated
+ *  - "out": not authenticated
+ */
+
+const AuthContext = createContext({
+  status: "checking",
+  login: async (_password, _remember) => {},
+  logout: async () => {},
+});
 
 export function AuthProvider({ children }) {
-  const [status, setStatus] = useState("checking"); // "checking" | "in" | "out"
-  const [user, setUser] = useState(null);
+  const [status, setStatus] = useState("checking");
 
-  const refresh = useCallback(async () => {
-    try {
-      const res = await api.me();            // asks backend if cookie is valid
-      setUser(res.user || { role: "member" });
-      setStatus("in");
-    } catch {
-      setUser(null);
-      setStatus("out");
-    }
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await api.me(); // expects { ok: boolean }
+        if (!cancelled) setStatus(res?.ok ? "in" : "out");
+      } catch {
+        if (!cancelled) setStatus("out");
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  useEffect(() => { refresh(); }, [refresh]);
+  const value = useMemo(() => {
+    return {
+      status,
+      login: async (password, remember) => {
+        const res = await api.login(password, remember); // throws on !ok
+        setStatus("in");
+        return res;
+      },
+      logout: async () => {
+        try {
+          if (api.logout) {
+            await api.logout();
+          } else {
+            await fetch(`${window.__AUTH_BASE || ""}/api/logout`, {
+              method: "POST",
+              credentials: "include",
+            });
+          }
+        } finally {
+          setStatus("out");
+        }
+        return { ok: true };
+      },
+    };
+  }, [status]);
 
-  const login = async (password, remember) => {
-    await api.login(password, remember);     // sets cookie
-    await refresh();                         // updates state
-  };
-
-  const logout = async () => {
-    await api.logout();                      // clears cookie
-    setUser(null);
-    setStatus("out");
-  };
-
-  return (
-    <AuthCtx.Provider value={{ status, user, login, logout }}>
-      {children}
-    </AuthCtx.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
+
+export function useAuth() {
+  return useContext(AuthContext);
+}
+

@@ -16,6 +16,7 @@ import ChampRules from './pages/ChampRules';
 import Champions from './pages/Champions';
 import ManagerBio from './pages/ManagerBio';
 import Losers from './pages/Losers';
+import DraftRecaps from './pages/DraftRecaps';
 import MatchupRecap from './pages/MatchupRecap';
 import ZellePage from './pages/ZellePage';
 import GooglePay from './pages/GooglePay';
@@ -28,11 +29,22 @@ function AppContent() {
   const { status, logout } = useAuth(); // "checking" | "in" | "out"
   const navigate = useNavigate();
 
+  // --- DEV BYPASS (local only via .env.development) ---
+  // If REACT_APP_DEV_BYPASS=1, we force "in" locally without touching backend.
+  const devBypass = process.env.REACT_APP_DEV_BYPASS === '1';
+  const effectiveStatus = devBypass ? 'in' : status;
+
   const handleLogout = async () => {
+    if (devBypass) {
+      // Local-only "logout" when bypassing (no backend needed)
+      localStorage.removeItem('loggedIn');
+      sessionStorage.removeItem('loggedIn');
+      navigate('/login', { replace: true });
+      return;
+    }
     try {
       await logout(); // clears cookie on backend
     } finally {
-      // clear any legacy flags just in case
       localStorage.removeItem('loggedIn');
       sessionStorage.removeItem('loggedIn');
       navigate('/login', { replace: true });
@@ -43,19 +55,19 @@ function AppContent() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // while we ask the backend if the cookie is valid
-  if (status === 'checking') {
+  // Only show loader while the real auth is checking AND we're not bypassing
+  if (!devBypass && status === 'checking') {
     return <div className="page-content"><p>Loading…</p></div>;
   }
 
-  // if not logged in, push to /login except when already there
-  if (status === 'out' && location.pathname !== '/login') {
+  // Gate: if not logged in (effectiveStatus === 'out'), redirect to /login
+  if (effectiveStatus === 'out' && location.pathname !== '/login') {
     return <Navigate to="/login" replace state={{ from: location }} />;
   }
 
   return (
     <>
-      {status === 'in' && <Navbar onLogout={handleLogout} />}
+      {effectiveStatus === 'in' && <Navbar onLogout={handleLogout} />}
       <div className="page-content">
         <Routes>
           {/* Public */}
@@ -70,6 +82,8 @@ function AppContent() {
           <Route path="/champions" element={<Champions />} />
           <Route path="/managers/:slug" element={<ManagerBio />} />
           <Route path="/losers" element={<Losers />} />
+          <Route path="/draft-recaps" element={<DraftRecaps />} />
+          <Route path="/draft-recaps/:year" element={<DraftRecaps />} />
           <Route path="/matchup-recap/:year" element={<MatchupRecap />} />
           <Route path="/zelle" element={<ZellePage />} />
           <Route path="/googlepay" element={<GooglePay />} />
@@ -77,7 +91,7 @@ function AppContent() {
 
           {/* Fallback */}
           <Route path="*" element={
-            <Navigate to={status === 'in' ? '/' : '/login'} replace />
+            <Navigate to={effectiveStatus === 'in' ? '/' : '/login'} replace />
           } />
         </Routes>
       </div>

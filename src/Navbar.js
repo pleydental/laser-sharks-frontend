@@ -41,6 +41,7 @@ const handleLogout = () => {
         <Link to="/champ-rules" onClick={handleLinkClick}>Champ Rules</Link>
         <Link to="/champions" onClick={handleLinkClick}>Champions</Link>
         <Link to="/losers" onClick={handleLinkClick}>Losers</Link>
+        <Link to="/draft-recaps" onClick={handleLinkClick}>Draft Recaps</Link>
         <button className="logout-button" onClick={handleLogout}>Logout</button>
       </div>
     </nav>
