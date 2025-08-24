@@ -42,14 +42,14 @@ const RECAPS = {
       // recapVid1   //put imported MP4s here
     ],
     notes: <section className="recap-writeup">
-  <h2>Season 9 Laser Sharks Draft Grades</h2>
+  <h2>Season 10 Laser Sharks Draft Grades</h2>
 
   <p>
     Well another draft in the books. Things couldn’t have gone smoother. The draft order
     was correct, everyone was able to log in to Yahoo without any problems, everybody got
     along well with the non-Laser Shark attendees, the Yahoo draft room user interface left
     draftees in awe with its ease of use, I didn’t get the feeling at all that some of you
-    had never been to Yahoo in your life or after drafted from Yahoo. I didn’t even have to
+    had never been to Yahoo in your life or ever drafted from Yahoo. I didn’t even have to
     pause the draft.
   </p>
 
