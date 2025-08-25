@@ -18,6 +18,7 @@ import ManagerBio from './pages/ManagerBio';
 import Losers from './pages/Losers';
 import DraftRecaps from './pages/DraftRecaps';
 import MatchupRecap from './pages/MatchupRecap';
+import WeeklyMatchupRecaps from './pages/WeeklyMatchupRecaps';
 import ZellePage from './pages/ZellePage';
 import GooglePay from './pages/GooglePay';
 import AppleCash from './pages/AppleCash';
@@ -84,6 +85,9 @@ function AppContent() {
           <Route path="/losers" element={<Losers />} />
           <Route path="/draft-recaps" element={<DraftRecaps />} />
           <Route path="/draft-recaps/:year" element={<DraftRecaps />} />
+          <Route path="/weekly-matchup-recaps" element={<WeeklyMatchupRecaps />} />
+          <Route path="/weekly-matchup-recaps/:year" element={<WeeklyMatchupRecaps />} />
+          <Route path="/weekly-matchup-recaps/:year/week/:week" element={<WeeklyMatchupRecaps />} />
           <Route path="/matchup-recap/:year" element={<MatchupRecap />} />
           <Route path="/zelle" element={<ZellePage />} />
           <Route path="/googlepay" element={<GooglePay />} />

@@ -1,6 +1,7 @@
 // src/pages/DraftRecaps.js
 import React, { useMemo } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import Comments from "../components/Comments";
 
 /**
  * HOW TO ADD MEDIA:
@@ -319,7 +320,8 @@ function RecapContent({ year }) {
     return (
       <div className="recap-coming-soon">
         <h2>{y} Recap</h2>
-        <p><em>chill bros, coming soon</em></p>
+        <p><em>coming soon, spoiler alert your draft was the equivalent of getting
+            runner up in the special olympics</em></p>
       </div>
     );
   }
@@ -370,6 +372,8 @@ function RecapContent({ year }) {
           ))}
         </div>
       )}
+    {/* ✅ Comments go here */}
+      <Comments pageKey="draft:2025" />
     </section>
   );
 }
