@@ -174,7 +174,7 @@ export default function WeeklyMatchupRecaps() {
     <div className="recap-wrapper content-wrapper">
       <header className="recap-header">
         <h1>Weekly Recaps</h1>
-        <p className="recap-sub">Put your dick away then pick a year, then a week, then laugh at the carnage.</p>
+        <p className="recap-sub">Put your dick away, then pick a year, then a week, then laugh at the carnage.</p>
       </header>
 
       <YearButtons activeYear={selectedYear} onPick={handlePickYear} />

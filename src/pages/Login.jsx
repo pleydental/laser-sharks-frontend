@@ -18,6 +18,10 @@ export default function Login() {
     setError("");
     try {
       await login(password, remember);   // backend login (sets cookie)
+
+      // 🔥 Prefetch the post-login bundle so the transition feels instant
+      import("../AppContent");
+
       nav(dest, { replace: true });     // go where the user was headed
     } catch {
       setError("Ah shit, wrong password, time to ask Mish.");
@@ -33,7 +37,7 @@ export default function Login() {
       </div>
 
       <div className="content-wrapper login-card">
-        <h1>Enter League Password</h1>
+        <h1>Blue Pill or Red Pill? Or Password...</h1>
         <form onSubmit={submit} className="login-form">
           <label style={{ display: "block", margin: "0.5rem 0" }}>
             <span>Password</span>
@@ -53,7 +57,7 @@ export default function Login() {
               checked={remember}
               onChange={(e) => setRemember(e.target.checked)}
             />
-            <span>Stay logged in on this device</span>
+            <span>Damn girl, let me stay</span>
           </label>
 
           {error && <div style={{ color: "salmon", marginBottom: 10 }}>{error}</div>}
