@@ -148,25 +148,9 @@ const Champions = () => {
           );
         })}
       </div>
+    <Comments pageKey="champions" />
 
-      {/* 💬 Shit Talk — single thread for the Champions page */}
-      <section className="recap-comments" style={{ marginTop: '1.5rem' }}>
-        <h3 className="recap-comments__title">💬 Shit Talk</h3>
-        <div className="recap-comments__help" style={{ opacity: 0.9, marginBottom: 8 }}>
-          <ol>
-            <li>
-              Make a free{' '}
-              <a href="https://github.com/signup" target="_blank" rel="noreferrer">
-                GitHub account
-              </a>.
-            </li>
-            <li>Click “Sign in with GitHub” below.</li>
-            <li>Approve the prompt.</li>
-            <li>Type your masterpiece and hit <strong>Comment</strong>.</li>
-          </ol>
-        </div>
-        <Comments pageKey="champions" />
-      </section>
+
     </div>
   );
 };
