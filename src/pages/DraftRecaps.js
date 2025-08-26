@@ -1,7 +1,7 @@
 // src/pages/DraftRecaps.js
 import React, { useMemo } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Comments from "../components/Comments";
+
 
 /**
  * HOW TO ADD MEDIA:
@@ -373,7 +373,7 @@ function RecapContent({ year }) {
         </div>
       )}
     {/* ✅ Comments go here */}
-      <Comments pageKey="draft:2025" />
+ 
     </section>
   );
 }

@@ -841,3 +841,19 @@ h1, h2, h3, p {
   text-shadow: none;
   border-color: rgba(255, 255, 255, 0.25);
 }
+.recap-comments {
+  margin-top: 1.25rem;
+}
+.recap-comments__title {
+  margin: 0 0 .5rem 0;
+}
+.recap-comments__help {
+  background: rgba(0,0,0,.6);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 10px;
+  padding: .75rem 1rem;
+  margin-bottom: .75rem;
+  max-width: 900px;
+}
+.recap-comments__help a { color: #9ae6ff; }
+.recap-comments__help ol { margin: .35rem 0 .25rem 1.25rem; }

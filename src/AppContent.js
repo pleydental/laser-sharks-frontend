@@ -2,6 +2,8 @@
 import React, { useEffect } from "react";
 import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
+import RecapComments from "./components/RecapComments";
+
 
 import Navbar from "./Navbar";
 
@@ -70,15 +72,19 @@ function AuthedRoutes() {
           <Route path="/managers" element={<Managers />} />
           <Route path="/rules" element={<Rules />} />
           <Route path="/champ-rules" element={<ChampRules />} />
-          <Route path="/champions" element={<Champions />} />
+// (Optional) Champions page gets a thread too
+<Route path="/champions" element={<><Champions /><RecapComments /></>} />
           <Route path="/managers/:slug" element={<ManagerBio />} />
           <Route path="/losers" element={<Losers />} />
-          <Route path="/draft-recaps" element={<DraftRecaps />} />
-          <Route path="/draft-recaps/:year" element={<DraftRecaps />} />
-          <Route path="/weekly-matchup-recaps" element={<WeeklyMatchupRecaps />} />
-          <Route path="/weekly-matchup-recaps/:year" element={<WeeklyMatchupRecaps />} />
-          <Route path="/weekly-matchup-recaps/:year/week/:week" element={<WeeklyMatchupRecaps />} />
-          <Route path="/matchup-recap/:year" element={<MatchupRecap />} />
+          // Draft Recaps (list + year)
+<Route path="/draft-recaps" element={<><DraftRecaps /><RecapComments /></>} />
+<Route path="/draft-recaps/:year" element={<><DraftRecaps /><RecapComments /></>} />
+// Weekly Recaps (list + year + specific week)
+<Route path="/weekly-matchup-recaps" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
+<Route path="/weekly-matchup-recaps/:year" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
+<Route path="/weekly-matchup-recaps/:year/week/:week" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
+// Single-season Matchup Recap page
+<Route path="/matchup-recap/:year" element={<><MatchupRecap /><RecapComments /></>} />
           <Route path="/zelle" element={<ZellePage />} />
           <Route path="/googlepay" element={<GooglePay />} />
           <Route path="/applecash" element={<AppleCash />} />
