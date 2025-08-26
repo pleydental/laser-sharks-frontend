@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Champions.css';
 import trophySpin from '../assets/trophy-spin-smooth.mp4';
 import { useNavigate } from 'react-router-dom';
+import Comments from "../components/Comments"; // ⬅️ add
 
 const champions = [
   { year: 2016, winner: 'Paul Ley', file: 'champ-2016.mp4' },
@@ -32,10 +33,7 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
     if (!el) return;
 
     const io = new IntersectionObserver(
-      ([entry]) => {
-        const vis = entry.isIntersecting;
-        setInView(vis);
-      },
+      ([entry]) => setInView(entry.isIntersecting),
       { root: null, rootMargin: '300px', threshold: 0.01 }
     );
 
@@ -47,15 +45,13 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
     const v = ref.current;
     if (!v) return;
 
-    // Attach src when in view; remove when far away (optional memory saver)
     if (inView && !loaded) {
       v.src = src;
       setLoaded(true);
     }
 
-    // Play/pause based on visibility
     if (inView) {
-      v.play().catch(() => {/* ignore autoplay block if any */});
+      v.play().catch(() => {});
     } else {
       v.pause();
     }
@@ -70,7 +66,6 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
       playsInline
       preload="metadata"
       poster={poster}
-      // no src initially; set by effect when in view
     />
   );
 }
@@ -98,7 +93,6 @@ const Champions = () => {
       <div className="champ-grid">
         {champions.map((champ, idx) => {
           const isVideo = champ.file.endsWith('.mp4') || champ.file.endsWith('.webm');
-          // CRA require returns a URL string; still fine to pass into LazyVideo later
           const mediaSrc = require(`../assets/champ-banners/${champ.file}`);
 
           return (
@@ -145,6 +139,25 @@ const Champions = () => {
           );
         })}
       </div>
+
+      {/* 💬 Shit Talk (single thread for Champions page) */}
+      <section className="recap-comments" style={{ marginTop: '1.5rem' }}>
+        <h3 className="recap-comments__title">💬 Shit Talk</h3>
+        <div className="recap-comments__help" style={{ opacity: 0.9, marginBottom: 8 }}>
+          <ol>
+            <li>
+              Make a free{' '}
+              <a href="https://github.com/signup" target="_blank" rel="noreferrer">
+                GitHub account
+              </a>.
+            </li>
+            <li>Click “Sign in with GitHub” below.</li>
+            <li>Approve the prompt.</li>
+            <li>Type your masterpiece and hit <strong>Comment</strong>.</li>
+          </ol>
+        </div>
+        <Comments pageKey="champions" />
+      </section>
     </div>
   );
 };

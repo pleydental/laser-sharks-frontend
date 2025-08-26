@@ -68,7 +68,8 @@ function AuthedRoutes() {
           <Route path="/champ-rules" element={<ChampRules />} />
 
           {/* (Optional) Champions page gets a thread too */}
-          <Route path="/champions" element={<><Champions /><RecapComments /></>} />
+          <Route path="/champions" element={<Champions />} />
+
 
           <Route path="/managers/:slug" element={<ManagerBio />} />
           <Route path="/losers" element={<Losers />} />
@@ -84,8 +85,8 @@ function AuthedRoutes() {
           <Route path="/weekly-matchup-recaps/:year/week/:week" element={<WeeklyMatchupRecaps />} />
 
 
-          {/* Single-season Matchup Recap page */}
-          <Route path="/matchup-recap/:year" element={<><MatchupRecap /><RecapComments /></>} />
+          <Route path="/matchup-recap/:year" element={<MatchupRecap />} />
+
 
           <Route path="/zelle" element={<ZellePage />} />
           <Route path="/googlepay" element={<GooglePay />} />
