@@ -37,7 +37,15 @@ export default function Login() {
       </div>
 
       <div className="content-wrapper login-card">
-        <h1>Blue Pill or Red Pill? Or Password...</h1>
+  <h1>
+    Blue Pill or Red Pill?<br />
+    <span style={{ fontWeight: 400 }}>Or Password...</span>
+  </h1>
+  <form onSubmit={submit} className="login-form">
+    ...
+  </form>
+</div>
+
         <form onSubmit={submit} className="login-form">
           <label style={{ display: "block", margin: "0.5rem 0" }}>
             <span>Password</span>
