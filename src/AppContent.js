@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
-import RecapComments from "./components/RecapComments";
+// ❌ removed RecapComments import
 
 import Navbar from "./Navbar";
 
@@ -26,7 +26,6 @@ function AuthedRoutes() {
   const navigate = useNavigate();
   const { status, logout } = useAuth(); // "checking" | "in" | "out"
 
-  // DEV BYPASS (local only via .env.development)
   const devBypass = process.env.REACT_APP_DEV_BYPASS === "1";
   const effectiveStatus = devBypass ? "in" : status;
 
@@ -38,7 +37,7 @@ function AuthedRoutes() {
       return;
     }
     try {
-      await logout(); // clears cookie on backend
+      await logout();
     } finally {
       localStorage.removeItem("loggedIn");
       sessionStorage.removeItem("loggedIn");
@@ -50,7 +49,6 @@ function AuthedRoutes() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // 🚀 Treat anything not explicitly "in" as logged out — go to /login immediately.
   if (!devBypass && effectiveStatus !== "in") {
     return <Navigate to="/login" replace state={{ from: location }} />;
   }
@@ -60,39 +58,34 @@ function AuthedRoutes() {
       {effectiveStatus === "in" && <Navbar onLogout={handleLogout} />}
       <div className="page-content">
         <Routes>
-          {/* Authed pages */}
           <Route path="/" element={<Dashboard />} />
           <Route path="/standings" element={<Standings />} />
           <Route path="/managers" element={<Managers />} />
           <Route path="/rules" element={<Rules />} />
           <Route path="/champ-rules" element={<ChampRules />} />
 
-          {/* (Optional) Champions page gets a thread too */}
+          {/* Champions page renders its own <Comments/> */}
           <Route path="/champions" element={<Champions />} />
-
 
           <Route path="/managers/:slug" element={<ManagerBio />} />
           <Route path="/losers" element={<Losers />} />
 
-          {/* Draft Recaps (list + year) */}
+          {/* Draft Recaps render their own <Comments/> */}
           <Route path="/draft-recaps" element={<DraftRecaps />} />
           <Route path="/draft-recaps/:year" element={<DraftRecaps />} />
 
-
-          {/* Weekly Recaps (list + year + specific week) */}
+          {/* Weekly pages already handle their own comment keying */}
           <Route path="/weekly-matchup-recaps" element={<WeeklyMatchupRecaps />} />
           <Route path="/weekly-matchup-recaps/:year" element={<WeeklyMatchupRecaps />} />
           <Route path="/weekly-matchup-recaps/:year/week/:week" element={<WeeklyMatchupRecaps />} />
 
-
+          {/* Championship recap pages render their own <Comments/> */}
           <Route path="/matchup-recap/:year" element={<MatchupRecap />} />
-
 
           <Route path="/zelle" element={<ZellePage />} />
           <Route path="/googlepay" element={<GooglePay />} />
           <Route path="/applecash" element={<AppleCash />} />
 
-          {/* Fallback (inside authed area) */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
