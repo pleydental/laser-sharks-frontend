@@ -19,7 +19,7 @@ export default function Login() {
     try {
       await login(password, remember);   // backend login (sets cookie)
 
-      // 🔥 Prefetch the post-login bundle so the transition feels instant
+      // Prefetch the post-login bundle so the transition feels instant
       import("../AppContent");
 
       nav(dest, { replace: true });     // go where the user was headed
@@ -37,14 +37,11 @@ export default function Login() {
       </div>
 
       <div className="content-wrapper login-card">
-  <h1>
-    Blue Pill or Red Pill?<br />
-    <span style={{ fontWeight: 400 }}>Or Password...</span>
-  </h1>
-  <form onSubmit={submit} className="login-form">
-    ...
-  </form>
-</div>
+        <h1>
+          Blue Pill or Red Pill?
+          <br />
+          <span style={{ fontWeight: 400 }}>Or Password...</span>
+        </h1>
 
         <form onSubmit={submit} className="login-form">
           <label style={{ display: "block", margin: "0.5rem 0" }}>
@@ -59,7 +56,9 @@ export default function Login() {
             />
           </label>
 
-          <label style={{ display: "flex", alignItems: "center", gap: 8, margin: "0.5rem 0 1rem" }}>
+          <label
+            style={{ display: "flex", alignItems: "center", gap: 8, margin: "0.5rem 0 1rem" }}
+          >
             <input
               type="checkbox"
               checked={remember}
