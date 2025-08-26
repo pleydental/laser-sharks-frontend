@@ -1,6 +1,7 @@
 // src/pages/DraftRecaps.js
 import React, { useMemo } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import Comments from "../components/Comments"; // ⬅️ ADDED
 
 
 /**
@@ -16,6 +17,7 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 
 // ✅ Example: importing your first recap image
 
+// assets imports...
 import recapImg1 from "../assets/recap-images/2025RC-image-1.png";
 import recapImg2 from "../assets/recap-images/2025RC-image-2.png";
 import recapImg3 from "../assets/recap-images/2025RC-image-3.png";
@@ -29,7 +31,6 @@ import recapImg10 from "../assets/recap-images/2025RC-image-10.png";
 import recapImg11 from "../assets/recap-images/2025RC-image-11.png";
 import recapImg12 from "../assets/recap-images/2025RC-image-12.png";
 import outroGif from "../assets/recap-images/2025RC-outro-loop.gif";
-
 
 const YEARS = Array.from({ length: 2025 - 2016 + 1 }, (_, i) => 2016 + i).reverse();
 
@@ -335,22 +336,15 @@ function RecapContent({ year }) {
 
       {!hasAnything && (
         data.notes
-         ? data.notes // can be full JSX (section, images, etc.)
-         : <p className="recap-note">Add media to src/assets and wire them up in RECAPS to display here.</p>
-)}
-
+          ? data.notes
+          : <p className="recap-note">Add media to src/assets and wire them up in RECAPS to display here.</p>
+      )}
 
       {data.images?.length > 0 && (
         <div className="recap-media-grid">
           {data.images.map((src, idx) => (
             <figure key={`img-${idx}`} className="recap-card">
-              <img 
-                src={src}
-                alt={`2025 recap ${idx + 1}`}
-                className="recap-img"
-                loading="lazy"
-/>
-
+              <img src={src} alt={`2025 recap ${idx + 1}`} className="recap-img" loading="lazy" />
             </figure>
           ))}
         </div>
@@ -360,23 +354,16 @@ function RecapContent({ year }) {
         <div className="recap-media-grid">
           {data.videos.map((src, idx) => (
             <figure key={`vid-${idx}`} className="recap-card">
-              <video
-                src={src}
-                className="recap-video"
-                controls
-                playsInline
-                loop
-                preload="metadata"
-              />
+              <video src={src} className="recap-video" controls playsInline loop preload="metadata" />
             </figure>
           ))}
         </div>
       )}
-    {/* ✅ Comments go here */}
- 
+      {/* comments now live at page bottom in the parent to keep pager below too */}
     </section>
   );
 }
+
 function YearPager({ year, onPick }) {
   const min = 2016;
   const max = 2025;
@@ -408,14 +395,12 @@ function YearPager({ year, onPick }) {
   );
 }
 
-
 export default function DraftRecaps() {
   const { year: yearParam } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
 
   const selectedYear = useMemo(() => {
-    // If route has /draft-recaps/:year, use it; else default to 2025
     const y = yearParam || "2025";
     return YEARS.includes(Number(y)) ? y : "2025";
   }, [yearParam]);
@@ -428,6 +413,9 @@ export default function DraftRecaps() {
     }
   };
 
+  // 🔑 unique thread per draft year (root page has its own too)
+  const pageKey = yearParam ? `draft-${yearParam}` : "draft-recaps-root";
+
   return (
     <div className="recap-wrapper content-wrapper">
       <header className="recap-header">
@@ -436,11 +424,11 @@ export default function DraftRecaps() {
       </header>
 
       <YearButtons activeYear={selectedYear} onPick={handlePickYear} />
-
       <RecapContent year={selectedYear} />
-
       <YearPager year={Number(selectedYear)} onPick={handlePickYear} />
 
+      {/* 💬 Shit Talk — unique per year */}
+      <Comments pageKey={pageKey} />
     </div>
   );
 }

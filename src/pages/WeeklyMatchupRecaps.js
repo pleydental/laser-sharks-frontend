@@ -1,9 +1,10 @@
 // src/pages/WeeklyMatchupRecaps.js
 import React, { useMemo } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import Comments from "../components/Comments"; // ⬅️ add comments here
 import middleFingerBtn from "../assets/middle-finger-button.png";
 
-const YEARS = [2025];               // add more years later
+const YEARS = [2025]; // add more years later
 const WEEKS = Array.from({ length: 16 }, (_, i) => i + 1); // 1..16
 
 function YearButtons({ activeYear, onPick }) {
@@ -52,7 +53,6 @@ function WeekButtons({ year, activeWeek, onPickWeek }) {
 
 function PrevNextNav({ year, week, onPickWeek }) {
   const w = Number(week);
-
   if (!w || w < 1) return null;
 
   return (
@@ -64,8 +64,8 @@ function PrevNextNav({ year, week, onPickWeek }) {
         alignItems: "center",
       }}
     >
-      {/* Prev button */}
-      {w > 1 && (
+      {/* Prev */}
+      {w > 1 ? (
         <button
           onClick={() => onPickWeek(year, w - 1)}
           style={{ background: "none", border: "none", cursor: "pointer" }}
@@ -76,35 +76,24 @@ function PrevNextNav({ year, week, onPickWeek }) {
             style={{ width: "60px", transform: "rotate(180deg)" }}
           />
         </button>
+      ) : (
+        <div />
       )}
 
-      {/* Spacer if no prev */}
-      {w === 1 && <div />}
-
-      {/* Next button */}
-      {w < 16 && (
+      {/* Next / Champ */}
+      {w < 16 ? (
         <button
           onClick={() => onPickWeek(year, w + 1)}
           style={{ background: "none", border: "none", cursor: "pointer" }}
         >
-          <img
-            src={middleFingerBtn}
-            alt="Next Week"
-            style={{ width: "60px" }}
-          />
+          <img src={middleFingerBtn} alt="Next Week" style={{ width: "60px" }} />
         </button>
-      )}
-
-      {w === 16 && (
+      ) : (
         <button
           onClick={() => onPickWeek(year, 17)}
           style={{ background: "none", border: "none", cursor: "pointer" }}
         >
-          <img
-            src={middleFingerBtn}
-            alt="Go to Championship Recap"
-            style={{ width: "60px" }}
-          />
+          <img src={middleFingerBtn} alt="Go to Championship Recap" style={{ width: "60px" }} />
         </button>
       )}
     </div>
@@ -118,7 +107,9 @@ function YearlyRecap({ year, week, onPickWeek }) {
     return (
       <div className="recap-coming-soon">
         <h2>{y} Weekly Recaps</h2>
-        <p><em>chill bros, coming soon</em></p>
+        <p>
+          <em>chill bros, coming soon</em>
+        </p>
       </div>
     );
   }
@@ -133,7 +124,9 @@ function YearlyRecap({ year, week, onPickWeek }) {
       {week && Number(week) >= 1 && Number(week) <= 16 && (
         <div style={{ marginTop: "1.25rem" }}>
           <h3>Week {week} Recap</h3>
-          <p><em>coming soon — you probably sucked/will suck balls this week anyway</em></p>
+          <p>
+            <em>coming soon — you probably sucked/will suck balls this week anyway</em>
+          </p>
         </div>
       )}
 
@@ -170,15 +163,27 @@ export default function WeeklyMatchupRecaps() {
     }
   };
 
+  // 🔑 Build a unique comments key for Giscus
+  const pageKey = selectedWeek
+    ? `weekly-${selectedYear}-week-${selectedWeek}`
+    : selectedYear
+    ? `weekly-${selectedYear}`
+    : "weekly-recaps-root";
+
   return (
     <div className="recap-wrapper content-wrapper">
       <header className="recap-header">
         <h1>Weekly Recaps</h1>
-        <p className="recap-sub">Put your dick away, then pick a year, then a week, then laugh at the carnage.</p>
+        <p className="recap-sub">
+          Put your dick away, then pick a year, then a week, then laugh at the carnage.
+        </p>
       </header>
 
       <YearButtons activeYear={selectedYear} onPick={handlePickYear} />
       <YearlyRecap year={selectedYear} week={selectedWeek} onPickWeek={handlePickWeek} />
+
+      {/* 💬 Shit Talk for this exact year/week */}
+      <Comments pageKey={pageKey} />
     </div>
   );
 }

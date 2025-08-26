@@ -78,9 +78,10 @@ function AuthedRoutes() {
           <Route path="/draft-recaps/:year" element={<><DraftRecaps /><RecapComments /></>} />
 
           {/* Weekly Recaps (list + year + specific week) */}
-          <Route path="/weekly-matchup-recaps" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
-          <Route path="/weekly-matchup-recaps/:year" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
-          <Route path="/weekly-matchup-recaps/:year/week/:week" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
+          <Route path="/weekly-matchup-recaps" element={<WeeklyMatchupRecaps />} />
+          <Route path="/weekly-matchup-recaps/:year" element={<WeeklyMatchupRecaps />} />
+          <Route path="/weekly-matchup-recaps/:year/week/:week" element={<WeeklyMatchupRecaps />} />
+
 
           {/* Single-season Matchup Recap page */}
           <Route path="/matchup-recap/:year" element={<><MatchupRecap /><RecapComments /></>} />

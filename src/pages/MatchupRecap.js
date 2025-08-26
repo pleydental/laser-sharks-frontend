@@ -1,6 +1,7 @@
 // src/pages/MatchupRecap.js
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Comments from "../components/Comments"; // ⬅️ ADDED
 import './MatchupRecap.css';
 import fingerButton from '../assets/middle-finger-button.png';
 import Gif from "../components/Gif";
@@ -533,6 +534,9 @@ export default function MatchupRecap() {
     );
   }
 
+  // 🔑 unique thread per season recap page
+  const pageKey = `matchup-recap-${year || "unknown"}`;
+
   return (
     <div className="matchup-recap-page">
       <h1>{year} Matchup Recap</h1>
@@ -553,6 +557,9 @@ export default function MatchupRecap() {
       </div>
 
       {recapNode}
+
+      {/* 💬 Shit Talk — unique per championship year */}
+      <Comments pageKey={pageKey} />
     </div>
   );
 }
