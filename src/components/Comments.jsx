@@ -10,7 +10,7 @@ export default function Comments({ pageKey }) {
 
   return (
     <section style={{ marginTop: "2rem" }}>
-      <h3>💬 Comments</h3>
+      <h3>💬 Shit Talk</h3>
       
       <Giscus
   id="comments"

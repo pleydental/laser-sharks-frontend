@@ -4,7 +4,6 @@ import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-
 import { useAuth } from "./context/AuthContext";
 import RecapComments from "./components/RecapComments";
 
-
 import Navbar from "./Navbar";
 
 import Dashboard from "./pages/Dashboard";
@@ -51,13 +50,8 @@ function AuthedRoutes() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // Only show loader while the real auth is checking AND we're not bypassing
-  if (!devBypass && status === "checking") {
-    return <div className="page-content"><p>Loading…</p></div>;
-  }
-
-  // Gate: if not logged in, redirect to /login
-  if (effectiveStatus === "out" && location.pathname !== "/login") {
+  // 🚀 Treat anything not explicitly "in" as logged out — go to /login immediately.
+  if (!devBypass && effectiveStatus !== "in") {
     return <Navigate to="/login" replace state={{ from: location }} />;
   }
 
@@ -72,19 +66,25 @@ function AuthedRoutes() {
           <Route path="/managers" element={<Managers />} />
           <Route path="/rules" element={<Rules />} />
           <Route path="/champ-rules" element={<ChampRules />} />
-// (Optional) Champions page gets a thread too
-<Route path="/champions" element={<><Champions /><RecapComments /></>} />
+
+          {/* (Optional) Champions page gets a thread too */}
+          <Route path="/champions" element={<><Champions /><RecapComments /></>} />
+
           <Route path="/managers/:slug" element={<ManagerBio />} />
           <Route path="/losers" element={<Losers />} />
-          // Draft Recaps (list + year)
-<Route path="/draft-recaps" element={<><DraftRecaps /><RecapComments /></>} />
-<Route path="/draft-recaps/:year" element={<><DraftRecaps /><RecapComments /></>} />
-// Weekly Recaps (list + year + specific week)
-<Route path="/weekly-matchup-recaps" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
-<Route path="/weekly-matchup-recaps/:year" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
-<Route path="/weekly-matchup-recaps/:year/week/:week" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
-// Single-season Matchup Recap page
-<Route path="/matchup-recap/:year" element={<><MatchupRecap /><RecapComments /></>} />
+
+          {/* Draft Recaps (list + year) */}
+          <Route path="/draft-recaps" element={<><DraftRecaps /><RecapComments /></>} />
+          <Route path="/draft-recaps/:year" element={<><DraftRecaps /><RecapComments /></>} />
+
+          {/* Weekly Recaps (list + year + specific week) */}
+          <Route path="/weekly-matchup-recaps" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
+          <Route path="/weekly-matchup-recaps/:year" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
+          <Route path="/weekly-matchup-recaps/:year/week/:week" element={<><WeeklyMatchupRecaps /><RecapComments /></>} />
+
+          {/* Single-season Matchup Recap page */}
+          <Route path="/matchup-recap/:year" element={<><MatchupRecap /><RecapComments /></>} />
+
           <Route path="/zelle" element={<ZellePage />} />
           <Route path="/googlepay" element={<GooglePay />} />
           <Route path="/applecash" element={<AppleCash />} />
