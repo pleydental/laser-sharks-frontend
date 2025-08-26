@@ -857,3 +857,7 @@ h1, h2, h3, p {
 }
 .recap-comments__help a { color: #9ae6ff; }
 .recap-comments__help ol { margin: .35rem 0 .25rem 1.25rem; }
+.giscus, .giscus-frame {
+  width: 100% !important;
+  min-height: 400px !important;
+}
