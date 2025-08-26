@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Champions.css';
 import trophySpin from '../assets/trophy-spin-smooth.mp4';
 import { useNavigate } from 'react-router-dom';
-import Comments from "../components/Comments"; // ⬅️ add
+import Comments from "../components/Comments";
 
 const champions = [
   { year: 2016, winner: 'Paul Ley', file: 'champ-2016.mp4' },
@@ -19,9 +19,7 @@ const champions = [
 ];
 
 /**
- * LazyVideo: renders a <video> that only sets its src once the element is near viewport.
- * - Reduces initial network traffic massively versus eager <video>.
- * - Autoplays/loops/muted when visible; pauses when scrolled away.
+ * LazyVideo: only sets src when near the viewport; plays when visible.
  */
 function LazyVideo({ src, className = 'champ-media', poster }) {
   const ref = useRef(null);
@@ -31,12 +29,10 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
     const io = new IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting),
       { root: null, rootMargin: '300px', threshold: 0.01 }
     );
-
     io.observe(el);
     return () => io.disconnect();
   }, []);
@@ -46,10 +42,9 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
     if (!v) return;
 
     if (inView && !loaded) {
-      v.src = src;
+      v.src = src;           // attach only when needed
       setLoaded(true);
     }
-
     if (inView) {
       v.play().catch(() => {});
     } else {
@@ -64,7 +59,7 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
       muted
       loop
       playsInline
-      preload="metadata"
+      preload="none"   // lighter on mobile
       poster={poster}
     />
   );
@@ -73,17 +68,31 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
 const Champions = () => {
   const navigate = useNavigate();
 
+  // 📴 Don’t autoplay the hero video on mobile
+  const [isDesktop, setIsDesktop] = useState(true);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    if (mq.addEventListener) mq.addEventListener('change', update);
+    else mq.addListener(update); // older Safari
+    return () => {
+      if (mq.removeEventListener) mq.removeEventListener('change', update);
+      else mq.removeListener(update);
+    };
+  }, []);
+
   return (
     <div className="champ-page">
-      {/* Spinning Trophy Video (hero): keep autoplay but light preload */}
+      {/* Spinning Trophy (autoplay only on desktop) */}
       <div className="trophy-container">
         <video
           src={trophySpin}
-          autoPlay
+          autoPlay={isDesktop}
           loop
           muted
           playsInline
-          preload="metadata"
+          preload={isDesktop ? 'metadata' : 'none'}
           className="trophy-video"
         />
       </div>
@@ -93,7 +102,8 @@ const Champions = () => {
       <div className="champ-grid">
         {champions.map((champ, idx) => {
           const isVideo = champ.file.endsWith('.mp4') || champ.file.endsWith('.webm');
-          const mediaSrc = require(`../assets/champ-banners/${champ.file}`);
+          const mod = require(`../assets/champ-banners/${champ.file}`);
+          const mediaSrc = mod?.default || mod; // safe for both CRA/Webpack outputs
 
           return (
             <div key={idx} className="champ-card">
@@ -101,7 +111,6 @@ const Champions = () => {
                 <LazyVideo
                   src={mediaSrc}
                   className="champ-media"
-                  // poster={require(`../assets/champ-banners/${champ.year}-poster.jpg`)} // optional
                 />
               ) : (
                 <img
@@ -140,7 +149,7 @@ const Champions = () => {
         })}
       </div>
 
-      {/* 💬 Shit Talk (single thread for Champions page) */}
+      {/* 💬 Shit Talk — single thread for the Champions page */}
       <section className="recap-comments" style={{ marginTop: '1.5rem' }}>
         <h3 className="recap-comments__title">💬 Shit Talk</h3>
         <div className="recap-comments__help" style={{ opacity: 0.9, marginBottom: 8 }}>

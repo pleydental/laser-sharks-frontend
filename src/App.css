@@ -861,3 +861,20 @@ h1, h2, h3, p {
   width: 100% !important;
   min-height: 400px !important;
 }
+/* Mobile: avoid expensive fixed backgrounds & heavy text-shadows */
+@media (max-width: 768px) {
+  .app-container {
+    background-attachment: scroll;     /* was fixed */
+    background-position: center top;
+    background-size: cover;
+  }
+  .navbar a {
+    animation: none !important;        /* kill neon pulsing on phones */
+    text-shadow: none !important;      /* trim paint cost */
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar a { animation: none !important; }
+}

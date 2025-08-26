@@ -2,15 +2,29 @@
   command = "npm run build"
   publish = "build"
 
+# HTML should not be cached (good for deploys)
 [[headers]]
-  for = "/*"
+  for = "/"
   [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-    Pragma = "no-cache"
-    Expires = "0"
+    Cache-Control = "no-store, max-age=0"
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-store, max-age=0"
 
-# Redirect all routes to index.html (for React Router)
-# Proxy all /api/* calls to Render
+# ✅ Long cache for hashed assets from CRA (JS/CSS/images/videos)
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# (optional) any direct assets you serve from /assets/*
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# API proxy unchanged
 [[redirects]]
   from = "/api/*"
   to = "https://laser-sharks-auth.onrender.com/api/:splat"
