@@ -1,5 +1,5 @@
 // src/pages/Login.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";    // <- add useEffect
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import pyramid from "../assets/pyramid.png";
@@ -8,21 +8,24 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(true);
   const [error, setError] = useState("");
-  const { login } = useAuth();
+
+  const { login, status } = useAuth();                // <- pull status
   const nav = useNavigate();
   const loc = useLocation();
   const dest = loc.state?.from?.pathname || "/";
+
+  // If user is already authenticated, don't show the login page.
+  useEffect(() => {
+    if (status === "in") nav(dest, { replace: true }); // or "/" if you prefer
+  }, [status, nav, dest]);
 
   const submit = async (e) => {
     e.preventDefault();
     setError("");
     try {
       await login(password, remember);   // backend login (sets cookie)
-
-      // Prefetch the post-login bundle so the transition feels instant
-      import("../AppContent");
-
-      nav(dest, { replace: true });     // go where the user was headed
+      import("../AppContent");           // prefetch
+      nav(dest, { replace: true });      // go where the user was headed
     } catch {
       setError("Ah shit, wrong password, time to ask Mish.");
     }
@@ -56,9 +59,7 @@ export default function Login() {
             />
           </label>
 
-          <label
-            style={{ display: "flex", alignItems: "center", gap: 8, margin: "0.5rem 0 1rem" }}
-          >
+          <label style={{ display: "flex", alignItems: "center", gap: 8, margin: "0.5rem 0 1rem" }}>
             <input
               type="checkbox"
               checked={remember}
