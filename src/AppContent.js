@@ -74,8 +74,9 @@ function AuthedRoutes() {
           <Route path="/losers" element={<Losers />} />
 
           {/* Draft Recaps (list + year) */}
-          <Route path="/draft-recaps" element={<><DraftRecaps /><RecapComments /></>} />
-          <Route path="/draft-recaps/:year" element={<><DraftRecaps /><RecapComments /></>} />
+          <Route path="/draft-recaps" element={<DraftRecaps />} />
+          <Route path="/draft-recaps/:year" element={<DraftRecaps />} />
+
 
           {/* Weekly Recaps (list + year + specific week) */}
           <Route path="/weekly-matchup-recaps" element={<WeeklyMatchupRecaps />} />
