@@ -1,7 +1,6 @@
 // src/pages/Champions.js
 import React, { useEffect, useRef, useState } from 'react';
 import './Champions.css';
-import trophySpin from '../assets/trophy-spin-smooth.mp4';
 import { useNavigate } from 'react-router-dom';
 import Comments from "../components/Comments";
 
@@ -42,14 +41,11 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
     if (!v) return;
 
     if (inView && !loaded) {
-      v.src = src;           // attach only when needed
+      v.src = src; // attach only when needed
       setLoaded(true);
     }
-    if (inView) {
-      v.play().catch(() => {});
-    } else {
-      v.pause();
-    }
+    if (inView) v.play().catch(() => {});
+    else v.pause();
   }, [inView, loaded, src]);
 
   return (
@@ -68,33 +64,51 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
 const Champions = () => {
   const navigate = useNavigate();
 
-  // 📴 Don’t autoplay the hero video on mobile
+  // Desktop vs mobile + reduced motion
   const [isDesktop, setIsDesktop] = useState(true);
+  const [reduced, setReduced] = useState(false);
+
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)');
-    const update = () => setIsDesktop(mq.matches);
-    update();
-    if (mq.addEventListener) mq.addEventListener('change', update);
-    else mq.addListener(update); // older Safari
+    const mqDesktop = window.matchMedia('(min-width: 768px)');
+    const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updateDesktop = () => setIsDesktop(mqDesktop.matches);
+    const updateReduced = () => setReduced(mqReduce.matches);
+    updateDesktop(); updateReduced();
+
+    mqDesktop.addEventListener?.('change', updateDesktop) ?? mqDesktop.addListener(updateDesktop);
+    mqReduce.addEventListener?.('change', updateReduced) ?? mqReduce.addListener(updateReduced);
+
     return () => {
-      if (mq.removeEventListener) mq.removeEventListener('change', update);
-      else mq.removeListener(update);
+      mqDesktop.removeEventListener?.('change', updateDesktop) ?? mqDesktop.removeListener(updateDesktop);
+      mqReduce.removeEventListener?.('change', updateReduced) ?? mqReduce.removeListener(updateReduced);
     };
   }, []);
 
   return (
     <div className="champ-page">
-      {/* Spinning Trophy (autoplay only on desktop) */}
+      {/* Spinning Trophy (autoplay only on desktop, respects reduced motion) */}
       <div className="trophy-container">
         <video
-          src={trophySpin}
-          autoPlay={isDesktop}
-          loop
-          muted
-          playsInline
-          preload={isDesktop ? 'metadata' : 'none'}
           className="trophy-video"
-        />
+          muted
+          loop
+          playsInline
+          poster="/trophy-poster.jpg"
+          autoPlay={isDesktop && !reduced}
+          preload={isDesktop ? 'metadata' : 'none'}
+        >
+          {isDesktop ? (
+            <>
+              <source src="/trophy-spin-desktop.webm" type="video/webm" />
+              <source src="/trophy-spin-desktop.mp4" type="video/mp4" />
+            </>
+          ) : (
+            <>
+              <source src="/trophy-spin-mobile.webm" type="video/webm" />
+              <source src="/trophy-spin-mobile.mp4" type="video/mp4" />
+            </>
+          )}
+        </video>
       </div>
 
       <h1>Past Laser Sharks CHAMPS</h1>
@@ -103,15 +117,12 @@ const Champions = () => {
         {champions.map((champ, idx) => {
           const isVideo = champ.file.endsWith('.mp4') || champ.file.endsWith('.webm');
           const mod = require(`../assets/champ-banners/${champ.file}`);
-          const mediaSrc = mod?.default || mod; // safe for both CRA/Webpack outputs
+          const mediaSrc = mod?.default || mod;
 
           return (
             <div key={idx} className="champ-card">
               {isVideo ? (
-                <LazyVideo
-                  src={mediaSrc}
-                  className="champ-media"
-                />
+                <LazyVideo src={mediaSrc} className="champ-media" />
               ) : (
                 <img
                   src={mediaSrc}
@@ -148,9 +159,8 @@ const Champions = () => {
           );
         })}
       </div>
-    <Comments pageKey="champions" />
 
-
+      <Comments pageKey="champions" />
     </div>
   );
 };
