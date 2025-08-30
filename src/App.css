@@ -878,3 +878,19 @@ h1, h2, h3, p {
 @media (prefers-reduced-motion: reduce) {
   .navbar a { animation: none !important; }
 }
+/* Make inline recap images responsive like videos */
+.recap-inline-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 255, 120, 0.5);
+}
+
+/* Optional cap on large screens so they don't get too big */
+@media (min-width: 1024px) {
+  .recap-inline-img {
+    max-width: 700px;
+  }
+}
