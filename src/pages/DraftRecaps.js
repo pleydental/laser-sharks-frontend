@@ -1091,97 +1091,167 @@ const RECAPS = {
     <h4>New Team Name:</h4>
     <p>Jack Black's swamp ass</p>
     <p>
-      Mark’s strength is definitely his WR’s with A Brown and AJ Green and he’s got a top 5 QB in Brees...
+      Mark’s strength is definitely his WR’s with A Brown and AJ Green and he’s got a top 5 QB in Brees. 
+      I have a feeling RB’s are going to be a thorn in side, his backups have some serious durability issues. 
+      If Jimmy Graham can put together a decent season and his RB’s stay healthy he could make it to the ship.</p> 
+      <p>What does Tom Selleck think?!
     </p>
     <img src={recap2018Loop1} alt="Tom Selleck on Mark's draft" className="recap-inline-img" loading="lazy" />
+    <p> I looked it up Tom, I thought that was Korean 5 Hour Energy you were pushin, nope, just more boner medicine</p>
 
     <h3>Marcello — <em>Yahoo Draft Grade B</em></h3>
     <h4>New Team Name:</h4>
     <p>Please don’t suck Vikings</p>
     <p>
-      Cello went with the Cousins-Diggs connection and I have a feeling that will work out nicely...
+      Cello went with the Cousins-Diggs connection and I have a feeling that will work out nicely for him this year, 
+      which means it probably won’t. WR2 Dem Thomas is a tough one, I just have a bad feeling about Denver this year 
+      (says everyone that watches football). He’s got a couple of rookies that could pan out and add some depth though. 
+      Lot's of "ifs" here.</p>
+      <p>What does Tom Selleck think?!
     </p>
     <img src={recap2018Loop2} alt="Tom Selleck on Cello's draft" className="recap-inline-img" loading="lazy" />
+    <p>Ya, you got a problem with that porn stache?</p>
 
     <h3>Ryan Schamerloh — <em>Yahoo Draft Grade B</em></h3>
     <h4>New Team Name:</h4>
     <p>White Rappers</p>
     <p>
-      Drafted two young ascending QB’s in Watson and Goff in the 2nd and 8th respectively...
+      Drafted two young ascending QB’s in Watson and Goff in the 2nd and 8th respectively. Has a great WR core in OBJ and 
+      Golden Tate and if Engram can figure out how to catch a ball this year he should be set at TE too. Not sure why he 
+      thought it was a good idea to draft 3 DET Lions, he did have a haircut like Eminem for awhile so that could be it. 
+      I actually kind of like this team but my opinion doesn’t matter, </p>
+      <p>What does Tom Selleck think?!
     </p>
     <img src={recap2018Loop3} alt="Tom Selleck on Ryan's draft" className="recap-inline-img" loading="lazy" />
+<p> Hahahahah, that's so Tom</p>
 
     <h3>Hackman — <em>Yahoo Draft Grade B</em></h3>
     <h4>New Team Name:</h4>
     <p>I Love Douchebags</p>
     <p>
-      I almost had to kick Hacky-poo out of my basement for picking 2 patriots with his 1st 3 picks...
+      I almost had to kick Hacky-poo out of my basement for picking 2 patriots with his 1st 3 picks. He went Bell, 
+      Gronk and Brady that are all beasts but the rest of his lineup suffered a bit. From the looks of it he doesn’t have a 
+      true WR1 but Bell should make up for that. If (when) Gronk goes down he’ll be hurting. My favorite picks of his were Bell in the 1st, 
+      JAX in the 9th and Nick Chubb in the 14th round. In the end, if everyone stays healthy he should do just fine.</p>
+      <p>What does Tom Selleck think?!
     </p>
     <img src={recap2018Loop4} alt="Tom Selleck on Hackman draft" className="recap-inline-img" loading="lazy" />
+<p>Oooh, he does not like what he sees</p>
 
     <h3>Matt — <em>Yahoo Draft Grade B</em></h3>
     <h4>New Team Name:</h4>
     <p>My ball Zach Ertz</p>
     <p>
-      Waited a little bit longer than the previous two teams to draft a QB and he snagged Russel Wilson...
+Waited a little bit longer than the previous two teams to draft a QB and he snagged Russel Wilson. Russel's value comes from 
+his running but it will interesting to see with the new OC if that continues. Kamara should have a huge start to the season while 
+Ingram serves his suspension and even when he’s back he should still have big numbers as we saw last year. Went with Beast Mode 
+for RB2, which will either be great or a great big stank burger with cheese. His back-up RB’s are suspect and my bet is he’ll cut
+ Parker by week 3. Nice WR pair with Adams and Cooks. Not bad ball Zach, not bad.</p>
+<p> What does Tom Selleck think?!
     </p>
     <img src={recap2018Loop5} alt="Tom Selleck on Matt's draft" className="recap-inline-img" loading="lazy" />
+<p>Wait, what? Are you happy or are you being patronizing, screw you Tom, Matt doesn't need your pity smile!</p>
 
     <h3>Ben — <em>Yahoo Draft Grade B-</em></h3>
     <h4>New Team Name:</h4>
     <p>Screw kickers</p>
     <p>
-      This might be one of my favorite teams, which if you’re paying attention means it will probably suck...
+This might be one of my favorite teams, which if you’re paying attention means it will probably suck. But man, 
+he’s got Johnson and Freeman as RB1/2, LeSean McCoy will be terrible this year, but then he picked up Ingram in the 6th and will 
+be ready to roll him out in the flex week 5 and dominate the RB category. Then he’s got Thielin/Baldwin as his WR1/2 which ain’t half bad. 
+Stafford should do just fine. He still needs a kicker but that’s a minor detail.</p>
+
+
+<p>What does Tom Selleck think?
     </p>
     <img src={recap2018Loop6} alt="Tom Selleck on Ben's draft" className="recap-inline-img" loading="lazy" />
+<p>I think he's a fan Benny, I swear, every 5th eyebrow raise is a little different.</p>
 
     <h3>Shaw — <em>Yahoo Draft Grade C+</em></h3>
     <h4>New Team Name:</h4>
     <p>Taints</p>
     <p>
-      First 3 picks were pretty solid. Gurley’s great, Evans should do well with Fitz-magic...
+      First 3 picks were pretty solid. Gurley’s great, Evans should do well with Fitz-magic for the first 4 games then 
+      Winston after, Fitzgerald should do well with…? No idea who the ARI QB is this year, Bradford? should be able to play at least 
+      1.5 games before getting hurt. That's kind of the great thing about Larry though, he only plays out of the slot these days and 
+      he can rack up 15 points with Paul Reubins throwing to him. The rest of the team is OK but I think Robinson, Rudolph, Kerryon Johnson, 
+      Aaron Jones and Boswell will disappoint him. Other than that, looks peachy. </p>
+      <p>What does Tom Selleck think?
     </p>
     <img src={recap2018Loop7} alt="Tom Selleck on Shaw's draft" className="recap-inline-img" loading="lazy" />
+<p>W.T.F. Tom</p>
 
     <h3>Wick — <em>Yahoo Draft Grade C</em></h3>
     <h4>New Team Name:</h4>
-    <p>(left blank in writeup)</p>
+    <p>Suicidal Unicorn Emoji</p>
     <p>
-      One of these years I’ll convince Wick not to take a QB with one of his first 2 picks...
+      One of these years I’ll convince Wick not to take a QB with one of his first 2 picks. Not this year, went with Rodgers 1st round
+      and now his best player after that is Dalvin Cook behind what’s turning out to be a shaky O-line in Minnesota. Rodgers might get 3 
+      more points than QB’s drafted 8 rounds later but not consistently. Great pickup at TE though in the 6th round with Greg Olson and 
+      a solid backup QB in Garoppolo. I think Jordy was a steal in the 7th and Cobb in the 10th should work out nicely.</p> 
+
+<p>What does Tom Selleck think?
     </p>
     <img src={recap2018Loop8} alt="Tom Selleck on Wick's draft" className="recap-inline-img" loading="lazy" />
+<p>Right back at ya brah</p>
 
     <h3>JD — <em>Yahoo Draft Grade C</em></h3>
     <h4>New Team Name:</h4>
     <p>You hungry? (Inside joke, JD loves when people ask him this)</p>
     <p>
-      JD’s coming out of retirement from fantasy football so I’m going to give him a little slack...
+      JD’s coming out of retirement from fantasy football so I’m going to give him a little slack, it’s been at least 30 years (yes, he’s that old).
+       But I got to say he put together a pretty impressive lineup. Week spot is tight end for sure and not sure why he needs 3 QB’s but hey, guy 
+       likes to party. Cam Newton is set to have a great year, KHunt is Khunt, McCaffrey will get his, and TY has his emotional support animal back (Luck).
+        Not bad brother, not bad.  </p>
+        <p>What does Tom Selleck Think?!
     </p>
     <img src={recap2018Loop9} alt="Tom Selleck on JD's draft" className="recap-inline-img" loading="lazy" />
+<p>Stay out of the sun Tom</p>
 
     <h3>McCringleberry — <em>Yahoo Draft Grade C</em></h3>
     <h4>New Team Name:</h4>
     <p>Starts with “Mc” and ends with “Dingleberry”</p>
     <p>
-      Mac was pretty disappointed at the end of the draft but looking at his team it’s not terrible...
+      Mac was pretty disappointed at the end of the draft but looking at his team it’s not terrible. Saquon will go for 3, 4, 5, 9, 36, 2, 5, 3, 1, 42yd 
+      with a TD or 2 each game so it will add up. He’s not lovin' on Julio but I think he’s prime for monster yards and at least double the TD’s he got last 
+      year (6).  Tyreek is a freak and Corey Davis will be the breakout WR of the year I think. Jordan Reed will literally explode the first time he gets hit 
+      so he’ll need another TE soon. The new OC at SEA (Shotty) is big on power running so Carson should get plenty of action as his RB2.  I’m guessing Wentz 
+      isn’t starting week 1 but he picked up “New Cutler” in the last round so he’s got his bases covered. By the way, as of draft night he was wanting to 
+      trade Julio so if anyone is interested make an offer.</p> 
+      <p>I don’t know what Tom Selleck thinks of this team but I know what McDingleberry thinks of it:
     </p>
     <img src={recap2018Loop10} alt="Tom Selleck on Mac's draft" className="recap-inline-img" loading="lazy" />
+<p>Well this went south quickly </p>
 
     <h3>Gus — <em>Yahoo Draft Grade C</em></h3>
     <h4>New Team Name:</h4>
     <p>The Cleveland Browns of Laser Sharks</p>
     <p>
-      I’m kidding Gus, you’re way better than last year panned out and I’m SURE you’ll do better this year...
+      I’m kidding Gus, you’re way better than last year panned out and I’m SURE you’ll do better this year, I predict 4 wins. If we could start 4 WR’s Gus would 
+      dominate everyone, Hopkins/Keenan/Gordon (maybe?)/Westbrook (reach). Weak spot is RB, he went for Kelce in the 3rd instead of grabbing a RB and ended up with 
+      Alex Collins as his RB1, and CJ Anderson as RB2 ajlkdfapoieuqp94jafkl;dvx., sorry, I just threw up a little.  Blount will probably end up doing well, DET has 
+      been looking for a RB like him and he should get the ball plenty. Great QB in Ryan, I think he’ll be top 6 this year but he also has ATL kicker, and typically 
+      the QB/K production is inversely proportional. But kickers are the devil and I don’t care. This is the year GUS, I’m rooting for you!! </p>
+
+<p>What does Tom Selleck Think!?
     </p>
     <img src={recap2018Loop11} alt="Tom Selleck on Gus's draft" className="recap-inline-img" loading="lazy" />
+<p>I don't even know what this means</p>
 
     <h3>Mish — <em>Yahoo Draft Grade C-</em></h3>
     <h4>New Team Name:</h4>
     <p>(left blank in writeup)</p>
     <p>
-      I did not like my team after the draft but the more I look at I am pretty happy...
+      I did not like my team after the draft but the more I look at I am pretty happy. Zeke is the only game in town in DAL and as long as he doesn’t get hurt he WILL 
+      be the #1 RB by years end. I thought I would have to settle for David Johnson with the 4th overall pick but I lucked out and got my overall #1. I think Marquise 
+      Goodwin will end up being Jimmy G’s favorite target. Joe Mixon and Lamar Miller make me nervous but they are both set to get heavy workloads. I’ve got Njoku who 
+      will be a top 5 TE to cover for Walker when he gets hurt. I didn’t get my QB till the 13th round, I missed on Brees, Luck, Ryan and Mariota. I’m hoping Eli can 
+      get me through the first 3 games because I think Baker Mayfield get’s the starting job week 4. The Browns have the best looking offense I’ve seen in a long time 
+      (for the Browns anyway) and if Gordon is back they might get more wins than Gus this year.</p>
+      <p>What does Tom Selleck think?
     </p>
     <img src={recap2018Loop12} alt="Tom Selleck on Mish's draft" className="recap-inline-img" loading="lazy" />
+<p>Damn straight Tom, damn straight</p>
 
     <p><strong>Mish out</strong></p>
     <img src={recap2018Outro} alt="2018 outro" className="recap-inline-video" loading="lazy" />
