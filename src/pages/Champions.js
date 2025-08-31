@@ -1,6 +1,7 @@
 // src/pages/Champions.js
 import React, { useEffect, useRef, useState } from 'react';
 import './Champions.css';
+import trophySpin from '../assets/trophy-spin-smooth.mp4';
 import { useNavigate } from 'react-router-dom';
 import Comments from "../components/Comments";
 
@@ -41,11 +42,14 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
     if (!v) return;
 
     if (inView && !loaded) {
-      v.src = src; // attach only when needed
+      v.src = src;           // attach only when needed
       setLoaded(true);
     }
-    if (inView) v.play().catch(() => {});
-    else v.pause();
+    if (inView) {
+      v.play().catch(() => {});
+    } else {
+      v.pause();
+    }
   }, [inView, loaded, src]);
 
   return (
@@ -63,66 +67,74 @@ function LazyVideo({ src, className = 'champ-media', poster }) {
 
 const Champions = () => {
   const navigate = useNavigate();
+  const trophyRef = useRef(null);
 
-  // Desktop vs mobile + reduced motion
-  const [isDesktop, setIsDesktop] = useState(true);
-  const [reduced, setReduced] = useState(false);
-
+  // Try to start playback in a few different lifecycle moments (iOS-friendly)
   useEffect(() => {
-    const mqDesktop = window.matchMedia('(min-width: 768px)');
-    const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const updateDesktop = () => setIsDesktop(mqDesktop.matches);
-    const updateReduced = () => setReduced(mqReduce.matches);
-    updateDesktop(); updateReduced();
+    const v = trophyRef.current;
+    if (!v) return;
 
-    mqDesktop.addEventListener?.('change', updateDesktop) ?? mqDesktop.addListener(updateDesktop);
-    mqReduce.addEventListener?.('change', updateReduced) ?? mqReduce.addListener(updateReduced);
+    const tryPlay = () => v.play().catch(() => { /* iOS may require a tap */ });
+
+    // 1) On mount
+    tryPlay();
+
+    // 2) When the video has enough data
+    const onLoaded = () => tryPlay();
+    v.addEventListener('loadeddata', onLoaded);
+
+    // 3) When page becomes visible again
+    const onVis = () => {
+      if (document.visibilityState === 'visible') tryPlay();
+    };
+    document.addEventListener('visibilitychange', onVis);
 
     return () => {
-      mqDesktop.removeEventListener?.('change', updateDesktop) ?? mqDesktop.removeListener(updateDesktop);
-      mqReduce.removeEventListener?.('change', updateReduced) ?? mqReduce.removeListener(updateReduced);
+      v.removeEventListener('loadeddata', onLoaded);
+      document.removeEventListener('visibilitychange', onVis);
     };
   }, []);
 
+  // 4) As a last resort, first user tap on the trophy starts it
+  const handleTrophyTap = () => {
+    const v = trophyRef.current;
+    if (v && v.paused) v.play().catch(() => {});
+  };
+
   return (
     <div className="champ-page">
-      {/* Spinning Trophy (autoplay only on desktop, respects reduced motion) */}
+      {/* Spinning Trophy — autoplay everywhere (muted + playsInline) */}
       <div className="trophy-container">
         <video
-          className="trophy-video"
-          muted
+          ref={trophyRef}
+          src={trophySpin}
+          autoPlay
           loop
+          muted
           playsInline
-          poster="/trophy-poster.jpg"
-          autoPlay={isDesktop && !reduced}
-          preload={isDesktop ? 'metadata' : 'none'}
-        >
-          {isDesktop ? (
-            <>
-              <source src="/trophy-spin-desktop.webm" type="video/webm" />
-              <source src="/trophy-spin-desktop.mp4" type="video/mp4" />
-            </>
-          ) : (
-            <>
-              <source src="/trophy-spin-mobile.webm" type="video/webm" />
-              <source src="/trophy-spin-mobile.mp4" type="video/mp4" />
-            </>
-          )}
-        </video>
+          preload="metadata"
+          className="trophy-video"
+          onClick={handleTrophyTap}
+          onTouchStart={handleTrophyTap}
+          disablePictureInPicture
+          controls={false}
+        />
       </div>
 
       <h1>Past Laser Sharks CHAMPS</h1>
 
       <div className="champ-grid">
         {champions.map((champ, idx) => {
-          const isVideo = champ.file.endsWith('.mp4') || champ.file.endsWith('.webm');
-          const mod = require(`../assets/champ-banners/${champ.file}`);
-          const mediaSrc = mod?.default || mod;
+          const isVideo = /\.(mp4|webm)$/i.test(champ.file);
+          const mediaSrc = `${process.env.PUBLIC_URL}/champ-banners/${champ.file}`;
 
           return (
             <div key={idx} className="champ-card">
               {isVideo ? (
-                <LazyVideo src={mediaSrc} className="champ-media" />
+                <LazyVideo
+                  src={mediaSrc}
+                  className="champ-media"
+                />
               ) : (
                 <img
                   src={mediaSrc}
@@ -159,7 +171,6 @@ const Champions = () => {
           );
         })}
       </div>
-
       <Comments pageKey="champions" />
     </div>
   );
