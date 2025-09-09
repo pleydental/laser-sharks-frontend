@@ -24,3 +24,15 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# --- API proxy to Render ---
+[[redirects]]
+  from = "/api/*"
+  to = "https://laser-sharks-auth.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+# --- SPA fallback so deep links (e.g., /login, /rules) work on refresh ---
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,22 +1,20 @@
 // src/lib/api.js
+// Use Netlify proxy in prod, dev server locally
+const ENV_BASE = (process.env.REACT_APP_AUTH_BASE || "").replace(/\/$/, "");
+const PROD_BASE = "/api";                 // Netlify proxy prefix
+const DEV_BASE = "http://localhost:4000/api"; // local backend
 
-const IN_BROWSER = typeof window !== "undefined";
-const ENV_BASE = (process.env.REACT_APP_AUTH_BASE ?? "").replace(/\/$/, "");
+// If an env var is provided, use it; otherwise default to PROD_BASE in browser, DEV in non-browser
+const BASE =
+  (typeof window !== "undefined" && (ENV_BASE || PROD_BASE)) ||
+  DEV_BASE;
 
-// In the browser:
-// - If ENV_BASE is set, use it (e.g., http://localhost:4000 for local dev).
-// - If ENV_BASE is empty, use "" (same-origin) so Netlify proxy handles /api/*.
-// Outside the browser (build tools), fall back to localhost only if ENV_BASE is set.
-const BASE = IN_BROWSER
-  ? (ENV_BASE !== "" ? ENV_BASE : "")
-  : (ENV_BASE !== "" ? ENV_BASE : "http://localhost:4000");
-
-// Debug helper in DevTools
-if (IN_BROWSER) window.__AUTH_BASE = BASE;
+// Optional: quick debug in DevTools
+if (typeof window !== "undefined") window.__AUTH_BASE = BASE;
 
 export const api = {
   async login(password, remember) {
-    const res = await fetch(`${BASE}/api/login`, {
+    const res = await fetch(`${BASE}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -27,17 +25,18 @@ export const api = {
   },
 
   async me() {
-    const res = await fetch(`${BASE}/api/me`, {
-      credentials: "include",
-    });
+    const res = await fetch(`${BASE}/me`, { credentials: "include" });
+    if (!res.ok) throw new Error("me_failed");
     return res.json();
   },
 
   async logout() {
-    const res = await fetch(`${BASE}/api/logout`, {
+    const res = await fetch(`${BASE}/logout`, {
       method: "POST",
       credentials: "include",
     });
+    if (!res.ok) throw new Error("logout_failed");
     return res.json();
   },
 };
+
