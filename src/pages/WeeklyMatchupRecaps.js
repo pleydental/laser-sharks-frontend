@@ -267,7 +267,7 @@ function Recap2025Week2() {
 
     <p>
       <strong>High score of the week</strong> goes to <strong>Marcello</strong> with a 151-127
-      (5th highest score) win over <strong>DD</strong>.{" "}
+      <strong>(5th highest score)</strong> win over <strong>DD</strong>.{" "}
       <strong>Marcello</strong> is one of two undefeated teams at 4-0 and{" "}
       <strong>DD</strong> is 2-2. <strong>DD</strong> did manage to get into the
       top 6 for the 2nd week in a row otherwise he would be one of 5 of us at
