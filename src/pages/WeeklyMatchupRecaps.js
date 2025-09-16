@@ -269,9 +269,7 @@ function Recap2025Week2() {
       <strong>High score of the week</strong> goes to <strong>Marcello</strong> with a 151-127
       <strong>(5th highest score)</strong> win over <strong>DD</strong>.{" "}
       <strong>Marcello</strong> is one of two undefeated teams at 4-0 and{" "}
-      <strong>DD</strong> is 2-2. <strong>DD</strong> did manage to get into the
-      top 6 for the 2nd week in a row otherwise he would be one of 5 of us at
-      0-4. <strong>Marcello's</strong> worst player of the week was James Conner
+      <strong>DD</strong> is 3-1. . <strong>Marcello's</strong> worst player of the week was James Conner
       with 12 pts — no one on his team went off, just a solid balanced week and
       no injuries. <strong>DD</strong> did not have the same luck and for the
       2nd week in a row one of his players got injured, this time it was RB
