@@ -16,6 +16,15 @@ import w1gif8 from "../assets/weekly-recaps/week-1-loop-8.gif";
 import w1gif9 from "../assets/weekly-recaps/week-1-loop-9.gif";
 import w1gif10 from "../assets/weekly-recaps/week-1-loop-10.gif";
 import w1gif11 from "../assets/weekly-recaps/week-1-loop-11.gif";
+import w2gif1 from "../assets/weekly-recaps/week-2-loop-1.gif";
+import w2gif2 from "../assets/weekly-recaps/week-2-loop-2.gif";
+import w2gif3 from "../assets/weekly-recaps/week-2-loop-3.gif";
+import w2gif4 from "../assets/weekly-recaps/week-2-loop-4.gif";
+import w2gif5 from "../assets/weekly-recaps/week-2-loop-5.gif";
+import w2gif6 from "../assets/weekly-recaps/week-2-loop-6.gif";
+import w2gif7 from "../assets/weekly-recaps/week-2-loop-7.gif";
+import w2gif8 from "../assets/weekly-recaps/week-2-loop-8.gif";
+import w2gif10 from "../assets/weekly-recaps/week-2-loop-10.gif";
 
 const YEARS = [2025]; // add more years later
 const WEEKS = Array.from({ length: 16 }, (_, i) => i + 1); // 1..16
@@ -143,7 +152,6 @@ function Recap2025Week1() {
         I know a few of you are into that kind of thing.
       </p>
 
-
       <p>
         One quick reminder, we do have an IR spot so if you have a player on IR you can move him into that spot
         so he doesn’t take up any bench space.
@@ -243,6 +251,113 @@ function Recap2025Week1() {
     </article>
   );
 }
+/** ---- 2025 WEEK 2 CONTENT ---- */
+
+function Recap2025Week2() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+    <h2>Week 2 — Laser Sharks Starting to Get Worried Edition</h2>
+
+    <p>
+      So far about half of you are feeling pretty damn good right now about your
+      teams and the other half of us feel like dog shit. Let’s get into it.
+    </p>
+
+    <Gif src={w2gif1} alt="Week 2 loop 1" />
+
+    <p>
+      <strong>High score of the week</strong> goes to <strong>Marcello</strong> with a 151-127
+      (5th highest score) win over <strong>DD</strong>.{" "}
+      <strong>Marcello</strong> is one of two undefeated teams at 4-0 and{" "}
+      <strong>DD</strong> is 2-2. <strong>DD</strong> did manage to get into the
+      top 6 for the 2nd week in a row otherwise he would be one of 5 of us at
+      0-4. <strong>Marcello's</strong> worst player of the week was James Conner
+      with 12 pts — no one on his team went off, just a solid balanced week and
+      no injuries. <strong>DD</strong> did not have the same luck and for the
+      2nd week in a row one of his players got injured, this time it was RB
+      Aaron Jones. Might be time to start getting worried.
+    </p>
+
+   <Gif src={w2gif2} alt="Week 2 loop 2" />
+
+    <p>
+      <strong>The 2nd highest score</strong> goes to rookie <strong>Fischer</strong> with a 146-109
+      win over <strong>Shaw</strong>-Balls. <strong>Fischer</strong> is also
+      undefeated at 4-0 and <strong>Shaw</strong> sits 12th at 0-4. At one point{" "}
+      <strong>Fischer</strong> was projected to be the high score but he got a
+      disappointing Monday night from Shultz and only 2 pts from Derrick Henry.
+      Everyone try to feel bad for him. <strong>Shaw</strong> got 39 pts from
+      Nabers but Jayden Daniels got hurt and Austin Ekeler landed on IR, leaving
+      him with RJ Harvey and Skattebo as his only viable RBs. Ouch.
+    </p>
+
+   <Gif src={w2gif3} alt="Week 2 loop 3" />
+
+    <p>
+      <strong>The 3rd highest score</strong> goes to <strong>Mark</strong> who is off to a great
+      start and beat your <strong>Mish</strong> 141-102. <strong>Mark</strong> is
+      3-1 and <strong>Mish</strong> is barely above <strong>Shaw</strong> at
+      0-4 and 11th. So far the early CMC pick is paying off for{" "}
+      <strong>Mark</strong> and he has avoided injury so far. If he can get some
+      AJ Brown production going soon this team will keep winning.{" "}
+      <strong>Mish's</strong> Bears didn’t do terribly but some dumb lineup
+      choices left points on the bench. Still though — he sucks.
+    </p>
+
+    <Gif src={w2gif4} alt="Week 2 loop 4" />
+
+    <p>
+      <strong>The 4th highest score</strong> goes to <strong>Matt</strong> with a nice bounce-back
+      win over <strong>JD</strong>, 131-115. <strong>Matt</strong> is 3-1 and{" "}
+      <strong>JD</strong> is in the basement with us at 0-4. This win is
+      bittersweet for <strong>Matt</strong> — Jayden Reed fractured his collarbone
+      (6-8 weeks) and Justin Fields is in concussion protocol. Luckily{" "}
+      <strong>Matt</strong> has Goff (45 pts on bench!) and WR depth so he should
+      be fine. <strong>JD</strong> had Jamar Chase go off for 38 pts and still
+      missed top 6. He started 3 RBs that gave him 8.7 pts total, while his
+      3 bench RBs had 19.8 pts total. Yeah… he should be worried too.
+    </p>
+
+  <Gif src={w2gif5} alt="Week 2 loop 5" />
+
+    <p>
+      <strong>The 5th highest score</strong> goes to <strong>Debo</strong> with a 125-112 win over{" "}
+      <strong>Champ-Balls</strong>. <strong>Debo</strong> stays undefeated in 3rd
+      and <strong>Champ-Balls</strong> loses that status, falling to 7th.{" "}
+      <strong>Debo</strong>’s team was solid thanks to Amon-Ra and his 40 pts.
+      Only 9.3 pts from starting RBs but Dobbins in the FLEX bailed him out with
+      16. <strong>Champ-Balls</strong> looked a lot like Week 1 except Josh Allen
+      only scored 12 pts instead of 44. Both squads might be a little worried.
+    </p>
+
+   <Gif src={w2gif6} alt="Week 2 loop 6" />
+
+    <p>
+      <strong>Barely-worth-mentioning matchup</strong> of the week was between{" "}
+      <strong>Gus</strong> and <strong>McCool</strong> —{" "}
+      <strong>Gus's</strong> 2nd straight appearance in this segment.{" "}
+      <strong>Gus</strong> pulled off the 119-94 win but neither of them cracked the top 6.{" "}
+      <strong>Gus</strong> is now 1-3 and <strong>McCool</strong> is still in
+      the basement with us at 0-4. Yeah — they’re worried.
+    </p>
+
+    <Gif src={w2gif7} alt="Week 2 loop 7" />
+
+    <p>
+      Ok that’s it for week 2 folks. I’ll try to keep these going despite the
+      personal anguish of looking at my team. Don't forget to hit those comments to tell me 
+      how terrible my team is. 
+    </p>
+
+    <p className="signoff">- <strong>Mish Out!</strong></p>
+
+    <Gif src={w2gif8} alt="Week 2 loop 8" />
+   <Gif src={w2gif10} alt="Week 2 loop 10" />
+  </article>
+);
+}
+
+
 
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
@@ -267,25 +382,27 @@ function YearlyRecap({ year, week, onPickWeek }) {
 
       <WeekButtons year={y} activeWeek={week} onPickWeek={onPickWeek} />
 
-      {/* Render specific weeks */}
-      {w >= 1 && w <= 16 ? (
-        <>
-          <div style={{ marginTop: "1.25rem" }}>
-            <h3>Week {w} Recap</h3>
-          </div>
+{/* Render specific weeks */}
+{w >= 1 && w <= 16 ? (
+  <>
+    <div style={{ marginTop: "1.25rem" }}>
+      <h3>Week {w} Recap</h3>
+    </div>
 
-          {w === 1 ? (
-            <Recap2025Week1 />
-          ) : (
-            <p>
-              <em>No recap yet. Don't worry you probabaly sucked balls.</em>
-            </p>
-          )}
+    {w === 1 ? (
+      <Recap2025Week1 />
+    ) : w === 2 ? (
+      <Recap2025Week2 />
+    ) : (
+      <p>
+        <em>No recap yet. Don't worry you probabaly sucked balls.</em>
+      </p>
+    )}
 
-          {/* Prev/Next Nav */}
-          <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
-        </>
-      ) : null}
+    {/* Prev/Next Nav */}
+    <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
+  </>
+) : null}
     </section>
   );
 }
