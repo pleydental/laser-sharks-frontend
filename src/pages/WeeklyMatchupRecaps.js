@@ -26,6 +26,17 @@ import w2gif7 from "../assets/weekly-recaps/week-2-loop-7.gif";
 import w2gif8 from "../assets/weekly-recaps/week-2-loop-8.gif";
 import w2gif10 from "../assets/weekly-recaps/week-2-loop-10.gif";
 
+/** ---- 2025 WEEK 3 CONTENT ---- */
+import w3gif1 from "../assets/weekly-recaps/week-3-loop-1.gif";
+import w3gif2 from "../assets/weekly-recaps/week-3-loop-2.gif";
+import w3gif3 from "../assets/weekly-recaps/week-3-loop-3.gif";
+import w3gif4 from "../assets/weekly-recaps/week-3-loop-4.gif";
+import w3gif5 from "../assets/weekly-recaps/week-3-loop-5.gif";
+import w3gif6 from "../assets/weekly-recaps/week-3-loop-6.gif";
+import w3gif7 from "../assets/weekly-recaps/week-3-loop-7.gif";
+import w3gif8 from "../assets/weekly-recaps/week-3-loop-8.gif";
+import w3gif10 from "../assets/weekly-recaps/week-3-loop-10.gif";
+
 const YEARS = [2025]; // add more years later
 const WEEKS = Array.from({ length: 16 }, (_, i) => i + 1); // 1..16
 
@@ -354,6 +365,138 @@ function Recap2025Week2() {
   </article>
 );
 }
+function Recap2025Week3() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 3 — Laser Sharks wait, what? edition</h2>
+
+      <p>
+        It seems my{" "}
+        <a
+          href="https://lasersharksfantasyfootball.netlify.app/matchup-recap/2025"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Season 10 prediction
+        </a>{" "}
+        has some merit. Hopefully <strong>Champ-balls</strong> hasn’t been shivved and <strong>McCool</strong> 
+          isn’t applying for a banana farmer license.
+      </p>
+
+      <Gif src={w3gif1} alt="Week 3 loop 1" />
+
+      <p>
+        <strong>High score of the week</strong> goes to <strong>Mark</strong>{" "}
+        with a 154 to 143 (<strong>3rd highest score</strong>) win over{" "}
+        <strong>Champ-balls</strong>. <strong>Mark</strong> is 3rd at 5-1 but he is only one
+        point behind <strong>Fischer</strong> (6-0). <strong>Mark</strong> needed a big Monday night, he had
+        Jackson and Montgomery and Ryan had Gibbs. Every one of those players
+        cleaned it up but Montgomery getting 30 points was the difference maker
+        for <strong>Mark</strong>. This was <strong>Champ-balls</strong> (3-3) best week by far and I have
+        complete confidence that he maybe might possibly have an ok chance that
+        he will or will not make the playoffs with this team, guaranteed.
+      </p>
+
+      <Gif src={w3gif2} alt="Week 3 loop 2" />
+
+      <p>
+        <strong>The 2rd highest score</strong> goes to <strong>Debo</strong>{" "}
+        with a 146 to 136 (<strong>5th highest score</strong>) win over{" "}
+        <strong>McCool</strong>. <strong>Debo</strong> is still undefeated and
+        moved up to 2nd. He does not have much of a point advantage over any one.
+        One bad week and he would drop a few spots pretty quick but still a
+        solid start to the season. He needed 10pts from St Brown Monday night to
+        get the win and he got 20. <strong>McCool</strong> had his best week by far as well and
+        is no longer in the “no-win” basement, he now has one foot on the bottom
+        step of the basement stairs. Hampton finally had a game and that will
+        likely continue now that Najee is out. <strong>McCool</strong> has a decently unlikely
+        but possible outside improbable but hopeful chance of turning this
+        season around.
+      </p>
+
+      <Gif src={w3gif3} alt="Week 3 loop 3" />
+
+      <p>
+        <strong>The 4rd highest score</strong> goes to your <strong>Mish</strong>{" "}
+        with a 138 to 102 win over <strong>Shaw-Balls</strong>. I also moved out
+        of the “no-win” basement and I feel like maybe I have 2 feet on the
+        bottom step of the basement stairs. I renamed my team to<strong>DA BEARS</strong> as I
+        finally got the production out of them I was hoping to, 37pts from Caleb
+        (hell ya) and 23pts from Moore and Swift (hell meh). They are amazing I
+        can’t believe how lucky I was to draft them. I finally benched Andrews
+        and he of course gets 27pts on the bench. <strong>Shaw-balls</strong> is in trouble
+        though, he is still winless. Devonta Smith finally did something and
+        rookie Skattebo emerged but everyone else was terrible. To make matters
+        worse Evans tweaked his hamstring, hopefully he’ll get Daniels back for
+        this week. <strong>Shaw-balls</strong> is really hoping for a miracle, his team has the
+        outside potential to have great games individually any given week but
+        not much of a chance for them to all have a great game all at the same
+        time to give them any kind of reliable consistency and confidence that
+        any given week all the pieces will line up to have a good week overall
+        and that each week will be a scattering of solid performances and not
+        solid performances and and and
+      </p>
+
+      <Gif src={w3gif4} alt="Week 3 loop 4" />
+
+      <p>
+        <strong>The 6th highest score</strong> goes to <strong>Fischer</strong>{" "}
+        with a fortunate matchup and win over <strong>DD</strong> 125 to 81.{" "}
+        <strong>Fischer</strong> is still undefeated and poisoning <strong>Debo’s</strong> wine during their
+        Tuesday night Wine Wednesdays. His team came back to earth a little and
+        his highest score was week 1. It didn’t help that he had to start Trevor
+        Lawrence with Purdy being out. It worked out for him last week but only
+        got 9 pts this week. But honestly, wtf am I even talking about, he still
+        won his head to head matchup, he still got a top 6 score, he is still
+        the league point leader. HIS DRAFT STILL SUCKED AND DID NOT DESERVE AN A
+        FROM YAHOO, gaaaaawwwwwww! Shit that was weird. On to <strong>DD</strong> who is just
+        getting donged by injuries. He already lost Kittle week 1, Aaron Jones
+        week 2, and now Lamb week 3. Lamb said he will absolutely play week 4
+        but the reports are saying he could miss 3-4 weeks. <strong>DD’s</strong> only hope is
+        that Jeanty returns his draft capital some day, Aiyuk returns from PUP
+        with a vengeance, one of his 3 QB’s find a way to score more than 20pts
+        and his IR players get stem cell injections into their prostates.
+      </p>
+
+      <Gif src={w3gif5} alt="Week 3 loop 5" />
+
+      <p>
+        We have 2 barely worth mentioning matchups this week.
+      </p>
+
+      <p>
+        The first not as bad but still bad <strong>Barely worth mentioning matchup</strong> was
+        between <strong>Marcello</strong> and <strong>Matt</strong>.{" "}
+        <strong>Marcello</strong> won and dropped from 2nd to 4th like a sack of
+        hot potatoes tumbling down a hill of broken dreams and promises.
+      </p>
+
+      <Gif src={w3gif6} alt="Week 3 loop 6" />
+
+      <p>
+        The next but not really that bad but pretty bad <strong>Barely worth mentioning
+        matchup of the week</strong> was between <strong>Gus</strong> and{" "}
+        <strong>JD</strong>. <strong>Gus's</strong> 3rd week in this prominent
+        category. <strong>Gus</strong> was just unshitty enough again to pull out the win by less
+        than 1 point. <strong>Gus and JD’s</strong> hopes are a lot like that time that guy said
+        a thing and then ate a sandwich and shit himself but was ok with it
+        because he only got a little bit of shit on his shoes.
+      </p>
+
+      <Gif src={w3gif7} alt="Week 3 loop 7" />
+
+      <p>
+        Ok that’s it for week 3 folks. Can't wait for the bye weeks! Go Bears!!
+      </p>
+
+      <p className="signoff">- <strong>Mish Out!</strong></p>
+
+      <Gif src={w3gif8} alt="Week 3 loop 8" />
+      <Gif src={w3gif10} alt="Week 3 loop 10" />
+      <p><strong>Well, some of you anyway</strong></p>
+    </article>
+  );
+}
 
 
 
@@ -388,14 +531,14 @@ function YearlyRecap({ year, week, onPickWeek }) {
     </div>
 
     {w === 1 ? (
-      <Recap2025Week1 />
-    ) : w === 2 ? (
-      <Recap2025Week2 />
-    ) : (
-      <p>
-        <em>No recap yet. Don't worry you probabaly sucked balls.</em>
-      </p>
-    )}
+  <Recap2025Week1 />
+) : w === 2 ? (
+  <Recap2025Week2 />
+) : w === 3 ? (
+  <Recap2025Week3 />
+) : (
+  <p><em>No recap yet. Don't worry you probabaly sucked balls.</em></p>
+)}
 
     {/* Prev/Next Nav */}
     <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
