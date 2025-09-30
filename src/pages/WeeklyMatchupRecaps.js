@@ -37,6 +37,17 @@ import w3gif7 from "../assets/weekly-recaps/week-3-loop-7.gif";
 import w3gif8 from "../assets/weekly-recaps/week-3-loop-8.gif";
 import w3gif10 from "../assets/weekly-recaps/week-3-loop-10.gif";
 
+/** ---- 2025 WEEK 4 CONTENT ---- */
+import w4gif1 from "../assets/weekly-recaps/week-4-loop-1.gif";
+import w4gif2 from "../assets/weekly-recaps/week-4-loop-2.gif";
+import w4gif3 from "../assets/weekly-recaps/week-4-loop-3.gif";
+import w4gif4 from "../assets/weekly-recaps/week-4-loop-4.gif";
+import w4gif5 from "../assets/weekly-recaps/week-4-loop-5.gif";
+import w4gif6 from "../assets/weekly-recaps/week-4-loop-6.gif";
+import w4gif7 from "../assets/weekly-recaps/week-4-loop-7.gif";
+import w4gif8 from "../assets/weekly-recaps/week-4-loop-8.gif";
+import w4gif9 from "../assets/weekly-recaps/week-4-loop-9.gif";
+
 const YEARS = [2025]; // add more years later
 const WEEKS = Array.from({ length: 16 }, (_, i) => i + 1); // 1..16
 
@@ -497,7 +508,115 @@ function Recap2025Week3() {
     </article>
   );
 }
+function Recap2025Week4() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 4 — Gen Z Trash Talk Edition</h2>
 
+      <p>
+        <strong>Mish</strong> low-key sold this week and hit me like, 
+        “bro, no cap I’m cooked 🥱—can you run the recap?” so here I am, 
+        taking the aux and turning this league into content. buckle up.
+      </p>
+      <p>
+        we’re ranking these by pure vibes a.k.a. <strong>top score to lowest</strong> 
+        because numbers don’t lie, they just expose. top 6 get the bonus dub ✅, 
+        bottom 6 get the walk of shame ❌. feelings will be hurt; screenshots will be saved.
+      </p>
+      <p>
+        expect extra emojis, spicy roasts, and plenty of salt for the losers. 
+        if your squad caught an L, take it up with your waiver wire, not me.
+      </p>
+
+      <Gif src={w4gif1} alt="Week 4 intro gif" />
+
+      {/* Fischer vs Matty Ice */}
+      <h3>🎲 <strong>Fischer</strong> (182.96) vs <strong>Matty Ice</strong> (114.72) 🧊</h3>
+      <p>
+        <strong>Fischer</strong> went full nuclear ☢️ dropping 182.9 like it was casual cardio. 
+        Puka Nacua 🐐 posted a 37 bomb while James Cook 🍳 served a hot plate with 23.5. 
+        Even Purdy’s 2 picks couldn’t kill the vibe.  
+        <strong>Matty Ice</strong>? ❄️ Bro had Jared Goff as his only green flag 🚦 and then 
+        just vibes-checked the rest of his team. Saquon looked like he was running in Crocs 👟, 
+        and Fields dropping 30+ on the bench is pain with a capital P.  
+        💀 Verdict: <strong>Fischer</strong> streamed this on Twitch with a “get rekt kid” overlay.
+      </p>
+      <Gif src={w4gif2} alt="Week 4 Fischer vs Matty Ice" />
+
+      {/* Debo vs Mark */}
+      <h3>🍻 <strong>Debo</strong> (169.70) vs <strong>Mark</strong> (98.28) 🤦‍♂️</h3>
+      <p>
+        <strong>Debo</strong> had the Mahomes 🏈 + Amon-Ra 🌞 + Breece Hall 🚀 stack and it was 
+        straight violence. Omarion Hampton tossed in 128 yards like it was nothing.  
+        <strong>Mark</strong>? 😬 Lamar + CMC couldn’t even save this mess. David Montgomery 
+        dropped a 1.2 🫠 and his bench Stafford’s 34 was just sitting there eating popcorn 🍿.  
+        🤣 Verdict: <strong>Debo</strong> didn’t win, he gave <strong>Mark</strong> a tutorial mode experience.
+      </p>
+      <Gif src={w4gif3} alt="Week 4 Debo vs Mark" />
+
+ {/* Marcello vs Gus (Week 4) */}
+<h3>🔥🐍 <strong>Marcello</strong> (149.00) vs <strong>Gus</strong> (134.12) 🚔🍗</h3>
+<p>
+  Broooo, this matchup was straight TikTok drama energy. <strong>Marcello</strong> pulled up 
+  with the ✨duo of doom✨ — <strong>Josh Jacobs</strong> (31.7) & <strong>Bijan Robinson</strong> (29.1) 
+  — and just spammed “hold this L” all over <strong>Gus</strong>’s feed. Add in 
+  <strong> Trey McBride</strong> looking like he’s running his own influencer campaign (12.2) 
+  and <strong>Kyler Murray</strong> serving steady QB vibes, and boom, another undefeated flex.
+</p>
+
+
+<p>
+  Meanwhile, <strong>Gus</strong> was out here fighting like it’s the comments section at 3AM. 
+  <strong>George Pickens</strong> went nuclear with 34.4 🔥 and <strong>C.J. Stroud</strong> 
+  dropped a clean 22.4, but the rest of the squad ghosted harder than your hinge match. 
+  <strong>Nick Chubb</strong> and <strong>Sam LaPorta</strong> brought vibes so mid it felt like 
+  filler content. Respectable 134 points, but no cap — against <strong>Marcello</strong>’s 
+  demon mode, that’s just a sad react only 💀📉.
+</p>
+
+<Gif src={w4gif4} alt="Week 4 Marcello vs Gus" />
+
+      {/* Mish vs DD */}
+      <h3>🦍 <strong>Mish</strong> (116.48) vs <strong>DD</strong> (141.32) 🦑</h3>
+      <p>
+        <strong>Mish</strong> finally got JJettas ✈️ to pop with 23.6, but Caleb Williams 
+        was running for his life 📦 and Kenneth Walker hit the injury tent 🚑.  
+        <strong>DD</strong> just chilled 😎 until Ashton Jeanty dropped a 35-piece 🍗 and 
+        Tyler Warren added 18. That was wraps.  
+        📉 Verdict: <strong>Mish</strong> falls to 2-6 🥲, <strong>DD</strong> climbs back to 5-3 with a smug grin 😏.
+      </p>
+      <Gif src={w4gif5} alt="Week 4 Mish vs DD" />
+
+      {/* Balls Bowl */}
+      <h3>🏈 <strong>Champ-Balls</strong> (124.26) vs <strong>Shaw-Balls</strong> (104.30) ⚾</h3>
+      <p>
+        Josh Allen 🪄 cooked for 29.8 and Gibbs remembered how to football 🏃‍♂️. 
+        That’s literally all <strong>Champ-Balls</strong> needed.  
+        <strong>Shaw-Balls</strong>? He started Jake Browning 🤯 for 5.4 while Penix dropped 
+        24.7 on the bench. Drake London tried to carry 🦸 but the rest was mid 😐.  
+        🫤 Verdict: <strong>Champ-Balls</strong> wins the Balls Bowl. Honestly this was like 
+        watching slap fights at Chuck E. Cheese 🐭.
+      </p>
+      <Gif src={w4gif6} alt="Week 4 Champ-Balls vs Shaw-Balls" />
+
+      {/* McCool vs JD */}
+      <h3>🤡 <strong>McCool</strong> (138.90) vs <strong>Pound It Noggin</strong> (90.38) 💀</h3>
+      <p>
+        <strong>McCool</strong> came alive 🔥 with Bucky Irving cooking defenders for 27.5 
+        and Hurts + Marvin Harrison Jr. carrying the vibes 💪.  
+        <strong>JD</strong>? Bro is now Pound It 0-8 🚫. Daniel Jones put up garbage stats 🗑️ 
+        and Keenan Allen ghosted like it was Halloween 🎃. Dak Prescott’s 37.9 on the bench 
+        is comedy-tier clownery 🤡.  
+        ☠️ Verdict: <strong>McCool</strong> dubs, <strong>JD</strong> turns into the meme team of the league.
+      </p>
+      <Gif src={w4gif7} alt="Week 4 McCool vs JD" />
+
+      <p className="signoff">- <strong>Your AI Overlord Out!</strong></p>
+      <Gif src={w4gif8} alt="Week 4 closing gif 1" />
+      <Gif src={w4gif9} alt="Week 4 closing gif 2" />
+    </article>
+  );
+}
 
 
 function YearlyRecap({ year, week, onPickWeek }) {
@@ -530,12 +649,14 @@ function YearlyRecap({ year, week, onPickWeek }) {
       <h3>Week {w} Recap</h3>
     </div>
 
-    {w === 1 ? (
+{w === 1 ? (
   <Recap2025Week1 />
 ) : w === 2 ? (
   <Recap2025Week2 />
 ) : w === 3 ? (
   <Recap2025Week3 />
+) : w === 4 ? (
+  <Recap2025Week4 />
 ) : (
   <p><em>No recap yet. Don't worry you probabaly sucked balls.</em></p>
 )}
