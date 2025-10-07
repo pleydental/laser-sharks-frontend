@@ -743,7 +743,7 @@ function Recap2025Week5() {
 
         <h4><strong className="glow-green">Debo</strong> (143.82 6th highest) def. <strong className="glow-green">Shaw</strong> (109.64)</h4>
         <p>
-          Record: <strong className="glow-green">Debo</strong> 8–0 <Arrow dir="up" change="1" /> | <strong className="glow-green">Shaw</strong> 0–8<br />
+          Record: <strong className="glow-green">Debo</strong> 10–0 <Arrow dir="up" change="1" /> | <strong className="glow-green">Shaw</strong> 0–10<br />
           <strong className="glow-green">Debo</strong>’s undefeated—just like I was in 2016, folks. He’s got the best team, maybe ever, and everyone knows it. Total domination.
           <strong className="glow-green">Shaw</strong>? Terrible season. Zero wins, zero leadership, zero clue. He’s the Jeb Bush of fantasy football—low energy!
         </p>
