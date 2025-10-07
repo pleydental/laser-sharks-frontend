@@ -919,4 +919,6 @@ h1, h2, h3, p {
     0 0 10px rgba(57, 255, 20, 0.6),
     0 0 20px rgba(57, 255, 20, 0.4);
 }
+.arrow-up { color:#39ff14; text-shadow:0 0 8px #39ff14, 0 0 16px #39ff14; font-weight:bold; }
+.arrow-down { color:#ff2b2b; text-shadow:0 0 8px #ff2b2b, 0 0 16px #ff2b2b; font-weight:bold; }
 

@@ -48,6 +48,39 @@ import w4gif7 from "../assets/weekly-recaps/week-4-loop-7.gif";
 import w4gif8 from "../assets/weekly-recaps/week-4-loop-8.gif";
 import w4gif9 from "../assets/weekly-recaps/week-4-loop-9.gif";
 
+// --- WEEK 5: Bounce Edition (Final JSX Block with Glowing Arrows) ---
+import w5gif1 from "../assets/weekly-recaps/week-5-loop-1.gif";
+import w5gif2 from "../assets/weekly-recaps/week-5-loop-2.gif";
+import w5gif3 from "../assets/weekly-recaps/week-5-loop-3.gif";
+import w5gif4 from "../assets/weekly-recaps/week-5-loop-4.gif";
+import w5gif5 from "../assets/weekly-recaps/week-5-loop-5.gif";
+import w5gif6 from "../assets/weekly-recaps/week-5-loop-6.gif";
+import w5gif7 from "../assets/weekly-recaps/week-5-loop-7.gif";
+import w5gif8 from "../assets/weekly-recaps/week-5-loop-8.gif";
+import w5gif9 from "../assets/weekly-recaps/week-5-loop-9.gif";
+import w5gif10 from "../assets/weekly-recaps/week-5-loop-10.gif";
+import w5gif11 from "../assets/weekly-recaps/week-5-loop-11.gif";
+import w5gif12 from "../assets/weekly-recaps/week-5-loop-12.gif";
+import w5gif13 from "../assets/weekly-recaps/week-5-loop-13.gif";
+import w5gif14 from "../assets/weekly-recaps/week-5-loop-14.gif";
+import w5gif15 from "../assets/weekly-recaps/week-5-loop-15.gif";
+import w5gif16 from "../assets/weekly-recaps/week-5-loop-16.gif";
+
+// 🔁 Universal glowing arrow + number component
+const Arrow = ({ dir, change }) => {
+  const isUp = dir === "up";
+  const colorClass = isUp ? "arrow-up" : "arrow-down";
+  const sign = isUp ? "+" : "−";
+  return (
+    <span className={colorClass}>
+      {isUp ? "⬆︎" : "⬇︎"} {sign}
+      {change}
+    </span>
+  );
+};
+
+
+
 const YEARS = [2025]; // add more years later
 const WEEKS = Array.from({ length: 16 }, (_, i) => i + 1); // 1..16
 
@@ -618,6 +651,136 @@ function Recap2025Week4() {
   );
 }
 
+function Recap2025Week5() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <div className="recap-content">
+        <h2>Week 5 Laser Sharks Bounce Edition</h2>
+
+        <p>
+          A few people bouncing around in the standings. Thanks ChatGPT, I used her again, 
+          we aren't fighting any more, she's nice. 
+        </p>
+
+        {/* Standings Table */}
+        <div className="standings-movement-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Manager</th>
+                <th>Week 4 Rank</th>
+                <th>Week 5 Rank</th>
+                <th>Movement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong className="glow-green">Debo</strong></td><td>2</td><td>1</td><td><Arrow dir="up" change="1" /></td></tr>
+              <tr><td><strong className="glow-green">Fischer</strong></td><td>1</td><td>2</td><td><Arrow dir="down" change="1" /></td></tr>
+              <tr><td><strong className="glow-green">Mark</strong></td><td>4</td><td>3</td><td><Arrow dir="up" change="1" /></td></tr>
+              <tr><td><strong className="glow-green">Marcello</strong></td><td>3</td><td>4</td><td><Arrow dir="down" change="1" /></td></tr>
+              <tr><td><strong className="glow-green">Gus</strong></td><td>8</td><td>5</td><td><Arrow dir="up" change="3" /></td></tr>
+              <tr><td><strong className="glow-green">Scham</strong></td><td>6</td><td>6</td><td>–</td></tr>
+              <tr><td><strong className="glow-green">DD</strong></td><td>5</td><td>7</td><td><Arrow dir="down" change="2" /></td></tr>
+              <tr><td><strong className="glow-green">McCool</strong></td><td>9</td><td>8</td><td><Arrow dir="up" change="1" /></td></tr>
+              <tr><td><strong className="glow-green">Mish</strong></td><td>10</td><td>9</td><td><Arrow dir="up" change="1" /></td></tr>
+              <tr><td><strong className="glow-green">Welsch</strong></td><td>7</td><td>10</td><td><Arrow dir="down" change="3" /></td></tr>
+              <tr><td><strong className="glow-green">JD</strong></td><td>11</td><td>11</td><td>–</td></tr>
+              <tr><td><strong className="glow-green">Shaw</strong></td><td>12</td><td>12</td><td>–</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="recap-gif"><img src={w5gif1} alt="Week 5 GIF 1" /></div>
+
+        <p>
+          I was going to do a stabbing edition due to Sanchez’s rage eruption over his Uber Eats but I thought this would be more fun.
+          Should help you guys that are losing your focus on the season like me. <strong>All should be read in a Trump voice.</strong>
+        </p>
+
+        <div className="recap-gif"><img src={w5gif2} alt="Week 5 GIF 2" /></div>
+
+        <h3>🦈 WEEK 5 — “MASSIVE WINS, TOTAL DISASTERS, EVERYBODY’S TALKING ABOUT IT”</h3>
+
+        <h4>🥇 <strong className="glow-green">Gus</strong> (161.26-highest) def. <strong className="glow-green">Fischer</strong> (138.24)</h4>
+        <p>
+          Record: <strong className="glow-green">Gus</strong> 5–5 <Arrow dir="up" change="3" /> | <strong className="glow-green">Fischer</strong> 8–2 <Arrow dir="down" change="1" /><br />
+          Absolutely tremendous performance by <strong className="glow-green">Gus</strong>. People are saying it’s one of the greatest fantasy weeks anyone’s ever seen, maybe in history.
+          <strong className="glow-green">Fischer</strong>—nice guy, good numbers—but frankly, got destroyed. Total embarrassment.
+          <strong className="glow-green">Gus</strong> is winning again, folks, and the league has never been so nervous.
+        </p>
+
+        <div className="recap-gif"><img src={w5gif3} alt="Week 5 GIF 3" /></div>
+
+        <h4>🥈 <strong className="glow-green">JD</strong> (156.98- 2nd highest) def. <strong className="glow-green">Marcello</strong> (95.40)</h4>
+        <p>
+          Record: <strong className="glow-green">JD</strong> 2–8 | <strong className="glow-green">Marcello</strong> 7–3 <Arrow dir="down" change="1" /><br />
+          <strong className="glow-green">JD</strong> was losing badly, many people said he couldn’t win. I never believed it.
+          He came back—big comeback—absolutely crushed <strong className="glow-green">Marcello</strong>, who quite frankly looked terrible.
+          Sleepy <strong className="glow-green">Marcello</strong> didn’t even show up. <strong className="glow-green">JD</strong>’s performance was beautiful, just beautiful.
+        </p>
+
+        <div className="recap-gif"><img src={w5gif4} alt="Week 5 GIF 4" /></div>
+
+        <h4>🥉 <strong className="glow-green">Mish</strong> (156.74 3rd highest) def. <strong className="glow-green">Welsch</strong> (122.82)</h4>
+        <p>
+          Record: <strong className="glow-green">Mish</strong> 4–6 <Arrow dir="up" change="1" /> | <strong className="glow-green">Welsch</strong> 3–7 <Arrow dir="down" change="3" /><br />
+          Biggie Pauls—he’s tough, he’s strong, he’s got that winning mentality. Tremendous victory.
+          <strong className="glow-green">Welsch</strong>’s team? Not good. They call it a team, I call it a total disaster.
+          Many people are saying it might be one of the worst-run rosters in league history. Sad!
+        </p>
+
+        <div className="recap-gif"><img src={w5gif5} alt="Week 5 GIF 5" /></div>
+
+        <h4><strong className="glow-green">Mark</strong> (155.28 4th highest) def. <strong className="glow-green">McCool</strong> (148.30 5th highest)</h4>
+        <p>
+          Record: <strong className="glow-green">Mark</strong> 7–3 <Arrow dir="up" change="1" /> | <strong className="glow-green">McCool</strong> 4–6 <Arrow dir="down" change="1" /><br />
+          <strong className="glow-green">Mark</strong>—fantastic guy, plays the game the right way. Very high IQ fantasy football.
+          <strong className="glow-green">McCool</strong>, decent player, but he’s been losing so much, he’s probably tired of losing.
+          Maybe he should change his name to “Not-So-Cool.” Everyone’s talking about it.
+        </p>
+
+        <div className="recap-gif"><img src={w5gif6} alt="Week 5 GIF 6" /></div>
+
+        <h4><strong className="glow-green">Debo</strong> (143.82 6th highest) def. <strong className="glow-green">Shaw</strong> (109.64)</h4>
+        <p>
+          Record: <strong className="glow-green">Debo</strong> 8–0 <Arrow dir="up" change="1" /> | <strong className="glow-green">Shaw</strong> 0–8<br />
+          <strong className="glow-green">Debo</strong>’s undefeated—just like I was in 2016, folks. He’s got the best team, maybe ever, and everyone knows it. Total domination.
+          <strong className="glow-green">Shaw</strong>? Terrible season. Zero wins, zero leadership, zero clue. He’s the Jeb Bush of fantasy football—low energy!
+        </p>
+
+        <div className="recap-gif"><img src={w5gif7} alt="Week 5 GIF 7" /></div>
+
+        <h4><strong>Barely Worth Mentioning Matchup of the Week</strong><br />
+          <strong className="glow-green">Scham</strong> (111.72) def. <strong className="glow-green">DD</strong> (98.44) -2
+        </h4>
+        <p>
+          Record: <strong className="glow-green">Scham</strong> 5–5 | <strong className="glow-green">DD</strong> 5–5 <Arrow dir="down" change="2" /><br />
+          Pretty even matchup. Both middle of the pack—some say average, I say very average.
+          <strong className="glow-green">Scham</strong> won because he knows how to close the deal.
+          <strong className="glow-green">DD</strong> just couldn’t get it done—maybe he was too busy negotiating a golf cart lease.
+        </p>
+
+        <div className="recap-gif"><img src={w5gif8} alt="Week 5 GIF 8" /></div>
+        <p>—<strong className="glow-green">Mish Out!</strong></p>
+
+        <div className="recap-gif"><img src={w5gif9} alt="Week 5 GIF 9" /></div>
+        <div className="recap-gif"><img src={w5gif10} alt="Week 5 GIF 10" /></div>
+
+        <p>
+          Here’s more GIFs, couldn’t fit them all above, seemed a shame to let them go to waste.
+        </p>
+
+        <div className="recap-gif"><img src={w5gif11} alt="Week 5 GIF 11" /></div>
+        <div className="recap-gif"><img src={w5gif12} alt="Week 5 GIF 12" /></div>
+        <div className="recap-gif"><img src={w5gif13} alt="Week 5 GIF 13" /></div>
+        <div className="recap-gif"><img src={w5gif14} alt="Week 5 GIF 14" /></div>
+        <div className="recap-gif"><img src={w5gif15} alt="Week 5 GIF 15" /></div>
+        <div className="recap-gif"><img src={w5gif16} alt="Week 5 GIF 16" /></div>
+      </div>
+    </article>
+  );
+}
+
 
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
@@ -657,8 +820,10 @@ function YearlyRecap({ year, week, onPickWeek }) {
   <Recap2025Week3 />
 ) : w === 4 ? (
   <Recap2025Week4 />
+) : w === 5 ? (
+  <Recap2025Week5 />
 ) : (
-  <p><em>No recap yet. Don't worry you probabaly sucked balls.</em></p>
+  <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
 )}
 
     {/* Prev/Next Nav */}
