@@ -802,19 +802,27 @@ function Recap2025Week5() {
 }
 /** ---- 2025 WEEK 6 CONTENT ---- */
 function Recap2025Week6() {
-  const audioRef = React.useRef(null);
-  const playVO = () => audioRef.current?.play();
+const audioRef = React.useRef(null);
+const playVO = () => audioRef.current?.play();
+const pauseVO = () => audioRef.current?.pause();
+
 
   return (
     <article style={{ marginTop: "1.25rem" }}>
       {/* Top audio CTA */}
       <div className="voiceover-bar">
-        <h3>🎧 Week 6 Recap — Morgan Freeman Narration</h3>
-        <audio ref={audioRef} src={week6VO} preload="auto" />
-        <button className="voiceover-btn" onClick={playVO}>
-          ▶️ Play Morgan Freeman Dictation
-        </button>
-      </div>
+  <h3>🎧 Week 6 Recap — Morgan Freeman Narration</h3>
+  <audio ref={audioRef} src={week6VO} preload="auto" />
+  <div style={{ display: "flex", gap: "10px", justifyContent: "center", marginTop: "0.5rem" }}>
+    <button className="voiceover-btn" onClick={playVO}>
+      ▶️ Play
+    </button>
+    <button className="voiceover-btn" onClick={pauseVO}>
+      ⏸️ Pause
+    </button>
+  </div>
+</div>
+
 
       {/* Intro (VERBATIM) */}
       <p>I remember Andy Dufresne. The quiet man who crawled through five hundred yards of the foulest fantasy football lineup you can imagine… and came out clean on the other side.</p>
