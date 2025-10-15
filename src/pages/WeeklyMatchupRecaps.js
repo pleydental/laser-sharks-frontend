@@ -872,7 +872,7 @@ knew this day would come.</p>
       {/* Mish */}
       <h4><strong className="glow">Mish (DA BEARS)</strong> — 108.68</h4>
       <p>Your warden Mish got the 6th highest score with 109 glorious points. 
- The Commish looked tired—tired of the noise, the injuries, the hope that hurts when it dies. One-hundred-nine glorious points and a spark that won’t quit. Some men keep digging because they don’t know how to stop. That’s Mish.</p>
+ The Mish looked tired—tired of the noise, the injuries, the hope that hurts when it dies. One-hundred-nine glorious points and a spark that won’t quit. Some men keep digging because they don’t know how to stop. That’s Mish.</p>
       <p>He is now 5 and 7 and moved up one spot to 8th. He didn’t even care that he lost this week to Gus, for his plethora of Bears finally came through and got him the one win, partial victory is so so sweet, like freedom you didn’t ask for but came tightly wrapped in a bag that he shit out once he cleared security. </p>
       <Gif src={w6gif6} alt="Week 6 — Mish" />
 
@@ -923,7 +923,7 @@ His record is still a solid 10 and 2 and he sits a top the Laser Shark standings
       <p>Maybe I’ll see my team climb that wall. Maybe I won’t. But I hope.</p>
       <p>I hope to make the playoffs. I hope the waiver gods have mercy. I hope I can make it across that border… to the land of trophies and bragging rights… where the sun never sets on the Laser Sharks.</p>
       <p>One thing seems to be abundantly certain, no one with the last name of Balls will be released from the depths of Laser Shark obscurity this year.</p>
-      <p>And finally, in the immortal words of JD Lie, Eat a Dick</p>
+      <p>And finally, in the immortal words of JD Ley, Eat a Dick</p>
       <p>Fuck fuck, fuckity fuck balls shit face doggy shit gonorrhea fucky fuck. Dammit, Mish made me say that.</p>
       <p><strong>— Mish….OUT!</strong></p>
 
