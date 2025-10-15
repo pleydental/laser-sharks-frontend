@@ -1,6 +1,6 @@
 // src/pages/WeeklyMatchupRecaps.js
 import React, { useMemo } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Comments from "../components/Comments";
 import middleFingerBtn from "../assets/middle-finger-button.png";
 
@@ -65,6 +65,26 @@ import w5gif13 from "../assets/weekly-recaps/week-5-loop-13.gif";
 import w5gif14 from "../assets/weekly-recaps/week-5-loop-14.gif";
 import w5gif15 from "../assets/weekly-recaps/week-5-loop-15.gif";
 import w5gif16 from "../assets/weekly-recaps/week-5-loop-16.gif";
+
+// ---- WEEK 6 AUDIO ----
+import week6VO from "../assets/weekly-recaps/week-6-voiceover.mp3";
+
+// ---- 2025 WEEK 6 GIFs ----
+import w6gif1 from "../assets/weekly-recaps/week-6-loop-1.gif";
+import w6gif2 from "../assets/weekly-recaps/week-6-loop-2.gif";
+import w6gif3 from "../assets/weekly-recaps/week-6-loop-3.gif";
+import w6gif4 from "../assets/weekly-recaps/week-6-loop-4.gif";
+import w6gif5 from "../assets/weekly-recaps/week-6-loop-5.gif";
+import w6gif6 from "../assets/weekly-recaps/week-6-loop-6.gif";
+import w6gif7 from "../assets/weekly-recaps/week-6-loop-7.gif";
+import w6gif8 from "../assets/weekly-recaps/week-6-loop-8.gif";
+import w6gif9 from "../assets/weekly-recaps/week-6-loop-9.gif";
+import w6gif10 from "../assets/weekly-recaps/week-6-loop-10.gif";
+import w6gif11 from "../assets/weekly-recaps/week-6-loop-11.gif";
+import w6gif12 from "../assets/weekly-recaps/week-6-loop-12.gif";
+import w6gif13 from "../assets/weekly-recaps/week-6-loop-13.gif";
+import w6gif14 from "../assets/weekly-recaps/week-6-loop-14.gif";
+
 
 // 🔁 Universal glowing arrow + number component
 const Arrow = ({ dir, change }) => {
@@ -780,6 +800,131 @@ function Recap2025Week5() {
     </article>
   );
 }
+/** ---- 2025 WEEK 6 CONTENT ---- */
+function Recap2025Week6() {
+  const audioRef = React.useRef(null);
+  const playVO = () => audioRef.current?.play();
+
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      {/* Top audio CTA */}
+      <div className="voiceover-bar">
+        <h3>🎧 Week 6 Recap — Morgan Freeman Narration</h3>
+        <audio ref={audioRef} src={week6VO} preload="auto" />
+        <button className="voiceover-btn" onClick={playVO}>
+          ▶️ Play Morgan Freeman Dictation
+        </button>
+      </div>
+
+      {/* Intro (VERBATIM) */}
+      <p>I remember Andy Dufresne. The quiet man who crawled through five hundred yards of the foulest fantasy football lineup you can imagine… and came out clean on the other side.</p>
+      <p>Some seasons feel like that, don’t they? You start out buried under bad trades, broken players, and that familiar smell of despair. But then one Sunday… one lineup… and you feel that first drop of rain on your face.</p>
+      <p>I’ve seen men rise in this league. I’ve seen them break, rebuild, and rise again. And this week… well, this week was Andy’s crawl all over again.</p>
+      <p>The walls of the Laser Sharks league stood tall. Some men chipped away with steady hands. Others just sat in the dark, waiting for a miracle. But the ones who made it out… they didn’t just play. They escaped.</p>
+      <p>So here we are — Week Six. Half the season gone. The legends still being written. And hope… that dangerous, beautiful thing… still crawling through the pipes.</p>
+
+      <p><em>Let’s see how it all went down shall we?</em></p>
+
+      {/* Marcello */}
+      <h4><strong className="glow">Marcello (Slippery Jack)</strong> — 160.04</h4>
+      <p>Marcello gets the top score with 160 points 
+He’d been down there in the dark for weeks, scraping at the walls. But this time, he broke through again with his 2nd top score of the season. One lineup, one perfect escape, and the man found daylight. One-hundred-sixty points of pure, clean freedom… you could almost hear the rain washing the season off his shoulders.</p>
+      <p>He is now 9 and 3 on the season, up 2 spots from last week. He has been quietly hiding in the shadows of Debo and Fischer and he can see the light now, the sweet sweet light. </p>
+      <Gif src={w6gif1} alt="Week 6 — Marcello" />
+
+      {/* Shaw-Balls */}
+      <h4><strong className="glow">Shaw-Balls (Kenny Powers)</strong> — 147.84</h4>
+      <p>Shaw-Balls gets the 2nd highest score with 148 points.
+ They said he was finished, that all the talk was just noise. But every now and then, the loudest man in the yard earns his silence. He stormed the scoreboard like a riot and stopped just short of the top. You can lock a man’s mouth… but you can’t lock his swagger.</p>
+      <p>He is now 2 and 10 getting his first wins of the season, he may still be in the basement but he is looking to climb the walls of freedom, right into the grips of a ball vice</p>
+      <Gif src={w6gif2} alt="Week 6 — Shaw-Balls" />
+
+      {/* JD */}
+      <h4><strong className="glow">JD (Pound It Noggin)</strong> — 146.24</h4>
+      <p>JD gets the 3rd highest score with 146 points.
+ The kid kept hammering at the wall. Weeks of near-misses, and now the light finally came through. One-hundred-forty-six points. When the gate opened, he didn’t sprint—he just walked, calm, like a man who always 
+knew this day would come.</p>
+      <p>He is now 4 and 8 and moved up 2 spots to 9th, still garbage but even the garbage man needs hope. This is is 2nd week in a row in the top 6 and who knows, maybe he’s figured out the system.</p>
+      <Gif src={w6gif3} alt="Week 6 — JD" />
+
+      {/* DD */}
+      <h4><strong className="glow">DD (Double D’s)</strong> — 129.16</h4>
+      <p>DD gets the 4th highest score with 129 points.
+ Old Double D’s stumbled onto something rare this week—hope. Not the loud kind… just the sort that sits quiet and waits its turn. One-hundred-twenty-nine points worth of belief that the season ain’t over yet.</p>
+      <p>He is now 7 and 5 moving up one spot to top half of Laser Sharks at #6.</p>
+      <Gif src={w6gif4} alt="Week 6 — DD" />
+
+      {/* Gus */}
+      <h4><strong className="glow">Gus (Prison Panther)</strong> — 128.96</h4>
+      <p>Gus gets the 5th highest score with 129 points. 
+ The Panther roared again. A few bad weeks had left him in solitary, but Week Six let him stretch those claws. One-hundred-twenty-nine points of revenge. He’s not out yet… but you can smell freedom on the wind.</p>
+      <p>He is now 7 and 5 holding steady at 5th place. Gus has improved the most thus far, starting the season in dead last but tasting the sweet sweet nectar of redemption.</p>
+      <Gif src={w6gif5} alt="Week 6 — Gus" />
+
+      {/* Mish */}
+      <h4><strong className="glow">Mish (DA BEARS)</strong> — 108.68</h4>
+      <p>Your warden Mish got the 6th highest score with 109 glorious points. 
+ The Commish looked tired—tired of the noise, the injuries, the hope that hurts when it dies. One-hundred-nine glorious points and a spark that won’t quit. Some men keep digging because they don’t know how to stop. That’s Mish.</p>
+      <p>He is now 5 and 7 and moved up one spot to 8th. He didn’t even care that he lost this week to Gus, for his plethora of Bears finally came through and got him the one win, partial victory is so so sweet, like freedom you didn’t ask for but came tightly wrapped in a bag that he shit out once he cleared security. </p>
+      <Gif src={w6gif6} alt="Week 6 — Mish" />
+
+      {/* Fischer */}
+      <h4><strong className="glow">Fischer (Dice Roll Aaron)</strong> — 103.32</h4>
+      <p>Fischer suffered his 4th loss in a row with the 7th highest score of one-hundred-three points. 
+ The dice came up short this time. One-hundred-three. Not bad, not good… just stuck in the middle of the yard watching others climb. He’ll find his numbers again. He always does.</p>
+      <p>His record is now 8 and 4 and dropped to 3rd place when he was the top dog just 2 short weeks ago.</p>
+      <Gif src={w6gif7} alt="Week 6 — Fischer" />
+
+      {/* Scham-Balls */}
+      <h4><strong className="glow">Scham-Balls (Team Steiners)</strong> — 101.60</h4>
+      <p>Scham-Balls got the 8th highest score with one-hundred-two points.
+ He tried. One-hundred-two of almost. You could see the light on his face for a moment… then the gate slammed shut. Some birds aren’t meant to be caged. He’ll fly—just not this week.</p>
+      <p>His record is now 6 and 6 and dropped out of the top 6 (again) to 7th place.</p>
+      <Gif src={w6gif8} alt="Week 6 — Scham-Balls" />
+
+      {/* Welsch */}
+      <h4><strong className="glow">Welsch (smakdown)</strong> — 98.94</h4>
+      <p>Welsch got the 9th highest score with our first sub 100 at ninety-nine points
+ Ninety-nine and the sound of rain on concrete. Every touchdown that wasn’t, every yard that fell short—he felt them all. There’s a certain quiet to defeat, and Welsch wore it like a coat.</p>
+      <p>He is now 3 and 9 on the season and dropped one spot to 11th. He is the juicy juicy meat between the McCool—JD and Shaw sandwich.</p>
+      <Gif src={w6gif9} alt="Week 6 — Welsch" />
+
+      {/* Williams */}
+      <h4><strong className="glow">Williams (unfollowbobo)</strong> — 97.54</h4>
+      <p>Williams got the 10th highest score with ninety-eight points  Ninety-eight, and still working his way through the pipe. There’s a tunnel there—you can see it in his eyes. He’ll get out soon. He doesn’t like being a bitch and a plans on getting the BJ’s instead of giving them.</p>
+      <p>He is now 7 and 5 and only dropped one spot to 4th place in Laser Sharks</p>
+      <Gif src={w6gif10} alt="Week 6 — Williams" />
+
+      {/* Debo */}
+      <h4><strong className="glow">Debo (Happy Hour)</strong> — 96.78</h4>
+      <p>Debo got the 2nd lowest score with  ninety-seven points.   Ninety-seven and a laugh that echoes through the cell block. The scoreboard lies sometimes. He’s playing for pride now—and a little fear for anyone who draws him next.</p>
+      <p>He loved pointing out his perfect record to the warden despite the wardens attempt to blemish his good name, but Debo’s hubris has been relegated to the loser column this week.
+His record is still a solid 10 and 2 and he sits a top the Laser Shark standings at 1st place. </p>
+      <Gif src={w6gif11} alt="Week 6 — Debo" />
+
+      {/* McCool */}
+      <h4><strong className="glow">McCool (Hingle McCringleberry)</strong> — 84.02</h4>
+      <p>McCool got the lowest score by a whole bunch with only eighty-four points.  Eighty-four. Lowest of the week, but he took it like a man who’s seen worse. Every league needs somebody to carry the weight of last place. He’s our canary in the mine—and somehow, he still sings.</p>
+      <p>His record is now 4 and 8 and he dropped two spots the 10th. </p>
+      <Gif src={w6gif12} alt="Week 6 — McCool" />
+
+      {/* Outro (VERBATIM) */}
+      <p>I find myself thinking about this league… about the men who’ve fought, lost, and clawed their way through the weeks. I think about Andy Dufresne, standing in the rain, arms to the sky — and I wonder if maybe, in his heart, he knew something about fantasy football too.</p>
+      <p>Because that’s what this game is, isn’t it? A long crawl through darkness, searching for that one clean Sunday on the other side. Some will make it out. Some will stay behind. But every one of us keeps digging.</p>
+      <p>I guess I just miss the sound of Sunday. The quiet before the storm. The moment when you still believe that this… could be the week you break free.</p>
+      <p>Maybe I’ll see my team climb that wall. Maybe I won’t. But I hope.</p>
+      <p>I hope to make the playoffs. I hope the waiver gods have mercy. I hope I can make it across that border… to the land of trophies and bragging rights… where the sun never sets on the Laser Sharks.</p>
+      <p>One thing seems to be abundantly certain, no one with the last name of Balls will be released from the depths of Laser Shark obscurity this year.</p>
+      <p>And finally, in the immortal words of JD Lie, Eat a Dick</p>
+      <p>Fuck fuck, fuckity fuck balls shit face doggy shit gonorrhea fucky fuck. Dammit, Mish made me say that.</p>
+      <p><strong>— Mish….OUT!</strong></p>
+
+      {/* Two extra GIFs after Mish OUT */}
+      <Gif src={w6gif13} alt="Week 6 — Outro 1" />
+      <Gif src={w6gif14} alt="Week 6 — Outro 2" />
+    </article>
+  );
+}
 
 
 function YearlyRecap({ year, week, onPickWeek }) {
@@ -812,19 +957,21 @@ function YearlyRecap({ year, week, onPickWeek }) {
       <h3>Week {w} Recap</h3>
     </div>
 
-{w === 1 ? (
-  <Recap2025Week1 />
-) : w === 2 ? (
-  <Recap2025Week2 />
-) : w === 3 ? (
-  <Recap2025Week3 />
-) : w === 4 ? (
-  <Recap2025Week4 />
-) : w === 5 ? (
-  <Recap2025Week5 />
-) : (
-  <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
-)}
+    {w === 1 ? (
+      <Recap2025Week1 />
+    ) : w === 2 ? (
+      <Recap2025Week2 />
+    ) : w === 3 ? (
+      <Recap2025Week3 />
+    ) : w === 4 ? (
+      <Recap2025Week4 />
+    ) : w === 5 ? (
+      <Recap2025Week5 />
+    ) : w === 6 ? (
+      <Recap2025Week6 />
+    ) : (
+      <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
+    )}
 
     {/* Prev/Next Nav */}
     <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
@@ -837,7 +984,6 @@ function YearlyRecap({ year, week, onPickWeek }) {
 export default function WeeklyMatchupRecaps() {
   const { year: yearParam, week: weekParam } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const selectedYear = useMemo(() => {
     const y = yearParam || "2025";
