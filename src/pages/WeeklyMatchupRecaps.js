@@ -68,6 +68,9 @@ import w5gif16 from "../assets/weekly-recaps/week-5-loop-16.gif";
 
 // ---- WEEK 6 AUDIO ----
 import week6VO from "../assets/weekly-recaps/week-6-voiceover.mp3";
+// ---- WEEK 5 AUDIO ----
+import week5VO from "../assets/weekly-recaps/week-5-trump-voiceover.mp3";
+
 
 // ---- 2025 WEEK 6 GIFs ----
 import w6gif1 from "../assets/weekly-recaps/week-6-loop-1.gif";
@@ -672,9 +675,23 @@ function Recap2025Week4() {
 }
 
 function Recap2025Week5() {
+  const week5AudioRef = React.useRef(null);
+  const playW5 = () => week5AudioRef.current?.play();
+  const pauseW5 = () => week5AudioRef.current?.pause();
+
   return (
     <article style={{ marginTop: "1.25rem" }}>
       <div className="recap-content">
+                {/* Top audio CTA for Week 5 */}
+        <div className="voiceover-bar">
+          <h3>🎧 Week 5 Recap — Trump Voiceover</h3>
+          <audio ref={week5AudioRef} src={week5VO} preload="auto" />
+          <div style={{ display: "flex", gap: "10px", justifyContent: "center", marginTop: "0.5rem" }}>
+            <button className="voiceover-btn" onClick={playW5}>▶️ Play</button>
+            <button className="voiceover-btn" onClick={pauseW5}>⏸️ Pause</button>
+          </div>
+        </div>
+
         <h2>Week 5 Laser Sharks Bounce Edition</h2>
 
         <p>
