@@ -3,7 +3,6 @@ import React, { useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Comments from "../components/Comments";
 import middleFingerBtn from "../assets/middle-finger-button.png";
-
 // 🔁 Week 1 GIFs (placed in: src/assets/weekly-recaps)
 import w1gif1 from "../assets/weekly-recaps/week-1-loop-1.gif";
 import w1gif2 from "../assets/weekly-recaps/week-1-loop-2.gif";
@@ -70,6 +69,9 @@ import w5gif16 from "../assets/weekly-recaps/week-5-loop-16.gif";
 import week6VO from "../assets/weekly-recaps/week-6-voiceover.mp3";
 // ---- WEEK 5 AUDIO ----
 import week5VO from "../assets/weekly-recaps/week-5-trump-voiceover.mp3";
+// ---- WEEK 7 AUDIO (TopMediai output) ----
+import week7VO from "../assets/weekly-recaps/week-7-voiceover.mp3";
+
 
 
 // ---- 2025 WEEK 6 GIFs ----
@@ -87,6 +89,95 @@ import w6gif11 from "../assets/weekly-recaps/week-6-loop-11.gif";
 import w6gif12 from "../assets/weekly-recaps/week-6-loop-12.gif";
 import w6gif13 from "../assets/weekly-recaps/week-6-loop-13.gif";
 import w6gif14 from "../assets/weekly-recaps/week-6-loop-14.gif";
+
+/** ---- 2025 WEEK 7 CONTENT ---- */
+
+// 🎞️ Week 7 GIFs
+import w7gif1 from "../assets/weekly-recaps/week-7-loop-1.gif";
+import w7gif2 from "../assets/weekly-recaps/week-7-loop-2.gif";
+import w7gif3 from "../assets/weekly-recaps/week-7-loop-3.gif";
+import w7gif4 from "../assets/weekly-recaps/week-7-loop-4.gif";
+import w7gif5 from "../assets/weekly-recaps/week-7-loop-5.gif";
+import w7gif6 from "../assets/weekly-recaps/week-7-loop-6.gif";
+import w7gif7 from "../assets/weekly-recaps/week-7-loop-7.gif";
+import w7gif8 from "../assets/weekly-recaps/week-7-loop-8.gif";
+import w7gif9 from "../assets/weekly-recaps/week-7-loop-9.gif";
+import w7gif10 from "../assets/weekly-recaps/week-7-loop-10.gif";
+import w7gif11 from "../assets/weekly-recaps/week-7-loop-11.gif";
+
+
+function formatTime(secs) {
+  if (!Number.isFinite(secs)) return "0:00";
+  const m = Math.floor(secs / 60);
+  const s = Math.floor(secs % 60);
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+function AudioPlayer({ src, label = "Voiceover" }) {
+  const audioRef = React.useRef(null);
+  const [dur, setDur] = React.useState(0);
+  const [cur, setCur] = React.useState(0);
+  const [playing, setPlaying] = React.useState(false);
+
+  const onLoaded = () => setDur(audioRef.current?.duration ?? 0);
+  const onTime = () => setCur(audioRef.current?.currentTime ?? 0);
+
+  const toggle = () => {
+    const el = audioRef.current;
+    if (!el) return;
+    if (el.paused) {
+      el.play();
+      setPlaying(true);
+    } else {
+      el.pause();
+      setPlaying(false);
+    }
+  };
+
+  const seek = (time) => {
+    const el = audioRef.current;
+    if (!el) return;
+    el.currentTime = Math.max(0, Math.min(dur, time));
+  };
+
+  const skip = (delta) => seek((audioRef.current?.currentTime ?? 0) + delta);
+
+  const onScrub = (e) => seek(Number(e.target.value));
+
+  return (
+    <div className="voiceover-bar">
+      <h3>🎧 {label}</h3>
+      <audio
+        ref={audioRef}
+        src={src}
+        preload="auto"
+        onLoadedMetadata={onLoaded}
+        onTimeUpdate={onTime}
+        onEnded={() => setPlaying(false)}
+      />
+      <div style={{ display: "grid", gap: 8, justifyItems: "center" }}>
+        <div style={{ display: "flex", gap: 8 }}>
+          <button className="voiceover-btn" onClick={() => skip(-15)}>⏪ 15s</button>
+          <button className="voiceover-btn" onClick={toggle}>{playing ? "⏸️ Pause" : "▶️ Play"}</button>
+          <button className="voiceover-btn" onClick={() => skip(15)}>15s ⏩</button>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "48px 1fr 48px", gap: 8, alignItems: "center", width: "min(720px, 90vw)" }}>
+          <span style={{ textAlign: "right" }}>{formatTime(cur)}</span>
+          <input
+            type="range"
+            min={0}
+            max={dur || 0}
+            step="0.1"
+            value={cur}
+            onChange={onScrub}
+            style={{ width: "100%" }}
+          />
+          <span>{formatTime(dur)}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 
 // 🔁 Universal glowing arrow + number component
@@ -123,6 +214,32 @@ const Gif = ({ src, alt }) => (
     />
   </div>
 );
+
+
+
+// 👇 Add Step 2 here
+const GifPlaceholder = ({ label }) => (
+  <div style={{ display: "flex", justifyContent: "center", margin: "1.25rem 0" }}>
+    <div
+      style={{
+        width: "100%",
+        maxWidth: "680px",
+        height: "260px",
+        border: "2px dashed #888",
+        borderRadius: "10px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontStyle: "italic",
+        color: "#888",
+      }}
+    >
+      GIF Placeholder — {label}
+    </div>
+  </div>
+);
+
+
 
 function YearButtons({ activeYear, onPick }) {
   return (
@@ -294,7 +411,7 @@ function Recap2025Week1() {
         Marcello had a great week; the only sore spot was his WR1 Xavier Worthy giving him a goose egg and potentially
         missing some time going forward (currently day-to-day). He started 4 RBs this week and they all scored over
         13 points. Shaw had a rough week with Jayden Daniels being his best player with 22 points. He had 5 players
-        that scored under 10 pts though. He barely missed the lowest score of the week by outscoring Gus by 0.1 pts —
+        that scored under 10 pts though. He barely missed the lowest score of the week by outscoring Gus by 0.1 pts -
         that’s sucky spitty fo sho.
       </p>
 
@@ -334,103 +451,103 @@ function Recap2025Week1() {
 function Recap2025Week2() {
   return (
     <article style={{ marginTop: "1.25rem" }}>
-    <h2>Week 2 — Laser Sharks Starting to Get Worried Edition</h2>
+      <h2>Week 2 — Laser Sharks Starting to Get Worried Edition</h2>
 
-    <p>
-      So far about half of you are feeling pretty damn good right now about your
-      teams and the other half of us feel like dog shit. Let’s get into it.
-    </p>
+      <p>
+        So far about half of you are feeling pretty damn good right now about your
+        teams and the other half of us feel like dog shit. Let’s get into it.
+      </p>
 
-    <Gif src={w2gif1} alt="Week 2 loop 1" />
+      <Gif src={w2gif1} alt="Week 2 loop 1" />
 
-    <p>
-      <strong>High score of the week</strong> goes to <strong>Marcello</strong> with a 151-127
-      <strong>(5th highest score)</strong> win over <strong>DD</strong>.{" "}
-      <strong>Marcello</strong> is one of two undefeated teams at 4-0 and{" "}
-      <strong>DD</strong> is 3-1. . <strong>Marcello's</strong> worst player of the week was James Conner
-      with 12 pts — no one on his team went off, just a solid balanced week and
-      no injuries. <strong>DD</strong> did not have the same luck and for the
-      2nd week in a row one of his players got injured, this time it was RB
-      Aaron Jones. Might be time to start getting worried.
-    </p>
+      <p>
+        <strong>High score of the week</strong> goes to <strong>Marcello</strong> with a 151-127
+        <strong>(5th highest score)</strong> win over <strong>DD</strong>.{" "}
+        <strong>Marcello</strong> is one of two undefeated teams at 4-0 and{" "}
+        <strong>DD</strong> is 3-1. . <strong>Marcello's</strong> worst player of the week was James Conner
+        with 12 pts — no one on his team went off, just a solid balanced week and
+        no injuries. <strong>DD</strong> did not have the same luck and for the
+        2nd week in a row one of his players got injured, this time it was RB
+        Aaron Jones. Might be time to start getting worried.
+      </p>
 
-   <Gif src={w2gif2} alt="Week 2 loop 2" />
+      <Gif src={w2gif2} alt="Week 2 loop 2" />
 
-    <p>
-      <strong>The 2nd highest score</strong> goes to rookie <strong>Fischer</strong> with a 146-109
-      win over <strong>Shaw</strong>-Balls. <strong>Fischer</strong> is also
-      undefeated at 4-0 and <strong>Shaw</strong> sits 12th at 0-4. At one point{" "}
-      <strong>Fischer</strong> was projected to be the high score but he got a
-      disappointing Monday night from Shultz and only 2 pts from Derrick Henry.
-      Everyone try to feel bad for him. <strong>Shaw</strong> got 39 pts from
-      Nabers but Jayden Daniels got hurt and Austin Ekeler landed on IR, leaving
-      him with RJ Harvey and Skattebo as his only viable RBs. Ouch.
-    </p>
+      <p>
+        <strong>The 2nd highest score</strong> goes to rookie <strong>Fischer</strong> with a 146-109
+        win over <strong>Shaw</strong>-Balls. <strong>Fischer</strong> is also
+        undefeated at 4-0 and <strong>Shaw</strong> sits 12th at 0-4. At one point{" "}
+        <strong>Fischer</strong> was projected to be the high score but he got a
+        disappointing Monday night from Shultz and only 2 pts from Derrick Henry.
+        Everyone try to feel bad for him. <strong>Shaw</strong> got 39 pts from
+        Nabers but Jayden Daniels got hurt and Austin Ekeler landed on IR, leaving
+        him with RJ Harvey and Skattebo as his only viable RBs. Ouch.
+      </p>
 
-   <Gif src={w2gif3} alt="Week 2 loop 3" />
+      <Gif src={w2gif3} alt="Week 2 loop 3" />
 
-    <p>
-      <strong>The 3rd highest score</strong> goes to <strong>Mark</strong> who is off to a great
-      start and beat your <strong>Mish</strong> 141-102. <strong>Mark</strong> is
-      3-1 and <strong>Mish</strong> is barely above <strong>Shaw</strong> at
-      0-4 and 11th. So far the early CMC pick is paying off for{" "}
-      <strong>Mark</strong> and he has avoided injury so far. If he can get some
-      AJ Brown production going soon this team will keep winning.{" "}
-      <strong>Mish's</strong> Bears didn’t do terribly but some dumb lineup
-      choices left points on the bench. Still though — he sucks.
-    </p>
+      <p>
+        <strong>The 3rd highest score</strong> goes to <strong>Mark</strong> who is off to a great
+        start and beat your <strong>Mish</strong> 141-102. <strong>Mark</strong> is
+        3-1 and <strong>Mish</strong> is barely above <strong>Shaw</strong> at
+        0-4 and 11th. So far the early CMC pick is paying off for{" "}
+        <strong>Mark</strong> and he has avoided injury so far. If he can get some
+        AJ Brown production going soon this team will keep winning.{" "}
+        <strong>Mish's</strong> Bears didn’t do terribly but some dumb lineup
+        choices left points on the bench. Still though — he sucks.
+      </p>
 
-    <Gif src={w2gif4} alt="Week 2 loop 4" />
+      <Gif src={w2gif4} alt="Week 2 loop 4" />
 
-    <p>
-      <strong>The 4th highest score</strong> goes to <strong>Matt</strong> with a nice bounce-back
-      win over <strong>JD</strong>, 131-115. <strong>Matt</strong> is 3-1 and{" "}
-      <strong>JD</strong> is in the basement with us at 0-4. This win is
-      bittersweet for <strong>Matt</strong> — Jayden Reed fractured his collarbone
-      (6-8 weeks) and Justin Fields is in concussion protocol. Luckily{" "}
-      <strong>Matt</strong> has Goff (45 pts on bench!) and WR depth so he should
-      be fine. <strong>JD</strong> had Jamar Chase go off for 38 pts and still
-      missed top 6. He started 3 RBs that gave him 8.7 pts total, while his
-      3 bench RBs had 19.8 pts total. Yeah… he should be worried too.
-    </p>
+      <p>
+        <strong>The 4th highest score</strong> goes to <strong>Matt</strong> with a nice bounce-back
+        win over <strong>JD</strong>, 131-115. <strong>Matt</strong> is 3-1 and{" "}
+        <strong>JD</strong> is in the basement with us at 0-4. This win is
+        bittersweet for <strong>Matt</strong> — Jayden Reed fractured his collarbone
+        (6-8 weeks) and Justin Fields is in concussion protocol. Luckily{" "}
+        <strong>Matt</strong> has Goff (45 pts on bench!) and WR depth so he should
+        be fine. <strong>JD</strong> had Jamar Chase go off for 38 pts and still
+        missed top 6. He started 3 RBs that gave him 8.7 pts total, while his
+        3 bench RBs had 19.8 pts total. Yeah… he should be worried too.
+      </p>
 
-  <Gif src={w2gif5} alt="Week 2 loop 5" />
+      <Gif src={w2gif5} alt="Week 2 loop 5" />
 
-    <p>
-      <strong>The 5th highest score</strong> goes to <strong>Debo</strong> with a 125-112 win over{" "}
-      <strong>Champ-Balls</strong>. <strong>Debo</strong> stays undefeated in 3rd
-      and <strong>Champ-Balls</strong> loses that status, falling to 7th.{" "}
-      <strong>Debo</strong>’s team was solid thanks to Amon-Ra and his 40 pts.
-      Only 9.3 pts from starting RBs but Dobbins in the FLEX bailed him out with
-      16. <strong>Champ-Balls</strong> looked a lot like Week 1 except Josh Allen
-      only scored 12 pts instead of 44. Both squads might be a little worried.
-    </p>
+      <p>
+        <strong>The 5th highest score</strong> goes to <strong>Debo</strong> with a 125-112 win over{" "}
+        <strong>Champ-Balls</strong>. <strong>Debo</strong> stays undefeated in 3rd
+      <p>
+        and <strong>Champ-Balls</strong> loses that status, falling to 7th.{" "}
+        <strong>Debo</strong>’s team was solid thanks to Amon-Ra and his 40 pts.
+        Only 9.3 pts from starting RBs but Dobbins in the FLEX bailed him out with
+        16. <strong>Champ-Balls</strong> looked a lot like Week 1 except Josh Allen
+        only scored 12 pts instead of 44. Both squads might be a little worried.
+      </p>
 
-   <Gif src={w2gif6} alt="Week 2 loop 6" />
+      <Gif src={w2gif6} alt="Week 2 loop 6" />
 
-    <p>
-      <strong>Barely-worth-mentioning matchup</strong> of the week was between{" "}
-      <strong>Gus</strong> and <strong>McCool</strong> —{" "}
-      <strong>Gus's</strong> 2nd straight appearance in this segment.{" "}
-      <strong>Gus</strong> pulled off the 119-94 win but neither of them cracked the top 6.{" "}
-      <strong>Gus</strong> is now 1-3 and <strong>McCool</strong> is still in
-      the basement with us at 0-4. Yeah — they’re worried.
-    </p>
+      <p>
+        <strong>Barely-worth-mentioning matchup</strong> of the week was between{" "}
+        <strong>Gus</strong> and <strong>McCool</strong> —{" "}
+        <strong>Gus's</strong> 2nd straight appearance in this segment.{" "}
+        <strong>Gus</strong> pulled off the 119-94 win but neither of them cracked the top 6.{" "}
+        <strong>Gus</strong> is now 1-3 and <strong>McCool</strong> is still in
+        the basement with us at 0-4. Yeah — they’re worried.
+      </p>
 
-    <Gif src={w2gif7} alt="Week 2 loop 7" />
+      <Gif src={w2gif7} alt="Week 2 loop 7" />
 
-    <p>
-      Ok that’s it for week 2 folks. I’ll try to keep these going despite the
-      personal anguish of looking at my team. Don't forget to hit those comments to tell me 
-      how terrible my team is. 
-    </p>
+        Ok that’s it for week 2 folks. I’ll try to keep these going despite the
+        personal anguish of looking at my team. Don't forget to hit those comments to tell me
+        how terrible my team is.
+      </p>
 
-    <p className="signoff">- <strong>Mish Out!</strong></p>
+      <p className="signoff">- <strong>Mish Out!</strong></p>
 
-    <Gif src={w2gif8} alt="Week 2 loop 8" />
-   <Gif src={w2gif10} alt="Week 2 loop 10" />
-  </article>
-);
+      <Gif src={w2gif8} alt="Week 2 loop 8" />
+      <Gif src={w2gif10} alt="Week 2 loop 10" />
+    </article>
+  );
 }
 function Recap2025Week3() {
   return (
@@ -446,8 +563,8 @@ function Recap2025Week3() {
         >
           Season 10 prediction
         </a>{" "}
-        has some merit. Hopefully <strong>Champ-balls</strong> hasn’t been shivved and <strong>McCool</strong> 
-          isn’t applying for a banana farmer license.
+        has some merit. Hopefully <strong>Champ-balls</strong> hasn’t been shivved and <strong>McCool</strong>
+        isn’t applying for a banana farmer license.
       </p>
 
       <Gif src={w3gif1} alt="Week 3 loop 1" />
@@ -542,7 +659,7 @@ function Recap2025Week3() {
 
       <p>
         The next but not really that bad but pretty bad <strong>Barely worth mentioning
-        matchup of the week</strong> was between <strong>Gus</strong> and{" "}
+          matchup of the week</strong> was between <strong>Gus</strong> and{" "}
         <strong>JD</strong>. <strong>Gus's</strong> 3rd week in this prominent
         category. <strong>Gus</strong> was just unshitty enough again to pull out the win by less
         than 1 point. <strong>Gus and JD’s</strong> hopes are a lot like that time that guy said
@@ -570,17 +687,17 @@ function Recap2025Week4() {
       <h2>Week 4 — Gen Z Trash Talk Edition</h2>
 
       <p>
-        <strong>Mish</strong> low-key sold this week and hit me like, 
-        “bro, no cap I’m cooked 🥱—can you run the recap?” so here I am, 
+        <strong>Mish</strong> low-key sold this week and hit me like,
+        “bro, no cap I’m cooked 🥱—can you run the recap?” so here I am,
         taking the aux and turning this league into content. buckle up.
       </p>
       <p>
-        we’re ranking these by pure vibes a.k.a. <strong>top score to lowest</strong> 
-        because numbers don’t lie, they just expose. top 6 get the bonus dub ✅, 
+        we’re ranking these by pure vibes a.k.a. <strong>top score to lowest</strong>
+        because numbers don’t lie, they just expose. top 6 get the bonus dub ✅,
         bottom 6 get the walk of shame ❌. feelings will be hurt; screenshots will be saved.
       </p>
       <p>
-        expect extra emojis, spicy roasts, and plenty of salt for the losers. 
+        expect extra emojis, spicy roasts, and plenty of salt for the losers.
         if your squad caught an L, take it up with your waiver wire, not me.
       </p>
 
@@ -589,12 +706,12 @@ function Recap2025Week4() {
       {/* Fischer vs Matty Ice */}
       <h3>🎲 <strong>Fischer</strong> (182.96) vs <strong>Matty Ice</strong> (114.72) 🧊</h3>
       <p>
-        <strong>Fischer</strong> went full nuclear ☢️ dropping 182.9 like it was casual cardio. 
-        Puka Nacua 🐐 posted a 37 bomb while James Cook 🍳 served a hot plate with 23.5. 
-        Even Purdy’s 2 picks couldn’t kill the vibe.  
-        <strong>Matty Ice</strong>? ❄️ Bro had Jared Goff as his only green flag 🚦 and then 
-        just vibes-checked the rest of his team. Saquon looked like he was running in Crocs 👟, 
-        and Fields dropping 30+ on the bench is pain with a capital P.  
+        <strong>Fischer</strong> went full nuclear ☢️ dropping 182.9 like it was casual cardio.
+        Puka Nacua 🐐 posted a 37 bomb while James Cook 🍳 served a hot plate with 23.5.
+        Even Purdy’s 2 picks couldn’t kill the vibe.
+        <strong>Matty Ice</strong>? ❄️ Bro had Jared Goff as his only green flag 🚦 and then
+        just vibes-checked the rest of his team. Saquon looked like he was running in Crocs 👟,
+        and Fields dropping 30+ on the bench is pain with a capital P.
         💀 Verdict: <strong>Fischer</strong> streamed this on Twitch with a “get rekt kid” overlay.
       </p>
       <Gif src={w4gif2} alt="Week 4 Fischer vs Matty Ice" />
@@ -602,43 +719,43 @@ function Recap2025Week4() {
       {/* Debo vs Mark */}
       <h3>🍻 <strong>Debo</strong> (169.70) vs <strong>Mark</strong> (98.28) 🤦‍♂️</h3>
       <p>
-        <strong>Debo</strong> had the Mahomes 🏈 + Amon-Ra 🌞 + Breece Hall 🚀 stack and it was 
-        straight violence. Omarion Hampton tossed in 128 yards like it was nothing.  
-        <strong>Mark</strong>? 😬 Lamar + CMC couldn’t even save this mess. David Montgomery 
-        dropped a 1.2 🫠 and his bench Stafford’s 34 was just sitting there eating popcorn 🍿.  
+        <strong>Debo</strong> had the Mahomes 🏈 + Amon-Ra 🌞 + Breece Hall 🚀 stack and it was
+        straight violence. Omarion Hampton tossed in 128 yards like it was nothing.
+        <strong>Mark</strong>? 😬 Lamar + CMC couldn’t even save this mess. David Montgomery
+        dropped a 1.2 🫠 and his bench Stafford’s 34 was just sitting there eating popcorn 🍿.
         🤣 Verdict: <strong>Debo</strong> didn’t win, he gave <strong>Mark</strong> a tutorial mode experience.
       </p>
       <Gif src={w4gif3} alt="Week 4 Debo vs Mark" />
 
- {/* Marcello vs Gus (Week 4) */}
-<h3>🔥🐍 <strong>Marcello</strong> (149.00) vs <strong>Gus</strong> (134.12) 🚔🍗</h3>
-<p>
-  Broooo, this matchup was straight TikTok drama energy. <strong>Marcello</strong> pulled up 
-  with the ✨duo of doom✨ — <strong>Josh Jacobs</strong> (31.7) & <strong>Bijan Robinson</strong> (29.1) 
-  — and just spammed “hold this L” all over <strong>Gus</strong>’s feed. Add in 
-  <strong> Trey McBride</strong> looking like he’s running his own influencer campaign (12.2) 
-  and <strong>Kyler Murray</strong> serving steady QB vibes, and boom, another undefeated flex.
-</p>
+      {/* Marcello vs Gus (Week 4) */}
+      <h3>🔥🐍 <strong>Marcello</strong> (149.00) vs <strong>Gus</strong> (134.12) 🚔🍗</h3>
+      <p>
+        Broooo, this matchup was straight TikTok drama energy. <strong>Marcello</strong> pulled up
+        with the ✨duo of doom✨ — <strong>Josh Jacobs</strong> (31.7) & <strong>Bijan Robinson</strong> (29.1)
+        — and just spammed “hold this L” all over <strong>Gus</strong>’s feed. Add in
+        <strong> Trey McBride</strong> looking like he’s running his own influencer campaign (12.2)
+        and <strong>Kyler Murray</strong> serving steady QB vibes, and boom, another undefeated flex.
+      </p>
 
 
-<p>
-  Meanwhile, <strong>Gus</strong> was out here fighting like it’s the comments section at 3AM. 
-  <strong>George Pickens</strong> went nuclear with 34.4 🔥 and <strong>C.J. Stroud</strong> 
-  dropped a clean 22.4, but the rest of the squad ghosted harder than your hinge match. 
-  <strong>Nick Chubb</strong> and <strong>Sam LaPorta</strong> brought vibes so mid it felt like 
-  filler content. Respectable 134 points, but no cap — against <strong>Marcello</strong>’s 
-  demon mode, that’s just a sad react only 💀📉.
-</p>
+      <p>
+        Meanwhile, <strong>Gus</strong> was out here fighting like it’s the comments section at 3AM.
+        <strong>George Pickens</strong> went nuclear with 34.4 🔥 and <strong>C.J. Stroud</strong>
+        dropped a clean 22.4, but the rest of the squad ghosted harder than your hinge match.
+        <strong>Nick Chubb</strong> and <strong>Sam LaPorta</strong> brought vibes so mid it felt like
+        filler content. Respectable 134 points, but no cap — against <strong>Marcello</strong>’s
+        demon mode, that’s just a sad react only 💀📉.
+      </p>
 
-<Gif src={w4gif4} alt="Week 4 Marcello vs Gus" />
+      <Gif src={w4gif4} alt="Week 4 Marcello vs Gus" />
 
       {/* Mish vs DD */}
       <h3>🦍 <strong>Mish</strong> (116.48) vs <strong>DD</strong> (141.32) 🦑</h3>
       <p>
-        <strong>Mish</strong> finally got JJettas ✈️ to pop with 23.6, but Caleb Williams 
-        was running for his life 📦 and Kenneth Walker hit the injury tent 🚑.  
-        <strong>DD</strong> just chilled 😎 until Ashton Jeanty dropped a 35-piece 🍗 and 
-        Tyler Warren added 18. That was wraps.  
+        <strong>Mish</strong> finally got JJettas ✈️ to pop with 23.6, but Caleb Williams
+        was running for his life 📦 and Kenneth Walker hit the injury tent 🚑.
+        <strong>DD</strong> just chilled 😎 until Ashton Jeanty dropped a 35-piece 🍗 and
+        Tyler Warren added 18. That was wraps.
         📉 Verdict: <strong>Mish</strong> falls to 2-6 🥲, <strong>DD</strong> climbs back to 5-3 with a smug grin 😏.
       </p>
       <Gif src={w4gif5} alt="Week 4 Mish vs DD" />
@@ -646,11 +763,11 @@ function Recap2025Week4() {
       {/* Balls Bowl */}
       <h3>🏈 <strong>Champ-Balls</strong> (124.26) vs <strong>Shaw-Balls</strong> (104.30) ⚾</h3>
       <p>
-        Josh Allen 🪄 cooked for 29.8 and Gibbs remembered how to football 🏃‍♂️. 
-        That’s literally all <strong>Champ-Balls</strong> needed.  
-        <strong>Shaw-Balls</strong>? He started Jake Browning 🤯 for 5.4 while Penix dropped 
-        24.7 on the bench. Drake London tried to carry 🦸 but the rest was mid 😐.  
-        🫤 Verdict: <strong>Champ-Balls</strong> wins the Balls Bowl. Honestly this was like 
+        Josh Allen 🪄 cooked for 29.8 and Gibbs remembered how to football 🏃‍♂️.
+        That’s literally all <strong>Champ-Balls</strong> needed.
+        <strong>Shaw-Balls</strong>? He started Jake Browning 🤯 for 5.4 while Penix dropped
+        24.7 on the bench. Drake London tried to carry 🦸 but the rest was mid 😐.
+        🫤 Verdict: <strong>Champ-Balls</strong> wins the Balls Bowl. Honestly this was like
         watching slap fights at Chuck E. Cheese 🐭.
       </p>
       <Gif src={w4gif6} alt="Week 4 Champ-Balls vs Shaw-Balls" />
@@ -658,11 +775,11 @@ function Recap2025Week4() {
       {/* McCool vs JD */}
       <h3>🤡 <strong>McCool</strong> (138.90) vs <strong>Pound It Noggin</strong> (90.38) 💀</h3>
       <p>
-        <strong>McCool</strong> came alive 🔥 with Bucky Irving cooking defenders for 27.5 
-        and Hurts + Marvin Harrison Jr. carrying the vibes 💪.  
-        <strong>JD</strong>? Bro is now Pound It 0-8 🚫. Daniel Jones put up garbage stats 🗑️ 
-        and Keenan Allen ghosted like it was Halloween 🎃. Dak Prescott’s 37.9 on the bench 
-        is comedy-tier clownery 🤡.  
+        <strong>McCool</strong> came alive 🔥 with Bucky Irving cooking defenders for 27.5
+        and Hurts + Marvin Harrison Jr. carrying the vibes 💪.
+        <strong>JD</strong>? Bro is now Pound It 0-8 🚫. Daniel Jones put up garbage stats 🗑️
+        and Keenan Allen ghosted like it was Halloween 🎃. Dak Prescott’s 37.9 on the bench
+        is comedy-tier clownery 🤡.
         ☠️ Verdict: <strong>McCool</strong> dubs, <strong>JD</strong> turns into the meme team of the league.
       </p>
       <Gif src={w4gif7} alt="Week 4 McCool vs JD" />
@@ -675,28 +792,23 @@ function Recap2025Week4() {
 }
 
 function Recap2025Week5() {
-  const week5AudioRef = React.useRef(null);
-  const playW5 = () => week5AudioRef.current?.play();
-  const pauseW5 = () => week5AudioRef.current?.pause();
+
 
   return (
     <article style={{ marginTop: "1.25rem" }}>
       <div className="recap-content">
-                {/* Top audio CTA for Week 5 */}
+        {/* Top audio CTA for Week 5 */}
         <div className="voiceover-bar">
           <h3>🎧 Week 5 Recap — Trump Voiceover</h3>
-          <audio ref={week5AudioRef} src={week5VO} preload="auto" />
-          <div style={{ display: "flex", gap: "10px", justifyContent: "center", marginTop: "0.5rem" }}>
-            <button className="voiceover-btn" onClick={playW5}>▶️ Play</button>
-            <button className="voiceover-btn" onClick={pauseW5}>⏸️ Pause</button>
-          </div>
+          <AudioPlayer src={week5VO} label="Week 5 Recap — Trump Voiceover" />
+          
         </div>
 
         <h2>Week 5 Laser Sharks Bounce Edition</h2>
 
         <p>
-          A few people bouncing around in the standings. Thanks ChatGPT, I used her again, 
-          we aren't fighting any more, she's nice. 
+          A few people bouncing around in the standings. Thanks ChatGPT, I used her again,
+          we aren't fighting any more, she's nice.
         </p>
 
         {/* Standings Table */}
@@ -819,25 +931,14 @@ function Recap2025Week5() {
 }
 /** ---- 2025 WEEK 6 CONTENT ---- */
 function Recap2025Week6() {
-const audioRef = React.useRef(null);
-const playVO = () => audioRef.current?.play();
-const pauseVO = () => audioRef.current?.pause();
-
 
   return (
     <article style={{ marginTop: "1.25rem" }}>
       {/* Top audio CTA */}
       <div className="voiceover-bar">
   <h3>🎧 Week 6 Recap — Morgan Freeman Narration</h3>
-  <audio ref={audioRef} src={week6VO} preload="auto" />
-  <div style={{ display: "flex", gap: "10px", justifyContent: "center", marginTop: "0.5rem" }}>
-    <button className="voiceover-btn" onClick={playVO}>
-      ▶️ Play
-    </button>
-    <button className="voiceover-btn" onClick={pauseVO}>
-      ⏸️ Pause
-    </button>
-  </div>
+  <AudioPlayer src={week6VO} label="Week 6 Recap — Morgan Freeman Narration" />
+
 </div>
 
 
@@ -852,7 +953,7 @@ const pauseVO = () => audioRef.current?.pause();
 
       {/* Marcello */}
       <h4><strong className="glow">Marcello (Slippery Jack)</strong> — 160.04</h4>
-      <p>Marcello gets the top score with 160 points 
+      <p>Marcello gets the top score with 160 points
 He’d been down there in the dark for weeks, scraping at the walls. But this time, he broke through again with his 2nd top score of the season. One lineup, one perfect escape, and the man found daylight. One-hundred-sixty points of pure, clean freedom… you could almost hear the rain washing the season off his shoulders.</p>
       <p>He is now 9 and 3 on the season, up 2 spots from last week. He has been quietly hiding in the shadows of Debo and Fischer and he can see the light now, the sweet sweet light. </p>
       <Gif src={w6gif1} alt="Week 6 — Marcello" />
@@ -867,7 +968,7 @@ He’d been down there in the dark for weeks, scraping at the walls. But this ti
       {/* JD */}
       <h4><strong className="glow">JD (Pound It Noggin)</strong> — 146.24</h4>
       <p>JD gets the 3rd highest score with 146 points.
- The kid kept hammering at the wall. Weeks of near-misses, and now the light finally came through. One-hundred-forty-six points. When the gate opened, he didn’t sprint—he just walked, calm, like a man who always 
+ The kid kept hammering at the wall. Weeks of near-misses, and now the light finally came through. One-hundred-forty-six points. When the gate opened, he didn’t sprint—he just walked, calm, like a man who always
 knew this day would come.</p>
       <p>He is now 4 and 8 and moved up 2 spots to 9th, still garbage but even the garbage man needs hope. This is is 2nd week in a row in the top 6 and who knows, maybe he’s figured out the system.</p>
       <Gif src={w6gif3} alt="Week 6 — JD" />
@@ -881,25 +982,25 @@ knew this day would come.</p>
 
       {/* Gus */}
       <h4><strong className="glow">Gus (Prison Panther)</strong> — 128.96</h4>
-      <p>Gus gets the 5th highest score with 129 points. 
+      <p>Gus gets the 5th highest score with 129 points.
  The Panther roared again. A few bad weeks had left him in solitary, but Week Six let him stretch those claws. One-hundred-twenty-nine points of revenge. He’s not out yet… but you can smell freedom on the wind.</p>
       <p>He is now 7 and 5 holding steady at 5th place. Gus has improved the most thus far, starting the season in dead last but tasting the sweet sweet nectar of redemption.</p>
       <Gif src={w6gif5} alt="Week 6 — Gus" />
 
       {/* Mish */}
       <h4><strong className="glow">Mish (DA BEARS)</strong> — 108.68</h4>
-      <p>Your warden Mish got the 6th highest score with 109 glorious points. 
+      <p>Your warden Mish got the 6th highest score with 109 glorious points.
  The Mish looked tired—tired of the noise, the injuries, the hope that hurts when it dies. One-hundred-nine glorious points and a spark that won’t quit. Some men keep digging because they don’t know how to stop. That’s Mish.</p>
       <p>He is now 5 and 7 and moved up one spot to 8th. He didn’t even care that he lost this week to Gus, for his plethora of Bears finally came through and got him the one win, partial victory is so so sweet, like freedom you didn’t ask for but came tightly wrapped in a bag that he shit out once he cleared security. </p>
       <Gif src={w6gif6} alt="Week 6 — Mish" />
 
       {/* Fischer */}
       <h4><strong className="glow">Fischer (Dice Roll Aaron)</strong> — 103.32</h4>
-      <p>Fischer suffered his 4th loss in a row with the 7th highest score of one-hundred-three points. 
+      <p>Fischer suffered his 4th loss in a row with the 7th highest score of one-hundred-three points.
  The dice came up short this time. One-hundred-three. Not bad, not good… just stuck in the middle of the yard watching others climb. He’ll find his numbers again. He always does.</p>
       <p>His record is now 8 and 4 and dropped to 3rd place when he was the top dog just 2 short weeks ago.</p>
       <Gif src={w6gif7} alt="Week 6 — Fischer" />
-
+     
       {/* Scham-Balls */}
       <h4><strong className="glow">Scham-Balls (Team Steiners)</strong> — 101.60</h4>
       <p>Scham-Balls got the 8th highest score with one-hundred-two points.
@@ -909,7 +1010,7 @@ knew this day would come.</p>
 
       {/* Welsch */}
       <h4><strong className="glow">Welsch (smakdown)</strong> — 98.94</h4>
-      <p>Welsch got the 9th highest score with our first sub 100 at ninety-nine points
+  <p>Welsch  got the 9th highest score with our first sub 100 at ninety-nine points
  Ninety-nine and the sound of rain on concrete. Every touchdown that wasn’t, every yard that fell short—he felt them all. There’s a certain quiet to defeat, and Welsch wore it like a coat.</p>
       <p>He is now 3 and 9 on the season and dropped one spot to 11th. He is the juicy juicy meat between the McCool—JD and Shaw sandwich.</p>
       <Gif src={w6gif9} alt="Week 6 — Welsch" />
@@ -919,7 +1020,7 @@ knew this day would come.</p>
       <p>Williams got the 10th highest score with ninety-eight points  Ninety-eight, and still working his way through the pipe. There’s a tunnel there—you can see it in his eyes. He’ll get out soon. He doesn’t like being a bitch and a plans on getting the BJ’s instead of giving them.</p>
       <p>He is now 7 and 5 and only dropped one spot to 4th place in Laser Sharks</p>
       <Gif src={w6gif10} alt="Week 6 — Williams" />
-
+   
       {/* Debo */}
       <h4><strong className="glow">Debo (Happy Hour)</strong> — 96.78</h4>
       <p>Debo got the 2nd lowest score with  ninety-seven points.   Ninety-seven and a laugh that echoes through the cell block. The scoreboard lies sometimes. He’s playing for pride now—and a little fear for anyone who draws him next.</p>
@@ -929,7 +1030,7 @@ His record is still a solid 10 and 2 and he sits a top the Laser Shark standings
 
       {/* McCool */}
       <h4><strong className="glow">McCool (Hingle McCringleberry)</strong> — 84.02</h4>
-      <p>McCool got the lowest score by a whole bunch with only eighty-four points.  Eighty-four. Lowest of the week, but he took it like a man who’s seen worse. Every league needs somebody to carry the weight of last place. He’s our canary in the mine—and somehow, he still sings.</p>
+  <p>McCool  got the lowest score by a whole bunch with only eighty-four points.  Eighty-four. Lowest of the week, but he took it like a man who’s seen worse. Every league needs somebody to carry the weight of last place. He’s our canary in the mine—and somehow, he still sings.</p>
       <p>His record is now 4 and 8 and he dropped two spots the 10th. </p>
       <Gif src={w6gif12} alt="Week 6 — McCool" />
 
@@ -939,7 +1040,7 @@ His record is still a solid 10 and 2 and he sits a top the Laser Shark standings
       <p>I guess I just miss the sound of Sunday. The quiet before the storm. The moment when you still believe that this… could be the week you break free.</p>
       <p>Maybe I’ll see my team climb that wall. Maybe I won’t. But I hope.</p>
       <p>I hope to make the playoffs. I hope the waiver gods have mercy. I hope I can make it across that border… to the land of trophies and bragging rights… where the sun never sets on the Laser Sharks.</p>
-      <p>One thing seems to be abundantly certain, no one with the last name of Balls will be released from the depths of Laser Shark obscurity this year.</p>
+   <p>One thi ng seems to be abundantly certain, no one with the last name of Balls will be released from the depths of Laser Shark obscurity this year.</p>
       <p>And finally, in the immortal words of JD Ley, Eat a Dick</p>
       <p>Fuck fuck, fuckity fuck balls shit face doggy shit gonorrhea fucky fuck. Dammit, Mish made me say that.</p>
       <p><strong>— Mish….OUT!</strong></p>
@@ -951,7 +1052,135 @@ His record is still a solid 10 and 2 and he sits a top the Laser Shark standings
   );
 }
 
+/** ---- 2025 WEEK 7 CONTENT ---- */
+function Recap2025Week7() {
 
+
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      {/* 🎧 Audio CTA */}
+{/* 🎧 Audio CTA */}
+<div className="voiceover-bar">
+  <h3>🎧 Week 7 Recap — Al Michaels × John Madden Edition</h3>
+  <AudioPlayer src={week7VO} label="Week 7 Recap — Al Michaels × John Madden Edition" />
+</div>
+
+
+      <h2>Week 7 — “Sunday Night Lights Edition”</h2>
+
+      {/* 🔝 Movement Table (Week 4 → Week 7) */}
+      <div className="standings-movement-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Manager</th>
+              <th>Week 4 Rank</th>
+              <th>Week 7 Rank</th>
+              <th>Movement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong className="glow-green">Marcello</strong></td><td>3</td><td>1</td><td><Arrow dir="up" change="2" /></td></tr>
+            <tr><td><strong className="glow-green">Debo</strong></td><td>2</td><td>2</td><td>–</td></tr>
+            <tr><td><strong className="glow-green">Mark</strong></td><td>4</td><td>3</td><td><Arrow dir="up" change="1" /></td></tr>
+            <tr><td><strong className="glow-green">Fischer</strong></td><td>1</td><td>4</td><td><Arrow dir="down" change="3" /></td></tr>
+            <tr><td><strong className="glow-green">Scham</strong></td><td>6</td><td>5</td><td><Arrow dir="up" change="1" /></td></tr>
+            <tr><td><strong className="glow-green">DD</strong></td><td>5</td><td>6</td><td><Arrow dir="down" change="1" /></td></tr>
+            <tr><td><strong className="glow-green">Gus</strong></td><td>8</td><td>7</td><td><Arrow dir="up" change="1" /></td></tr>
+            <tr><td><strong className="glow-green">JD</strong></td><td>11</td><td>8</td><td><Arrow dir="up" change="3" /></td></tr>
+            <tr><td><strong className="glow-green">McCool</strong></td><td>9</td><td>9</td><td>–</td></tr>
+            <tr><td><strong className="glow-green">Mish</strong></td><td>10</td><td>10</td><td>–</td></tr>
+            <tr><td><strong className="glow-green">Welsch</strong></td><td>7</td><td>11</td><td><Arrow dir="down" change="4" /></td></tr>
+            <tr><td><strong className="glow-green">Shaw</strong></td><td>12</td><td>12</td><td>–</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <Gif src={w7gif1} alt="Week 7 Opening GIF" />
+
+      {/* 📣 VERBATIM NARRATION SCRIPT */}
+      <div className="narration-block">
+        <h3>🎙️ Laser Sharks Week 7 Recap — Al Michaels × John Madden Edition</h3>
+
+        <p><strong>Al Michaels:</strong></p>
+        <p>“Good evening, folks — Week 7 was the kind of fantasy Sunday that makes legends and breaks souls. Points everywhere, and a few managers wondering why they even drafted tight ends. Let’s start at the top.”</p>
+ <Gif src={w7gif2} alt="Matchup 1" />
+        <h3>1️⃣ Mark Williams (176) def. Don ‘Double D’s’ Debone (133) — Primetime Shootout</h3>
+
+        <p><strong>Al Michaels:</strong></p>
+        <p>“Mark Williams put up a league-best 176 — Matthew Stafford 37, Christian McCaffrey 40, A.J. Brown 29, and Jordan Addison 23. Even kicker Brandon Aubrey added 17. DD countered with Justin Herbert 39, CeeDee Lamb 23, and Tyler Warren 17, but Ashton Jeanty and Kenneth Gainwell combined for just 7. That sealed it.”</p>
+
+        <p><strong>John Madden:</strong></p>
+        <p>“Yeah Al, that’s like tryin’ to tackle a freight train with a pool noodle — boom! McCaffrey was cheatin’ on the controller. DD didn’t play bad; Mark just went supernova.”</p>
+
+        <Gif src={w7gif3} alt="Matchup 2" />  
+
+        <h3>2️⃣ JD Ley (175) def. Mish (97)</h3>
+
+        <p><strong>Al Michaels:</strong></p>
+        <p>“JD Ley exploded for 175. Dak Prescott 29, Ja’Marr Chase 39, Keenan Allen 30, D’Andre Swift 22, and Kyren Williams 26 — total domination. Mish’s Caleb Williams managed 6, Justin Jefferson 13, and DJ Moore 8 while leaving Lamar Jackson’s 44 on the bench. JD jumps three spots to #8.”</p>
+
+        <p><strong>John Madden:</strong></p>
+        <p>“JD’s team looked like a video game demo, Al — touchdown after touchdown — boom! Mish brought a knife to a shoot-out and forgot to charge it first.”</p>
+
+      <Gif src={w7gif4} alt="Matchup 3" />
+
+        <h3>3️⃣ Scham-Balls (159) def. Gus ‘Prison Panther’ Miller (98) — Primetime Shootout</h3>
+
+        <p><strong>Al Michaels:</strong></p>
+        <p>“Scham-Balls kept rolling at 159 thanks to Jahmyr Gibbs 38, Davante Adams 27, Tee Higgins 22, and Chris Olave 27. Gus got 33 from Joe Flacco and 21 from Jaylen Warren, but Raheem Mostert’s 1 and Evan Engram’s 9 dragged him under.”</p>
+
+        <p><strong>John Madden:</strong></p>
+        <p>“Gibbs was run-nin’ like he owed somebody money — boom! That kid was electric. Gus’s team looked like they missed the bus to the stadium.”</p>
+
+       <Gif src={w7gif5} alt="Matchup 4" />
+
+        <h3>4️⃣ Shawn McCool (152) def. Shaw-Balls (122) — Barely Worth Mentioning Matchup of the Week</h3>
+
+        <p><strong>Al Michaels:</strong></p>
+        <p>“McCool tops Shaw-Balls 152 to 122 with Jalen Hurts 31, Jonathan Taylor 34, DeVonta Smith 34, and Travis Kelce 25. Cam Skattebo and Rhamondre Stevenson added 17 each. Shaw-Balls had Jayden Daniels 21 and Marvin Mims 16, but his top WRs Drake London and Marvin Harrison combined for under 20. Bench production was quiet — nobody over 13.”</p>
+
+        <p><strong>John Madden:</strong></p>
+        <p>“That’s power football with style, Al — Taylor and Hurts just kept hittin’ the hole — boom! Shaw-Balls needed somebody to step up and nobody answered the phone.”</p>
+
+        <Gif src={w7gif6} alt="Matchup 5" />
+
+        <h3>5️⃣ Marcello ‘Slippery Jack’ Pollidori (128) def. Fischer ‘Dice Roll Aaron’ (122) — Primetime Grind</h3>
+
+        <p><strong>Al Michaels:</strong></p>
+        <p>“Marcello hangs on 128 to 122 to take #1. Josh Jacobs 29, Trey McBride 29, Dalton Schultz 19, and Javonte Williams 21 did the heavy lifting. Fischer kept pace with Aaron Rodgers 33 and Rashee Rice 23, but Darren Waller’s goose egg and Travis Etienne’s 7 were too much to overcome.”</p>
+
+        <p><strong>John Madden:</strong></p>
+        <p>“That’s how you get the top spot, Al — win ugly, grind it out. Marcello’s team was all business. Fischer rolled the dice and pulled a zero — boom! Snake eyes at tight end ain’t gonna cut it.”</p>
+
+       <Gif src={w7gif7} alt="Week 7 Outro GIF A" /> 
+
+        <h3>6️⃣ Matt Welsch (110) def. Brian ‘Debo’ Debo (106) — Barely Worth Mentioning Matchup of The Week</h3>
+
+        <p><strong>Al Michaels:</strong></p>
+        <p>“Matt Welsch sneaks past Debo 110 to 106. Amon-Ra St. Brown 21, Michael Pittman 21, Tucker Kraft 17, and Evan McPherson’s leg for 17 made the difference. Debo had Patrick Mahomes 32 and Breece Hall 16, but his supporting cast stalled.”</p>
+
+        <p><strong>John Madden:</strong></p>
+        <p>“Two teams stuck in rush-hour traffic, Al — someone had to get home first. Welsch did just enough. Debo’s fine — but you can’t expect Mahomes to carry a piano up a hill every week.”</p>
+
+     <Gif src={w7gif8} alt="Week 7 Outro GIF B" />
+
+        <p><strong>John Madden:</strong></p>
+        <p>“And there you have it — boom! Touchdowns, meltdowns, and just enough chaos to keep the Laser Sharks hungry. Next week it starts all over again... and that’s why we love this game.”</p>
+      </div>
+
+      <Gif src={w7gif9} alt="Week 7 Closing GIF 1" />
+      
+      <p style={{ marginBottom: "0.5rem" }}>— <strong>Mish Out!</strong></p>
+      
+      <Gif src={w7gif10} alt="Week 7 Closing GIF 2" />
+      <Gif src={w7gif11} alt="Week 7 Closing GIF 3" />
+    </article>
+  );
+}
+
+
+   
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
 
@@ -961,7 +1190,7 @@ function YearlyRecap({ year, week, onPickWeek }) {
         <h2>{y} Weekly Recaps</h2>
         <p>
           <em>chill bros, coming soon</em>
-        </p>
+     </p>
       </div>
     );
   }
@@ -982,21 +1211,24 @@ function YearlyRecap({ year, week, onPickWeek }) {
       <h3>Week {w} Recap</h3>
     </div>
 
-    {w === 1 ? (
-      <Recap2025Week1 />
-    ) : w === 2 ? (
-      <Recap2025Week2 />
-    ) : w === 3 ? (
-      <Recap2025Week3 />
-    ) : w === 4 ? (
-      <Recap2025Week4 />
-    ) : w === 5 ? (
-      <Recap2025Week5 />
-    ) : w === 6 ? (
-      <Recap2025Week6 />
-    ) : (
-      <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
-    )}
+{w === 1 ? (
+  <Recap2025Week1 />
+) : w === 2 ? (
+  <Recap2025Week2 />
+) : w === 3 ? (
+  <Recap2025Week3 />
+) : w === 4 ? (
+  <Recap2025Week4 />
+) : w === 5 ? (
+  <Recap2025Week5 />
+) : w === 6 ? (
+  <Recap2025Week6 />
+) : w === 7 ? (
+  <Recap2025Week7 />
+) : (
+  <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
+)}
+
 
     {/* Prev/Next Nav */}
     <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
@@ -1015,9 +1247,10 @@ export default function WeeklyMatchupRecaps() {
     return YEARS.includes(Number(y)) ? y : "2025";
   }, [yearParam]);
 
-  const selectedWeek = useMemo(() => {
-    return weekParam ? String(weekParam) : "";
-  }, [weekParam]);
+const selectedWeek = useMemo(() => {
+  return weekParam ? String(weekParam) : "";
+}, [weekParam]);
+
 
   const handlePickYear = (y) => {
     navigate(`/weekly-matchup-recaps/${y}`);
@@ -1032,12 +1265,13 @@ export default function WeeklyMatchupRecaps() {
     }
   };
 
-  // 🔑 Build a unique comments key for Giscus
-  const pageKey = selectedWeek
-    ? `weekly-${selectedYear}-week-${selectedWeek}`
-    : selectedYear
-    ? `weekly-${selectedYear}`
-    : "weekly-recaps-root";
+// 🔑 Build a unique comments key for Giscus
+const pageKey = selectedWeek
+  ? `weekly-${selectedYear}-week-${selectedWeek}`
+  : selectedYear
+  ? `weekly-${selectedYear}`
+  : "weekly-recaps-root";
+
 
   return (
     <div className="recap-wrapper content-wrapper">
