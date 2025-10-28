@@ -105,6 +105,19 @@ import w7gif9 from "../assets/weekly-recaps/week-7-loop-9.gif";
 import w7gif10 from "../assets/weekly-recaps/week-7-loop-10.gif";
 import w7gif11 from "../assets/weekly-recaps/week-7-loop-11.gif";
 
+// 🎥 Week 8 media
+import week8loop1 from "../assets/weekly-recaps/week-8-loop-1.gif";
+import week8loop2 from "../assets/weekly-recaps/week-8-loop-2.gif";
+import week8loop9 from "../assets/weekly-recaps/week-8-loop-9.gif";
+import week8loop10 from "../assets/weekly-recaps/week-8-loop-10.gif";
+import week8shark from "../assets/weekly-recaps/week-8-shark.MP4";
+import week8bear from "../assets/weekly-recaps/week-8-bear.MP4";
+import week8honey from "../assets/weekly-recaps/week-8-honey.MP4";
+import week8lion from "../assets/weekly-recaps/week-8-lion.MP4";
+import week8princess from "../assets/weekly-recaps/week-8-princess.MP4";
+import week8frog from "../assets/weekly-recaps/week-8-frog.MP4";
+import week8VO from "../assets/weekly-recaps/week-8-voiceover.mp3";
+
 
 function formatTime(secs) {
   if (!Number.isFinite(secs)) return "0:00";
@@ -192,6 +205,7 @@ const Arrow = ({ dir, change }) => {
     </span>
   );
 };
+
 
 
 
@@ -1125,7 +1139,7 @@ function Recap2025Week7() {
 
       <Gif src={w7gif4} alt="Matchup 3" />
 
-        <h3>3️⃣ Scham-Balls (159) def. Gus ‘Prison Panther’ Miller (98) — Primetime Shootout</h3>
+        <h3>3️⃣ Scham-Balls (159) def. Gus ‘Prison Panther’ Miller (98)</h3>
 
         <p><strong>Al Michaels:</strong></p>
         <p>“Scham-Balls kept rolling at 159 thanks to Jahmyr Gibbs 38, Davante Adams 27, Tee Higgins 22, and Chris Olave 27. Gus got 33 from Joe Flacco and 21 from Jaylen Warren, but Raheem Mostert’s 1 and Evan Engram’s 9 dragged him under.”</p>
@@ -1135,7 +1149,7 @@ function Recap2025Week7() {
 
        <Gif src={w7gif5} alt="Matchup 4" />
 
-        <h3>4️⃣ Shawn McCool (152) def. Shaw-Balls (122) — Barely Worth Mentioning Matchup of the Week</h3>
+        <h3>4️⃣ Shawn McCool (152) def. Shaw-Balls (122)</h3>
 
         <p><strong>Al Michaels:</strong></p>
         <p>“McCool tops Shaw-Balls 152 to 122 with Jalen Hurts 31, Jonathan Taylor 34, DeVonta Smith 34, and Travis Kelce 25. Cam Skattebo and Rhamondre Stevenson added 17 each. Shaw-Balls had Jayden Daniels 21 and Marvin Mims 16, but his top WRs Drake London and Marvin Harrison combined for under 20. Bench production was quiet — nobody over 13.”</p>
@@ -1145,7 +1159,7 @@ function Recap2025Week7() {
 
         <Gif src={w7gif6} alt="Matchup 5" />
 
-        <h3>5️⃣ Marcello ‘Slippery Jack’ Pollidori (128) def. Fischer ‘Dice Roll Aaron’ (122) — Primetime Grind</h3>
+        <h3>5️⃣ Marcello ‘Slippery Jack’ Pollidori (128) def. Fischer ‘Dice Roll Aaron’ (122)</h3>
 
         <p><strong>Al Michaels:</strong></p>
         <p>“Marcello hangs on 128 to 122 to take #1. Josh Jacobs 29, Trey McBride 29, Dalton Schultz 19, and Javonte Williams 21 did the heavy lifting. Fischer kept pace with Aaron Rodgers 33 and Rashee Rice 23, but Darren Waller’s goose egg and Travis Etienne’s 7 were too much to overcome.”</p>
@@ -1178,6 +1192,199 @@ function Recap2025Week7() {
     </article>
   );
 }
+
+/** ---- 2025 WEEK 8 CONTENT ---- */
+function Recap2025Week8() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      {/* 🎧 Audio CTA (hook your Mediai mp3 later) */}
+      <div className="voiceover-bar">
+        <h3>🎧 Week 8 Recap — David Attenborough Narration</h3>
+        <AudioPlayer src={week8VO} label="Week 8 Recap — David Attenborough Narration" />
+      </div>
+
+      <h2>🦈 Week 8 — Predator vs. Prey</h2>
+
+      <p>The smell of blood drifted through the digital jungle.</p>
+      <p>Across the plains of the Laser Sharks League, predators stirred, hungry for points, while the wounded and the unprepared huddled in quiet fear.</p>
+      <p>Only the ruthless would eat.</p>
+      <p>Only the hungry would survive.</p>
+
+      <p>In Honor of National Tight End Week</p>
+      {/* Gif 1 goes here */}
+      <img src={week8loop1} alt="Week 8 Loop 1" className="recap-media" />
+
+      <h3>📊 Movement Across the Food Chain (Week 7 → Week 8)</h3>
+
+      {/* Table matching your style */}
+      <div className="standings-movement-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Manager</th>
+              <th>Week 7</th>
+              <th>Week 8</th>
+              <th>Movement</th>
+            </tr>
+          </thead>
+<tbody>
+  <tr><td><strong className="glow-green">Debo</strong></td><td>10–4</td><td>12–4</td><td><Arrow dir="up" change="1" /></td></tr>
+  <tr><td><strong className="glow-green">Marcello</strong></td><td>11–3</td><td>11–5</td><td><Arrow dir="down" change="1" /></td></tr>
+  <tr><td><strong className="glow-green">Fischer</strong></td><td>8–6</td><td>10–6</td><td><Arrow dir="up" change="1" /></td></tr>
+  <tr><td><strong className="glow-green">Mark</strong></td><td>9–5</td><td>9–7</td><td><Arrow dir="down" change="1" /></td></tr>
+  <tr><td><strong className="glow-green">Scham-Balls</strong></td><td>8–6</td><td>9–7</td><td>–</td></tr>
+  <tr><td><strong className="glow-green">DD</strong></td><td>8–6</td><td>9–7</td><td>–</td></tr>
+  <tr><td><strong className="glow-green">Gus</strong></td><td>7–7</td><td>8–8</td><td>–</td></tr>
+  <tr><td><strong className="glow-green">McCool</strong></td><td>6–8</td><td>7–9</td><td><Arrow dir="up" change="1" /></td></tr>
+  <tr><td><strong className="glow-green">Mish</strong></td><td>5–9</td><td>7–9</td><td><Arrow dir="up" change="1" /></td></tr>
+  <tr><td><strong className="glow-green">JD</strong></td><td>6–8</td><td>6–10</td><td><Arrow dir="down" change="2" /></td></tr>
+  <tr><td><strong className="glow-green">Welsch</strong></td><td>4–10</td><td>4–10</td><td>–</td></tr>
+  <tr><td><strong className="glow-green">Shaw</strong></td><td>2–12</td><td>2–14</td><td>–</td></tr>
+</tbody>
+
+        </table>
+      </div>
+
+      <h3>🎙️ The Hunt Begins</h3>
+      <p>Dawn breaks over the fantasy wilderness. The air hums with tension — predators rising from slumber, eyes locked on their unsuspecting prey. For every roar of triumph, there will be a whimper. For every feast, a carcass left behind.</p>
+
+      {/* Gif 2 goes here */}
+      <img src={week8loop2} alt="Week 8 Loop 2" className="recap-media" />
+
+      <h3>🏆 High Score of the Week</h3>
+      <h4><strong>Welsch</strong> devours <strong>Mark</strong> — 187 to 80</h4>
+
+      {/* original text + appended visual arrows */}
+     
+      
+<p>
+  <strong>Mark</strong> 9–7 <Arrow dir="down" change="1" /> | <strong>Welsch</strong> 4–10 –
+</p>
+
+
+      <p>In the murky depths, a shadow moves.</p>
+      <p><strong>Welsch</strong>, the great apex shark, circles a wounded creature thrashing helplessly near the surface.</p>
+      <p><strong>Mark</strong> — four players on bye, three barely alive — never stood a chance.</p>
+      <p>Then comes the strike.</p>
+      <p>Six players explode past twenty points, Tucker Kraft leading the frenzy with thirty-four.</p>
+      <p>When the feeding stops, there’s nothing left but bubbles… and shame.</p>
+
+      {/* Gif 3 goes here */}
+      <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+  <source src={week8shark} type="video/mp4" />
+</video>
+
+      <h3>🥈 Second High Score</h3>
+      <h4><strong>Fischer</strong> mauls <strong>McCool</strong> — 175 to 151</h4>
+<p>
+  <strong>Fischer</strong> 10–6 <Arrow dir="up" change="1" /> | <strong>McCool</strong> 7–9 <Arrow dir="up" change="1" />
+</p>
+
+
+      <p>From the mountains, the grizzly descends.</p>
+      <p>
+        <strong>Fischer’s</strong> paws crush everything in his path — <strong>James Cook</strong> and Derrick Henry tearing through the forest like unstoppable muscle.
+      </p>
+      <p>Below, <strong>McCool</strong>, a fever-mad deer, kicks wildly — brief flashes of brilliance before the claws find his throat.</p>
+      <p>Rice avoids prison long enough to join the slaughter.</p>
+      <p>The bear eats well tonight.</p>
+
+      {/* Gif 4 goes here */}
+     <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+  <source src={week8bear} type="video/mp4" />
+</video>
+
+      <h3>🥉 Third High Score</h3>
+      <h4><strong>Debo</strong> slaughters <strong>Gus</strong> — 154 to 102</h4>
+
+<p>
+  <strong>Debo</strong> 12–4 <Arrow dir="up" change="1" /> (#1) | <strong>Gus</strong> 8–8 –
+</p>
+
+      <p>Deep in the grasslands, a rattlesnake strikes again and again.</p>
+      <p>But <strong>Debo</strong>, the honey badger, feels no pain.</p>
+      <p>Mahomes and Breece Hall rip chunks from the scoreboard as <strong>Debo</strong> rises, blood-mouthed and fearless, to claim the #1 perch.</p>
+      <p><strong>Gus</strong> thrashes, fangs snapping, but his tight end sleeps through Tight End Week — a fatal mistake.</p>
+      <p>The honey badger has zero fucks left to give.</p>
+
+      {/* Gif 5 goes here */}
+      <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+  <source src={week8honey} type="video/mp4" />
+</video>
+
+      <h3>🦁 The Lion and the Donkey</h3>
+      <h4><strong>Mish</strong> annihilates <strong>Marcello</strong> — 102 to 68</h4>
+
+<p>
+  <strong>Marcello</strong> 11–5 <Arrow dir="down" change="1" /> | <strong>Mish</strong> 7–9 <Arrow dir="up" change="1" />
+</p>
+
+
+      <p>Across the savannah, a roar echoes.</p>
+      <p><strong>Mish</strong> — the lion — emerges from the dust, hungry and unbothered.</p>
+      <p><strong>Marcello</strong> limps into view, a three-legged donkey braying helplessly.</p>
+      <p>The hunt lasts mere moments.</p>
+      <p>Two Chicago Bears RBs at <strong>Mish’s</strong> side, Gadsden and his kicker leading the charge, and soon the carcass lies still.</p>
+      <p>Every one of <strong>Marcello’s</strong> players scored… yet none survived.</p>
+      <p>Nature can be cruel.</p>
+      <p>And <strong>Mish</strong>? He’s just doing what lions do.</p>
+
+      {/* Gif 6 goes here */}
+      <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+  <source src={week8lion} type="video/mp4" />
+</video>
+
+      <h3>🍩 Barely Worth Mentioning (Runner-Up)</h3>
+      <h4><strong>Scham-Balls</strong> out-waddles <strong>JD</strong> — 101 to 83</h4>
+
+<p>
+  <strong>Scham-Balls</strong> 9–7 – | <strong>JD</strong> 6–10 <Arrow dir="down" change="2" />
+</p>
+
+      <p>In this strange corner of the ecosystem, chaos reigns.</p>
+      <p>A glitter-covered predator in a princess gown chases a rolling feast — a donut on a string.</p>
+      <p><strong>JD</strong> nearly escapes, propelled by two stars over twenty points… but the rest of his team collapses like soggy pastry.</p>
+      <p>The princess feeds again.</p>
+
+      {/* Gif 7 goes here */}
+     <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+  <source src={week8princess} type="video/mp4" />
+</video>
+
+      <h3>🐸 Barely Worth Mentioning</h3>
+      <h4><strong>DD</strong> edges <strong>Shaw-Balls</strong> — 93 to 87</h4>
+
+<p>
+  <strong>DD</strong> 9–7 – | <strong>Shaw-Balls</strong> 2–14 –
+</p>
+
+      <p>A swamp stirs.</p>
+      <p>The frog-muppet lurks beneath the surface, eyes unblinking.</p>
+      <p>When the helpless kitten approaches to drink, the strike is quick — awkward, maybe, but deadly enough.</p>
+      <p>Both will be forgotten by dusk, but one hops away a victor.</p>
+
+      {/* Gif 8 goes here */}
+      <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+  <source src={week8frog} type="video/mp4" />
+</video>
+
+    
+      <p>And so the sun sets on Week 8.</p>
+      <p>The predators rest, bellies full, as the weak limp into the shadows to heal — or to hide.</p>
+      <p>But make no mistake.</p>
+      <p>In this league, mercy is extinct.</p>
+      <p>Next week, new prey will stumble into the clearing, and the feeding will begin again.</p>
+
+      <p><strong>Mish Out.</strong></p>
+
+      {/* Gif 9 & 10 go here */}
+      <img src={week8loop9} alt="Week 8 Loop 9" className="recap-media" />
+<img src={week8loop10} alt="Week 8 Loop 10" className="recap-media" />
+    </article>
+  );
+}
+
+
 
 
    
@@ -1225,9 +1432,12 @@ function YearlyRecap({ year, week, onPickWeek }) {
   <Recap2025Week6 />
 ) : w === 7 ? (
   <Recap2025Week7 />
+) : w === 8 ? (
+  <Recap2025Week8 />
 ) : (
   <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
 )}
+
 
 
     {/* Prev/Next Nav */}

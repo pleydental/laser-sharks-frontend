@@ -941,3 +941,12 @@ h1, h2, h3, p {
   transform: scale(1.05);
   box-shadow: 0 0 25px #00ff91;
 }
+
+.recap-media {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 1.25rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 255, 150, 0.25);
+}
