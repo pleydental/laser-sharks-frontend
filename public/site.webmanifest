@@ -1,0 +1,8 @@
+{
+  "name": "Laser Sharks Fantasy Football",
+  "short_name": "Laser Sharks",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}

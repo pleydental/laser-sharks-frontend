@@ -1,4 +1,4 @@
-// src/context/AuthContext.js
+// src/context/AuthContext.jsx
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { api } from "../lib/api"; // keep this path
 
@@ -65,4 +65,3 @@ export function AuthProvider({ children }) {
 export function useAuth() {
   return useContext(AuthContext);
 }
-

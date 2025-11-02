@@ -53,13 +53,40 @@
 }
 
 
+/* src/App.css — background base */
 .app-container {
   min-height: 100vh;
-  background: url('./assets/bg-shark.png') no-repeat center center fixed;
-  background-size: cover; /* ← This is what gives you the zoomed-in full cover look */
   color: #fff;
   font-family: 'Orbitron', sans-serif;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed; /* your mobile @media already changes this to scroll */
 }
+
+/* Modern browsers: WebP (1x/2x) */
+@supports (background-image: image-set(url("./assets/bg-shark-1600.webp") 1x)) {
+  .app-container {
+    background-image: -webkit-image-set(
+      url("./assets/bg-shark-1600.webp") 1x,
+      url("./assets/bg-shark-2560.webp") 2x
+    );
+    background-image: image-set(
+      url("./assets/bg-shark-1600.webp") 1x,
+      url("./assets/bg-shark-2560.webp") 2x
+    );
+  }
+}
+
+/* Older browsers fallback: PNG */
+@supports not (background-image: image-set(url("./assets/bg-shark-1600.webp") 1x)) {
+  .app-container {
+    background-image: url("./assets/bg-shark.png");
+  }
+}
+
+
+
 
 
 
@@ -949,4 +976,10 @@ h1, h2, h3, p {
   margin: 1.25rem auto;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 255, 150, 0.25);
+}
+
+
+/* make sure the login wrapper actually shows the bg */
+.login-bg {
+  min-height: 100vh !important;
 }

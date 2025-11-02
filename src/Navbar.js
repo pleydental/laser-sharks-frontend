@@ -1,23 +1,42 @@
 // src/Navbar.js
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Navbar.css';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "./context/AuthContext";   // ✅ use context logout
+import "./Navbar.css";
 
-const Navbar = ({ onLogout }) => {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { logout } = useAuth();                    // ✅ from context
 
-  const handleLinkClick = () => {
-    setMenuOpen(false);
+  const handleLinkClick = () => setMenuOpen(false);
+
+  const clearAllClientFlags = () => {
+    // nuke ALL auth flags
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("ls_storage");
+    localStorage.removeItem("ls_login_ts");
+    sessionStorage.removeItem("loggedIn");
+    sessionStorage.removeItem("ls_storage");
+    sessionStorage.removeItem("ls_login_ts");
+    // expire remember cookie
+    document.cookie = "ls_remember=; path=/; max-age=0";
   };
 
-const handleLogout = () => {
-  localStorage.removeItem('loggedIn');
-  sessionStorage.removeItem('loggedIn');
-  setMenuOpen(false);
-  onLogout(); // <-- THIS FIXES YOUR ERROR
-  navigate('/login');
-};
+  const handleLogout = async () => {
+    try {
+      // 1) Server-side: clear ls_session cookie
+      await logout();                              // calls /api/logout via api.js
+      // 2) Client-side: clear local/session flags + tiny cookie
+      clearAllClientFlags();
+    } catch {
+      // If server unavailable, still force local sign-out
+      clearAllClientFlags();
+    } finally {
+      setMenuOpen(false);
+      navigate("/login", { replace: true });
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -33,7 +52,7 @@ const handleLogout = () => {
         <span className="menu-label">MENU</span>
       </div>
 
-      <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+      <div className={`nav-links ${menuOpen ? "open" : ""}`}>
         <Link to="/" onClick={handleLinkClick}>Home</Link>
         <Link to="/standings" onClick={handleLinkClick}>Standings</Link>
         <Link to="/managers" onClick={handleLinkClick}>Mopes</Link>
@@ -47,6 +66,4 @@ const handleLogout = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
