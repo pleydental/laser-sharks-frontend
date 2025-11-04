@@ -39,19 +39,28 @@ export default function Login() {
   const loc = useLocation();
   const dest = loc.state?.from?.pathname || "/";
 
-  // If cookie already valid, bounce off /login.
+  // If already authenticated, prime storage and jump to home ONCE.
   useEffect(() => {
-    let cancelled = false;
+    let done = false;
     (async () => {
       try {
         const r = await fetch("/api/me", { credentials: "include" });
-        if (!cancelled && r.ok) {
-          window.location.replace("/");
+        if (!done && r.ok) {
+          // Make sure your ProtectedRoute/Auth boot reads "in"
+          localStorage.setItem("loggedIn", "true");
+          localStorage.setItem("ls_storage", "local");
+          localStorage.setItem("ls_login_ts", String(Date.now()));
+
+          if (window.location.pathname !== "/") {
+            // single navigation; no setTimeout, no double nav
+            nav("/", { replace: true });
+          }
         }
       } catch {}
     })();
-    return () => (cancelled = true);
-  }, []);
+    return () => { done = true; };
+  }, [nav]);
+
 
   const submit = async (e) => {
     e.preventDefault();
