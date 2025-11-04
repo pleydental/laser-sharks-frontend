@@ -1,67 +1,45 @@
-// src/context/AuthContext.jsx
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { api } from "../lib/api"; // keep this path
+// src/context/AuthContext.js
+import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
 
-/**
- * Status:
- *  - "checking": verifying cookie/session with backend
- *  - "in": authenticated
- *  - "out": not authenticated
- */
-
-const AuthContext = createContext({
-  status: "checking",
-  login: async (_password, _remember) => {},
-  logout: async () => {},
-});
+const AuthCtx = createContext(null);
 
 export function AuthProvider({ children }) {
-  const [status, setStatus] = useState("checking");
+  const [status, setStatus] = useState("loading"); // 'loading' | 'in' | 'out'
 
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const res = await api.me(); // expects { ok: boolean }
-        if (!cancelled) setStatus(res?.ok ? "in" : "out");
-      } catch {
-        if (!cancelled) setStatus("out");
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
+  const check = useCallback(async () => {
+    try {
+      const r = await fetch("/api/me", { credentials: "include" });
+      setStatus(r.ok ? "in" : "out");
+    } catch {
+      setStatus("out");
+    }
   }, []);
 
-  const value = useMemo(() => {
-    return {
-      status,
-      login: async (password, remember) => {
-        const res = await api.login(password, remember); // throws on !ok
-        setStatus("in");
-        return res;
-      },
-      logout: async () => {
-        try {
-          if (api.logout) {
-            await api.logout();
-          } else {
-            await fetch(`${window.__AUTH_BASE || ""}/api/logout`, {
-              method: "POST",
-              credentials: "include",
-            });
-          }
-        } finally {
-          setStatus("out");
-        }
-        return { ok: true };
-      },
-    };
-  }, [status]);
+  useEffect(() => { check(); }, [check]);
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  const login = useCallback(async (password, remember) => {
+    const r = await fetch("/api/login", {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password, remember: !!remember }),
+    });
+    if (!r.ok) throw new Error("bad password");
+    setStatus("in");
+  }, []);
+
+  const logout = useCallback(async () => {
+    try { await fetch("/api/logout", { credentials: "include" }); } catch {}
+    setStatus("out");
+  }, []);
+
+  return (
+    <AuthCtx.Provider value={{ status, login, logout, check }}>
+      {children}
+    </AuthCtx.Provider>
+  );
 }
 
 export function useAuth() {
-  return useContext(AuthContext);
+  return useContext(AuthCtx);
 }

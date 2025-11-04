@@ -1,38 +1,12 @@
-[build]
-  command = "npm run build"
-  publish = "build"
-
-# HTML should not be cached (good for deploys)
-[[headers]]
-  for = "/"
-  [headers.values]
-    Cache-Control = "no-store, max-age=0"
-[[headers]]
-  for = "/index.html"
-  [headers.values]
-    Cache-Control = "no-store, max-age=0"
-
-# ✅ Long cache for hashed assets from CRA (JS/CSS/images/videos)
-[[headers]]
-  for = "/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# (optional) any direct assets you serve from /assets/*
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# --- API proxy to Render (must match your Render service exactly) ---
+# Netlify config — proxy API to Render AUTH
 [[redirects]]
   from = "/api/*"
-  to = "https://laser-sharks-backend.onrender.com/api/:splat"
+  to   = "https://laser-sharks-auth.onrender.com/api/:splat"
   status = 200
-  force = true
+  force  = true
 
-# --- SPA fallback so deep links (e.g., /login, /rules) work on refresh ---
+# SPA fallback so deep links work
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to   = "/index.html"
   status = 200

@@ -18,18 +18,18 @@ const AppContent = React.lazy(() => import("./AppContent"));
 
 /** Only show the login page when you're logged OUT */
 function RequireLoggedOut() {
-  const { status } = useAuth(); // "in" | "out" | "checking"
-  const location = useLocation();
-
+  const { status } = useAuth();
   if (status === "checking") {
     return <div className="page-content"><p>Loading…</p></div>;
   }
   if (status === "in") {
-    const redirectTo = location.state?.from?.pathname || "/";
-    return <Navigate to={redirectTo} replace />;
+    // ✅ use React Router navigation instead of window.location.replace
+    return <Navigate to="/" replace />;
   }
   return <Login />;
 }
+
+
 
 /** Only show the main app when you're logged IN */
 function RequireLoggedIn({ children }) {

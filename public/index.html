@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script>
+  // Force the frontend to use your local auth API
+  window.__AUTH_BASE = "http://localhost:4000";
+</script>
+
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -23,6 +28,7 @@
 <!-- Optional: nicer icons for shortcuts/home screens -->
 <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicon-180x180.png" />
 <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
+
 
 
   </head>

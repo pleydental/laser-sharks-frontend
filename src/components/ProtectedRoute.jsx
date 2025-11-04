@@ -1,16 +1,17 @@
+// src/components/ProtectedRoute.jsx
 import React from "react";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-export default function ProtectedRoute() {
+export default function ProtectedRoute({ children }) {
   const { status } = useAuth();
-  const loc = useLocation();
+  const location = useLocation();
 
-  if (status === "checking") {
-    return <div className="content-wrapper">Checking access…</div>;
+  // While we don't know yet, render nothing (or a tiny splash) — NO redirect
+  if (status === "loading") return null;
+
+  if (status !== "in") {
+    return <Navigate to="/login" replace state={{ from: location }} />;
   }
-  if (status === "out") {
-    return <Navigate to="/login" replace state={{ from: loc }} />;
-  }
-  return <Outlet />;
+  return children;
 }
