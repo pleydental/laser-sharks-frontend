@@ -1429,18 +1429,22 @@ function Recap2025Week9() {
           </thead>
           <tbody>
             {/* Sorted by Week 9 rank */}
-            <tr><td><strong className="glow-green">Marcello</strong></td><td>2</td><td>1</td><td><Arrow dir="up" change="1" /></td></tr>
-            <tr><td><strong className="glow-green">Debo</strong></td><td>1</td><td>2</td><td><Arrow dir="down" change="1" /></td></tr>
-            <tr><td><strong className="glow-green">Mark</strong></td><td>4</td><td>3</td><td><Arrow dir="up" change="1" /></td></tr>
-            <tr><td><strong className="glow-green">DD</strong></td><td>6</td><td>4</td><td><Arrow dir="up" change="2" /></td></tr>
-            <tr><td><strong className="glow-green">Fischer</strong></td><td>3</td><td>5</td><td><Arrow dir="down" change="2" /></td></tr>
-            <tr><td><strong className="glow-green">Gus</strong></td><td>7</td><td>6</td><td><Arrow dir="up" change="1" /></td></tr>
-            <tr><td><strong className="glow-green">Champ-Balls</strong></td><td>5</td><td>7</td><td><Arrow dir="down" change="2" /></td></tr>
-            <tr><td><strong className="glow-green">Mish</strong></td><td>9</td><td>8</td><td><Arrow dir="up" change="1" /></td></tr>
-            <tr><td><strong className="glow-green">JD</strong></td><td>6</td><td>9</td><td><Arrow dir="down" change="3" /></td></tr>
-            <tr><td><strong className="glow-green">McCool</strong></td><td>8</td><td>10</td><td><Arrow dir="down" change="2" /></td></tr>
-            <tr><td><strong className="glow-green">Welsch</strong></td><td>11</td><td>11</td><td>–</td></tr>
-            <tr><td><strong className="glow-green">Shaw-Balls</strong></td><td>12</td><td>12</td><td>–</td></tr>
+const rows = [
+  /* Sorted by Week 9 rank */
+  <tr><td><strong className="glow-green">Marcello</strong></td><td>2</td><td>1</td><td><Arrow dir="up" change={1} /></td></tr>,
+  <tr><td><strong className="glow-green">Debo</strong></td><td>1</td><td>2</td><td><Arrow dir="down" change={1} /></td></tr>,
+  <tr><td><strong className="glow-green">Mark</strong></td><td>4</td><td>3</td><td><Arrow dir="up" change={1} /></td></tr>,
+  <tr><td><strong className="glow-green">DD</strong></td><td>6</td><td>4</td><td><Arrow dir="up" change={2} /></td></tr>,
+  <tr><td><strong className="glow-green">Fischer</strong></td><td>3</td><td>5</td><td><Arrow dir="down" change={2} /></td></tr>,
+  <tr><td><strong className="glow-green">Gus</strong></td><td>7</td><td>6</td><td><Arrow dir="up" change={1} /></td></tr>,
+  <tr><td><strong className="glow-green">Champ-Balls</strong></td><td>5</td><td>7</td><td><Arrow dir="down" change={2} /></td></tr>,
+  <tr><td><strong className="glow-green">Mish</strong></td><td>9</td><td>8</td><td><Arrow dir="up" change={1} /></td></tr>,
+  <tr><td><strong className="glow-green">JD</strong></td><td>10</td><td>9</td><td><Arrow dir="up" change={1} /></td></tr>,
+  <tr><td><strong className="glow-green">McCool</strong></td><td>8</td><td>10</td><td><Arrow dir="down" change={2} /></td></tr>,
+  <tr><td><strong className="glow-green">Welsch</strong></td><td>11</td><td>11</td><td>&mdash;</td></tr>,
+  <tr><td><strong className="glow-green">Shaw-Balls</strong></td><td>12</td><td>12</td><td>&mdash;</td></tr>,
+];
+
           </tbody>
         </table>
       </div>
