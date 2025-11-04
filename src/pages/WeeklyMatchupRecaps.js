@@ -120,19 +120,19 @@ import week8princess from "../assets/weekly-recaps/week-8-princess.MP4";
 import week8frog from "../assets/weekly-recaps/week-8-frog.MP4";
 import week8VO from "../assets/weekly-recaps/week-8-voiceover.mp3";
 
-// Week 9 GIFs
+// 🎥 Week 9 GIFs  ✅ make names match JSX usage
 import w9gif1 from "../assets/weekly-recaps/week-9-loop-1.gif";
 import w9gif4 from "../assets/weekly-recaps/week-9-loop-4.gif";
 import w9gif5 from "../assets/weekly-recaps/week-9-loop-5.gif";
-// Week 9 MP4 loops
-// If you only have the first MP4 right now, point all to it so the build works;
-// replace with unique files later (e.g., week-9-loop-b.mp4, ...-c.mp4, etc.)
+
+
+// 🎥 Week 9 MP4s (lowercase .mp4)
 import w9mp4a from "../assets/weekly-recaps/week-9-loop-a.mp4";
-import w9mp4b from "../assets/weekly-recaps/week-9-loop-b.mp4"; // temp
-import w9mp4c from "../assets/weekly-recaps/week-9-loop-c.mp4"; // temp
-import w9mp4d from "../assets/weekly-recaps/week-9-loop-d.mp4"; // temp
-import w9mp4e from "../assets/weekly-recaps/week-9-loop-e.mp4"; // temp
-import w9mp4f from "../assets/weekly-recaps/week-9-loop-f.mp4"; // temp
+import w9mp4b from "../assets/weekly-recaps/week-9-loop-b.mp4";
+import w9mp4c from "../assets/weekly-recaps/week-9-loop-c.mp4";
+import w9mp4d from "../assets/weekly-recaps/week-9-loop-d.mp4";
+import w9mp4e from "../assets/weekly-recaps/week-9-loop-e.mp4";
+import w9mp4f from "../assets/weekly-recaps/week-9-loop-f.mp4";
 
 
 function formatTime(secs) {
@@ -546,7 +546,6 @@ function Recap2025Week2() {
       <p>
         <strong>The 5th highest score</strong> goes to <strong>Debo</strong> with a 125-112 win over{" "}
         <strong>Champ-Balls</strong>. <strong>Debo</strong> stays undefeated in 3rd
-      <p>
         and <strong>Champ-Balls</strong> loses that status, falling to 7th.{" "}
         <strong>Debo</strong>’s team was solid thanks to Amon-Ra and his 40 pts.
         Only 9.3 pts from starting RBs but Dobbins in the FLEX bailed him out with
@@ -567,15 +566,18 @@ function Recap2025Week2() {
 
       <Gif src={w2gif7} alt="Week 2 loop 7" />
 
-        Ok that’s it for week 2 folks. I’ll try to keep these going despite the
-        personal anguish of looking at my team. Don't forget to hit those comments to tell me
-        how terrible my team is.
-      </p>
 
-      <p className="signoff">- <strong>Mish Out!</strong></p>
+<p>
+  Ok that’s it for week 2 folks. I’ll try to keep these going despite the
+  personal anguish of looking at my team. Don't forget to hit those comments to tell me
+  how terrible my team is.
+</p>
 
-      <Gif src={w2gif8} alt="Week 2 loop 8" />
-      <Gif src={w2gif10} alt="Week 2 loop 10" />
+<p className="signoff">- <strong>Mish Out!</strong></p>
+
+<Gif src={w2gif8} alt="Week 2 loop 8" />
+<Gif src={w2gif10} alt="Week 2 loop 10" />
+
     </article>
   );
 }
