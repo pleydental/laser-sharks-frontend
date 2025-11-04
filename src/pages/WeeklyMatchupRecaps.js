@@ -73,7 +73,7 @@ import week5VO from "../assets/weekly-recaps/week-5-trump-voiceover.mp3";
 // ---- WEEK 7 AUDIO (TopMediai output) ----
 import week7VO from "../assets/weekly-recaps/week-7-voiceover.mp3";
 // Week 9 audio 
-import week9VO from "../assets/voiceovers/week9-vo.mp3";
+import week9VO from "../assets/weekly-recaps/week9-vo.mp3";
 
 
 // ---- 2025 WEEK 6 GIFs ----
@@ -122,8 +122,6 @@ import week8VO from "../assets/weekly-recaps/week-8-voiceover.mp3";
 
 // Week 9 GIFs
 import w9gif1 from "../assets/weekly-recaps/week-9-loop-1.gif";
-import w9gif2 from "../assets/weekly-recaps/week-9-loop-2.gif";
-import w9gif3 from "../assets/weekly-recaps/week-9-loop-3.gif";
 import w9gif4 from "../assets/weekly-recaps/week-9-loop-4.gif";
 import w9gif5 from "../assets/weekly-recaps/week-9-loop-5.gif";
 // Week 9 MP4 loops
@@ -1617,13 +1615,11 @@ function YearlyRecap({ year, week, onPickWeek }) {
   <Recap2025Week7 />
 ) : w === 8 ? (
   <Recap2025Week8 />
-) : (
+) : w === 9 ? (
   <Recap2025Week9 />
 ) : (
   <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
 )}
-
-
 
     {/* Prev/Next Nav */}
     <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
