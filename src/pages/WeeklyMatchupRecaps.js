@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Comments from "../components/Comments";
 import middleFingerBtn from "../assets/middle-finger-button.png";
+
 // 🔁 Week 1 GIFs (placed in: src/assets/weekly-recaps)
 import w1gif1 from "../assets/weekly-recaps/week-1-loop-1.gif";
 import w1gif2 from "../assets/weekly-recaps/week-1-loop-2.gif";
@@ -71,7 +72,8 @@ import week6VO from "../assets/weekly-recaps/week-6-voiceover.mp3";
 import week5VO from "../assets/weekly-recaps/week-5-trump-voiceover.mp3";
 // ---- WEEK 7 AUDIO (TopMediai output) ----
 import week7VO from "../assets/weekly-recaps/week-7-voiceover.mp3";
-
+// Week 9 audio 
+import week9VO from "../assets/voiceovers/week9-vo.mp3";
 
 
 // ---- 2025 WEEK 6 GIFs ----
@@ -117,6 +119,22 @@ import week8lion from "../assets/weekly-recaps/week-8-lion.MP4";
 import week8princess from "../assets/weekly-recaps/week-8-princess.MP4";
 import week8frog from "../assets/weekly-recaps/week-8-frog.MP4";
 import week8VO from "../assets/weekly-recaps/week-8-voiceover.mp3";
+
+// Week 9 GIFs
+import w9gif1 from "../assets/weekly-recaps/week-9-loop-1.gif";
+import w9gif2 from "../assets/weekly-recaps/week-9-loop-2.gif";
+import w9gif3 from "../assets/weekly-recaps/week-9-loop-3.gif";
+import w9gif4 from "../assets/weekly-recaps/week-9-loop-4.gif";
+import w9gif5 from "../assets/weekly-recaps/week-9-loop-5.gif";
+// Week 9 MP4 loops
+// If you only have the first MP4 right now, point all to it so the build works;
+// replace with unique files later (e.g., week-9-loop-b.mp4, ...-c.mp4, etc.)
+import w9mp4a from "../assets/weekly-recaps/week-9-loop-a.mp4";
+import w9mp4b from "../assets/weekly-recaps/week-9-loop-b.mp4"; // temp
+import w9mp4c from "../assets/weekly-recaps/week-9-loop-c.mp4"; // temp
+import w9mp4d from "../assets/weekly-recaps/week-9-loop-d.mp4"; // temp
+import w9mp4e from "../assets/weekly-recaps/week-9-loop-e.mp4"; // temp
+import w9mp4f from "../assets/weekly-recaps/week-9-loop-f.mp4"; // temp
 
 
 function formatTime(secs) {
@@ -1258,7 +1276,7 @@ function Recap2025Week8() {
      
       
 <p>
-  <strong>Mark</strong> 9–7 <Arrow dir="down" change="1" /> | <strong>Welsch</strong> 4–10 –
+  <strong>Mark</strong> 9–7 <Arrow dir="down" change="1" /> | <strong>Welsch</strong> 6–10 –
 </p>
 
 
@@ -1384,6 +1402,171 @@ function Recap2025Week8() {
   );
 }
 
+/** ---- 2025 WEEK 9 CONTENT ---- */
+function Recap2025Week9() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      {/* 🎧 Audio CTA (hook your Mediai mp3 later) */}
+      <div className="voiceover-bar">
+        <h3>🎧 Week 9 Recap — Cartman Voiceover</h3>
+        <AudioPlayer src={week9VO} label="Week 9 Recap — Cartman Voiceover" />
+      </div>
+
+      {/* 1) Top GIF */}
+      <img src={w9gif1} alt="Week 9 Loop 1" className="recap-media" />
+
+      {/* 2) Standings movement table (Week 8 → Week 9) */}
+      <h3>📊 Movement Across the Board (Week 8 → Week 9)</h3>
+      <div className="standings-movement-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Manager</th>
+              <th>Week 8 Rank</th>
+              <th>Week 9 Rank</th>
+              <th>Movement</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Sorted by Week 9 rank */}
+            <tr><td><strong className="glow-green">Marcello</strong></td><td>2</td><td>1</td><td><Arrow dir="up" change="1" /></td></tr>
+            <tr><td><strong className="glow-green">Debo</strong></td><td>1</td><td>2</td><td><Arrow dir="down" change="1" /></td></tr>
+            <tr><td><strong className="glow-green">Mark</strong></td><td>4</td><td>3</td><td><Arrow dir="up" change="1" /></td></tr>
+            <tr><td><strong className="glow-green">DD</strong></td><td>6</td><td>4</td><td><Arrow dir="up" change="2" /></td></tr>
+            <tr><td><strong className="glow-green">Fischer</strong></td><td>3</td><td>5</td><td><Arrow dir="down" change="2" /></td></tr>
+            <tr><td><strong className="glow-green">Gus</strong></td><td>7</td><td>6</td><td><Arrow dir="up" change="1" /></td></tr>
+            <tr><td><strong className="glow-green">Champ-Balls</strong></td><td>5</td><td>7</td><td><Arrow dir="down" change="2" /></td></tr>
+            <tr><td><strong className="glow-green">Mish</strong></td><td>9</td><td>8</td><td><Arrow dir="up" change="1" /></td></tr>
+            <tr><td><strong className="glow-green">JD</strong></td><td>6</td><td>9</td><td><Arrow dir="down" change="3" /></td></tr>
+            <tr><td><strong className="glow-green">McCool</strong></td><td>8</td><td>10</td><td><Arrow dir="down" change="2" /></td></tr>
+            <tr><td><strong className="glow-green">Welsch</strong></td><td>11</td><td>11</td><td>–</td></tr>
+            <tr><td><strong className="glow-green">Shaw-Balls</strong></td><td>12</td><td>12</td><td>–</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* 3) Intro (Cartman tone) */}
+      <h2>🦈 Week 9 — Respect My Authoritah</h2>
+      <p>helloooo children. gather ’round while <strong className="glow-green">Mish</strong> explains why some of you are apex predators and some of you are confused squirrels who forgot to wear cups.</p>
+
+      {/* 1) Top GIF */}
+      <img src={w9gif1} alt="Week 9 Loop 1" className="recap-media" />
+
+      {/* 4) Recap 1 — High Score of the Week */}
+      <h3>🏆 High Score of the Week</h3>
+      <h4>
+        <strong className="glow-green">JD</strong> (155) bulldozes <strong className="glow-green">Debo</strong> (88)
+      </h4>
+      <p>
+Brock. Freaking. Bowers drops 44, and <strong className="glow-green">JD</strong> finally remembers what the end zone looks like. 
+Charbonnet + Keenan tried to sandbag him with a combined 11, but it didn’t matter—this was a five-alarm pantsing. 
+<strong className="glow-green">Debo</strong>, buddy… Mahomes at 11, Vidal at 3, and a bench that looked like a hospice ward on BYE week. You didn’t just lose; 
+you evacuated the #1 perch. 
+Down to #2 you go. Respectfully: HAHAHA.
+      </p>
+
+      {/* MP4 #1 */}
+      <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+        <source src={w9mp4a} type="video/mp4" />
+      </video>
+
+      {/* 5) Recap 2 — 2nd & 6th High */}
+      <h3>🥈 2nd High Score & 6th High Score</h3>
+      <h4>
+        <strong className="glow-green">Mark</strong> (153) rides CMC past <strong className="glow-green">Gus</strong> (128.9)
+      </h4>
+      <p>
+CMC tossed <strong className="glow-green">Mark</strong> the car keys and said “don’t crash,” and he did not—35 and chill. 
+<strong className="glow-green">Gus</strong> had three bright lights (Flacco 45, Kicker 18, Warren 17) and then… 
+the Bears scored 47 without Odunze catching a single ball, which is comedy so pure it belongs 
+in a museum. Silver lining for <strong className="glow-green">Gus</strong>: you edged <strong className="glow-green">Fischer</strong> by 0.1 to sneak into the Top-6 party. 
+That’s the fantasy equivalent of squeezing under a garage door with an erection.
+      </p>
+
+      {/* MP4 #2 */}
+      <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+        <source src={w9mp4b} type="video/mp4" />
+      </video>
+
+      {/* 6) Recap 3 — 3rd High */}
+      <h3>🥉 3rd High Score</h3>
+      <h4>
+        <strong className="glow-green">DD</strong> (143) unplugs <strong className="glow-green">McCool</strong> (110.06)
+      </h4>
+      <p>
+Herbert 33, JSN 23, Jeanty 20, and Quinton Johnston crawls out of the crypt for 15 like “remember me?” 
+<strong className="glow-green">McCool</strong> finally gets life from Harrison Jr., but then gets a straight-up zero from McNichols and only 8 from Jonathan Taylor. 
+Also, Aaron Rodgers… consider this your official “eat a dick" from <strong className="glow-green">McCool</strong>. <strong className="glow-green">DD</strong> to the moon—and up the standings.
+      </p>
+
+      {/* MP4 #3 */}
+      <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+        <source src={w9mp4c} type="video/mp4" />
+      </video>
+
+      {/* 7) Recap 4 — 4th & 7th High */}
+      <h3>4th High Score & 7th High Score</h3>
+      <h4>
+        <strong className="glow-green">Mish</strong> (139) outlasts <strong className="glow-green">Fischer</strong> (128.8)
+      </h4>
+      <p>
+MNF dagger from Brissett. <strong className="glow-green">Mish</strong> cashes it, walks off like a villain. 
+Both of us benched the Bears stack that combined for 70 (Caleb + DJ Moore in that 100-point circus), 
+which is the kind of decision that keeps a man awake at night, staring at the ceiling, whispering “why.” 
+<strong className="glow-green">Fischer</strong> misses Top-6 by 0.1—and yeah, he’s still the points leader… 
+slowly sinking to rank 5 like a piano in quicksand. Sad music plays. I laugh.
+      </p>
+
+      {/* MP4 #4 */}
+      <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+        <source src={w9mp4d} type="video/mp4" />
+      </video>
+
+      {/* 8) Recap 5 — 5th High */}
+      <h3>5th High Score</h3>
+      <h4>
+        <strong className="glow-green">Marcello</strong> (133) over <strong className="glow-green">Champ-Balls</strong> (121)
+      </h4>
+      <p>
+Rematch of last year’s cowboy sparkle pageant. <strong className="glow-green">Marcello's</strong> RBs punched, TE McBride sealed it late Monday, 
+and he snatched the #1 spot in the league back like it was store credit. 
+<strong className="glow-green">Champ-Balls</strong> got solid QB play—but a big, beautiful zero at TE. 
+You can’t bring a blank to a knife fight, pal. Out of the Top-6 you drip, toodles you fabulous cowboys.
+      </p>
+
+      {/* MP4 #5 */}
+      <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+        <source src={w9mp4e} type="video/mp4" />
+      </video>
+
+      {/* 9) Recap 6 — Barely Worth Mentioning */}
+      <h3>🍩 Barely Worth Mentioning Matchup of the Week</h3>
+      <h4>
+        <strong className="glow-green">Welsch</strong> (117) edges <strong className="glow-green">Shaw-Balls</strong> (108)
+      </h4>
+      <p>
+        Dumpster-fire matinee. Ticket price: a half-eaten corn dog and your dignity. 
+        <strong className="glow-green">Shaw-Balls</strong>s loses Jayden Daniels (again), I think <strong className="glow-green">Shaw-Balls</strong> placed a hex on everyone he drafted.
+        Meanwhile <strong className="glow-green">Welsch</strong> waves goodbye to Tucker Kraft. Somehow it wasn’t the worst week for <strong className="glow-green">Welsch</strong>, 
+        but just not good enough.
+      </p>
+
+      {/* MP4 #6 */}
+      <video autoPlay loop muted playsInline preload="auto" className="recap-media">
+        <source src={w9mp4f} type="video/mp4" />
+      </video>
+
+      {/* 10) Outro */}
+      <p>don’t bench free points, don’t trust Rodgers quotes, and for the love of God wear a cup. respect my authoritah!</p>
+      <p><em>-Mish Out!</em></p>
+
+      {/* 11) Final GIFs */}
+      <img src={w9gif4} alt="Week 9 Loop 4" className="recap-media" />
+      <img src={w9gif5} alt="Week 9 Loop 5" className="recap-media" />
+    </article>
+  );
+}
+
 
 
 
@@ -1434,6 +1617,8 @@ function YearlyRecap({ year, week, onPickWeek }) {
   <Recap2025Week7 />
 ) : w === 8 ? (
   <Recap2025Week8 />
+) : (
+  <Recap2025Week9 />
 ) : (
   <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
 )}
