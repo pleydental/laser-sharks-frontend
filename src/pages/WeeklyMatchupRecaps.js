@@ -1792,7 +1792,7 @@ He’s one of three at 1,188 total — the other two are already in the basement
       out of top 6 but unlikely. Two losses and bye bye top 6 for our point leader…probably.</p>
       <p><strong>JD vs Shaw-Balls</strong>: <strong>JD</strong>, with the exception of <strong>Marcello</strong>, is probably the hottest team in the league right now. He is averaging 
       138 points the last 5 weeks, and that is with one of those weeks only getting 83 points. Two wins probably moves him a spot or two. Split wins 
-      he probably stays at 6th. Two losses and it’s back in the basement. </p>
+      he probably stays at 6th. Two losses and it’s back in the basement. <strong>Shaw-Balls? Shaw-Balls</strong> is fucked. </p>
       <Gif src={w10gif2} alt="Week 11 preview sting" />
 
       {/* 3) MATCHUP RECAPS (fourth) */}
