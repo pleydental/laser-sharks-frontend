@@ -983,3 +983,48 @@ h1, h2, h3, p {
 .login-bg {
   min-height: 100vh !important;
 }
+/* Shared media sizing for recap videos & gifs */
+.recap-media,
+.recap-video video {
+  width: 100%;
+  max-width: 680px;        /* adjust: 560px or 720px if you prefer */
+  height: auto;
+  aspect-ratio: 16 / 9;    /* helps prevent layout shift */
+  object-fit: contain;     /* your preferred “contain” framing */
+  display: block;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+
+/* Optional: center the figure wrapper used by Week 10 component */
+.recap-video {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+/* Tighten further on small phones if you want */
+@media (max-width: 420px) {
+  .recap-media,
+  .recap-video video {
+    max-width: 100%;
+  }
+}
+.media-row {
+  display: grid;
+  gap: 16px;
+  margin: 0.5rem 0 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.media-col h4 {
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .media-row {
+    grid-template-columns: 1fr 1fr; /* two videos side-by-side on desktop */
+    gap: 24px;
+  }
+}

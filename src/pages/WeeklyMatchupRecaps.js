@@ -134,6 +134,27 @@ import w9mp4d from "../assets/weekly-recaps/week-9-loop-d.mp4";
 import w9mp4e from "../assets/weekly-recaps/week-9-loop-e.mp4";
 import w9mp4f from "../assets/weekly-recaps/week-9-loop-f.mp4";
 
+// 🔁 Week 10 media (placed in: src/assets/weekly-recaps)
+import w10gif1 from "../assets/weekly-recaps/week-10-loop-1.gif";
+import w10gif2 from "../assets/weekly-recaps/week-10-loop-2.gif";
+import w10gif4 from "../assets/weekly-recaps/week-10-loop-4.gif";
+
+
+import w10mp4Cat from "../assets/weekly-recaps/week-10-cat.mp4";
+import w10mp4DD from "../assets/weekly-recaps/week-10-dd.mp4";
+import w10mp4Debo from "../assets/weekly-recaps/week-10-debo.mp4";
+import w10mp4Fischer from "../assets/weekly-recaps/week-10-fischer.mp4";
+import w10mp4Gus from "../assets/weekly-recaps/week-10-gus.mp4";
+import w10mp4JD from "../assets/weekly-recaps/week-10-JD.mp4";
+import w10mp4Marcello from "../assets/weekly-recaps/week-10-marcello.mp4";
+import w10mp4Mark from "../assets/weekly-recaps/week-10-mark.mp4";
+import w10mp4Matt from "../assets/weekly-recaps/week-10-matt.mp4";
+import w10mp4McCool from "../assets/weekly-recaps/week-10-mcccol.mp4";
+import w10mp4Mish from "../assets/weekly-recaps/week-10-mish.mp4";
+import w10mp4Scham from "../assets/weekly-recaps/week-10-scham.mp4";
+import w10mp4Shaw from "../assets/weekly-recaps/week-10-shaw.mp4";
+
+
 
 function formatTime(secs) {
   if (!Number.isFinite(secs)) return "0:00";
@@ -1568,6 +1589,260 @@ You can’t bring a blank to a knife fight, pal. Out of the Top-6 you drip, tood
   );
 }
 
+/** ---- 2025 WEEK 10 CONTENT (FIXED ORDER) ---- */
+function Recap2025Week10() {
+  // ---- standings data (Week 9 -> Week 10) ----
+  const standingsPrev = useMemo(
+    () => ([
+      { manager: "Mish", rank: 8 },
+      { manager: "Champ-Balls", rank: 7 },
+      { manager: "Welsch", rank: 11 },
+      { manager: "McCool", rank: 10 },
+      { manager: "DD", rank: 4 },
+      { manager: "JD", rank: 9 },
+      { manager: "Debo", rank: 2 },
+      { manager: "Mark", rank: 3 },
+      { manager: "Fischer", rank: 5 },
+      { manager: "Shaw-Balls", rank: 12 },
+      { manager: "Marcello", rank: 1 },
+      { manager: "Gus", rank: 6 },
+    ]),
+    []
+  );
+
+  const standingsCurr = useMemo(
+    () => ([
+      { manager: "Mish", rank: 8 },
+      { manager: "Champ-Balls", rank: 7 },
+      { manager: "Welsch", rank: 10 },
+      { manager: "McCool", rank: 9 },
+      { manager: "DD", rank: 4 },
+      { manager: "JD", rank: 6 },
+      { manager: "Debo", rank: 2 },
+      { manager: "Mark", rank: 3 },
+      { manager: "Fischer", rank: 5 },
+      { manager: "Shaw-Balls", rank: 12 },
+      { manager: "Marcello", rank: 1 },
+      { manager: "Gus", rank: 11 },
+    ]),
+    []
+  );
+
+  const movement = useMemo(() => {
+    const prevMap = new Map(standingsPrev.map(x => [x.manager, x.rank]));
+    return standingsCurr
+      .slice()
+      .sort((a, b) => a.rank - b.rank)
+      .map(row => {
+        const prevRank = prevMap.get(row.manager) ?? row.rank;
+        const delta = prevRank - row.rank; // + = moved up
+        return { ...row, prevRank, delta };
+      });
+  }, [standingsPrev, standingsCurr]);
+
+  // ---- tiny helpers ----
+  const Arrow = ({ change }) => {
+    if (change === 0) return <span>—</span>;
+    const up = change > 0;
+    return <span className={`arrow ${up ? "up" : "down"}`}>{up ? "▲" : "▼"} {Math.abs(change)}</span>;
+  };
+  const Gif = ({ src, alt }) => <img src={src} alt={alt} className="recap-gif" loading="lazy" />;
+  const Video = ({ src, label }) => (
+    <figure className="recap-video">
+      <video controls preload="metadata" playsInline>
+        <source src={src} type="video/mp4" />
+      </video>
+      {label && <figcaption>{label}</figcaption>}
+    </figure>
+  );
+
+  // ---- matchups (same content; order handled below) ----
+  const matchupsRaw = [
+    {
+      home: { name: "Mish", score: 125, mp4: w10mp4Mish },
+      away: { name: "McCool", score: 145, mp4: w10mp4McCool },
+      headline: "2nd & 5th Highest Scores",
+      notes:
+        `Mish knew he was beat Sunday morning with JT going off for McCool in Berlin — just hoped to sneak into top-6.
+Aside from JT, McCool didn’t have much going, average-to-below-average from most of his guys. 
+Mish left ~30 on the bench (would’ve been two wins and jump to 5th). But that didn’t happen, did it?
+McCool puts himself firmly in striking distance of the playoffs; Mish is still in it but needs to build the point total.`,
+    },
+    {
+      home: { name: "Gus", score: 113, mp4: w10mp4Gus },
+      away: { name: "Shaw-Balls", score: 124, mp4: w10mp4Shaw },
+      headline: "6th Highest Score of the Week",
+      notes:
+        `Shaw-Balls collects two wins and isn’t even in sniffing distance of 11th anymore — congrats, and hey, no players hospitalized this week.
+Gus… holy shit, man. BYE-week hell at the worst time. With the basement boys popping off, Gus free-falls from 6th to 11th.`,
+    },
+    {
+      home: { name: "Debo", score: 100, mp4: w10mp4Debo },
+      away: { name: "Marcello", score: 163, mp4: w10mp4Marcello },
+      headline: "High Score of the Week",
+      notes:
+        `#1 vs #2 and Marcello detonates. He leapfrogs Debo **and** Mark in total points for 2nd-most in the league.
+Third high score of the season; nobody “went off,” just four players in the 20s and four in double digits. 
+It’s his 3rd week out of 4 at #1. Debo’s not in danger of falling out of top-6, but the top-2 is crowded.
+He loses Garrett Wilson but has WR depth — chalk it up to a bad week.`,
+    },
+    {
+      home: { name: "JD", score: 131, mp4: w10mp4JD },
+      away: { name: "Mark", score: 91, mp4: w10mp4Mark },
+      headline: "4th High Score & Low Score Combo",
+      notes:
+        `JD just keep winning going 6-0 the last 3 weeks and he finds himself in the top 6 standing for the first time this year. 
+        This is reminiscent of the year he won the ‘ship. Nobody really went off for JD but he is FINALLY getting some consistent play out of 
+        Trev Henderson giving him 29 points this week. Mark got the lowest score of the week and is now in danger of dropping to the basement with 
+        another bad week or two. He’s got an advantage with points so he probably won’t drop too far. 
+        I’d say most of his players disappointed except for Matt Stafford on his bench. Wah wah waaaah`,
+    },
+    {
+      home: { name: "Champ-Balls", score: 123, mp4: w10mp4Scham },
+      away: { name: "Fischer", score: 110, mp4: w10mp4Fischer },
+      headline: "Barely Worth Mentioning Matchup of the Week",
+      notes:
+        `Scham keeps up the one-win/one-loss dance and just misses top-6 again — even with Gibbs dropping 39. 
+Probably didn’t help to get ~7 total from TE + two FLEX + K, maybe… just maybe.
+Fischer’s on a six-loss skid but survived in top-6 thanks to his early-season points avalanche; bad weeks haven’t been *that* bad.
+DJ Moore goose egg’d him — bit by the BEARS bug. One more bad week is survivable… maybe only one.`,
+    },
+    {
+      home: { name: "Welsch", score: 139, mp4: w10mp4Matt },
+      away: { name: "DD", score: 118, mp4: w10mp4DD },
+      headline: "3rd High Score of the Week",
+      notes:
+        `Matt shows signs of life and climbs out of 11th — within striking distance of top-6 now. Amazing what one week can do. 
+Achane drops 42 vs the Bills, plus a couple solid helpers. 
+DD takes two losses but sits tight at 4th; one more dud and he could slip out of top-6 on points.
+He’s one of three at 1,188 total — the other two are already in the basement. Roster says “unlikely,” but who TF knows?`,
+    },
+  ];
+
+  const matchups = useMemo(() => {
+    const rankNow = new Map(standingsCurr.map(x => [x.manager, x.rank]));
+    return matchupsRaw
+      .map(m => {
+        const top = Math.max(m.home.score, m.away.score);
+        const margin = Math.abs(m.home.score - m.away.score);
+        const bestRank = Math.min(rankNow.get(m.home.name) ?? 99, rankNow.get(m.away.name) ?? 99);
+        return { ...m, _top: top, _margin: margin, _bestRank: bestRank };
+      })
+      .sort((x, y) => y._top - x._top || y._margin - x._margin || x._bestRank - y._bestRank);
+  }, [matchupsRaw, standingsCurr]);
+
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+
+      {/* 0) STANDINGS (first) */}
+      <h2>📊 Standings — Week 9 ➜ Week 10</h2>
+      <div className="table-wrap">
+        <table className="movement-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Manager</th>
+              <th>Prev</th>
+              <th>Δ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {movement.map((row) => (
+              <tr key={row.manager}>
+                <td>{row.rank}</td>
+                <td><strong className="glow-green">{row.manager}</strong></td>
+                <td>{row.prevRank}</td>
+                <td><Arrow change={row.delta} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* 1) INTRO (second) */}
+      <h2>🦈 Week 10 — The Field Narrows</h2>
+      <p>
+        As you can see, the field has narrowed considerably. <strong>9 people</strong> on the bubble. One bad week and{" "}
+        <strong>Mark</strong>, <strong>DD</strong>, <strong>Fischer</strong> can find themselves in the basement (ahem, <strong>Gus</strong>). One good week and{" "}
+        <strong>Gus</strong>, <strong>Welsch</strong>, <strong>McCool</strong>, <strong>Mish</strong>, <strong>Champ-Balls</strong>{" "}
+        can rocket into the top 6. Shit’s getting interesting. All the top-6 scores this week — except <strong>Marcello</strong> — came from the bottom-six crowd (well, except <strong>Champ-Balls</strong>).
+        And <strong>Champ-Balls</strong> even handed <strong>Fischer (5th)</strong> a head-to-head loss. Blood bath for the top-6. 
+      </p>
+      <Gif src={w10gif1} alt="Week 10 intro sting" />
+
+      {/* 2) WEEK 11 PREVIEW (third) */}
+      <h3>🔮 Week 11 Preview & Implications</h3>
+      <p><strong>Champ-Balls vs Mish</strong>: They are both 10-10. Two wins for <strong>Mish</strong> or two wins for <strong>Champ-Balls</strong> and one of 
+      us will likely be in 
+      the top 6 standings. If we split wins like we have been doing, probably staying put. Two losses for either one of us, probably drop to 
+      10th or 11th.</p>
+      <p><strong>McCool vs Matt</strong>: Two wins for either and they have a chance at top 6 in standings, split wins they stay put, two losses they 
+      stay put. </p>
+      <p><strong>Gus vs DD</strong>: They have same point total but <strong>Gus</strong> is 11th and <strong>DD</strong> is 4th. If <strong>Gus</strong> gets two wins 
+      he probably moves up a spot or 
+      two. Split wins he stays put. Two losses he stays put. If <strong>DD</strong> gets two wins he probably stays put or moves up one maybe. Split
+       wins stays 
+      put or moves down a spot. Two losses he probably gets knocked out of top 6 depending on <strong>Fischer</strong> and <strong>JD’s and Champ-Balls and Mish’s</strong> performances. </p>
+      <p><strong>Mark vs Marcello</strong>: If <strong>Mark</strong> gets two wins he either moves up a spot or stays put depending on Debo’s week. Split wins he 
+      either stays put or moves down depending on <strong>Debo and DD’s</strong> perfmances. Two losses he’s most likely still in the top 6 standings but who TF knows. </p>
+      <p><strong>Fischer vs Debo</strong>: These two were dominating at one point in the season but one of these two will not be happy if they lose 
+      twice or hell even one loss would suck, especially for <strong>Fischer</strong>. Two wins for <strong>Debo</strong> keeps him at number 2 in standings. Split wins probably 
+      still at number 2 but Mark could easily take that spot if he gets two wins. Two losses and suddenly he has risk of moving out of the top 6 
+      in standings. <strong>Fischer</strong> is in much worse situation. Two wins gives him cushion but he probably doesn’t move up much. Split wins he could drop 
+      out of top 6 but unlikely. Two losses and bye bye top 6 for our point leader…probably.</p>
+      <p><strong>JD vs Shaw-Balls</strong>: <strong>JD</strong>, with the exception of <strong>Marcello</strong>, is probably the hottest team in the league right now. He is averaging 
+      138 points the last 5 weeks, and that is with one of those weeks only getting 83 points. Two wins probably moves him a spot or two. Split wins 
+      he probably stays at 6th. Two losses and it’s back in the basement. </p>
+      <Gif src={w10gif2} alt="Week 11 preview sting" />
+
+      {/* 3) MATCHUP RECAPS (fourth) */}
+      <h2>🏈 Week 10 Matchups</h2>
+      <p><em>Click videos to play with sound.</em> No autoplay — we’re classy degenerates.</p>
+
+      {matchups.map((m, i) => {
+        const winner = m.home.score >= m.away.score ? m.home : m.away;
+        const loser  = m.home.score <  m.away.score ? m.home : m.away;
+        return (
+          <section key={i} className="matchup">
+            <h3>
+              {m.headline}:{" "}
+              <strong className="glow-green">{winner.name}</strong> over{" "}
+              <strong className="glow-green">{loser.name}</strong>{" "}
+              ({winner.score}–{loser.score})
+            </h3>
+
+            <div className="media-row">
+  <div className="media-col">
+    <h4 className="glow-green"><strong>{m.home.name} — {m.home.score}</strong></h4>
+    <Video src={m.home.mp4} />
+  </div>
+  <div className="media-col">
+    <h4 className="glow-green"><strong>{m.away.name} — {m.away.score}</strong></h4>
+    <Video src={m.away.mp4} />
+  </div>
+</div>
+
+
+            <p>{m.notes}</p>
+          </section>
+        );
+      })}
+
+      {/* 4) OUTRO (last) */}
+      <h3>🎬 Outro</h3>
+      <p>
+        If your squad shat the bed this week, enjoy it, taste it, now you know what it feels like! If you face-planted, hydrate, blame your kicker,
+        and pretend it was “all part of the plan.” Two weeks from now we’ll call this chaos “parity.”</p> 
+      <p>
+        – <strong>Mish Out</strong>
+      </p>
+     <h4 className="glow-green"><strong>World’s Most Interesting Cat — Stay Thirsty My Friends.</strong></h4>
+<Video src={w10mp4Cat} />
+
+    </article>
+  );
+}
+
 
 
 
@@ -1602,27 +1877,54 @@ function YearlyRecap({ year, week, onPickWeek }) {
       <h3>Week {w} Recap</h3>
     </div>
 
-{w === 1 ? (
-  <Recap2025Week1 />
-) : w === 2 ? (
-  <Recap2025Week2 />
-) : w === 3 ? (
-  <Recap2025Week3 />
-) : w === 4 ? (
-  <Recap2025Week4 />
-) : w === 5 ? (
-  <Recap2025Week5 />
-) : w === 6 ? (
-  <Recap2025Week6 />
-) : w === 7 ? (
-  <Recap2025Week7 />
-) : w === 8 ? (
-  <Recap2025Week8 />
-) : w === 9 ? (
-  <Recap2025Week9 />
-) : (
-  <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
-)}
+{/* Render specific weeks */}
+{w >= 1 && w <= 16 ? (
+  <>
+    <div style={{ marginTop: "1.25rem" }}>
+      <h3>Week {w} Recap</h3>
+    </div>
+
+{w >= 1 && w <= 16 ? (
+  <>
+    <div style={{ marginTop: "1.25rem" }}>
+      <h3>Week {w} Recap</h3>
+    </div>
+
+    {w === 1 ? (
+      <Recap2025Week1 />
+    ) : w === 2 ? (
+      <Recap2025Week2 />
+    ) : w === 3 ? (
+      <Recap2025Week3 />
+    ) : w === 4 ? (
+      <Recap2025Week4 />
+    ) : w === 5 ? (
+      <Recap2025Week5 />
+    ) : w === 6 ? (
+      <Recap2025Week6 />
+    ) : w === 7 ? (
+      <Recap2025Week7 />
+    ) : w === 8 ? (
+      <Recap2025Week8 />
+    ) : w === 9 ? (
+      <Recap2025Week9 />
+    ) : w === 10 ? (
+      <Recap2025Week10 />
+    ) : (
+      <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
+    )}
+
+    {/* Prev/Next Nav */}
+    <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
+  </>
+) : null}
+
+
+    {/* Prev/Next Nav */}
+    <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
+  </>
+) : null}
+
 
     {/* Prev/Next Nav */}
     <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
