@@ -12,7 +12,7 @@ import gusImg from '../assets/justin-gus-miller.png';
 import mattImg from '../assets/matt-welsch.png';
 import shawnImg from '../assets/shawn-mccool.png';
 import jdImg from '../assets/jd-ley.png';
-import marcelloImg from '../assets/marcello-polidori.png';
+import marcelloImg from '../assets/marcello-pollidori.png';
 import donImg from '../assets/don-debone.png';
 import brianImg from '../assets/brian-debo.png';
 import aaronImg from '../assets/aaron-fischer.png';
@@ -26,7 +26,7 @@ const managers = [
   { name: 'Matt Welsch', slug: 'matt-welsch', aliases: ['smakdown'], image: mattImg },
   { name: 'Shawn McCool', slug: 'shawn-mccool', aliases: ['HingleMcCringleberry'], image: shawnImg },
   { name: 'JD Ley', slug: 'jd-ley', aliases: ['Pound It Noggin'], image: jdImg },
-  { name: 'Marcello Polidori', slug: 'marcello-polidori', aliases: ['Slippery Jack'], image: marcelloImg },
+  { name: 'Marcello Polidori', slug: 'marcello-pollidori', aliases: ['Slippery Jack'], image: marcelloImg },
   { name: 'Don "DD" Debone', slug: 'don-debone', aliases: ["Double D's"], image: donImg },
   { name: 'Brian Debo', slug: 'brian-debo', aliases: ['Happy Hour'], image: brianImg },
   { name: 'Aaron Fischer', slug: 'aaron-fischer', aliases: ['Dice Roll Aaron'], image: aaronImg },

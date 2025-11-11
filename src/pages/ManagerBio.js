@@ -4,10 +4,15 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './ManagerBio.css';
 import sharkImage from '../assets/bg-shark.png';
 
+
 // Dynamic image loaders (these stay in src/)
 const managerImages = require.context('../assets', false, /\.png$/);
 const loserBanners = require.context('../assets/loser-banners', false, /\.png$/);
 const runnerUpBanners = require.context('../assets/runner-up-banners', false, /\.png$/);
+// Manager 512px face loops (webm + mp4) that live in: src/assets/manager-loops/512
+const loops512Webm = require.context('../assets/manager-loops/512', false, /\.webm$/);
+const loops512Mp4  = require.context('../assets/manager-loops/512', false, /\.mp4$/);
+
 
 const ManagerBio = () => {
   const { slug } = useParams();
@@ -201,7 +206,7 @@ const ManagerBio = () => {
 
 -Off limit trash talk: Handicapped dogs (e.g. your team is gimpier than a 3-legged dog with gonorrhea…that you gave the gonorrhea to)`
     },
-    'marcello-polidori': {
+    'marcello-pollidori': {
       name: 'Marcello Polidori',
       aliases: ['Slippery Jack', 'Truffle King', 'I am Italian Dammit', 'also I am Moist'],
       stats: 'Seasons: 7 -||- Win rate: 50% -||- Record: 102-100 -||- High Scores Per Season: 1.88 -||- Earnings Per Season: -$36',
@@ -295,6 +300,15 @@ Off limit trash talk: any insult or factual evidence of IU's recent inferiority 
     console.warn(`Manager image not found for ${slug}, using fallback.`);
     managerImg = sharkImage;
   }
+// Try to load animated face loop for this manager (prefer webm, fallback mp4)
+let loopWebm = null;
+let loopMp4 = null;
+try { loopWebm = loops512Webm(`./${slug}-512.webm`); } catch (e) {}
+try { loopMp4  = loops512Mp4(`./${slug}-512.mp4`); }  catch (e) {}
+
+// Convenience flag: do we have any loop video for this manager?
+const hasLoop = !!(loopWebm || loopMp4);
+
 
   if (!manager) {
     return (
@@ -326,7 +340,25 @@ Off limit trash talk: any insult or factual evidence of IU's recent inferiority 
           })}
         </div>
 
-        <img src={managerImg} alt={manager.name} className="manager-img-bio" />
+        {/* swapped static PNG for autoplaying loop, circular, contain */}
+        {hasLoop ? (
+  <video
+    key={slug}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="manager-img-bio"
+    poster={managerImg}
+  >
+    {loopWebm && <source src={loopWebm} type="video/webm" />}
+    {loopMp4  && <source src={loopMp4}  type="video/mp4"  />}
+    Sorry, your browser doesn’t support embedded videos.
+  </video>
+) : (
+  <img src={managerImg} alt={manager.name} className="manager-img-bio" />
+)}
+
 
         <div className="runnerup-loser-container">
           {manager.runnerUps && manager.runnerUps.map((year, idx) => (
