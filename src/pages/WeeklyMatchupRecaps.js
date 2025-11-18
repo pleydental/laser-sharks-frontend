@@ -154,6 +154,16 @@ import w10mp4Mish from "../assets/weekly-recaps/week-10-mish.mp4";
 import w10mp4Scham from "../assets/weekly-recaps/week-10-scham.mp4";
 import w10mp4Shaw from "../assets/weekly-recaps/week-10-shaw.mp4";
 
+// 🔁 Week 11 media (placed in: src/assets/weekly-recaps)
+import w11gif1 from "../assets/weekly-recaps/week-11-loop-1.gif";
+import w11gif2 from "../assets/weekly-recaps/week-11-loop-2.gif";
+import w11gif3 from "../assets/weekly-recaps/week-11-loop-3.gif";
+import w11gif4 from "../assets/weekly-recaps/week-11-loop-4.gif";
+import w11gif5 from "../assets/weekly-recaps/week-11-loop-5.gif";
+import w11gif6 from "../assets/weekly-recaps/week-11-loop-6.gif";
+import w11gif7 from "../assets/weekly-recaps/week-11-loop-7.gif";
+import w11gif8 from "../assets/weekly-recaps/week-11-loop-8.gif";
+import w11gif9 from "../assets/weekly-recaps/week-11-loop-9.gif";
 
 
 function formatTime(secs) {
@@ -1842,6 +1852,373 @@ He’s one of three at 1,188 total — the other two are already in the basement
     </article>
   );
 }
+/** ---- 2025 WEEK 11 CONTENT ---- */
+function Recap2025Week11() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 11 writeup</h2>
+
+      <p>
+        Only 3 more weeks until playoffs, six losses and six wins up for grabs. Week 11 was another blood bath and a lot
+        of movements in the standings.{" "}
+        <span>
+          At this point half the league is doing playoff math like it&apos;s a Powerball ticket, and the other half is
+          wondering if there&apos;s a way to put their whole roster on IR and emotionally tap out.
+        </span>
+      </p>
+
+      <h3>📊 Week 10 → Week 11 Standings Movement</h3>
+      <div className="standings-movement-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Manager</th>
+              <th>Week 10 Rank</th>
+              <th>Week 11 Rank</th>
+              <th>Movement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong className="glow-green">Marcello</strong></td>
+              <td>1</td>
+              <td>1</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Fischer</strong></td>
+              <td>5</td>
+              <td>2</td>
+              <td><Arrow dir="up" change="3" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">JD</strong></td>
+              <td>6</td>
+              <td>3</td>
+              <td><Arrow dir="up" change="3" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Debo</strong></td>
+              <td>2</td>
+              <td>4</td>
+              <td><Arrow dir="down" change="2" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Champ-Balls</strong></td>
+              <td>7</td>
+              <td>5</td>
+              <td><Arrow dir="up" change="2" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">DD</strong></td>
+              <td>4</td>
+              <td>6</td>
+              <td><Arrow dir="down" change="2" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">McCool</strong></td>
+              <td>9</td>
+              <td>7</td>
+              <td><Arrow dir="up" change="2" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Mark</strong></td>
+              <td>3</td>
+              <td>8</td>
+              <td><Arrow dir="down" change="5" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Welsch</strong></td>
+              <td>10</td>
+              <td>9</td>
+              <td><Arrow dir="up" change="1" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Mish</strong></td>
+              <td>8</td>
+              <td>10</td>
+              <td><Arrow dir="down" change="2" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Gus</strong></td>
+              <td>11</td>
+              <td>11</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Shaw-Balls</strong></td>
+              <td>12</td>
+              <td>12</td>
+              <td>–</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* {week-11-loop-1.gif} */}
+      <Gif src={w11gif1} alt="Week 11 loop 1" />
+
+      {/* HIGH SCORE OF THE WEEK */}
+      <h3><strong className="glow-green">High Score of the week</strong></h3>
+      <h4>
+        <strong className="glow-green">Marcello</strong> (152) defeats{" "}
+        <strong className="glow-green">Mark</strong> (99){" "}
+        <span>
+          [<strong className="glow-green">Marcello</strong> stays #1 |{" "}
+          <strong className="glow-green">Mark</strong> <Arrow dir="down" change="5" /> to #8]
+        </span>
+      </h4>
+
+      <p>
+        <strong className="glow-green">Marcello&apos;s</strong> team is doing what{" "}
+        <strong className="glow-green">Marcello&apos;s</strong> team does, it sniffs your dog&apos;s butt then takes a dump on your
+        yard. 4th high score of the season, second in a row.
+      </p>
+      <p>
+        <strong className="glow-green">Mark</strong> is free falling right now with his 4th loss in a row. He has been in the top 6
+        standings the entire season but his team has decided to torture{" "}
+        <strong className="glow-green">Mark</strong> right before the playoffs. He has a decent enough point advantage over several
+        people in the top 6 so he&apos;s still got some hope.
+      </p>
+
+      {/* {week-11-loop-2.gif} */}
+      <Gif src={w11gif2} alt="Week 11 loop 2" />
+
+      {/* 2ND HIGH SCORE */}
+      <h3><strong className="glow-green">2nd High Score of the week</strong></h3>
+      <h4>
+        <strong className="glow-green">Champ-Balls</strong> (134) defeats{" "}
+        <strong className="glow-green">Mish</strong> (106){" "}
+        <span>
+          [<strong className="glow-green">Champ-Balls</strong> <Arrow dir="up" change="2" /> to #5 |{" "}
+          <strong className="glow-green">Mish</strong> <Arrow dir="down" change="2" /> to #10]
+        </span>
+      </h4>
+
+      <p>
+        <strong className="glow-green">Champ-Balls</strong> managed to pull himself back into the top 6 standings after spending the
+        last two weeks in the basement. Super glad his get-right week was against me. If Josh Allen scored a normal amount of
+        points I would have won and <strong className="glow-green">Champ-Balls</strong> would be in the basement. He moves up two
+        spots to #5 instead.
+      </p>
+      <p>
+        <strong className="glow-green">Mish</strong>, well <strong className="glow-green">Mish</strong> is going to blame Da Bears
+        again. 19 points from the QB and RB total, fml. My hopes of the playoffs are all but gone, I moved down 2 spots to 10th.
+      </p>
+      <p>
+        This game was basically Josh Allen walking into{" "}
+        <strong className="glow-green">Mish&apos;s</strong> house, finishing his beer, petting his dog, and then punching him in
+        the dick on the way out. And somehow <strong className="glow-green">Mish</strong> is still going to say &quot;we&quot; when
+        talking about the Bears.
+      </p>
+
+      {/* {week-11-loop-3.gif} */}
+      <Gif src={w11gif3} alt="Week 11 loop 3" />
+
+      {/* 3RD HIGH SCORE */}
+      <h3><strong className="glow-green">3rd High Score of the week</strong></h3>
+      <h4>
+        <strong className="glow-green">JD</strong> (125) defeats{" "}
+        <strong className="glow-green">Shaw-Balls</strong> (89){" "}
+        <span>
+          [<strong className="glow-green">JD</strong> <Arrow dir="up" change="3" /> to #3 |{" "}
+          <strong className="glow-green">Shaw-Balls</strong> stays #12]
+        </span>
+      </h4>
+
+      <p>
+        The only bad news for <strong className="glow-green">JD</strong> about this week is Chase just got suspended for 1 game for
+        spitting on someone. I mean for fucks sake, what is the deal with grown men spitting on each other?{" "}
+        <strong className="glow-green">JD</strong>, any thoughts?{" "}
+        <strong className="glow-green">JD</strong> is up 6 spots from two weeks ago and up 3 spots from last week. He has the 3rd
+        highest point total in the top 6 so good luck getting rid of him.
+      </p>
+      <p>
+        <strong className="glow-green">Shaw-Balls&apos;</strong> team did what <strong className="glow-green">Shaw-Balls&apos;</strong>{" "}
+        team does, it sniffed your dog&apos;s butt then spray-farted diarrhea all over itself. Oh yeah, and another one of his best
+        players just got injured and his QB got a concussion during the game. Can&apos;t make this shit up. At least we got to see
+        Shadeur Sanders get served a hot steaming pile of shut-the-fuck-up. You should pick him up, Shaw.{" "}
+        <strong className="glow-green">Shaw-Balls</strong> is the first team that has been eliminated from the playoffs, not
+        technically, but c&apos;mon, it&apos;s basically true.
+      </p>
+      <p>
+        If there was a relegation system, <strong className="glow-green">Shaw-Balls</strong> would be in a 6-team league with
+        three bots and still finish 7th this year.
+      </p>
+
+      {/* {week-11-loop-4.gif} */}
+      <Gif src={w11gif4} alt="Week 11 loop 4" />
+
+      {/* 4TH & 5TH HIGH SCORE */}
+      <h3><strong className="glow-green">4th and 5th High Score of the week</strong></h3>
+      <h4>
+        <strong className="glow-green">McCool</strong> (118) defeats{" "}
+        <strong className="glow-green">Welsch</strong> (118){" "}
+        <span>
+          [<strong className="glow-green">McCool</strong> <Arrow dir="up" change="2" /> to #7 |{" "}
+          <strong className="glow-green">Welsch</strong> <Arrow dir="up" change="1" /> to #9]
+        </span>
+      </h4>
+
+      <p>Close one here!</p>
+      <p>
+        <strong className="glow-green">McCool</strong> had the solid FLEX play of Michael Wilson. Good thing too, he only got 1.5
+        points from his RBs. How TF does that even happen? <strong className="glow-green">McCool</strong> moved up 2 spots to 7th,
+        slowly climbing himself out of the basement. He has a point advantage over 4 of the top 6 so his chances are looking pretty
+        good for a playoff push.
+      </p>
+      <p>
+        <strong className="glow-green">Welsch</strong> really needed 2 wins here to give himself a cushion, but he&apos;s still got a
+        shot at the playoffs. If he wins out it&apos;s probably a sure thing.
+      </p>
+    
+
+      {/* {week-11-loop-5.gif} */}
+      <Gif src={w11gif5} alt="Week 11 loop 5" />
+
+      {/* 6TH HIGH SCORE */}
+      <h3><strong className="glow-green">6th highest score of the week</strong></h3>
+      <h4>
+        <strong className="glow-green">Fischer</strong> (117) defeats{" "}
+        <strong className="glow-green">Debo</strong> (101){" "}
+        <span>
+          [<strong className="glow-green">Fischer</strong> <Arrow dir="up" change="3" /> to #2 |{" "}
+          <strong className="glow-green">Debo</strong> <Arrow dir="down" change="2" /> to #4]
+        </span>
+      </h4>
+
+      <p>
+        <strong className="glow-green">Fischer</strong> finally breaks his 6 game losing streak against his partner in crime. Huge
+        win for him as well, shooting him up 3 spots to 2nd place. That&apos;s probably the highest he can hope for now that{" "}
+        <strong className="glow-green">Marcello</strong> has all but locked in 1st place. If{" "}
+        <strong className="glow-green">Fischer</strong> goes 3-3 or better he is probably safe, any worse than that and he could be
+        eliminated.
+      </p>
+      <p>
+        This is <strong className="glow-green">Debo&apos;s</strong> 6th loss in a row and he drops to 4th place. Three people in the
+        bottom six have a point advantage or are within 7 points of <strong className="glow-green">Debo</strong> so another bad week
+        or two for <strong className="glow-green">Debo</strong> would be no bueno. That means “holy fuck how did this happen” in
+        Spanish.
+      </p>
+      <p>
+       <strong className="glow-green">Debo</strong> went from &quot;catch me at the 1-seed bar&quot; to standing outside with
+        a fake ID and a declined credit card while <strong className="glow-green">Fischer</strong> does shots inside.
+      </p>
+
+      {/* {week-11-loop-6.gif} */}
+       <Gif src={w11gif6} alt="Week 11 loop 6" />
+
+      {/* BARELY WORTH MENTIONING */}
+      <h3><strong className="glow-green">Barely Worth Mentioning Matchup of the Week</strong></h3>
+      <h4>
+        <strong className="glow-green">DD</strong> (110) defeats{" "}
+        <strong className="glow-green">Gus</strong> (87){" "}
+        <span>
+          [<strong className="glow-green">DD</strong> <Arrow dir="down" change="2" /> to #6 |{" "}
+          <strong className="glow-green">Gus</strong> stays #11]
+        </span>
+      </h4>
+
+      <p>
+        <strong className="glow-green">DD</strong> gets the head-to-head win, helping him stay in the top 6, but he is in a very
+        vulnerable position, like pillow-biting type position, fo real. He dropped two spots to 6th despite going 1-1 this week.
+        He has a 50–100 point disadvantage on 3 players below him in the 7th, 8th and 9th positions. He probably needs to go 4-2 or
+        5-1 to stay in the top 6 these next three weeks.
+      </p>
+      <p>
+        <strong className="glow-green">Gus&apos;s</strong> 4 losses in a row have really hurt. His early season push has dried up and
+        he stays at 11th. He has about as much hope as I do to make the playoffs at this point due to our low point totals. Crazier
+        shit has happened, I&apos;ve never seen it, some guy said it might have happened once.
+      </p>
+      <p>
+        If hope was fantasy points, <strong className="glow-green">Gus</strong> and{" "}
+        <strong className="glow-green">Mish</strong> would still be projected for 67 points in a full PPR league with bonuses.
+      </p>
+
+      {/* {week-11-loop-7.gif} */}
+      <Gif src={w11gif7} alt="Week 11 loop 7" />
+
+      <h3><strong className="glow-green">Week 12 Matchups</strong></h3>
+
+      <h4>
+        <strong className="glow-green">Mish</strong> Vs. <strong className="glow-green">Debo</strong>
+      </h4>
+      <p>
+        <strong className="glow-green">Mish</strong> could creep up a spot or two, or worst-case scenario move to 11th.{" "}
+        <strong className="glow-green">Debo</strong> could move up a spot or two or get knocked out of the top 6. His RB situation is
+        not good, I like my chances.
+      </p>
+
+      <h4>
+        <strong className="glow-green">McCool</strong> Vs. <strong className="glow-green">Champ-Balls</strong>
+      </h4>
+      <p>
+        <strong className="glow-green">McCool</strong> gets Jonathan Taylor back this week. Two wins for{" "}
+        <strong className="glow-green">McCool</strong> and he is in the top 6. Split wins maybe. Two losses still in the basement.{" "}
+        <strong className="glow-green">Champ-Balls</strong> same situation except two losses puts him back in the basement.
+      </p>
+
+      <h4>
+        <strong className="glow-green">Welsch</strong> Vs. <strong className="glow-green">Gus</strong>
+      </h4>
+      <p>
+        Two wins for <strong className="glow-green">Welsch</strong> maybe top 6, split wins or two losses still in the basement. No
+        hopes for <strong className="glow-green">Gus</strong> to crack the top 6 this week but 4-2 or better next three weeks is a solid
+        maybe.
+      </p>
+
+      <h4>
+        <strong className="glow-green">Shaw-Balls</strong> Vs. <strong className="glow-green">Marcello</strong>
+      </h4>
+      <p>
+        <strong className="glow-green">Shaw-Balls</strong> needs to go 4-0 the next two weeks to maintain his 12th spot. 6-0 he could
+        get 11th. If he goes 0-6 he moves to 13th. <strong className="glow-green">Marcello</strong> would have to go 1-5 and{" "}
+        <strong className="glow-green">Fischer</strong> 6-0 to get knocked out of the #1 spot. If he goes better than 1-5 he&apos;s got
+        a first round playoff bye locked down.
+      </p>
+
+      <h4>
+        <strong className="glow-green">Mark</strong> Vs. <strong className="glow-green">Fischer</strong>
+      </h4>
+      <p>
+        One of the more significant matchups of the week. <strong className="glow-green">Mark</strong> needs a win or two to get back
+        into the top 6. A win or two keeps <strong className="glow-green">Fischer</strong> in the top 6, two losses and he could end up
+        in the basement, but not likely with his point advantage.
+      </p>
+
+      <h4>
+        <strong className="glow-green">JD</strong> Vs. <strong className="glow-green">DD</strong>
+      </h4>
+      <p>
+        Another significant matchup. One of these two will be in the bottom 6 after this week is over with{" "}
+        <strong className="glow-green">DD</strong> being at the most risk. Anything but two wins for{" "}
+        <strong className="glow-green">DD</strong> likely means a demotion.{" "}
+        <strong className="glow-green">JD</strong> could still probably weather a 1-1 week and maybe even a 0-2 week.
+      </p>
+
+      <h3>Outro</h3>
+      <p>
+        Week 11 basically handed out emotional participation trophies. Some of you clawed into the top 6, some of you slid out of it
+        like a wet bar of soap, and a couple of us are hanging on by dental floss and spite.
+      </p>
+      <p>
+        If you&apos;re safely in, don&apos;t get cocky — one more week like{" "}
+        <strong className="glow-green">Mark</strong> just had and you&apos;re down here in the gutter with{" "}
+        <strong className="glow-green">Mish</strong> trying to talk yourself into &quot;mathematical possibility.&quot; If you&apos;re
+        already in the gutter… fuck it, embrace the chaos and torch somebody&apos;s playoff hopes on your way out.
+      </p>
+
+      <p>
+        - <strong className="glow-green">Mish Out!</strong>
+      </p>
+
+      {/* {week-11-loop-8.gif} */}
+      <Gif src={w11gif8} alt="Week 11 loop 8" />
+      {/* {week-11-loop-9.gif} */}
+      <Gif src={w11gif9} alt="Week 11 loop 9" />
+    </article>
+  );
+}
 
 
 
@@ -1910,9 +2287,12 @@ function YearlyRecap({ year, week, onPickWeek }) {
       <Recap2025Week9 />
     ) : w === 10 ? (
       <Recap2025Week10 />
+    ) : w === 11 ? (
+      <Recap2025Week11 />
     ) : (
       <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
     )}
+
 
     {/* Prev/Next Nav */}
     <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
