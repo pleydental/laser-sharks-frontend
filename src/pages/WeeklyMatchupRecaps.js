@@ -165,6 +165,26 @@ import w11gif7 from "../assets/weekly-recaps/week-11-loop-7.gif";
 import w11gif8 from "../assets/weekly-recaps/week-11-loop-8.gif";
 import w11gif9 from "../assets/weekly-recaps/week-11-loop-9.gif";
 
+// 🗓 2025 WEEK 12 MEDIA (2 PNGs + 9 GIFs)
+
+// PNGs
+
+import shaw1 from "../assets/weekly-recaps/shaw-1.png";
+import shaw2 from "../assets/weekly-recaps/shaw-2.png";
+
+
+// GIFs
+import w12gif1 from "../assets/weekly-recaps/week-12-loop-1.gif";
+import w12gif2 from "../assets/weekly-recaps/week-12-loop-2.gif";
+import w12gif3 from "../assets/weekly-recaps/week-12-loop-3.gif";
+import w12gif4 from "../assets/weekly-recaps/week-12-loop-4.gif";
+import w12gif5 from "../assets/weekly-recaps/week-12-loop-5.gif";
+import w12gif6 from "../assets/weekly-recaps/week-12-loop-6.gif";
+import w12gif7 from "../assets/weekly-recaps/week-12-loop-7.gif";
+import w12gif8 from "../assets/weekly-recaps/week-12-loop-8.gif";
+import w12gif9 from "../assets/weekly-recaps/week-12-loop-9.gif";
+
+
 
 function formatTime(secs) {
   if (!Number.isFinite(secs)) return "0:00";
@@ -2219,6 +2239,549 @@ function Recap2025Week11() {
     </article>
   );
 }
+/** ---- 2025 WEEK 12 CONTENT ---- */
+function Recap2025Week12() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 12 writeup</h2>
+
+      <p>
+        I know you probably don't care but Mish is not in a good mood this week. I got 2nd highest score in a league and lost and 
+        eliminated from the playoff race, I also got elminated from my guillotine leage by 0.6pts because Chase had to spit on someone. 
+        Ya I know I am bitching to an empty room but dammit, not a good fantasy year for me.</p>
+      <p>
+        Anyhoo, only 2 more weeks until playoffs, four losses and four wins up for grabs. Week 12 was meh, some movement. Most
+        notable is <strong className="glow-green">Welsch</strong> climbing for the 4th week in a row and now in striking
+        distance of the playoffs. And honestly, if <strong className="glow-green">Welsch</strong> is the one storming up
+        the standings this late, the rest of you bubble teams should probably start pre-ordering your tutus and emotional
+        support alcohol.
+      </p>
+
+      {/* {week-12-loop-1.gif} */}
+      <div
+        style={{
+          textAlign: "center",
+          margin: "1.25rem 0",
+        }}
+      >
+        <img
+          src={w12gif1}
+          alt="week-12-loop-1"
+          style={{ maxWidth: "100%", borderRadius: "8px", display: "inline-block" }}
+        />
+      </div>
+
+      <p>
+        I don’t think it mattered this week but <strong className="glow-green">Shaw-Balls</strong> phoned it in Week 12.
+        Luckily he was playing <strong className="glow-green">Marcello</strong> and it wouldn’t have made a difference if{" "}
+        <strong className="glow-green">Marcello</strong> lost or not. It could have had some serious implications for
+        people though if he was playing someone on the bubble and then getting an easy win. Set your lineups folks, it
+        doesn’t make a difference if you are out or not, it matters. It is the 2nd rule on the Champ Rules page. I’m not
+        sure I’ve ever seen a worse matchup, it’s laughable. Shaw’s team is absolutely decimated. I haven’t seen this many
+        red O’s since Russia decided to make their own Cheerios. Shaw-Balls on the left, Marcello on the right. 
+      </p>
+
+      {/* {shaw-1.PNG} and {shaw-2.PNG} side by side */}
+      <div
+        style={{
+          display: "flex",
+          gap: "1rem",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          margin: "1.25rem 0",
+        }}
+      >
+        <img
+          src={shaw1}
+          alt="shaw-1"
+          style={{
+            flex: "1 1 260px",
+            maxWidth: "340px",
+            borderRadius: "10px",
+            maxHeight: "100%",
+            objectFit: "contain",
+          }}
+        />
+        <img
+          src={shaw2}
+          alt="shaw-2"
+          style={{
+            flex: "1 1 260px",
+            maxWidth: "340px",
+            borderRadius: "10px",
+            maxHeight: "100%",
+            objectFit: "contain",
+          }}
+        />
+      </div>
+
+      {/* Week 11 → Week 12 movement table */}
+      <h3>📊 Week 11 → Week 12 Standings Movement</h3>
+      <div className="standings-movement-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Manager</th>
+              <th>Week 11 Rank</th>
+              <th>Week 12 Rank</th>
+              <th>Movement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong className="glow-green">Marcello</strong>
+              </td>
+              <td>1</td>
+              <td>1</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">Fischer</strong>
+              </td>
+              <td>2</td>
+              <td>2</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">Debo</strong>
+              </td>
+              <td>4</td>
+              <td>3</td>
+              <td>
+                <Arrow dir="up" change="1" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">Champ-Balls</strong>
+              </td>
+              <td>5</td>
+              <td>4</td>
+              <td>
+                <Arrow dir="up" change="1" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">DD</strong>
+              </td>
+              <td>6</td>
+              <td>5</td>
+              <td>
+                <Arrow dir="up" change="1" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">JD</strong>
+              </td>
+              <td>3</td>
+              <td>6</td>
+              <td>
+                <Arrow dir="down" change="3" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">Welsch</strong>
+              </td>
+              <td>9</td>
+              <td>7</td>
+              <td>
+                <Arrow dir="up" change="2" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">Mark</strong>
+              </td>
+              <td>8</td>
+              <td>8</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">McCool</strong>
+              </td>
+              <td>7</td>
+              <td>9</td>
+              <td>
+                <Arrow dir="down" change="2" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">Mish</strong>
+              </td>
+              <td>10</td>
+              <td>10</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">Gus</strong>
+              </td>
+              <td>11</td>
+              <td>11</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td>
+                <strong className="glow-green">Shaw-Balls</strong>
+              </td>
+              <td>12</td>
+              <td>12</td>
+              <td>–</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>
+        <strong className="glow-green">High Score of the week</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">Champ-Balls</strong> (148.42) defeats{" "}
+        <strong className="glow-green">McCool</strong> (110).{" "}
+        <span>
+          [<strong className="glow-green">Champ-Balls</strong>{" "}
+          <Arrow dir="up" change="1" /> to #4 | <strong className="glow-green">McCool</strong>{" "}
+          <Arrow dir="down" change="2" /> to #9]
+        </span>
+      </h4>
+      <p>
+        -<strong className="glow-green">Champ-Balls</strong> protects his playoff position and actually moved up a spot.
+      </p>
+      <p>
+        -<strong className="glow-green">McCool</strong> drops a couple of spots but still in the race.
+      </p>
+      <p>
+        -I’m not going to lie, <strong className="glow-green">Champ-Balls&apos;</strong> team is really pissing me off this
+        year. Last week Allen scored 55pts and the rest of his team was garbage, this week, Gibbs scored 58pts and ya, you
+        guessed it, the rest of his team was garbage. I think part of my annoyance is how terrible my team is and losing to
+        him last week, yes, I am butt-hurt.
+      </p>
+      <p>
+        -<strong className="glow-green">McCool</strong> had a rough week, even if Gibbs scored 36pts less (his projection),
+        he still would have lost by a point or two. JT had a bad week and may have cost McCool his chances at the playoffs this
+        year. If JT has another week like that, <strong className="glow-green">McCool</strong> is going to be watching the playoffs the
+        same way the rest of us watch his life choices: deeply confused and slightly concerned for his mental health.
+      </p>
+
+      {/* {week-12-loop-2.gif} */}
+      <div
+        style={{
+          textAlign: "center",
+          margin: "1.25rem 0",
+        }}
+      >
+        <img
+          src={w12gif2}
+          alt="week-12-loop-2"
+          style={{ maxWidth: "100%", borderRadius: "8px", display: "inline-block" }}
+        />
+      </div>
+
+      <h3>
+        <strong className="glow-green">2nd High Score of the week and 5th High Score of the week</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">DD</strong> (148.06) defeats{" "}
+        <strong className="glow-green">JD</strong> (131.66){" "}
+        <span>
+          [<strong className="glow-green">DD</strong>{" "}
+          <Arrow dir="up" change="1" /> to #5 | <strong className="glow-green">JD</strong>{" "}
+          <Arrow dir="down" change="3" /> to #6]
+        </span>
+      </h4>
+      <p>
+        -<strong className="glow-green">DD</strong> just missed out on high score by one catch or 4 yards of rushing, ouch.
+        JSN has been a beast for <strong className="glow-green">DD</strong> and he got the nice boost from Gainwell, that
+        was a good pickup. Kittle last night almost pushed him over the top but definitely sealed the H2H win for him.
+      </p>
+      <p>
+        -<strong className="glow-green">JD</strong> had another good week and his late season push continues. He did this
+        with Chase being suspended so he’s still looking pretty good. At this point{" "}
+        <strong className="glow-green">JD</strong> is basically playing fantasy football on “hard mode” and still winning,
+        while the rest of us trying to take his spot are circle jerking onto doritos without yellow number 5. 
+      </p>
+
+      {/* {week-12-loop-3.gif} */}
+      <div
+        style={{
+          textAlign: "center",
+          margin: "1.25rem 0",
+        }}
+      >
+        <img
+          src={w12gif3}
+          alt="week-12-loop-3"
+          style={{ maxWidth: "100%", borderRadius: "8px", display: "inline-block" }}
+        />
+      </div>
+
+      <h3>
+        <strong className="glow-green">3rd High Score of the week</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">Debo</strong> (144) defeats{" "}
+        <strong className="glow-green">Mish</strong> (93){" "}
+        <span>
+          [<strong className="glow-green">Debo</strong>{" "}
+          <Arrow dir="up" change="1" /> to #3 | <strong className="glow-green">Mish</strong> stays #10]
+        </span>
+      </h4>
+      <p>
+        -<strong className="glow-green">Debo</strong> did what he needed to do this week to stay in the top 6. He also made
+        a good move picking up Wilson with Jacobs being out. He had a solid shot at top score this week Monday night but Tet
+        McMillan only caught two of his 7 targets. You still got 2 wins so quit your bitchin.
+      </p>
+      <p>
+        -<strong className="glow-green">Mish</strong> dropped his 4th loss in a row and he is just sad.{" "}
+        <strong className="glow-green">Mish</strong>’s season is basically a slow-motion car crash where the driver is
+        screaming “fuuuuuuuuuuuuuuuuuuuuuuuuuuu” while the steering wheel isn’t even attached to anything.
+      </p>
+
+      {/* {week-12-loop-4.gif} */}
+      <div
+        style={{
+          textAlign: "center",
+          margin: "1.25rem 0",
+        }}
+      >
+        <img
+          src={w12gif4}
+          alt="week-12-loop-4"
+          style={{ maxWidth: "100%", borderRadius: "8px", display: "inline-block" }}
+        />
+      </div>
+
+      <h3>
+        <strong className="glow-green">4th High Score of the week</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">Fischer</strong> (138) defeats{" "}
+        <strong className="glow-green">Mark</strong> (129){" "}
+        <span>
+          [<strong className="glow-green">Fischer</strong> stays #2 | <strong className="glow-green">Mark</strong> stays
+          #8]
+        </span>
+      </h4>
+      <p>
+        -<strong className="glow-green">Fischer</strong> also had a shot at top score this week but Purdy’s 3 interceptions
+        last night fucked that plan right in the ass. He also left some points on the bench. But again, nothing too much to
+        complain about here, 2 wins and barring tragedy pretty much guaranteed to make the playoffs.
+      </p>
+      <p>
+        -<strong className="glow-green">Mark</strong> has had a rough few weeks losing 6 in a row at the worst possible
+        time. And he just missed top 6 by 1 point this week. The goose-egg from Addison and the flailing Vikings offense
+        didn’t help one bit. At this point <strong className="glow-green">Mark's</strong> season arc went from “title
+        contender” to three meerkats jerking each other off in a gas station bathroom. 
+      </p>
+
+      {/* {week-12-loop-5.gif} */}
+      <div
+        style={{
+          textAlign: "center",
+          margin: "1.25rem 0",
+        }}
+      >
+        <img
+          src={w12gif5}
+          alt="week-12-loop-5"
+          style={{ maxWidth: "100%", borderRadius: "8px", display: "inline-block" }}
+        />
+      </div>
+
+      <h3>
+        <strong className="glow-green">6th highest score of the week</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">Welsch</strong> (130) defeats{" "}
+        <strong className="glow-green">Gus</strong> (101){" "}
+        <span>
+          [<strong className="glow-green">Welsch</strong>{" "}
+          <Arrow dir="up" change="2" /> to #7 | <strong className="glow-green">Gus</strong> stays #11]
+        </span>
+      </h4>
+      <p>
+        -Like I mentioned above, <strong className="glow-green">Welsch</strong> has been slowly creeping into relevance.
+        There is a really good chance he WON’T have to wear a TuTu for a 3rd time and an outside chance of becoming a two
+        time champ if he can keep it up. He was able to do this with some of his key players on BYE too, I just realized he
+        has 3 Miami players, not sure that is much worse than 3 Bears but it’s working out much better for him than me.
+      </p>
+      <p>
+        -<strong className="glow-green">Gus</strong>’s mid-season magic has faded and I think it might be over for him. He
+        left some points on the bench but not sure it would have made much of a difference, I would check but I don’t want
+        to math right now. At this point <strong className="glow-green">Gus</strong> is basically the fantasy version of a
+        horror movie sequel: technically still going, but everybody knows how it ends.
+      </p>
+
+      {/* {week-12-loop-6.gif} */}
+      <div
+        style={{
+          textAlign: "center",
+          margin: "1.25rem 0",
+        }}
+      >
+        <img
+          src={w12gif6}
+          alt="week-12-loop-6"
+          style={{ maxWidth: "100%", borderRadius: "8px", display: "inline-block" }}
+        />
+      </div>
+
+      <h3>
+        <strong className="glow-green">Barely Worth Mentioning Matchup of the Week</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">Marcello</strong> (75) defeats{" "}
+        <strong className="glow-green">Shaw-Balls</strong> (34){" "}
+        <span>
+          [<strong className="glow-green">Marcello</strong> stays #1 |{" "}
+          <strong className="glow-green">Shaw-Balls</strong> stays #12]
+        </span>
+      </h4>
+      <p>
+        -I just can’t with this one. <strong className="glow-green">Shaw-Balls</strong> evil injury hex rubbed off on{" "}
+        <strong className="glow-green">Marcello</strong>. <strong className="glow-green">Marcello</strong> already had 2
+        key players out and then lost his backup QB this week.{" "}
+        <strong className="glow-green">Shaw-Balls</strong> had 4 zeros in his starting lineup, and 7 zeros on his bench,
+        yes there are 7 bench spots.
+      </p>
+      <p>
+        <strong className="glow-green">Marcello</strong> at least stayed on the throne,{" "}
+        <strong className="glow-green">Shaw-Balls</strong> just keeps digging toward whatever cursed basement is under the
+        actual basement.
+      </p>
+
+      {/* {week-12-loop-7.gif} */}
+      <div
+        style={{
+          textAlign: "center",
+          margin: "1.25rem 0",
+        }}
+      >
+        <img
+          src={w12gif7}
+          alt="week-12-loop-7"
+          style={{ maxWidth: "100%", borderRadius: "8px", display: "inline-block" }}
+        />
+      </div>
+
+      <h3>
+        <strong className="glow-green">Week 12 Matchups</strong>
+      </h3>
+
+      <h4>
+        <strong className="glow-green">Mish</strong> Vs. <strong className="glow-green">Mark</strong>
+      </h4>
+      <p>
+        Relevant matchup for both. Two wins keeps <strong className="glow-green">Mark</strong>&apos;s playoff hopes alive.
+        Luckily <strong className="glow-green">JD</strong> and <strong className="glow-green">Welsch</strong> are playing
+        each other this week, so that helps <strong className="glow-green">Mark</strong> either way because at least one of
+        them will get a loss or two. Two wins makes <strong className="glow-green">Mish</strong>’s playoff hopes akin to a
+        rusty sharp spoon digging out my own appendix hoping it doesn’t kill me.
+      </p>
+
+      <h4>
+        <strong className="glow-green">McCool</strong> Vs. <strong className="glow-green">Gus</strong>
+      </h4>
+      <p>
+        Relevant matchup for <strong className="glow-green">McCool</strong> and one last hope for{" "}
+        <strong className="glow-green">Gus</strong> (see spoon scenario above). Two wins for{" "}
+        <strong className="glow-green">McCool</strong> and losses by <strong className="glow-green">Welsch</strong> and{" "}
+        <strong className="glow-green">Mark</strong> would go a long way.
+      </p>
+
+      <h4>
+        <strong className="glow-green">DD</strong> Vs. <strong className="glow-green">Marcello</strong>
+      </h4>
+      <p>
+        Relevant matchup for <strong className="glow-green">DD</strong>.{" "}
+        <strong className="glow-green">Marcello</strong> is like the honey-badger, he don’t give a fuck. Though there is a
+        scenario where he loses his 1st round playoff bye position but he has clinched a playoff spot at least.{" "}
+        <strong className="glow-green">DD</strong> needs at least one win to stay relevant here. Losses by{" "}
+        <strong className="glow-green">Fischer</strong>, <strong className="glow-green">Debo</strong>,{" "}
+        <strong className="glow-green">Champ-Balls</strong> would also be helpful for him.
+      </p>
+
+      <h4>
+        <strong className="glow-green">Shaw-Balls</strong> Vs.{" "}
+        <strong className="glow-green">Fischer</strong>
+      </h4>
+      <p>
+        Relevant matchup for <strong className="glow-green">Fischer</strong>,{" "}
+        <strong className="glow-green">Debo</strong>, <strong className="glow-green">Champ-Balls</strong>, and{" "}
+        <strong className="glow-green">DD</strong>. 3 of them are really hoping{" "}
+        <strong className="glow-green">Shaw-Balls</strong> tries this week. A win by him over{" "}
+        <strong className="glow-green">Fischer</strong> would be really helpful for them.{" "}
+        <strong className="glow-green">Fischer</strong> is hoping for the opposite.
+      </p>
+
+      <h4>
+        <strong className="glow-green">JD</strong> Vs. <strong className="glow-green">Welsch</strong>
+      </h4>
+      <p>
+        Probably THE most relevant matchup. Whoever wins here increases their chances of making the playoffs by a lot.{" "}
+        <strong className="glow-green">McCool</strong> and <strong className="glow-green">Mish</strong> have slightly
+        better chances of making the playoffs because of this matchup as well.
+      </p>
+
+      <h4>
+        <strong className="glow-green">Champ-Balls</strong> Vs.{" "}
+        <strong className="glow-green">Debo</strong>
+      </h4>
+      <p>
+        Another relevant matchup. One of these two risk getting bounced out of top 6 in standings this week. This is good
+        news for <strong className="glow-green">Fischer</strong> and{" "}
+        <strong className="glow-green">DD</strong>. All four of these mopes are grasping on to their playoff position but
+        all four also have a shot at a 1st round bye.
+      </p>
+
+      {/* ChatGPT outro */}
+      <p>
+        Good luck everybody and Godspeed. 
+
+        <strong className="glow-green">-Mish Out!</strong>
+      </p>
+
+      <p className="signoff">
+        -<strong className="glow-green">Mish Out! Literally.</strong> 
+      </p>
+
+      {/* {week-12-loop-8.gif} and {week-12-loop-9.gif} */}
+      <div
+        style={{
+          textAlign: "center",
+          margin: "1.25rem 0",
+        }}
+      >
+        <img
+          src={w12gif8}
+          alt="week-12-loop-8"
+          style={{ maxWidth: "100%", borderRadius: "8px", display: "inline-block" }}
+        />
+      </div>
+      <div
+        style={{
+          textAlign: "center",
+          margin: "1.25rem 0",
+        }}
+      >
+        <img
+          src={w12gif9}
+          alt="week-12-loop-9"
+          style={{ maxWidth: "100%", borderRadius: "8px", display: "inline-block" }}
+        />
+      </div>
+    </article>
+  );
+}
+
 
 
 
@@ -2267,7 +2830,7 @@ function YearlyRecap({ year, week, onPickWeek }) {
       <h3>Week {w} Recap</h3>
     </div>
 
-    {w === 1 ? (
+        {w === 1 ? (
       <Recap2025Week1 />
     ) : w === 2 ? (
       <Recap2025Week2 />
@@ -2289,9 +2852,14 @@ function YearlyRecap({ year, week, onPickWeek }) {
       <Recap2025Week10 />
     ) : w === 11 ? (
       <Recap2025Week11 />
+    ) : w === 12 ? (
+      <Recap2025Week12 />
     ) : (
-      <p><em>No recap yet. Don’t worry, you probably sucked balls.</em></p>
+      <p>
+        <em>No recap yet. Don’t worry, you probably sucked balls.</em>
+      </p>
     )}
+
 
 
     {/* Prev/Next Nav */}
