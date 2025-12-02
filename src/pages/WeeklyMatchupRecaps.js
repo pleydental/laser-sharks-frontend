@@ -184,6 +184,17 @@ import w12gif7 from "../assets/weekly-recaps/week-12-loop-7.gif";
 import w12gif8 from "../assets/weekly-recaps/week-12-loop-8.gif";
 import w12gif9 from "../assets/weekly-recaps/week-12-loop-9.gif";
 
+// 🗓 2025 WEEK 13 MEDIA
+import w13gif1 from "../assets/weekly-recaps/week-13-loop-1.gif";
+import w13gif2 from "../assets/weekly-recaps/week-13-loop-2.gif";
+import w13gif3 from "../assets/weekly-recaps/week-13-loop-3.gif";
+import w13gif4 from "../assets/weekly-recaps/week-13-loop-4.gif";
+import w13gif5 from "../assets/weekly-recaps/week-13-loop-5.gif";
+import w13gif6 from "../assets/weekly-recaps/week-13-loop-6.gif";
+import w13gif7 from "../assets/weekly-recaps/week-13-loop-7.gif";
+import w13gif8 from "../assets/weekly-recaps/week-13-loop-8.gif";
+import w13gif9 from "../assets/weekly-recaps/week-13-loop-9.gif";
+
 
 
 function formatTime(secs) {
@@ -2781,6 +2792,288 @@ function Recap2025Week12() {
     </article>
   );
 }
+function Recap2025Week13() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 13 writeup</h2>
+
+      <p>
+        Only 1 more week until playoffs! There are still a few people left on the bubble, 7 to be exact.
+      </p>
+
+      {/* {week-13-loop-1.gif} */}
+      <Gif src={w13gif1} alt="Week 13 loop 1" />
+
+      {/* WEEK 12 -> WEEK 13 MOVEMENT TABLE */}
+      <h3>📊 Week 12 → Week 13 Standings Movement</h3>
+      <div className="standings-movement-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Manager</th>
+              <th>Week 12 Rank</th>
+              <th>Week 13 Rank</th>
+              <th>Movement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong className="glow-green">Marcello</strong></td>
+              <td>1</td>
+              <td>1</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Fischer</strong></td>
+              <td>2</td>
+              <td>2</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">JD</strong></td>
+              <td>6</td>
+              <td>3</td>
+              <td><Arrow dir="up" change="3" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Debo</strong></td>
+              <td>3</td>
+              <td>4</td>
+              <td><Arrow dir="down" change="1" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">DD</strong></td>
+              <td>5</td>
+              <td>5</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Champ-Balls</strong></td>
+              <td>4</td>
+              <td>6</td>
+              <td><Arrow dir="down" change="2" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Welsch</strong></td>
+              <td>7</td>
+              <td>9</td>
+              <td><Arrow dir="down" change="2" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Mark</strong></td>
+              <td>8</td>
+              <td>8</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">McCool</strong></td>
+              <td>9</td>
+              <td>7</td>
+              <td><Arrow dir="up" change="2" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Mish</strong></td>
+              <td>10</td>
+              <td>10</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Gus</strong></td>
+              <td>11</td>
+              <td>11</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Shaw-Balls</strong></td>
+              <td>12</td>
+              <td>12</td>
+              <td>–</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* HIGH SCORE OF THE WEEK */}
+      <h3><strong className="glow-green">High Score of the week</strong></h3>
+      <h4>
+        <strong className="glow-green">JD</strong> (147){" "}
+        <Arrow dir="up" change="3" /> defeats{" "}
+        <strong className="glow-green">Matt</strong> (94){" "}
+        <Arrow dir="down" change="2" />.
+      </h4>
+      <p>
+        Huge win for <strong className="glow-green">JD</strong> catapulting him all the way up to 3rd place. Welsch
+        got knocked down a couple of pegs, still a shot at the playoffs.
+      </p>
+
+      {/* {week-13-loop-2.gif} */}
+      <Gif src={w13gif2} alt="Week 13 loop 2" />
+
+      {/* 2ND HIGH SCORE */}
+      <h3><strong className="glow-green">2nd High Score of the week</strong></h3>
+      <h4>
+        <strong className="glow-green">McCool</strong> (139){" "}
+        <Arrow dir="up" change="2" /> defeats{" "}
+        <strong className="glow-green">Gus</strong> (100){" "}
+        {/* no movement for Gus */}
+      </h4>
+      <p>
+        <strong className="glow-green">McCool</strong> also jumped up a couple of spots, he is sitting pretty at 7th,
+        one more good week and he should be good to go for the post season.{" "}
+        <strong className="glow-green">Gus</strong>, nope.
+      </p>
+
+      {/* {week-13-loop-3.gif} */}
+      <Gif src={w13gif3} alt="Week 13 loop 3" />
+
+      {/* 3RD & 6TH HIGH SCORE */}
+      <h3><strong className="glow-green">3rd and 6th High Score of the week</strong></h3>
+      <h4>
+        <strong className="glow-green">Fischer</strong> (138) defeats{" "}
+        <strong className="glow-green">Shaw-Balls</strong> (115)
+      </h4>
+      <p>
+        <strong className="glow-green">Fischer</strong> secured himself a playoff spot and has a good chance at a 1st
+        round bye. <strong className="glow-green">Shaw-Balls</strong> tried this week and over tripled his score from
+        last week. He edged <strong className="glow-green">Debo</strong> out of a top 6 score by less than a point.
+      </p>
+
+      {/* {week-13-loop-4.gif} */}
+      <Gif src={w13gif4} alt="Week 13 loop 4" />
+
+      {/* 4TH HIGH SCORE */}
+      <h3><strong className="glow-green">4th High Score of the week</strong></h3>
+      <h4>
+        <strong className="glow-green">Marcello</strong> (133) defeats{" "}
+        <strong className="glow-green">DD</strong> (94)
+      </h4>
+      <p>
+        <strong className="glow-green">Marcello</strong> secured a 1st round bye with these two wins.{" "}
+        <strong className="glow-green">DD</strong> lost two but is still at 5th place.
+      </p>
+
+      {/* {week-13-loop-5.gif} */}
+      <Gif src={w13gif5} alt="Week 13 loop 5" />
+
+      {/* 5TH HIGH SCORE */}
+      <h3><strong className="glow-green">5th highest score of the week</strong></h3>
+      <h4>
+        <strong className="glow-green">Mark</strong> (132) defeats{" "}
+        <strong className="glow-green">Mish</strong> (90)
+      </h4>
+      <p>
+        <strong className="glow-green">Mark</strong> got it done and kept his chances at the playoffs alive.{" "}
+        <strong className="glow-green">Mish</strong> got the lowest score of the week.
+      </p>
+
+      {/* {week-13-loop-6.gif} */}
+      <Gif src={w13gif6} alt="Week 13 loop 6" />
+
+      {/* BARELY WORTH MENTIONING */}
+      <h3><strong className="glow-green">Barely Worth Mentioning Matchup of the Week</strong></h3>
+      <h4>
+        <strong className="glow-green">Debo</strong> (115) defeats{" "}
+        <strong className="glow-green">Champ-Balls</strong> (94)
+      </h4>
+      <p>
+        <strong className="glow-green">Debo</strong> gets the one win so not a completely disastrous week for him.{" "}
+        <strong className="glow-green">Champ-Balls</strong> dropped to sixth.
+      </p>
+
+      {/* {week-13-loop-7.gif} */}
+      <Gif src={w13gif7} alt="Week 13 loop 7" />
+
+      <h3><strong className="glow-green">Week 14 Matchups and Implications</strong></h3>
+
+      {/* MATCHUP: Shaw-Balls vs Mish */}
+      <h4>
+        <strong className="glow-green">Shaw-Balls</strong> vs.{" "}
+        <strong className="glow-green">Mish</strong>
+      </h4>
+      <p>
+        This matchup matters about as much as Lane Kiffin&apos;s choice between southern blondes.
+      </p>
+
+      {/* MATCHUP: McCool vs Debo */}
+      <h4>
+        <strong className="glow-green">McCool</strong> vs.{" "}
+        <strong className="glow-green">Debo</strong>
+      </h4>
+      <p>
+        Major matchup here. <strong className="glow-green">McCool</strong> has the point advantage but is two games
+        behind <strong className="glow-green">Debo</strong>. Do or die time for{" "}
+        <strong className="glow-green">McCool</strong>.{" "}
+        <strong className="glow-green">Debo</strong> just needs one win to secure a playoff spot.
+      </p>
+
+      {/* MATCHUP: JD vs Gus */}
+      <h4>
+        <strong className="glow-green">JD</strong> vs.{" "}
+        <strong className="glow-green">Gus</strong>
+      </h4>
+      <p>
+        Doesn&apos;t matter for <strong className="glow-green">Gus</strong> but just 1 win for{" "}
+        <strong className="glow-green">JD</strong> secures him a playoff spot.
+      </p>
+
+      {/* MATCHUP: Matt vs Marcello */}
+      <h4>
+        <strong className="glow-green">Matt</strong> vs.{" "}
+        <strong className="glow-green">Marcello</strong>
+      </h4>
+      <p>
+        Doesn&apos;t matter for <strong className="glow-green">Marcello</strong>, he could bench his whole team and
+        still have a 1st round bye secured. If <strong className="glow-green">Matt</strong> gets two wins and scores
+        close to 200 pts he might have a chance at the 6th seed.
+      </p>
+
+      {/* MATCHUP: Mark vs Champ-Balls */}
+      <h4>
+        <strong className="glow-green">Mark</strong> vs.{" "}
+        <strong className="glow-green">Champ-Balls</strong>
+      </h4>
+      <p>
+        Big matchup here. Two wins for <strong className="glow-green">Mark</strong> and a loss by{" "}
+        <strong className="glow-green">McCool</strong> and <strong className="glow-green">Mark</strong> should be in.{" "}
+        <strong className="glow-green">Champ-Balls</strong> could probably get by with 1 win and a{" "}
+        <strong className="glow-green">McCool</strong> loss but needs 2 wins to be safe.
+      </p>
+
+      {/* MATCHUP: Fischer vs DD */}
+      <h4>
+        <strong className="glow-green">Fischer</strong> vs.{" "}
+        <strong className="glow-green">DD</strong>
+      </h4>
+      <p>
+        The only thing <strong className="glow-green">Fischer</strong> is fighting for is a first round bye, playoffs
+        are locked in. <strong className="glow-green">DD</strong> is firmly on the bubble and has a points
+        disadvantage. He needs a win and <strong className="glow-green">McCool</strong>,{" "}
+        <strong className="glow-green">Mark</strong>, and/or{" "}
+        <strong className="glow-green">Champ-Balls</strong> to lose.
+      </p>
+
+      {/* OUTRO */}
+      <p>
+        So that&apos;s where we&apos;re at: a dozen grown men about to let Week 14 decide whether they&apos;re
+        playoff legends or glitter-smeared unicorn victims. 
+      </p>
+      <p>
+        If you&apos;re on the bubble and still &quot;feeling good&quot; about your team, you either haven&apos;t
+        looked at your roster, or you&apos;re already three bourbons deep. Set your lineups, sacrifice your least favorite pet to the Laser Shark, and
+        mentally prepare to be emotionally waterboarded by RedZone one last time.
+      </p>
+
+      <p>
+        — <strong className="glow-green">Mish Out!</strong>
+      </p>
+
+      {/* {week-13-loop-8.gif} */}
+      <Gif src={w13gif8} alt="Week 13 loop 8" />
+      {/* {week-13-loop-9.gif} */}
+      <Gif src={w13gif9} alt="Week 13 loop 9" />
+    </article>
+  );
+}
 
 
 
@@ -2831,34 +3124,37 @@ function YearlyRecap({ year, week, onPickWeek }) {
     </div>
 
         {w === 1 ? (
-      <Recap2025Week1 />
-    ) : w === 2 ? (
-      <Recap2025Week2 />
-    ) : w === 3 ? (
-      <Recap2025Week3 />
-    ) : w === 4 ? (
-      <Recap2025Week4 />
-    ) : w === 5 ? (
-      <Recap2025Week5 />
-    ) : w === 6 ? (
-      <Recap2025Week6 />
-    ) : w === 7 ? (
-      <Recap2025Week7 />
-    ) : w === 8 ? (
-      <Recap2025Week8 />
-    ) : w === 9 ? (
-      <Recap2025Week9 />
-    ) : w === 10 ? (
-      <Recap2025Week10 />
-    ) : w === 11 ? (
-      <Recap2025Week11 />
-    ) : w === 12 ? (
-      <Recap2025Week12 />
-    ) : (
-      <p>
-        <em>No recap yet. Don’t worry, you probably sucked balls.</em>
-      </p>
-    )}
+  <Recap2025Week1 />
+) : w === 2 ? (
+  <Recap2025Week2 />
+) : w === 3 ? (
+  <Recap2025Week3 />
+) : w === 4 ? (
+  <Recap2025Week4 />
+) : w === 5 ? (
+  <Recap2025Week5 />
+) : w === 6 ? (
+  <Recap2025Week6 />
+) : w === 7 ? (
+  <Recap2025Week7 />
+) : w === 8 ? (
+  <Recap2025Week8 />
+) : w === 9 ? (
+  <Recap2025Week9 />
+) : w === 10 ? (
+  <Recap2025Week10 />
+) : w === 11 ? (
+  <Recap2025Week11 />
+) : w === 12 ? (
+  <Recap2025Week12 />
+) : w === 13 ? (
+  <Recap2025Week13 />
+) : (
+  <p>
+    <em>No recap yet. Don’t worry, you probably sucked balls.</em>
+  </p>
+)}
+
 
 
 
