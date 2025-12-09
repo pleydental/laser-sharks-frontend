@@ -1028,3 +1028,14 @@ h1, h2, h3, p {
     gap: 24px;
   }
 }
+.recap-media-full {
+  display: block;
+  width: 100vw;       /* stretch to full viewport width */
+  max-width: none;
+  margin: 1.5rem 0;
+
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%); /* center while going edge-to-edge */
+}

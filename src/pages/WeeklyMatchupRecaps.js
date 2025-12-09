@@ -195,6 +195,25 @@ import w13gif7 from "../assets/weekly-recaps/week-13-loop-7.gif";
 import w13gif8 from "../assets/weekly-recaps/week-13-loop-8.gif";
 import w13gif9 from "../assets/weekly-recaps/week-13-loop-9.gif";
 
+// 🗓 2025 WEEK 14 MEDIA
+import w14gif1 from "../assets/weekly-recaps/week-14-loop-1.gif";
+import w14gif2 from "../assets/weekly-recaps/week-14-loop-2.gif";
+import w14gif3 from "../assets/weekly-recaps/week-14-loop-3.gif";
+import w14gif4 from "../assets/weekly-recaps/week-14-loop-4.gif";
+import w14gif5 from "../assets/weekly-recaps/week-14-loop-5.gif";
+import w14gif6 from "../assets/weekly-recaps/week-14-loop-6.gif";
+import w14gif7 from "../assets/weekly-recaps/week-14-loop-7.gif";
+
+import w14Sad from "../assets/weekly-recaps/week-14-sad.mp4";
+import w14Nut from "../assets/weekly-recaps/week-14-nut.mp4";
+import w14L from "../assets/weekly-recaps/week-14-L.mp4";
+import w14Slam from "../assets/weekly-recaps/week-14-slam.mp4";
+import w14Punt from "../assets/weekly-recaps/week-14-punt.mp4";
+import w14Tackle from "../assets/weekly-recaps/week-14-tackle.mp4";
+
+import w14Tutu from "../assets/weekly-recaps/week-14-tutu.png";
+
+
 
 
 function formatTime(secs) {
@@ -3075,6 +3094,387 @@ function Recap2025Week13() {
   );
 }
 
+/** ---- 2025 WEEK 14 CONTENT ---- */
+function Recap2025Week14() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 14 writeup</h2>
+
+      {/* {week-14-loop-1.gif} (i’ll ad a cignetti gif here) */}
+      <Gif src={w14gif1} alt="Week 14 opener" />
+            {/* {week-14-sad.mp4} */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="recap-media"
+      >
+        <source src={w14Sad} type="video/mp4" />
+      </video>
+
+      <p>
+        Playoffs are here! Playoffs are here! There are a few excited people reading this right now, and a few people sadder than a donkey
+        that wasn’t invited to the South American donkey show.
+      </p>
+{/* {week-14-loop-2.gif} */}
+      <Gif src={w14gif2} alt="Week 14 standings loop" />
+      {/* Extra harsh/edgy intro beat */}
+      <p>
+        Half this league is sharpening playoff knives, the other half is standing in the shower fully clothed, wondering
+        how the hell they lost to a team starting three guys with turf toe and emotional baggage. If you&apos;re reading this
+        and smiling, congrats — you&apos;re the problem. If you&apos;re reading this and furious, congrats — you&apos;re in the{" "}
+        Tutu danger zone.
+      </p>
+
+      
+
+      <p><strong className="glow-green">Here are our current rankings after the nail biter of a week 14.</strong></p>
+
+      {/* Week 13 → Week 14 comparison table */}
+      <div className="standings-movement-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Manager</th>
+              <th>Week 13 Rank</th>
+              <th>Week 14 Rank</th>
+              <th>Movement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong className="glow-green">Marcello</strong></td>
+              <td>1</td>
+              <td>1</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Fischer</strong></td>
+              <td>2</td>
+              <td>2</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">JD</strong></td>
+              <td>3</td>
+              <td>3</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Champ-Balls</strong></td>
+              <td>6</td>
+              <td>4</td>
+              <td><Arrow dir="up" change="2" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Debo</strong></td>
+              <td>4</td>
+              <td>5</td>
+              <td><Arrow dir="down" change="1" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Mark</strong></td>
+              <td>8</td>
+              <td>6</td>
+              <td><Arrow dir="up" change="2" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">McCool</strong></td>
+              <td>7</td>
+              <td>7</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Welsch</strong></td>
+              <td>9</td>
+              <td>8</td>
+              <td><Arrow dir="up" change="1" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">DD</strong></td>
+              <td>5</td>
+              <td>9</td>
+              <td><Arrow dir="down" change="4" /></td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Mish</strong></td>
+              <td>10</td>
+              <td>10</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Gus</strong></td>
+              <td>11</td>
+              <td>11</td>
+              <td>–</td>
+            </tr>
+            <tr>
+              <td><strong className="glow-green">Shaw-Balls</strong></td>
+              <td>12</td>
+              <td>12</td>
+              <td>–</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <p>
+        The Championship Bracket is all set and should be updated in yahoo, LET ME KNOW if you see any mistakes!
+      </p>
+
+    {/* WEEK 14 GIF 3 – FULL WIDTH */}
+<img
+  src={w14gif3}
+  alt="Week 14 GIF 3"
+  className="recap-media recap-media-full"
+/>
+
+
+
+      {/* Highest & 3rd highest */}
+      <h3>
+        <strong className="glow-green">Highest and 3rd Highest Score of the Week</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">Champ-Balls</strong> (157) defeats{" "}
+        <strong className="glow-green">Mark</strong> (143.24){" "}
+        <span>
+          <strong className="glow-green">Champ-Balls</strong>{" "}
+          <Arrow dir="up" change="2" /> |{" "}
+          <strong className="glow-green">Mark</strong>{" "}
+          <Arrow dir="up" change="2" />
+        </span>
+      </h4>
+      <p>
+        This cemented <strong className="glow-green">Champ-Balls</strong> a spot in the playoffs and he’ll be matched up
+        against <strong className="glow-green">Debo</strong> in the first round.{" "}
+        <strong className="glow-green">Mark</strong> was able to get in to the playoffs with the one top 6 score win,
+        losses by <strong className="glow-green">McCool</strong> and <strong className="glow-green">DD</strong>, and a
+        point advantage. That’s one way to do it! He’ll match up against{" "}
+        <strong className="glow-green">JD</strong>.
+      </p>
+
+      {/* {week-14-loop-4.gif} */}
+      <Gif src={w14gif4} alt="Week 14 high score loop" />
+
+      {/* 2nd high score */}
+      <h3>
+        <strong className="glow-green">2nd High Score of the week</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">Fischer</strong> (146) defeats{" "}
+        <strong className="glow-green">DD</strong> (107){" "}
+        <span>
+          <strong className="glow-green">Fischer</strong> – |{" "}
+          <strong className="glow-green">DD</strong>{" "}
+          <Arrow dir="down" change="4" />
+        </span>
+      </h4>
+      <p>
+        This cemented <strong className="glow-green">Fischer</strong> at the #2 spot and gave him a first round bye. He’s
+        been strong most of the year with a rough stretch but he pulled it all back together. The whole season{" "}
+        <strong className="glow-green">DD</strong> was in the top 6 with the exception of 2 weeks, well you can add a 3rd
+        week to that total because he dropped from 5th all the way to 9th. His two losses plus{" "}
+        <strong className="glow-green">Mark&apos;s</strong> win knocked him out of the playoffs because of a close to a
+        140 point disadvantage. What’s even worse, he dropped so far he is now in the running for the Tutu. Bye{" "}
+        <strong className="glow-green">DD</strong>. Right in the nut sack.
+      </p>
+
+      {/* {week-14-nut.mp4} */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="recap-media"
+      >
+        <source src={w14Nut} type="video/mp4" />
+      </video>
+
+      {/* 4th high score */}
+      <h3>
+        <strong className="glow-green">4th High Score of the Week</strong>
+      </h3>
+      <h4>
+       <strong className="glow-green"> Welsch </strong>(133) defeats <strong className="glow-green">Marcello</strong> (97){" "}
+        <span>
+         <strong className="glow-green"> Welsch</strong> <Arrow dir="up" change="1" /> |{" "}
+          <strong className="glow-green">Marcello</strong> –
+        </span>
+      </h4>
+      <p>
+        <strong className="glow-green">Welsch </strong>did everything he could to make it into the playoffs with 2 wins this week, almost did it too, he lost out
+        by 73pts against <strong className="glow-green">Mark</strong>. Silver lining, he doesn’t have to play for the
+        TuTu. <strong className="glow-green">Marcello</strong> got 2 losses but still firmly at the #1 spot with a first
+        round bye. His team has been solid but man, when it’s bad, it’s bad. Hopefully the week off will do him good.
+        Either way, bye <strong className="glow-green">Welsch.</strong>
+      </p>
+
+      {/* {week-14-L.mp4} */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="recap-media"
+      >
+        <source src={w14L} type="video/mp4" />
+      </video>
+
+      {/* 5th & 6th high score */}
+      <h3>
+        <strong className="glow-green">5th and 6th High Score of the week</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">JD</strong> (122) defeats{" "}
+        <strong className="glow-green">Gus</strong> (112){" "}
+        <span>
+          <strong className="glow-green">JD</strong> – |{" "}
+          <strong className="glow-green">Gus</strong> –
+        </span>
+      </h4>
+      <p>
+        <strong className="glow-green">JD</strong> found his way into the top 6 a few weeks ago and has decided he wants
+        to stay. He is solidly in 3rd place and will match up against{" "}
+        <strong className="glow-green">Mark</strong> in the 1st round. Somehow along the way he ended up with the 2nd most
+        points. <strong className="glow-green">Gus</strong> is also in the running for the TuTu and will match up against{" "}
+        <strong className="glow-green">Mish</strong>. He was out awhile ago but lets make it official, bye{" "}
+        <strong className="glow-green">Gus</strong>.
+      </p>
+
+      {/* {week-14-slam.mp4} */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="recap-media"
+      >
+        <source src={w14Slam} type="video/mp4" />
+      </video>
+
+      {/* Barely worth mentioning v1 */}
+      <h3>
+        <strong className="glow-green">Barely Worth Mentioning Matchup of the Week Version 1</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">McCool</strong> (106) defeats{" "}
+        <strong className="glow-green">Debo</strong> (85){" "}
+        <span>
+          <strong className="glow-green">McCool</strong> – |{" "}
+          <strong className="glow-green">Debo</strong>{" "}
+          <Arrow dir="down" change="1" />
+        </span>
+      </h4>
+      <p>
+        Another nut cruncher. <strong className="glow-green">McCool</strong> got the head to head win but failed to make
+        it in the top 6 in scoring, so he missed out on the playoffs by 31pts because of{" "}
+        <strong className="glow-green">Mark&apos;s</strong> point advantage.{" "}
+        <strong className="glow-green">Debo</strong> is really thankful for this by the way, if{" "}
+        <strong className="glow-green">McCool</strong> would have gotten 2 wins this week{" "}
+        <strong className="glow-green">Debo</strong> would be OUT of the playoffs. I think{" "}
+        <strong className="glow-green">Debo</strong> owes you a beer{" "}
+        <strong className="glow-green">McCool</strong>. Until then, bye{" "}
+        <strong className="glow-green">McCool</strong>.
+      </p>
+
+      {/* {week-14-punt.mp4} */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="recap-media"
+      >
+        <source src={w14Punt} type="video/mp4" />
+      </video>
+
+      {/* Barely worth mentioning v2 */}
+      <h3>
+        <strong className="glow-green">Barely Worth Mentioning Matchup of the Week Version 2</strong>
+      </h3>
+      <h4>
+        <strong className="glow-green">Mish</strong> (96) defeats{" "}
+        <strong className="glow-green">Shaw-Balls</strong> (84){" "}
+        <span>
+          <strong className="glow-green">Mish</strong> – |{" "}
+          <strong className="glow-green">Shaw-Balls</strong> –
+        </span>
+      </h4>
+      <p>
+        I didn’t really look, but I am pretty sure I made terrible lineup decisions and 3 of{" "}
+        <strong className="glow-green">Shaw-Balls</strong> starting lineup players had infected toes amputated during
+        their games, or a hammy/shoulder/knee/ankle, whatever the flavor of the week for his team was. Bye{" "}
+        <strong className="glow-green">Mish</strong>, Bye{" "}
+        <strong className="glow-green">Shaw-Balls</strong>.
+      </p>
+
+      {/* {week-14-tackle.mp4} */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="recap-media"
+      >
+        <source src={w14Tackle} type="video/mp4" />
+      </video>
+
+      <h3>
+        <strong className="glow-green">Here is how the TuTu Bracket is looking:</strong>
+      </h3>
+      
+{/* WEEK 14 GIF 7 – FULL WIDTH */}
+<img
+  src={w14gif7}
+  alt="Week 14 GIF 7"
+  className="recap-media recap-media-full"
+/>
+
+
+      {/* (ChatGPT: Write funny outro here based on above information) */}
+      <p>
+        So there it is: the pretty kids at the top polishing their bye weeks, and the degenerates at the bottom getting
+        fitted for tulle and glitter. <strong className="glow-green">Marcello</strong> and{" "}
+        <strong className="glow-green">Fischer</strong> get to sit on their smug little thrones while{" "}
+        <strong className="glow-green">Mish</strong>, <strong className="glow-green">Gus</strong>,{" "}
+        <strong className="glow-green">DD</strong> and <strong className="glow-green">Shaw-Balls</strong> are one bad week away from starring in the{" "}
+        &quot;please don&apos;t let my kids see this&quot; Tutu slideshow.
+      </p>
+   
+      <p>
+        If you made the playoffs, congrats, you’re now officially on upset alert. If you’re in the Tutu bracket, don’t
+        worry — your shame will live forever on the website, group chat, and probably in at least one Christmas card.
+      </p>
+
+      <p>– <strong className="glow-green">Mish Out!</strong></p>
+
+      {/* {week-14-loop-5.gif} (nut shot) */}
+      <Gif src={w14gif5} alt="Week 14 nut shot loop" />
+
+      {/* {week-14-loop-6.gif} (champ banner) */}
+      <Gif src={w14gif6} alt="Week 14 champ banner loop" />
+
+      {/* {week-14-tutu.png} (loser banner) */}
+      <div style={{ display: "flex", justifyContent: "center", margin: "1.25rem 0" }}>
+        <img
+          src={w14Tutu}
+          alt="Week 14 TuTu loser bracket banner"
+          className="recap-media"
+          style={{ maxWidth: "720px", width: "100%", height: "auto" }}
+        />
+      </div>
+    </article>
+  );
+}
 
 
 
@@ -3123,7 +3523,7 @@ function YearlyRecap({ year, week, onPickWeek }) {
       <h3>Week {w} Recap</h3>
     </div>
 
-        {w === 1 ? (
+{w === 1 ? (
   <Recap2025Week1 />
 ) : w === 2 ? (
   <Recap2025Week2 />
@@ -3149,11 +3549,14 @@ function YearlyRecap({ year, week, onPickWeek }) {
   <Recap2025Week12 />
 ) : w === 13 ? (
   <Recap2025Week13 />
+) : w === 14 ? (
+  <Recap2025Week14 />
 ) : (
   <p>
     <em>No recap yet. Don’t worry, you probably sucked balls.</em>
   </p>
 )}
+
 
 
 
