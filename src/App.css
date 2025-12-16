@@ -1039,3 +1039,15 @@ h1, h2, h3, p {
   right: 50%;
   transform: translateX(-50%); /* center while going edge-to-edge */
 }
+/* Full-bleed recap videos (champ / tutu) */
+.recap-video-wrapper-full {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.recap-video-full {
+  width: 100%;
+  height: auto;
+  display: block;
+}

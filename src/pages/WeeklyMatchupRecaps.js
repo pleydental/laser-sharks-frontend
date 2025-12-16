@@ -213,7 +213,23 @@ import w14Tackle from "../assets/weekly-recaps/week-14-tackle.mp4";
 
 import w14Tutu from "../assets/weekly-recaps/week-14-tutu.png";
 
+// src/recaps/Recap2025Week15.jsx
 
+import week15Champ from "../assets/weekly-recaps/week-15-champ.mp4";
+import week15Loop1 from "../assets/weekly-recaps/week-15-loop-1.gif";
+import week15Loop2 from "../assets/weekly-recaps/week-15-loop-2.gif";
+import week15Loop3 from "../assets/weekly-recaps/week-15-loop-3.gif";
+import week15Loop4 from "../assets/weekly-recaps/week-15-loop-4.gif";
+import week15Loop5 from "../assets/weekly-recaps/week-15-loop-5.gif";
+import week15Loop6 from "../assets/weekly-recaps/week-15-loop-6.gif";
+import week15Loop7 from "../assets/weekly-recaps/week-15-loop-7.gif";
+import week15Loop8 from "../assets/weekly-recaps/week-15-loop-8.gif";
+import week15Loop9 from "../assets/weekly-recaps/week-15-loop-9.gif";
+import week15Loop10 from "../assets/weekly-recaps/week-15-loop-10.gif";
+import week15Loop11 from "../assets/weekly-recaps/week-15-loop-11.gif";
+import week15Loop12 from "../assets/weekly-recaps/week-15-loop-12.gif";
+import week15Tutu from "../assets/weekly-recaps/week-15-tutu.mp4";
+import week15TutuBanner from "../assets/weekly-recaps/week-15-tutubanner.mp4";
 
 
 function formatTime(secs) {
@@ -3476,6 +3492,273 @@ function Recap2025Week14() {
   );
 }
 
+const Recap2025Week15 = () => {
+  return (
+    <div className="weekly-recap">
+      <p>
+        Holy hell fellas that was some shit right there, week 15 did not
+        disappoint. Here is the championship bracket:
+      </p>
+
+     <div className="recap-video-wrapper recap-video-wrapper-full">
+  <video
+    src={week15Champ}
+    className="recap-video recap-video-full"
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+</div>
+
+
+      <h2 className="glow-green">
+        <strong>Highest Score of the Week</strong>
+      </h2>
+
+      <p>
+        <strong className="glow-green">Fischer</strong> got a whopping 182
+        pointless points as he had a bye this week. He still gets paid though.
+        Will probably score 110 this week hahahahahahahaha.
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop1} alt="Week 15 loop 1" className="recap-gif" />
+      </div>
+
+      <p>
+        <strong className="glow-green">Marcello</strong> also had a great week
+        with 169 points, also pointless because of his bye and will also likely
+        be disappointed this week. Especially since he is playing{" "}
+        <strong className="glow-green">Champ-Balls</strong>, a notorious spoiler
+        for hopes and dreams.
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop2} alt="Week 15 loop 2" className="recap-gif" />
+      </div>
+
+      <p>
+        Everyone that did play in the first round had some nail-biters, or
+        pillow biters depending on how you look at it.
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop3} alt="Week 15 loop 3" className="recap-gif" />
+      </div>
+
+      <h2 className="glow-green">
+        <strong>4th and 5th Seed Matchup. </strong>
+        <strong className="glow-green">Debo</strong> 118 vs.{" "}
+        <strong className="glow-green">Champ-Balls</strong> 122
+      </h2>
+
+      <p>
+        <strong className="glow-green">Debo</strong> had a small lead going into
+        Monday night. He needed{" "}
+        <strong className="glow-green">Champ-Balls</strong> tight end to score
+        his projected points or worse. What did that mudda fudda do? He scored a
+        14yd tuddy run in the 4th quarter. Prior to that he had 2 receptions for
+        12 yards. Dat sum shit. Mahomes tearing his ACL didn’t help{" "}
+        <strong className="glow-green">Debo</strong> either. Though the fact
+        that <strong className="glow-green">Debo</strong> couldn’t win despite{" "}
+        <strong className="glow-green">Champ-Balls</strong> starting a WR that
+        was announced as inactive prior to the game just shows{" "}
+        <strong className="glow-green">Champ-Balls</strong> mercy in putting him
+        out of his misery. Nice season{" "}
+        <strong className="glow-green">Debo</strong> but as Socrates once
+        said….
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop4} alt="Week 15 loop 4" className="recap-gif" />
+      </div>
+
+      <h2 className="glow-green">
+        <strong>3rd and 6th Seed Matchup. </strong>
+        <strong className="glow-green">JD</strong> 121 vs{" "}
+        <strong className="glow-green">Mark</strong> 128
+      </h2>
+
+      <p>
+        <strong className="glow-green">JD</strong>’s hopes and dreams were
+        crushed Sunday night. By then{" "}
+        <strong className="glow-green">JD</strong> was only alive because of T
+        Henderson and J Chase and yes, his kicker, we’ll come back to this
+        later. <strong className="glow-green">Mark</strong>’s team was balanced
+        and he got decent enough production from everyone to make it through,
+        3rd highest point total in the Championship bracket.{" "}
+        <strong className="glow-green">JD</strong> was texting me bitching about{" "}
+        <strong className="glow-green">Mark</strong>’s kicker outscoring Dak
+        Sunday night and then went into full on melt down mode, I thought he
+        might fly out to Dallas and let Dak know how much of widdle bitch he
+        was. <strong className="glow-green">JD</strong> forgot to mention his own
+        kicker got 18 points.{" "}
+        <strong className="glow-green">JD</strong>’s team was fun to watch this
+        year, great cum back story just like his championship year, but any way,
+        buh bye cowboy.
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop5} alt="Week 15 loop 5" className="recap-gif" />
+      </div>
+
+      <h2 className="glow-green">
+        <strong>Round 2 matchups:</strong>
+      </h2>
+
+      <h3 className="glow-green">
+        <strong>Gay Texas Cowboy Rematch</strong>
+      </h3>
+
+      <p>
+        That’s right folks, this a rematch of last year’s championship between{" "}
+        <strong className="glow-green">Marcello</strong> and{" "}
+        <strong className="glow-green">Champ-Balls</strong>. They also met up in
+        week 9 this year and <strong className="glow-green">Marcello</strong>{" "}
+        won 133-121. I will be in Dallas with these two jabronis this weekend
+        when they are going head to head, I hope it doesn’t get awkward, I also
+        hope they aren’t wearing ass-less chaps. The obvious favorite here is{" "}
+        <strong className="glow-green">Marcello</strong> but it’s been a weird
+        year. His team usually does amazing but when it doesn’t it REALLY
+        doesn’t. <strong className="glow-green">Champ-Balls</strong> season theme
+        is barely eeking out wins week to week and doing just enough to piss his
+        opponents off. If I was{" "}
+        <strong className="glow-green">Marcello</strong>, I would be scared
+        shit-less, with the ass-less chaps though at least the mess will be
+        minimal.
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop6} alt="Week 15 loop 6" className="recap-gif" />
+      </div>
+
+      <h3 className="glow-green">
+        <strong>Rookie vs. Veteran Matchup.</strong>
+      </h3>
+
+      <p>
+        <strong className="glow-green">Mark</strong> came out of last week
+        smelling like roses but now he is matched up against the league point
+        leader and 1st rounds high score…guy…person…I forgot{" "}
+        <strong className="glow-green">Fischer</strong>’s pronouns, my bad.
+        Again, <strong className="glow-green">Fischer</strong> is the obvious
+        favorite here but I’ve seen some crazy things. Undefeated teams losing
+        their first playoff matchup, 6th seeds having their best game of the
+        year, anything can happen. Both teams are healthy without an injury in
+        sight. I love <strong className="glow-green">Fischer</strong> like a
+        brother but man if he wins his rookie season I know I will never hear
+        the end of it, c’mon <strong className="glow-green">Mark</strong>, don’t
+        let a rookie win man!
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop7} alt="Week 15 loop 7" className="recap-gif" />
+      </div>
+
+      <h2 className="glow-green">
+        <strong>TUTU BRACKET</strong>
+      </h2>
+
+   <div className="recap-video-wrapper recap-video-wrapper-full">
+  <video
+    src={week15Tutu}
+    className="recap-video recap-video-full"
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+</div>
+
+      <p>
+        This might be even more exciting than the above. In less than a week{" "}
+        <strong className="glow-green">Shaw-Balls</strong> or{" "}
+        <strong className="glow-green">Gus</strong> will be tasked with wearing
+        a TuTu for our enjoyment, for most of us anyway. But for{" "}
+        <strong className="glow-green">Mark</strong> it is so much more, he has an unhealthy obsession with
+        the photos, I think he has a collage of the past losers in his basement
+        bathroom.
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop8} alt="Week 15 loop 8" className="recap-gif" />
+      </div>
+
+      <p>
+        <strong className="glow-green">Mish</strong> played{" "}
+        <strong className="glow-green">Gus</strong> in the 1st round and barely
+        eeked out an 11 point win and is marked safe from TuTu. Both of us had
+        some problems but Burrow only scoring 8 points for{" "}
+        <strong className="glow-green">Gus</strong> sealing the deal. Burrow said
+        after the game there wasn’t a team in the NFL (even the Colts) that
+        would have won that day if he was their quarterback, well,{" "}
+        <strong className="glow-green">Gus</strong> concurs.
+      </p>
+
+      <p>
+        <strong className="glow-green">DD</strong> played{" "}
+        <strong className="glow-green">Shaw-Balls</strong> and won by 40 points.
+        This was <strong className="glow-green">DD</strong>’s best performance
+        since week 12, but too little too late. He is now safe from a 2nd TuTu.
+      </p>
+
+      <p>
+        <strong className="glow-green">Shaw-Balls</strong> is the heavy favorite
+        for the TuTu but <strong className="glow-green">Gus</strong> juuuuust
+        might throw the match on purpose. Not because of a bribe or anything
+        like that but he really likes TuTu’s. If{" "}
+        <strong className="glow-green">Gus</strong> picks up Rivers this week
+        then we have our answer.
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop9} alt="Week 15 loop 9" className="recap-gif" />
+      </div>
+
+      <p>
+        Ok, going to be interesting to see how this all shakes out. My
+        prediction, <strong className="glow-green">Marcello</strong> loses by 6
+        maybe 7 points not because he has a worse team, but because{" "}
+        <strong className="glow-green">Champ-Balls</strong> has some sort of
+        voodoo magic. <strong className="glow-green">Fischer</strong> wins by 69
+        points and <strong className="glow-green">Mark</strong> sniffs glue and
+        passes out. <strong className="glow-green">Shaw-Balls</strong> somehow
+        puts it all together and gets high score for the week, fulfilling{" "}
+        <strong className="glow-green">Gus</strong>’s lifelong dream of sending
+        TuTu photos to his friends.
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop10} alt="Week 15 loop 10" className="recap-gif" />
+      </div>
+
+      <p>
+        -<strong className="glow-green">Mish Out!</strong>
+      </p>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop11} alt="Week 15 loop 11" className="recap-gif" />
+      </div>
+
+      <div className="recap-gif-wrapper">
+        <img src={week15Loop12} alt="Week 15 loop 12" className="recap-gif" />
+      </div>
+
+      <div className="recap-video-wrapper">
+        <video
+          src={week15TutuBanner}
+          className="recap-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </div>
+    </div>
+  );
+};
+
 
 
 
@@ -3551,6 +3834,8 @@ function YearlyRecap({ year, week, onPickWeek }) {
   <Recap2025Week13 />
 ) : w === 14 ? (
   <Recap2025Week14 />
+) : w === 15 ? (
+  <Recap2025Week15 />
 ) : (
   <p>
     <em>No recap yet. Don’t worry, you probably sucked balls.</em>
