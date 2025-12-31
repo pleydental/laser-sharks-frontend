@@ -82,6 +82,7 @@ const GLOW_NAMES = [
   "Cello",
   "Cello's",
   "13 to 64",
+  "13 to 16",
   "121 to 102",
 ];
 
@@ -635,7 +636,7 @@ const recaps = {
     <h3 class="recap-subheader">Christmas Day</h3>
     <p>Fischer had J Williams going first and he gave him about what he has been expecting from him so far. 
     Not a bad start but not a great start, 6 points below projected. The next game Scham-Balls was hoping to answer 
-    back with J Gibbs but he had a disappointing 7 points in their loss to Minnesota. The team heard their city was opening 30 new Somalian daycares and they were super excited. Fischer added to his lead with his kicker in this game but he only got 5 points. Scham-Balls was comforted in knowing he wasn’t going to get beat by a kicker at least. The final game of Christmas Scham-Balls had a chance to make up some ground with Engram in the Den-KC game but alas, he did not, only got 6pts. Score so far (bold and green) 13 to 16 Fischer.</p>
+    back with J Gibbs but he had a disappointing 7 points in their loss to Minnesota. The team heard their city was opening 30 new Somalian daycares and they were super excited. Fischer added to his lead with his kicker in this game but he only got 5 points. Scham-Balls was comforted in knowing he wasn’t going to get beat by a kicker at least. The final game of Christmas Scham-Balls had a chance to make up some ground with Engram in the Den-KC game but alas, he did not, only got 6pts. Score so far 13 to 16 Fischer.</p>
 
     [gif file="week-16-loop-2.gif" size="md" align="center"]
 
