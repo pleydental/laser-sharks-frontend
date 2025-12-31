@@ -26,8 +26,8 @@ const Dashboard = () => {
   const [playoffCountdown, setPlayoffCountdown] = useState('');
 
   useEffect(() => {
-    const draftDate = new Date('2025-08-22T20:00:00-04:00');
-    const playoffDate = new Date('2025-12-11T20:15:00-05:00');
+    const draftDate = new Date('2026-08-29T20:00:00-04:00');
+    const playoffDate = new Date('2026-12-15T20:15:00-05:00');
 
     const updateCountdowns = () => {
       const now = new Date();
@@ -41,7 +41,7 @@ const Dashboard = () => {
         const s = Math.floor((draftDiff / 1000) % 60);
         setDraftCountdown(`${d}d ${h}h ${m}m ${s}s`);
       } else {
-        setDraftCountdown('🚨 Draft is OVER BITCHES! 🚨');
+        setDraftCountdown('🚨 That got out of hand quickly! 🚨');
       }
 
       if (playoffDiff > 0) {
@@ -172,7 +172,7 @@ const Dashboard = () => {
               <div>
                 <div className="countdown-box card-dark">
                   <h2 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '1rem' }}>
-                    📋 Draft Order 2025 📋
+                    📋 Draft Order 2026 📋
                   </h2>
                   <table className="draft-order-table" style={{ margin: '0 auto' }}>
                     <thead>

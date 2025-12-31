@@ -4,7 +4,7 @@ import "./ChampRules.css";
 
 const lines = [
   "League rule: High score each week gets $25, goes through playoffs",
-  "Bare minimum rule: Everyone is expected to set a line-up each week, any one who doesn't will be called out and humiliated. And if it becomes a habit, potentially removed from the league. Ask Ben Adams, though he went to jail before I could remove him",
+  "Bare minimum rule: Everyone is expected to set a line-up each week during regular season, any one who doesn't will be called out and humiliated. And if it becomes a habit, potentially removed from the league. Ask Ben Adams, though he went to jail before I could remove him",
   "2016: Mish – 1 win for head-to-head win, 1 win for top 6 weekly score",
   "2017: Shaw – Ummmmmm, I have no record of this rule, Shaw do you remember?",
   "2018: Welsch – Added SuperFlex (QB/WR/RB/TE)",
@@ -14,6 +14,7 @@ const lines = [
   "2022: Scham – Added a flex position (WR/TE/RB)",
   "2023: Shaw – Winner from previous year chooses draft position; down line from there",
   "2024: Scham – Cornell Rule: During the draft order picking, if current draftee does not respond within 12hrs, they automatically get the lowest pick left and the draft order picking resumes with the next up",
+  "2025: Fischer - Waiting on Rule",
 ];
 
 function RuleLine({ text }) {

@@ -26,17 +26,110 @@ function resolveLocalGif(filename) {
   }
 }
 
+/**
+ * Names that must always be bold + glowing green anywhere they appear.
+ * Whole-words only, case-insensitive.
+ */
+const GLOW_NAMES = [
+  "Mish",
+  "Champ-Balls",
+  "Scham-Balls",
+  "Ryan Schamerloh",
+  "Scham",
+  "Scham-shaft",
+  "Shaw-Balls",
+  "Ryan Shaw",
+  "Ryan",
+  "Ryan's",
+  "Shaw",
+  "Marcello",
+  "Marcello's",
+  "Fischer",
+  "Fischer's",
+  "Aaron Fischer",
+  "Debo",
+  "Debo's",
+  "DD",
+  "DD's",
+  "Mark",
+  "Mark's",
+  "JD",
+  "JD's",
+  "Gus",
+  "Gus's",
+  "Matt",
+  "Matt's",
+  "McCool",
+  "McCool's",
+  "Welsch",
+  "Welsch's",
+  "Matty Ice",
+  "The Mac Train",
+  "TMT",
+  "Mac",
+  "Paul",
+  "Ben",
+  "Hack",
+  "Goldhammer",
+  "Chad",
+  "Ashleigh",
+  "Jeremy",
+  "3568 Snowdon Drive, Westfield, IN 46074",
+  "My prediction for 2025",
+  "Mish Out",
+  "Wick",
+  "Wick's",
+  "Cello",
+  "Cello's",
+  "13 to 64",
+  "121 to 102",
+];
+
+/**
+ * Highlight names in HTML text only (not inside tags/attributes).
+ * Wraps matches with: <strong class="glow-green">NAME</strong>
+ */
+function highlightNamesInHtml(html) {
+  if (typeof html !== "string" || !html) return html;
+
+  // Split into tag and text segments, only process text segments
+  const parts = html.split(/(<[^>]*>)/g);
+
+  const escaped = GLOW_NAMES
+    .slice()
+    // Longer first so "Scham-Balls" matches before "Scham"
+    .sort((a, b) => b.length - a.length)
+    .map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+
+  // Whole-word-ish boundary: not letter/number on either side
+  const re = new RegExp(`(?<![A-Za-z0-9])(${escaped.join("|")})(?![A-Za-z0-9])`, "gi");
+
+  return parts
+    .map((seg) => {
+      if (seg.startsWith("<") && seg.endsWith(">")) return seg;
+      return seg.replace(re, (m) => `<strong class="glow-green">${m}</strong>`);
+    })
+    .join("");
+}
+
 
 // --- Shortcode parser ---
 // Use inside your recap HTML strings like:
 // [gif file="turkey-dance.gif" size="md" align="center"]
 // [gif file="ref-whiff.mp4" size="sm" align="right" type="video"]
+//
+// Extended video attrs supported (optional):
+// autoplay="on|off", loop="on|off", muted="on|off", controls="on|off"
 function parseGifShortcodes(html) {
   if (typeof html !== 'string') return html;
 
   html = html.replace(/<\s*Gif\b[^>]*>(?:<\/\s*Gif\s*>|)/gi, '');
 
   const re = /\[gif\s+([^\]]+)\]/gi;
+
+  const isOn = (v) => /^(1|true|on|yes)$/i.test((v || "").trim());
+  const isOff = (v) => /^(0|false|off|no)$/i.test((v || "").trim());
+
   return html.replace(re, (_, attrStr) => {
     const attrs = {};
     attrStr.replace(/(\w+)\s*=\s*"([^"]*)"/g, (_, k, v) => {
@@ -53,16 +146,34 @@ function parseGifShortcodes(html) {
 
     if (!src) return '';
 
-if (isVideo) {
-  return `
-    <figure class="gif-figure gif-${align}">
-      <video class="gif-media gif-${size}" muted playsinline loop autoplay>
-        <source src="${src}" type="video/mp4" />
-      </video>
-    </figure>
-  `;
-}
+    if (isVideo) {
+      // Defaults (match your previous behavior)
+      let autoplay = true;
+      let loop = true;
+      let muted = true;
+      let controls = false;
 
+      if ("autoplay" in attrs) autoplay = isOn(attrs.autoplay) ? true : isOff(attrs.autoplay) ? false : autoplay;
+      if ("loop" in attrs) loop = isOn(attrs.loop) ? true : isOff(attrs.loop) ? false : loop;
+      if ("muted" in attrs) muted = isOn(attrs.muted) ? true : isOff(attrs.muted) ? false : muted;
+      if ("controls" in attrs) controls = isOn(attrs.controls) ? true : isOff(attrs.controls) ? false : controls;
+
+      return `
+        <figure class="gif-figure gif-${align}">
+          <video
+            class="gif-media gif-${size}"
+            ${muted ? "muted" : ""}
+            ${controls ? "controls" : ""}
+            ${loop ? "loop" : ""}
+            ${autoplay ? "autoplay" : ""}
+            playsinline
+            preload="metadata"
+          >
+            <source src="${src}" type="video/mp4" />
+          </video>
+        </figure>
+      `;
+    }
 
     return `
       <figure class="gif-figure gif-${align}">
@@ -473,7 +584,7 @@ const recaps = {
     <p>This is Scham-balls and Marcello getting all jazzed up prior to the championship game</p>
     [gif file="assless-chaps.gif" size="md" align="center"]
 
-    <p>It was actually a good matchup as both teams put up some pretty big numbers. In the end, I don't think Marcello polished his saddle enough because he had some seriously bad luck. James Conner got hurt in the 1st quarter and gave him less than 3 points and his TE Hunter Henry gave him 0 pts with only 2 targets. That's not to take away from Scham-balls victory, his team did great. This is his 3rd Laser Shark Championship.</p>
+    <p>It was actually a good matchup as both teams put up some pretty big numbers. In the end, I don't think Marcello polished his saddle enough because he had some seriously bad luck. James Conner got hurt in the 1st quarter and gave him less than 3 points and his TE Hunter Henry gave him 0 pts with only 2 targets. That's not to take away from Scham-balls victory, his team did great. This is his 3rd Laser Sharks Championship.</p>
     [gif file="southpark-gay-cowboys.gif" size="md" align="center"]
 
     <p>For those of you that don't know Scham-balls or Marcello, these two cowboys are actually really good representations of them.</p>
@@ -490,38 +601,129 @@ const recaps = {
   `,
 
   2025: `
+
+    <h2 class="recap-header">THERES A NEW SHERIFF IN TOWN!</h2>
+    <p>Congratulations to the rookie Fischer for busting the door down like Mr. Kool-Aid and absolutely whooping us. 
+    He got high score all 3 weeks in the playoffs, that’s never happened. Scham-Balls had 2 playoff high scores in 
+    2019 and Shaw-Balls had 2 playoff high scores in 2017.</p>
+
+    [gif file="week-16-loop-1.gif" size="md" align="center"]
+
+    <h2 class="recap-header">Housekeeping stuff before the write up</h2>
+    <p>1. Fischer- you need to pick a new rule for the 2026 season, or remove a current rule. Please try to get that to me before we start picking the draft order.</p>
+    <p>2. Shaw- I need your address so I can mail you the coveted TuTu</p>
+    <p>3. Scham- Mail the trophy back please (3568 Snowdon Drive, Westfield, IN 46074)</p>
+    <p>4. All money should be paid</p>
+    <p>5. You can now talk about Fight Club</p>
+    <p>6. Everyone else better luck next year</p>
+
+    <h2 class="recap-header">Final Standings and Earnings</h2>
+    [gif file="2025-standings.png" size="full" align="center"]
+
+    <h2 class="recap-header">Final Brackets</h2>
+    [gif file="champ-bracket.mp4" size="full" align="center" type="video" autoplay="on" loop="on" muted="on" controls="on"]
+    [gif file="tutu-bracket.mp4" size="full" align="center" type="video" autoplay="on" loop="on" muted="on" controls="on"]
+
+    <h2 class="recap-header">Championship Matchup</h2>
+    <h3 class="recap-subheader">Fischer (136) defeats Champ-Balls (107)</h3>
+
+    <p>Well the season didn’t shake quite the way I predicted, Debo gave a valiant effort but Fischer managed to 
+    make half of the prediction true. Champ-Balls knew he had an uphill climb to defeat Fischer but in the end, 
+    he didn’t, he was in the top 6 scores at least. Fischer like I said got high score again for his 3rd week in a
+     row and managed to win despite having his lowest score since week 11!</p>
+
+    <h3 class="recap-subheader">Christmas Day</h3>
+    <p>Fischer had J Williams going first and he gave him about what he has been expecting from him so far. 
+    Not a bad start but not a great start, 6 points below projected. The next game Scham-Balls was hoping to answer 
+    back with J Gibbs but he had a disappointing 7 points in their loss to Minnesota. The team heard their city was opening 30 new Somalian daycares and they were super excited. Fischer added to his lead with his kicker in this game but he only got 5 points. Scham-Balls was comforted in knowing he wasn’t going to get beat by a kicker at least. The final game of Christmas Scham-Balls had a chance to make up some ground with Engram in the Den-KC game but alas, he did not, only got 6pts. Score so far (bold and green) 13 to 16 Fischer.</p>
+
+    [gif file="week-16-loop-2.gif" size="md" align="center"]
+
+    <h3 class="recap-subheader">Saturday</h3>
+    <p>Neither had anyone going in the Texans-Chargers game. But Ravens-Packers, oh yes, oh yes they did. Fischer got a belated Christmas gift with old man Henry blowing up for 49 points. By far his best player of the week and really the ONLY player that excelled for him this week. I think by the end of this game he was projected to have 180pts. Scham-Balls had someone in this game as well, on his bench. Watson got 23points, roughly the same amount of points as his WR2, FLEX1 and FLEX 2 combined, ouch. Score so far 13 to 64 Fischer.</p>
+
+    [gif file="week-16-loop-3.gif" size="md" align="center"]
+
+    <h3 class="recap-subheader">Sunday</h3>
+    <p>Scham-Balls kicker gets him 9 points in the CIN-ARI game and Higgins only gets him 10 points in the same game. Fischer gets 35 points from Lawrence and Etienne against the Colts. Scham-Balls gets 11.5 from Pollard for the Titans and in the same game he finally gets someone to go off, Olave putting up a solid 27 points against the Titans. Tracy disappointed for Scham-Balls 7pts. Sunday was coming to an end and Scham-Balls had his great white hope in Josh Allen, he did just fine but did not exceed any expectations and got him 24pts. In the same game Fischer had Goedert but he got 10pts, Scham-Balls wasn’t out of it yet but pretty damn close to it. He got a gift in the Bears game as DJ Moore dropped a dud on Fischer with only 2pts. Going into Monday night Fischer is up 121 to 102, each with 1 player to go Monday night.</p>
+
+    [gif file="week-16-loop-4.gif" size="md" align="center"]
+
+    <h3 class="recap-subheader">Monday</h3>
+    <p>Fischer has Nacua and a 19 point lead, Scham-Balls has, wait, is that right? Ya that’s right, he has Darnell Mooney, who’s only had 1 game over 10 points the entire season. Yikes. Well we know how it all turned out, despite 4 interceptions by Stafford Nacua was able to do enough to seal the deal and Mooney did Mooney things. And just like that, Fischer takes down the 3 time champ Scham-Balls without question and the team that was supposed to win, won.</p>
+  
+    [gif file="champ-2025.mp4" size="full" align="center" type="video" autoplay="on" loop="on" muted="on" controls="off"]
+
+    [gif file="runner-up-2025.mp4" size="full" align="center" type="video" autoplay="off" loop="off" muted="on" controls="on"]
+
+    [gif file="loser-2025.png" size="md" align="center"]
+
+    <p>This has been a fun year creating all of this stuff for you guys but I am ready for a break! Thanks for making it fun and we’ll do it all again next year!!</p>
+
+    <p>-Mish Out</p>
+    [gif file="week-16-loop-5.gif" size="md" align="center"]
+
+    <hr class="recap-divider" />
+
     <p>My prediction for 2025</p>
 
     <p>Fischer Vs. Debo</p>
 
-    <p>The two newest members of Laser Sharks find themselves head to head at the end of the 2025 season vying for the 2025 Laser Sharks Trophy.</p>
+    <p>The two newest members of Laser Sharks find themselves head to head at the end of the 2025 season vying for 
+    the 2025 Laser Sharks Trophy.</p>
     [gif file="lets-go.gif" size="md" align="center"]
 
-    <p>Both men had something to prove, Fischer, the new guy approached the season like a prison newby. He got some advice from Gus and was told to shiv the big dog in the group. He flew out to Texas and and shivved Scham-Balls in the most obvious place when he bent down to pick up the soap. Scham-balls is now known as Scham-shaft.</p>
+    <p>Both men had something to prove, Fischer, the new guy approached the season like a prison newby. He got some 
+    advice from Gus and was told to shiv the big dog in the group. He flew out to Texas and and shivved Scham-Balls 
+    in the most obvious place when he bent down to pick up the soap. Scham-balls is now known as Scham-shaft.</p>
     [gif file="prison-mike.gif" size="md" align="center"]
 
-    <p>Debo knowing there was still some work to do, called up some of his TSA buddies and planted some heroin on Shaw-Balls right before he was about to take off on a flight. Shaw-balls found the contraband and ran through the airport like an old British comedy. No one laughed.</p>
+    <p>Debo knowing there was still some work to do, called up some of his TSA buddies and planted some heroin on 
+    Shaw-Balls right before he was about to take off on a flight. Shaw-balls found the contraband and ran through 
+    the airport like an old British comedy. No one laughed.</p>
     [gif file="benny-hill.gif" size="md" align="center"]
 
-    <p>Fischer and Debo thought they were in the clear but they forgot about 1 time champ and 4-time runner up Mish. They didn’t see him as much of a threat. Turns out they were right. Mish was blacked out for the draft and spent most of his time dicking around with this website to pay much attention to football. Mish ended up with the Tutu</p>
+    <p>Fischer and Debo thought they were in the clear but they forgot about 1 time champ and 4-time runner up Mish. 
+    They didn’t see him as much of a threat. Turns out they were right. Mish was blacked out for the draft and spent 
+    most of his time dicking around with this website to pay much attention to football. Mish ended up with the Tutu</p>
     [gif file="loser.gif" size="md" align="center"]
 
-    <p>McCool thought he was safe with his boy blue Debo but Debo made a pack with the devil and tipped off the FBI with some questionable browser history content. McCool didn’t stand a chance. The planted material was just too fucked up. McCool moved to Uruguay and became a banana farmer.</p>
+    <p>McCool thought he was safe with his boy blue Debo but Debo made a pack with the devil and tipped off the FBI 
+    with some questionable browser history content. McCool didn’t stand a chance. The planted material was just too 
+    fucked up. McCool moved to Uruguay and became a banana farmer.</p>
     [gif file="banana.gif" size="md" align="center"]
 
-    <p>JD made an early season pact with Fischer to collude on some one sided trades. JD was promised a baby oil bath at Fischer’s “White Party” but he quickly realized DD was promised the same thing and the two of them hit it off and ran away to Croatia so they could be themselves with each other</p>
+    <p>JD made an early season pact with Fischer to collude on some one sided trades. JD was promised a baby oil 
+    bath at Fischer’s “White Party” but he quickly realized DD was promised the same thing and the two of them hit 
+    it off and ran away to Croatia so they could be themselves with each other</p>
     [gif file="gay.gif" size="md" align="center"]
 
-    <p>Mark got off clean and was left alone. This was an oversight by Fischer and Debo and Mark was left to spend all of his free time pouring over his lineups and waiver wire. They didn’t see it coming. He finished 11th. Mark was later seen living his life like nothing ever happened.</p>
+    <p>Mark got off clean and was left alone. This was an oversight by Fischer and Debo and Mark was left to spend 
+    all of his free time pouring over his lineups and waiver wire. They didn’t see it coming. He finished 11th. 
+    Mark was later seen living his life like nothing ever happened.</p>
     [gif file="dont-give-a-shit.gif" size="md" align="center"]
 
-    <p>Fischer, not forgetting the advice that Gus gave him about the prison shiv knew he had to make good on the help he got. He flew him out to Vegas to a Coldplay concert and Gus was caught on the kiss cam with an inflatable Gumby doll. Gus denied any ill-intent to the national media but when the Gumby doll deflated from some un-natural holes it was clear he was in trouble. Gus went into isolation and replied insessantly to critical social media posts that “you just don’t understand!”</p>
+    <p>Fischer, not forgetting the advice that Gus gave him about the prison shiv knew he had to make good on the help
+     he got. He flew him out to Vegas to a Coldplay concert and Gus was caught on the kiss cam with an inflatable 
+     Gumby doll. Gus denied any ill-intent to the national media but when the Gumby doll deflated from some un-natural
+     holes it was clear he was in trouble. Gus went into isolation and replied insessantly to critical social media 
+     posts that “you just don’t understand!”</p>
     [gif file="coldplay.gif" size="md" align="center"]
 
-    <p>Matt and Marcello were also overlooked. They forgot that Matt had won a championship and Marcello had been a runner-up. “Matt-Cello” was smart and could see what was going on. They decided to band together and put a stop to this pathetic attempt for the noobs to prove themselves. They devised a MacGyver type plan involving truffles, horse hair, sutures, bubble gum and paper clips. They ended up making an effigy of Epstein with the intention of luring Debo and Fischer into a scandalous trap but pictures of the effigy were leaked prematurely and “Matt-Cello” were cancelled and relegated to an abandoned island once used for people with leprosy.</p>
+    <p>Matt and Marcello were also overlooked. They forgot that Matt had won a championship and Marcello had been a 
+    runner-up. “Matt-Cello” was smart and could see what was going on. They decided to band together and put a stop
+     to this pathetic attempt for the noobs to prove themselves. They devised a MacGyver type plan involving truffles, 
+     horse hair, sutures, bubble gum and paper clips. They ended up making an effigy of Epstein with the intention of 
+     luring Debo and Fischer into a scandalous trap but pictures of the effigy were leaked prematurely and “Matt-Cello”
+      were cancelled and relegated to an abandoned island once used for people with leprosy.</p>
     [gif file="clinton.gif" size="md" align="center"]
 
-    <p>With all of that craziness we found their evil plans paid off and Fischer and Debo found themselves head to head in the 2025 Laser Sharks Championship! It came down to the wire with Monday Night Football. Debo came out victorious but later found himself committed to a mental asylum, not because he felt guilty about all that he had done. But because Fischer had been slowly poisoning him during their weekly Tuesday night “wine Wednesdays” they had together. Fischer, unsatisfied with his failure, committed himself as well so he could form another league with easier prey.</p>
+    <p>With all of that craziness we found their evil plans paid off and Fischer and Debo found themselves head to 
+    head in the 2025 Laser Sharks Championship! It came down to the wire with Monday Night Football. Debo came out 
+    victorious but later found himself committed to a mental asylum, not because he felt guilty about all that he 
+    had done. But because Fischer had been slowly poisoning him during their weekly Tuesday night “wine Wednesdays” 
+    they had together. Fischer, unsatisfied with his failure, committed himself as well so he could form another
+     league with easier prey.</p>
     [gif file="excellent.gif" size="md" align="center"]
 
     <p>And that is how I see 2025 going, I can’t see any other way that it goes down</p>
@@ -530,11 +732,12 @@ const recaps = {
 
     <p>-Mish out!</p>
     [gif file="rogers-finger.gif" size="md" align="center"]
+
+
   `,
 
   // You can add more recaps here for other years
 };
-
 
 const years = Object.keys(recaps).map(Number).sort((a, b) => a - b);
 
@@ -553,7 +756,7 @@ export default function MatchupRecap() {
   if (typeof recapEntry === 'function') {
     recapNode = <div className="recap-text">{recapEntry()}</div>;
   } else if (typeof recapEntry === 'string') {
-    const processed = parseGifShortcodes(recapEntry);
+    const processed = highlightNamesInHtml(parseGifShortcodes(recapEntry));
     recapNode = (
       <div
         className="recap-text"

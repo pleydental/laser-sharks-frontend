@@ -9,6 +9,7 @@ import loser2021 from '../assets/loser-banners/loser-2021.png';
 import loser2022 from '../assets/loser-banners/loser-2022.png';
 import loser2023 from '../assets/loser-banners/loser-2023.png';
 import loser2024 from '../assets/loser-banners/loser-2024.png';
+import loser2025 from '../assets/loser-banners/loser-2025.png';
 
 const losers = [
   { year: 2019, name: 'Scott Hackman 2-24. Quit the next year. Just Missed the TuTu rule. New TuTu Rule at end of this season', banner: loser2019 },
@@ -17,6 +18,7 @@ const losers = [
   { year: 2022, name: 'Matt Welsch ......... 6-22. Shoveling Horse Shit in a TuTu', banner: loser2022 },
   { year: 2023, name: 'Matt Welsch 9-19. Cleaning Pool in a TuTu', banner: loser2023 },
   { year: 2024, name: 'Don Debone 9-19. Playing Golf in a Tutu', banner: loser2024 },
+  { year: 2025, name: 'Ryan Shaw 5-23. Picutre Pending', banner: loser2025 },
 ];
 
 const Losers = () => {

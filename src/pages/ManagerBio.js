@@ -55,7 +55,7 @@ const ManagerBio = () => {
     'paul-ley': {
       name: 'Paul Ley',
       aliases: ['Biggie Pauls', 'Mish', 'Shit talking mofo'],
-      stats: 'Seasons: 9 -||- Win rate: 54% -||- Record: 110-92 -||- High Scores Per Season: 2.13 -||- Earnings Per Season: $11',
+      stats: 'Seasons: 10 -||- Win rate: 53% -||- Record: 121-109 -||- High Scores Per Season: 1.7 -||- Earnings Per Season: $0',
       championships: [2016],
       runnerUps: [2021, 2020, 2019, 2017],
       bio: `-Connection to commish: It’s me!!!
@@ -75,8 +75,9 @@ const ManagerBio = () => {
     'ryan-schamerloh': {
       name: 'Ryan Schamerloh',
       aliases: ['Team Steiners', 'Scham-balls'],
-      stats: 'Seasons: 8 -||- Win rate: 51% -||- Record: 97-92 -||- High Scores Per Season: 1.14 -||- Earnings Per Season: $128',
+      stats: 'Seasons: 9 -||- Win rate: 52% -||- Record: 113-104 -||- High Scores Per Season: 1.11 -||- Earnings Per Season: $119',
       championships: [2024, 2022, 2019],
+      runnerUps: [2025],
       bio: `-Connection to commish: Cousin, brutha from anotha mutha
 
 -Likes: Bedazzling non-cloth items such as napkins and sheet metal, bubble wrap, marinades, hairless cats, fireworks, unicycle(s), that sticky stuff that holds a new credit card to the paper that you can pull off and roll up into a little ball, eyes
@@ -94,7 +95,7 @@ const ManagerBio = () => {
     'mark-williams': {
       name: 'Mark Williams',
       aliases: ['unfollowbobo', 'Just here for the bitches'],
-      stats: 'Seasons: 9 -||- Win rate: 53% -||- Record: 108-94 -||- High Scores Per Season: 1.38 -||- Earnings Per Season: -$33',
+      stats: 'Seasons: 10 -||- Win rate: 53% -||- Record: 122-108 -||- High Scores Per Season: 1.3 -||- Earnings Per Season: -$35',
       runnerUps: [2019, 2016],
       bio: `-Connection to commish: College
 
@@ -113,8 +114,9 @@ const ManagerBio = () => {
     'ryan-shaw': {
       name: 'Ryan Shaw',
       aliases: ['Kenny Powers', 'Shaw-balls', 'Ronald Reagan Is a Damn Hero'],
-      stats: 'Seasons: 9 -||- Win rate: 50% -||- Record: 102-100 -||- High Scores Per Season: 1.88 -||- Earnings Per Season: $50',
+      stats: 'Seasons: 10 -||- Win rate: 47% -||- Record: 107-123 -||- High Scores Per Season: 1.5 -||- Earnings Per Season: $35',
       championships: [2023, 2017],
+      losers: [2025],
       bio: `-Connection to commish: friends-giving crew
 
 -Likes: airplanes, spreadsheets, duvet covers, Chuck Norris, football, white brick, crop tops, melted cheese on the inside of hamburger wrappers, bacon, bacon, bacon
@@ -132,7 +134,7 @@ const ManagerBio = () => {
     'justin-gus-miller': {
       name: 'Justin "Gus" Miller',
       aliases: ['Prison Panther', 'Tofurker? I barely know er'],
-      stats: 'Seasons: 9 -||- Win rate: 53% -||- Record: 101-88 -||- High Scores Per Season: 0.88 -||- Earnings Per Season: -$39',
+      stats: 'Seasons: 10 -||- Win rate: 51% -||- Record: 111-106 -||- High Scores Per Season: 0.8 -||- Earnings Per Season: -$43',
       bio: `-Connection to commish: Kirkland Light brewery tour
 
 -Likes: bikes, tofurkey, crappy beer, not so crappy beer, kites, Weird-Al, oil wrestling, kayaking, Rom-Com’s, #2 pencils, The Sound of Music but not Music of Sound The
@@ -150,7 +152,7 @@ const ManagerBio = () => {
     'matt-welsch': {
       name: 'Matt Welsch',
       aliases: ['smakdown', 'I wear TuTu(s)', 'I Also Champ'],
-      stats: 'Seasons: 9 -||- Win rate: 44% -||- Record: 88-114 -||- High Scores Per Season: 1.25 -||- Earnings Per Season: -$36',
+      stats: 'Seasons: 10 -||- Win rate: 44% -||- Record: 102-128 -||- High Scores Per Season: 1.1 -||- Earnings Per Season: -$40',
       championships: [2018],
       losers: [2023, 2022],
       bio: `-Connection to commish: Former neighbor/vegas vet
@@ -170,7 +172,7 @@ const ManagerBio = () => {
     'shawn-mccool': {
       name: 'Shawn McCool',
       aliases: ['HingleMcCringleberry', 'Suns Out Guns Out'],
-      stats: 'Seasons: 7 -||- Win rate: 62% -||- Record: 109-67 -||- High Scores Per Season: 2.67 -||- Earnings Per Season: $0',
+      stats: 'Seasons: 8 -||- Win rate: 60% -||- Record: 123-81 -||- High Scores Per Season: 2 -||- Earnings Per Season: -$13',
       championships: [2020],
       runnerUps: [2018],
       bio: `-Connection to commish: Brookside/neighbor/vegas vet
@@ -190,7 +192,7 @@ const ManagerBio = () => {
     'jd-ley': {
       name: 'JD Ley',
       aliases: ['Pound It Noggin', 'I would put it in her butt'],
-      stats: 'Seasons: 7 -||- Win rate: 44% -||- Record: 77-99 -||- High Scores Per Season: 1.00 -||- Earnings Per Season: -$21',
+      stats: 'Seasons: 8 -||- Win rate: 46% -||- Record: 94-110 -||- High Scores Per Season: 1.00 -||- Earnings Per Season: -$25',
       championships: [2021],
       bio: `-Connection to commish: best brother ever, used to date Don...see 2025 predictions
 
@@ -209,7 +211,7 @@ const ManagerBio = () => {
     'marcello-pollidori': {
       name: 'Marcello Polidori',
       aliases: ['Slippery Jack', 'Truffle King', 'I am Italian Dammit', 'also I am Moist'],
-      stats: 'Seasons: 7 -||- Win rate: 50% -||- Record: 102-100 -||- High Scores Per Season: 1.88 -||- Earnings Per Season: -$36',
+      stats: 'Seasons: 8 -||- Win rate: 54% -||- Record: 109-94 -||- High Scores Per Season: 1.38 -||- Earnings Per Season: -$31',
       runnerUps: [2024],
       bio: `Connection to commish: brutha from anotha mutha
 
@@ -228,7 +230,7 @@ const ManagerBio = () => {
     'don-debone': {
       name: 'Don "DD" Debone',
       aliases: ["Double D's", 'I wear TuTu'],
-      stats: 'Seasons: 5 -||- Win rate: 58% -||- Record: 72-52 -||- High Scores Per Season: 1.5 -||- Earnings Per Season: -$15',
+      stats: 'Seasons: 6 -||- Win rate: 57% -||- Record: 86-66 -||- High Scores Per Season: 1.0 -||- Earnings Per Season: -$29',
       losers: [2024],
       runnerUps: [2022],
       bio: `-Connection to commish: Brookside, used to date my brother...see 2025 predictions
@@ -248,7 +250,7 @@ const ManagerBio = () => {
     'brian-debo': {
       name: 'Brian Debo',
       aliases: ['Happy Hour', 'Bottoms Up'],
-      stats: 'Seasons: 3 -||- Win rate: 60% -||- Record: 50-34 -||- High Scores Per Season: 0.67 -||- Earnings Per Season: -$25',
+      stats: 'Seasons: 4 -||- Win rate: 58% -||- Record: 65-47 -||- High Scores Per Season: 0.5 -||- Earnings Per Season: -$44',
       runnerUps: [2023],
       bio: `Connection to commish: Brookside, case races
 
@@ -266,8 +268,9 @@ const ManagerBio = () => {
     },
     'aaron-fischer': {
       name: 'Aaron Fischer',
-      aliases: ['Dice Roll Aaron', 'I love lamp', 'that got out of hand quickly'],
-      stats: 'Seasons: 0 -||- Win rate: 0% -||- Record: 0-0 -||- High Scores Per Season: 0 -||- Earnings Per Season: $0',
+      aliases: ['Dice Roll Aaron', 'that got out of hand quickly'],
+      stats: 'Seasons: 1 -||- Win rate: 64% -||- Record: 18-10 -||- High Scores Per Season: 5 -||- Earnings Per Season: $700',
+      championships: [2025],
       bio: `Connection to commish: brutha from another mutha
 
 Likes: Red and white striped pants, diet coke, bobby knight, IU, rocks, chia pets, corn, corn dogs, corn bread, creamed corn, corn, creepy collages of old school game show talents (think Vanna White)

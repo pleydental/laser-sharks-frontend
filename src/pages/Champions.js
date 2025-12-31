@@ -15,7 +15,7 @@ const champions = [
   { year: 2022, winner: 'Ryan Schamerloh', file: 'champ-2022.mp4' },
   { year: 2023, winner: 'Ryan Shaw', file: 'champ-2023.mp4' },
   { year: 2024, winner: 'Ryan Schamerloh', file: 'champ-2024.mp4' },
-  { year: 2025, winner: 'Could be You', file: 'champ-2025.mp4' }
+  { year: 2025, winner: 'Aaron Fischer', file: 'champ-2025.mp4' }
 ];
 
 /**
