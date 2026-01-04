@@ -321,6 +321,8 @@
 @media (max-width: 600px) {
   .dashboard .content-wrapper {
     padding: 0.6rem;
+    max-width: calc(100vw - 12px); /* push the green frame closer to the edges */
+    margin: 6px auto;              /* minimal inset so it doesn't touch the screen */
   }
 
   .countdown-box {
