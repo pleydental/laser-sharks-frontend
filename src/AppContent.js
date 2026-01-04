@@ -46,6 +46,7 @@ function AuthedLayout() {
   const { logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const isDashboard = location.pathname === "/";
   const devBypass = process.env.REACT_APP_DEV_BYPASS === "1";
 
   // Scroll to top on route change
@@ -72,7 +73,7 @@ function AuthedLayout() {
   return (
     <>
       <Navbar onLogout={handleLogout} />
-      <div className="page-content">
+      <div className={`page-content${isDashboard ? " page-content--dashboard" : ""}`}>
         <Outlet />
       </div>
     </>

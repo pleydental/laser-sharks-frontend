@@ -1,7 +1,6 @@
 // src/pages/DraftRecaps.js
 import React, { useMemo } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import Comments from "../components/Comments";
 
 /**
  * HOW TO ADD MEDIA:
@@ -1535,7 +1534,6 @@ export default function DraftRecaps() {
       <YearPager year={Number(selectedYear)} onPick={handlePickYear} />
 
       {/* 💬 Shit Talk — unique per year */}
-      <Comments pageKey={pageKey} />
     </div>
   );
 }

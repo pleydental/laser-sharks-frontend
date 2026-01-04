@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Champions.css';
 import trophySpin from '../assets/trophy-spin-smooth.mp4';
 import { useNavigate } from 'react-router-dom';
-import Comments from "../components/Comments";
 
 const champions = [
   { year: 2016, winner: 'Paul Ley', file: 'champ-2016.mp4' },
@@ -171,7 +170,6 @@ const Champions = () => {
           );
         })}
       </div>
-      <Comments pageKey="champions" />
     </div>
   );
 };

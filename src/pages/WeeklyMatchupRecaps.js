@@ -1,7 +1,6 @@
 // src/pages/WeeklyMatchupRecaps.js
 import React, { useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Comments from "../components/Comments";
 import middleFingerBtn from "../assets/middle-finger-button.png";
 
 // 🔁 Week 1 GIFs (placed in: src/assets/weekly-recaps)
@@ -4166,7 +4165,6 @@ const pageKey = selectedWeek
       <YearlyRecap year={selectedYear} week={selectedWeek} onPickWeek={handlePickWeek} />
 
       {/* 💬 Shit Talk for this exact year/week */}
-      <Comments pageKey={pageKey} />
     </div>
   );
 }

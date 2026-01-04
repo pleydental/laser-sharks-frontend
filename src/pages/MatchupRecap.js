@@ -1,7 +1,6 @@
 // src/pages/MatchupRecap.js
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Comments from "../components/Comments"; // ⬅️ ADDED
 import './MatchupRecap.css';
 import fingerButton from '../assets/middle-finger-button.png';
 import Gif from "../components/Gif";
@@ -799,7 +798,6 @@ export default function MatchupRecap() {
       {recapNode}
 
       {/* 💬 Shit Talk — unique per championship year */}
-      <Comments pageKey={pageKey} />
     </div>
   );
 }

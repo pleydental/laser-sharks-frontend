@@ -45,8 +45,11 @@ function RequireLoggedIn({ children }) {
 }
 
 function AppShell() {
+  const location = useLocation();
+  const isDashboard = location.pathname === "/";
+
   return (
-    <div className="app-container">
+    <div className={`app-container${isDashboard ? " app-container--dashboard" : ""}`}>
       <Routes>
         <Route path="/login" element={<RequireLoggedOut />} />
 

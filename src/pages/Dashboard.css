@@ -27,6 +27,41 @@
   box-shadow: 0 0 15px #39ff14;
 }
 
+/* Let dashboard bleed through the page-content padding */
+.page-content > .dashboard {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  padding: 0; /* remove inherited padding */
+}
+
+/* Safari/iOS: drop page-content padding when it hosts dashboard */
+.page-content--dashboard {
+  padding: 0 !important;
+}
+
+.app-container--dashboard {
+  padding: 0 !important;
+}
+
+.app-container--dashboard .page-content {
+  padding: 0 !important;
+}
+
+.app-container--dashboard .page-content > .dashboard {
+  margin: 0 !important;
+  width: 100vw !important;
+}
+
+.app-container--dashboard .dashboard .content-wrapper {
+  max-width: 100vw !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
+}
+
 .content-wrapper {
   background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
@@ -261,8 +296,12 @@
 }
 /* Dashboard wrapper wider and keeps everything inside */
 .dashboard .content-wrapper {
-  max-width: 98%; /* ✅ closer to screen edge */
-  margin: 0 auto;
+  max-width: none !important; /* allow full bleed */
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   border: 3px solid limegreen;
   border-radius: 15px;
   box-shadow: 0 0 25px limegreen;
@@ -319,10 +358,25 @@
 
 /* Responsive for phones */
 @media (max-width: 600px) {
+  /* cancel outer padding and hug the viewport */
+  .page-content > .dashboard {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+  }
+
+  .dashboard {
+    padding: 0.35rem 0.35rem;
+  }
+
   .dashboard .content-wrapper {
-    padding: 0.6rem;
-    max-width: calc(100vw - 12px); /* push the green frame closer to the edges */
-    margin: 6px auto;              /* minimal inset so it doesn't touch the screen */
+    padding: 0.35rem 0.5rem;
+    max-width: none;
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    border-width: 2px;
+    box-shadow: 0 0 12px limegreen;
+    box-sizing: border-box;
   }
 
   .countdown-box {
@@ -376,6 +430,24 @@
     font-size: 0.9rem;
     padding: 0.4rem;
   }
+}
+
+/* 🔒 Force full-bleed dashboard (helps iOS Chrome cache) */
+.page-content > .dashboard {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+
+.page-content > .dashboard .content-wrapper {
+  max-width: none !important;
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding: 8px 12px;
+  border-width: 2px;
+  box-shadow: 0 0 12px limegreen;
+  box-sizing: border-box;
 }
 
 /* Extra small phones */
