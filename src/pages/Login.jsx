@@ -92,6 +92,9 @@ export default function Login() {
     >
       <div className="login-hero">
         <h2 className="login-league-title">Laser Sharks Fantasy Football League</h2>
+           <br />
+           Established 2016 in Mish's Basement
+        
         <ResponsivePicture
           srcSetWebp={`${pyramidWebp800} 800w, ${pyramidWebp1600} 1600w`}
           srcPng={pyramidPng}
@@ -105,9 +108,9 @@ export default function Login() {
 
       <div className="content-wrapper login-card">
         <h1>
-          Blue Pill or Red Pill?
+          Come On In
           <br />
-          <span style={{ fontWeight: 400 }}>Or Password...</span>
+          <span style={{ fontWeight: 400 }}>Get Roasted</span>
         </h1>
 
         <form onSubmit={submit} className="login-form">
@@ -129,7 +132,7 @@ export default function Login() {
               checked={remember}
               onChange={(e) => setRemember(e.target.checked)}
             />
-            <span>Baby It's Cold Outside, let me stay</span>
+            <span>I'm old, I have all-timers, or dementia,I can't remember this basic AF password, keep me logged in please</span>
           </label>
 
           {error && <div style={{ color: "salmon", marginBottom: 10 }}>{error}</div>}
