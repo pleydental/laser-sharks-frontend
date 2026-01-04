@@ -3,11 +3,22 @@ import React, { createContext, useContext, useEffect, useState, useCallback } fr
 
 const AuthCtx = createContext(null);
 
+function readCachedStatus() {
+  try {
+    const local = localStorage.getItem("loggedIn");
+    const session = sessionStorage.getItem("loggedIn");
+    const rememberCookie = document.cookie.includes("ls_remember=");
+    return local === "true" || session === "true" || rememberCookie ? "in" : "checking";
+  } catch {
+    return "checking";
+  }
+}
+
 export function AuthProvider({ children }) {
-  const [status, setStatus] = useState("checking"); // 'checking' | 'in' | 'out'
+  const [status, setStatus] = useState(() => readCachedStatus()); // 'checking' | 'in' | 'out'
 
   const check = useCallback(async () => {
-    setStatus("checking");
+    setStatus((prev) => (prev === "in" ? "in" : "checking")); // keep fast-path "in" while verifying
     try {
       const r = await fetch("/api/me", { credentials: "include" });
       setStatus(r.ok ? "in" : "out");
