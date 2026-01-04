@@ -338,7 +338,7 @@ const Arrow = ({ dir, change }) => {
 
 
 
-const YEARS = [2025]; // add more years later
+const YEARS = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]; // add more years later
 const WEEKS = Array.from({ length: 16 }, (_, i) => i + 1); // 1..16
 
 // small helper to keep GIFs centered and not huge
@@ -4020,11 +4020,13 @@ function YearlyRecap({ year, week, onPickWeek }) {
       <div className="recap-coming-soon">
         <h2>{y} Weekly Recaps</h2>
         <p>
-          <em>chill bros, coming soon</em>
+          <em>chill bros, coming soon...or not, get off my ass already about it</em>
      </p>
       </div>
     );
   }
+
+
 
   const w = Number(week);
 

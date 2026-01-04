@@ -4,9 +4,10 @@ import React, { createContext, useContext, useEffect, useState, useCallback } fr
 const AuthCtx = createContext(null);
 
 export function AuthProvider({ children }) {
-  const [status, setStatus] = useState("loading"); // 'loading' | 'in' | 'out'
+  const [status, setStatus] = useState("checking"); // 'checking' | 'in' | 'out'
 
   const check = useCallback(async () => {
+    setStatus("checking");
     try {
       const r = await fetch("/api/me", { credentials: "include" });
       setStatus(r.ok ? "in" : "out");
