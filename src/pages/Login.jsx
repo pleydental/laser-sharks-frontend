@@ -92,8 +92,7 @@ export default function Login() {
     >
       <div className="login-hero">
         <h2 className="login-league-title">Laser Sharks Fantasy Football League</h2>
-           <br />
-           Established 2016 in Mish's Basement
+        <div className="login-est">Established 2016 in Mish's Basement</div>
         
         <ResponsivePicture
           srcSetWebp={`${pyramidWebp800} 800w, ${pyramidWebp1600} 1600w`}
