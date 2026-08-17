@@ -6,7 +6,7 @@ const leagueConfig = {
     address: "3568 Snowdon Drive, Westfield, IN 46074",
   },
   draftOrder: [
-    { manager: "Fischer", paid: false },
+    { manager: "Fischer", paid: true },
     { manager: "Scham-Balls", paid: false },
     { manager: "Mark", paid: true },
     { manager: "Marcello", paid: true },
@@ -14,7 +14,7 @@ const leagueConfig = {
     { manager: "JD", paid: true },
     { manager: "Mish", paid: true },
     { manager: "DD", paid: false },
-    { manager: "McCool", paid: false },
+    { manager: "McCool", paid: true },
     { manager: "Welsch", paid: false },
     { manager: "Gus", paid: false },
     { manager: "Shaw-Balls", paid: false },
