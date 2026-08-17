@@ -185,7 +185,7 @@ const Dashboard = () => {
                           <td>{entry.manager}</td>
                           <td>
                             {entry.paid
-                              ? <span className="status paid">✅</span>
+                              ? <span className="status paid">✅ PAID</span>
                               : <span className="status unpaid">❌ Unpaid</span>}
                           </td>
                         </tr>
