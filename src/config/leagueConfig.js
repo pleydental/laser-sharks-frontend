@@ -12,7 +12,7 @@ const leagueConfig = {
     { manager: "Marcello", paid: true },
     { manager: "Debo", paid: true },
     { manager: "JD", paid: true },
-    { manager: "Mish", paid: false },
+    { manager: "Mish", paid: true },
     { manager: "DD", paid: false },
     { manager: "McCool", paid: true },
     { manager: "Welsch", paid: false },
