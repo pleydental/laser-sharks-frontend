@@ -26,7 +26,7 @@ const Dashboard = () => {
   const [playoffCountdown, setPlayoffCountdown] = useState('');
 
   useEffect(() => {
-    const draftDate = new Date('2026-08-29T20:00:00-04:00');
+    const draftDate = new Date('2026-08-28T19:00:00-04:00');
     const playoffDate = new Date('2026-12-15T20:15:00-05:00');
 
     const updateCountdowns = () => {
@@ -172,7 +172,7 @@ const Dashboard = () => {
               <div>
                 <div className="countdown-box card-dark">
                   <h2 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '1rem' }}>
-                    📋 Draft Order 2026 📋
+                    📋 Draft Order 2026 (not the real order yet) 📋
                   </h2>
                   <table className="draft-order-table" style={{ margin: '0 auto' }}>
                     <thead>
@@ -185,7 +185,7 @@ const Dashboard = () => {
                           <td>{entry.manager}</td>
                           <td>
                             {entry.paid
-                              ? <span className="status paid">✅ Paid</span>
+                              ? <span className="status paid">✅</span>
                               : <span className="status unpaid">❌ Unpaid</span>}
                           </td>
                         </tr>
