@@ -58,24 +58,29 @@
   margin-bottom: 0.75rem;
 }
 
-.standings-zoom-controls button {
-  width: 2.25rem;
-  height: 2.25rem;
-  border: 2px solid rgba(0, 255, 120, 0.8);
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 8px;
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: #fff;
+.standings-zoom-btn {
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
-  text-shadow: 0 0 6px rgba(0, 255, 120, 0.9);
-  box-shadow: 0 0 8px rgba(0, 255, 120, 0.4);
 }
 
-.standings-zoom-controls button:disabled {
-  opacity: 0.4;
+.standings-zoom-btn:disabled {
+  opacity: 0.35;
   cursor: default;
-  box-shadow: none;
+}
+
+.standings-zoom-btn .finger-icon {
+  width: 44px;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 120, 0.6));
+}
+
+.standings-zoom-btn .zoom-up {
+  transform: rotate(-90deg);
+}
+
+.standings-zoom-btn .zoom-down {
+  transform: rotate(90deg);
 }
 
 .standings-zoom-controls span {

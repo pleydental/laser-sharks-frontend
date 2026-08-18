@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Standings.css';
+import fingerButton from '../assets/middle-finger-button.png';
 
 const MIN_SCALE = 0.25;
 const MAX_SCALE = 1.1;
@@ -46,9 +47,25 @@ const Standings = () => {
       <h2 style={{ color: '#00e6e6', textAlign: 'center', marginBottom: '1rem' }}>League Standings</h2>
       {isMobile && (
         <div className="standings-zoom-controls">
-          <button type="button" onClick={zoomOut} disabled={scale <= MIN_SCALE}>−</button>
+          <button
+            type="button"
+            className="standings-zoom-btn"
+            onClick={zoomOut}
+            disabled={scale <= MIN_SCALE}
+            aria-label="Zoom out"
+          >
+            <img src={fingerButton} alt="Zoom out" className="finger-icon zoom-down" />
+          </button>
           <span>{Math.round(scale * 100)}%</span>
-          <button type="button" onClick={zoomIn} disabled={scale >= MAX_SCALE}>+</button>
+          <button
+            type="button"
+            className="standings-zoom-btn"
+            onClick={zoomIn}
+            disabled={scale >= MAX_SCALE}
+            aria-label="Zoom in"
+          >
+            <img src={fingerButton} alt="Zoom in" className="finger-icon zoom-up" />
+          </button>
         </div>
       )}
       <div className="standings-outer">
