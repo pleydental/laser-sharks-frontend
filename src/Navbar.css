@@ -38,8 +38,10 @@ body {
   transition: 0.3s;
 }
 
-/* MENU label */
+/* MENU label — desktop already shows the full nav, so hide it there and
+   only show it on mobile next to the hamburger icon */
 .menu-label {
+  display: none;
   color: #39ff14;
   font-weight: bold;
   font-size: 1.2rem;
@@ -65,9 +67,13 @@ body {
 
 /* ===== MOBILE ONLY ===== */
 @media (max-width: 768px) {
-  /* Show hamburger only on mobile */
+  /* Show hamburger + MENU label only on mobile */
   .hamburger {
     display: flex;
+  }
+
+  .menu-label {
+    display: inline;
   }
 
   .nav-links {
