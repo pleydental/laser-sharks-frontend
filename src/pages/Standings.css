@@ -58,16 +58,12 @@
   .standings-frame {
     width: 4500px;
     height: 1800px;
-    /* Something inside the embedded (cross-origin) Google Sheet was
-       capturing touch-drag partway across and refusing to let it
-       bubble up as a scroll on the wrapper — confirmed by the fact
-       that scrollBy() from the pan buttons could always move past
-       the "stuck" point just fine. Disabling pointer events on the
-       iframe stops it from ever intercepting touch input, so all
-       gestures go straight to the wrapper's own scrolling. Trade-off:
-       links inside the sheet (e.g. the year tabs) aren't tappable on
-       mobile anymore — use the pan/zoom buttons instead. */
-    pointer-events: none;
+    /* Pointer events must stay enabled: what looked like "stuck"
+       touch-drag was actually Google's own pagination boundary for
+       wide published sheets — content past a certain column genuinely
+       isn't rendered until you tap Google's own small "›" arrow
+       inside the embed. Disabling pointer events (a prior attempt)
+       blocked that tap entirely, making it look like content vanished. */
   }
 }
 
