@@ -200,7 +200,7 @@ const Dashboard = () => {
                                     <img
                                       src={paidViaIcons[entry.paidVia]}
                                       alt={entry.paidVia}
-                                      style={{ width: '18px', height: '18px', verticalAlign: 'middle', marginLeft: '6px' }}
+                                      style={{ width: '32px', height: '32px', verticalAlign: 'middle', marginLeft: '6px' }}
                                     />
                                   )}
                                 </span>
