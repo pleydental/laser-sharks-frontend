@@ -26,104 +26,28 @@
     max-width: 100vw;
     max-height: 70vh;
     overflow: auto;
-    /* Deliberately no -webkit-overflow-scrolling: touch here. That
-       legacy property forces its own GPU-composited scroll layer,
-       which is a known source of the scroll boundary getting "stuck"
-       or inconsistent on content whose size changes dynamically (like
-       our zoom control) — and native overflow scrolling has had
-       momentum by default since iOS 13 without it. */
+    -webkit-overflow-scrolling: touch;
     justify-content: flex-start;
     /* Stop Chrome from treating overscroll at the edge of this
        container as its own edge-swipe back/forward or pull-to-refresh
        gesture — that handoff was what looked like a snap-back. */
     overscroll-behavior: contain;
-    /* Horizontal touch-drag has been unreliable no matter what we've
-       tried (snapping back, getting stuck) — switching between it and
-       the pan buttons is worse than just picking one. Disable
-       horizontal panning by touch and leave the left/right finger
-       buttons as the only way to move sideways; vertical touch
-       scrolling is left alone since it hasn't been a problem. */
-    touch-action: pan-y;
   }
 
   .standings-scale-box {
-    /* Generously oversized in both directions so the real sheet
-       (which runs wider AND taller than earlier estimates — the
-       right edge was still unreachable at 3000px, and rows were
-       getting cut off at 850px tall) never needs its own internal
-       iframe scroll in either axis; only this wrapper scrolls.
-       Zoom level itself is set inline by the finger-icon controls in
-       Standings.js. Uses CSS zoom rather than transform: scale() —
-       zoom changes the box's actual layout size, so the scrollable
-       wrapper's max-scroll bound stays correct as the level changes,
-       whereas transform's separate visual bounding box was leaving
-       the scroll boundary stale/inconsistent near the right edge. */
-    width: 4500px;
+    width: 3000px;
     height: 1800px;
+    /* Static shrink for a compact default view. Safe now that native
+       pinch-zoom is locked off on this page — combining a live pinch
+       gesture with a transform on this box was what crashed the tab
+       earlier. Height bumped from the original 850px since the bottom
+       rows of the sheet were getting cut off at that height. */
+    transform: scale(0.32);
+    transform-origin: top left;
   }
 
   .standings-frame {
-    width: 4500px;
+    width: 3000px;
     height: 1800px;
-    /* Pointer events must stay enabled: what looked like "stuck"
-       touch-drag was actually Google's own pagination boundary for
-       wide published sheets — content past a certain column genuinely
-       isn't rendered until you tap Google's own small "›" arrow
-       inside the embed. Disabling pointer events (a prior attempt)
-       blocked that tap entirely, making it look like content vanished. */
-    touch-action: pan-y;
   }
-}
-
-.standings-zoom-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.standings-zoom-btn {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.standings-zoom-btn:disabled {
-  opacity: 0.35;
-  cursor: default;
-}
-
-.standings-zoom-btn .finger-icon {
-  width: 44px;
-  filter: drop-shadow(0 0 6px rgba(0, 255, 120, 0.6));
-}
-
-.standings-zoom-btn .zoom-up {
-  transform: rotate(-90deg);
-}
-
-.standings-zoom-btn .zoom-down {
-  transform: rotate(90deg);
-}
-
-.standings-zoom-btn .pan-left {
-  transform: scaleX(-1);
-}
-
-.standings-zoom-controls span,
-.standings-pan-controls span {
-  min-width: 3.5rem;
-  text-align: center;
-  color: #00e6e6;
-  font-weight: 700;
-}
-
-.standings-pan-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
 }
