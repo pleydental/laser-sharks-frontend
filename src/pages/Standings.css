@@ -37,11 +37,12 @@
   .standings-scale-box {
     width: 3000px;
     height: 850px;
-    /* Scale itself is set inline by the +/- controls in Standings.js.
-       Safe to drive with a static transform now that native pinch-zoom
-       is locked off on this page — combining a live pinch gesture with
-       a transform on this box was what crashed the tab earlier. */
-    transform-origin: top left;
+    /* Zoom level itself is set inline by the finger-icon controls in
+       Standings.js. Uses CSS zoom rather than transform: scale() —
+       zoom changes the box's actual layout size, so the scrollable
+       wrapper's max-scroll bound stays correct as the level changes,
+       whereas transform's separate visual bounding box was leaving
+       the scroll boundary stale/inconsistent near the right edge. */
   }
 
   .standings-frame {

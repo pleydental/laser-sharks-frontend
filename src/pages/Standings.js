@@ -24,8 +24,8 @@ const Standings = () => {
       // between "pan the zoomed page" and "scroll this sheet" — WebKit
       // was routing the drag to pan the zoomed viewport, which is
       // bounded by the page's own width and snaps back almost
-      // immediately. Zooming instead happens through the +/- controls
-      // below, which apply a plain CSS transform to the sheet itself.
+      // immediately. Zooming instead happens through the finger-icon
+      // controls below, which apply CSS zoom to the sheet itself.
       viewport.setAttribute(
         'content',
         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
@@ -71,7 +71,7 @@ const Standings = () => {
       <div className="standings-outer">
         <div
           className="standings-scale-box"
-          style={isMobile ? { transform: `scale(${scale})` } : undefined}
+          style={isMobile ? { zoom: scale } : undefined}
         >
           <iframe
             className="standings-frame"
