@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Standings.css';
 import fingerButton from '../assets/middle-finger-button.png';
 
@@ -6,10 +6,12 @@ const MIN_SCALE = 0.25;
 const MAX_SCALE = 1.1;
 const SCALE_STEP = 0.1;
 const DEFAULT_SCALE = 0.45;
+const PAN_AMOUNT = 260;
 
 const Standings = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [scale, setScale] = useState(DEFAULT_SCALE);
+  const outerRef = useRef(null);
 
   useEffect(() => {
     const mobileQuery = window.matchMedia('(max-width: 768px)');
@@ -42,6 +44,15 @@ const Standings = () => {
   const zoomOut = () => setScale((s) => Math.max(MIN_SCALE, +(s - SCALE_STEP).toFixed(2)));
   const zoomIn = () => setScale((s) => Math.min(MAX_SCALE, +(s + SCALE_STEP).toFixed(2)));
 
+  // Drag-to-scroll can get stuck partway across the embedded sheet —
+  // something inside the (cross-origin) Google Sheets page appears to
+  // intercept the touch gesture before it reaches the true edge, and
+  // there's no way to inspect or fix that from our side. Panning via
+  // scrollBy sidesteps touch handling entirely, so it isn't affected.
+  const panBy = (amount) => {
+    outerRef.current?.scrollBy({ left: amount, behavior: 'smooth' });
+  };
+
   return (
     <div className="content-wrapper">
       <h2 style={{ color: '#00e6e6', textAlign: 'center', marginBottom: '1rem' }}>League Standings</h2>
@@ -68,7 +79,28 @@ const Standings = () => {
           </button>
         </div>
       )}
-      <div className="standings-outer">
+      {isMobile && (
+        <div className="standings-pan-controls">
+          <button
+            type="button"
+            className="standings-zoom-btn"
+            onClick={() => panBy(-PAN_AMOUNT)}
+            aria-label="Scroll left"
+          >
+            <img src={fingerButton} alt="Scroll left" className="finger-icon pan-left" />
+          </button>
+          <span>scroll</span>
+          <button
+            type="button"
+            className="standings-zoom-btn"
+            onClick={() => panBy(PAN_AMOUNT)}
+            aria-label="Scroll right"
+          >
+            <img src={fingerButton} alt="Scroll right" className="finger-icon pan-right" />
+          </button>
+        </div>
+      )}
+      <div className="standings-outer" ref={outerRef}>
         <div
           className="standings-scale-box"
           style={isMobile ? { zoom: scale } : undefined}

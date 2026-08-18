@@ -94,9 +94,22 @@
   transform: rotate(90deg);
 }
 
-.standings-zoom-controls span {
+.standings-zoom-btn .pan-left {
+  transform: scaleX(-1);
+}
+
+.standings-zoom-controls span,
+.standings-pan-controls span {
   min-width: 3.5rem;
   text-align: center;
   color: #00e6e6;
   font-weight: 700;
+}
+
+.standings-pan-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
