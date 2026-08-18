@@ -37,6 +37,13 @@
        container as its own edge-swipe back/forward or pull-to-refresh
        gesture — that handoff was what looked like a snap-back. */
     overscroll-behavior: contain;
+    /* Horizontal touch-drag has been unreliable no matter what we've
+       tried (snapping back, getting stuck) — switching between it and
+       the pan buttons is worse than just picking one. Disable
+       horizontal panning by touch and leave the left/right finger
+       buttons as the only way to move sideways; vertical touch
+       scrolling is left alone since it hasn't been a problem. */
+    touch-action: pan-y;
   }
 
   .standings-scale-box {
@@ -64,6 +71,7 @@
        isn't rendered until you tap Google's own small "›" arrow
        inside the embed. Disabling pointer events (a prior attempt)
        blocked that tap entirely, making it look like content vanished. */
+    touch-action: pan-y;
   }
 }
 
