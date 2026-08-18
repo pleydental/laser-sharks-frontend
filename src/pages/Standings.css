@@ -1,6 +1,7 @@
 .standings-outer {
   display: flex;
   justify-content: center;
+  overscroll-behavior: contain;
 }
 
 .standings-scale-box {
@@ -27,6 +28,10 @@
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     justify-content: flex-start;
+    /* Stop Chrome from treating overscroll at the edge of this
+       container as its own edge-swipe back/forward or pull-to-refresh
+       gesture — that handoff was what looked like a snap-back. */
+    overscroll-behavior: contain;
   }
 
   .standings-scale-box {
