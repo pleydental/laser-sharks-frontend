@@ -180,7 +180,7 @@ const Dashboard = () => {
               <div>
                 <div className="countdown-box card-dark">
                   <h2 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '1rem' }}>
-                    📋 Draft Order 2026 (not the real order yet) 📋
+                    <span style={{ textShadow: '0 0 10px red, 0 0 20px orange, 0 0 30px red' }}>🚨</span>📋 FINAL DRAFT ORDER 📋<span style={{ textShadow: '0 0 10px red, 0 0 20px orange, 0 0 30px red' }}>🚨</span>
                   </h2>
                   <table className="draft-order-table" style={{ margin: '0 auto' }}>
                     <thead>

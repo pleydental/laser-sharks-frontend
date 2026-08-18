@@ -13,7 +13,7 @@ const leagueConfig = {
     { manager: "Debo", paid: true, paidVia: "paypal" },
     { manager: "McCool", paid: true, paidVia: "venmo" },
     { manager: "Welsch", paid: true, paidVia: "zelle" },
-    { manager: "Gus", paid: false },
+    { manager: "Gus", paid: true, paidVia: "paypal" },
     { manager: "Shaw-Balls", paid: false },
     { manager: "DD", paid: false },
     { manager: "Mish", paid: true, paidVia: "venmo" },
