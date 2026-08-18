@@ -37,6 +37,12 @@
   .standings-scale-box {
     width: 3000px;
     height: 850px;
+    /* Static shrink for a compact default view. Safe now that native
+       pinch-zoom is locked off on this page — combining a live pinch
+       gesture with a transform on this box was what crashed the tab
+       earlier. */
+    transform: scale(0.45);
+    transform-origin: top left;
   }
 
   .standings-frame {

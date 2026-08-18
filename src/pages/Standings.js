@@ -8,9 +8,16 @@ const Standings = () => {
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
     if (viewport && isMobile) {
+      // Lock zoom to a flat 1:1 while on this page. Letting native
+      // pinch-zoom stay active here made single-finger drags ambiguous
+      // between "pan the zoomed page" and "scroll this sheet" — WebKit
+      // was routing the drag to pan the zoomed viewport, which is
+      // bounded by the page's own width and snaps back almost
+      // immediately. The compact default view instead comes from a
+      // plain CSS transform on the sheet itself (see Standings.css).
       viewport.setAttribute(
         'content',
-        'width=device-width, initial-scale=0.45, minimum-scale=0.3, maximum-scale=2.5'
+        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
       );
     }
 
