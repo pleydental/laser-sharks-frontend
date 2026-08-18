@@ -1,20 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Standings.css';
 
+const MIN_SCALE = 0.25;
+const MAX_SCALE = 1.1;
+const SCALE_STEP = 0.1;
+const DEFAULT_SCALE = 0.45;
+
 const Standings = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [scale, setScale] = useState(DEFAULT_SCALE);
+
   useEffect(() => {
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+    setIsMobile(mobileQuery.matches);
+
     const viewport = document.querySelector('meta[name="viewport"]');
     const original = viewport ? viewport.getAttribute('content') : null;
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-    if (viewport && isMobile) {
+    if (viewport && mobileQuery.matches) {
       // Lock zoom to a flat 1:1 while on this page. Letting native
       // pinch-zoom stay active here made single-finger drags ambiguous
       // between "pan the zoomed page" and "scroll this sheet" — WebKit
       // was routing the drag to pan the zoomed viewport, which is
       // bounded by the page's own width and snaps back almost
-      // immediately. The compact default view instead comes from a
-      // plain CSS transform on the sheet itself (see Standings.css).
+      // immediately. Zooming instead happens through the +/- controls
+      // below, which apply a plain CSS transform to the sheet itself.
       viewport.setAttribute(
         'content',
         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
@@ -28,11 +38,24 @@ const Standings = () => {
     };
   }, []);
 
+  const zoomOut = () => setScale((s) => Math.max(MIN_SCALE, +(s - SCALE_STEP).toFixed(2)));
+  const zoomIn = () => setScale((s) => Math.min(MAX_SCALE, +(s + SCALE_STEP).toFixed(2)));
+
   return (
     <div className="content-wrapper">
       <h2 style={{ color: '#00e6e6', textAlign: 'center', marginBottom: '1rem' }}>League Standings</h2>
+      {isMobile && (
+        <div className="standings-zoom-controls">
+          <button type="button" onClick={zoomOut} disabled={scale <= MIN_SCALE}>−</button>
+          <span>{Math.round(scale * 100)}%</span>
+          <button type="button" onClick={zoomIn} disabled={scale >= MAX_SCALE}>+</button>
+        </div>
+      )}
       <div className="standings-outer">
-        <div className="standings-scale-box">
+        <div
+          className="standings-scale-box"
+          style={isMobile ? { transform: `scale(${scale})` } : undefined}
+        >
           <iframe
             className="standings-frame"
             title="Laser Sharks Standings"

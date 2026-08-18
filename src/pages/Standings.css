@@ -37,11 +37,10 @@
   .standings-scale-box {
     width: 3000px;
     height: 850px;
-    /* Static shrink for a compact default view. Safe now that native
-       pinch-zoom is locked off on this page — combining a live pinch
-       gesture with a transform on this box was what crashed the tab
-       earlier. */
-    transform: scale(0.45);
+    /* Scale itself is set inline by the +/- controls in Standings.js.
+       Safe to drive with a static transform now that native pinch-zoom
+       is locked off on this page — combining a live pinch gesture with
+       a transform on this box was what crashed the tab earlier. */
     transform-origin: top left;
   }
 
@@ -49,4 +48,39 @@
     width: 3000px;
     height: 850px;
   }
+}
+
+.standings-zoom-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.standings-zoom-controls button {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 2px solid rgba(0, 255, 120, 0.8);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 0 0 6px rgba(0, 255, 120, 0.9);
+  box-shadow: 0 0 8px rgba(0, 255, 120, 0.4);
+}
+
+.standings-zoom-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  box-shadow: none;
+}
+
+.standings-zoom-controls span {
+  min-width: 3.5rem;
+  text-align: center;
+  color: #00e6e6;
+  font-weight: 700;
 }
