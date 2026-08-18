@@ -41,6 +41,70 @@ const Standings = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isMobile) return undefined;
+    const el = outerRef.current;
+    if (!el) return undefined;
+
+    // touch-action: pan-y only stops the *browser's* default panning —
+    // it can't reach whatever the cross-origin Google Sheets iframe
+    // does internally with the gesture, which kept letting drag
+    // through inconsistently. Take the gesture over manually instead:
+    // once movement clears a small threshold (so it's a real drag, not
+    // a tap), preventDefault stops it from ever reaching the iframe,
+    // and we drive scrollLeft/scrollTop ourselves. Below the threshold
+    // nothing is touched, so genuine taps (e.g. Google's own
+    // pagination arrow) still reach the iframe normally.
+    const DRAG_THRESHOLD = 8;
+    let startX = 0;
+    let startY = 0;
+    let startScrollLeft = 0;
+    let startScrollTop = 0;
+    let dragging = false;
+
+    const onTouchStart = (e) => {
+      if (e.touches.length !== 1) return;
+      const t = e.touches[0];
+      startX = t.clientX;
+      startY = t.clientY;
+      startScrollLeft = el.scrollLeft;
+      startScrollTop = el.scrollTop;
+      dragging = false;
+    };
+
+    const onTouchMove = (e) => {
+      if (e.touches.length !== 1) return;
+      const t = e.touches[0];
+      const dx = t.clientX - startX;
+      const dy = t.clientY - startY;
+
+      if (!dragging) {
+        if (Math.abs(dx) < DRAG_THRESHOLD && Math.abs(dy) < DRAG_THRESHOLD) return;
+        dragging = true;
+      }
+
+      e.preventDefault();
+      el.scrollLeft = startScrollLeft - dx;
+      el.scrollTop = startScrollTop - dy;
+    };
+
+    const onTouchEnd = () => {
+      dragging = false;
+    };
+
+    el.addEventListener('touchstart', onTouchStart, { capture: true, passive: true });
+    el.addEventListener('touchmove', onTouchMove, { capture: true, passive: false });
+    el.addEventListener('touchend', onTouchEnd, { capture: true, passive: true });
+    el.addEventListener('touchcancel', onTouchEnd, { capture: true, passive: true });
+
+    return () => {
+      el.removeEventListener('touchstart', onTouchStart, { capture: true });
+      el.removeEventListener('touchmove', onTouchMove, { capture: true });
+      el.removeEventListener('touchend', onTouchEnd, { capture: true });
+      el.removeEventListener('touchcancel', onTouchEnd, { capture: true });
+    };
+  }, [isMobile]);
+
   const zoomOut = () => setScale((s) => Math.max(MIN_SCALE, +(s - SCALE_STEP).toFixed(2)));
   const zoomIn = () => setScale((s) => Math.min(MAX_SCALE, +(s + SCALE_STEP).toFixed(2)));
 
