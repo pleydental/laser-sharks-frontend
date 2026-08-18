@@ -24,5 +24,9 @@
   .standings-outer {
     max-width: 100vw;
     max-height: 70vh;
+    /* justify-content: center clips unreachable overflow on both sides
+       when the content is wider than the container — switch to
+       flex-start so the full width can actually be scrolled to. */
+    justify-content: flex-start;
   }
 }
