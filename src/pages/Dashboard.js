@@ -11,6 +11,14 @@ import googlepayIcon from '../assets/googlewallet.png';
 import zelleIcon from '../assets/zelle-icon.png';
 import applecashIcon from '../assets/applecash.png';
 
+const paidViaIcons = {
+  venmo: venmoIcon,
+  paypal: paypalIcon,
+  zelle: zelleIcon,
+  googlePay: googlepayIcon,
+  appleCash: applecashIcon,
+};
+
 /* 🚀 Lazy-load heavy pages so dashboard ships fast */
 const Standings   = lazy(() => import('./Standings'));
 const Managers    = lazy(() => import('./Managers'));
@@ -185,7 +193,18 @@ const Dashboard = () => {
                           <td>{entry.manager}</td>
                           <td>
                             {entry.paid
-                              ? <span className="status paid">✅ PAID</span>
+                              ? (
+                                <span className="status paid">
+                                  ✅ PAID
+                                  {entry.paidVia && paidViaIcons[entry.paidVia] && (
+                                    <img
+                                      src={paidViaIcons[entry.paidVia]}
+                                      alt={entry.paidVia}
+                                      style={{ width: '18px', height: '18px', verticalAlign: 'middle', marginLeft: '6px' }}
+                                    />
+                                  )}
+                                </span>
+                              )
                               : <span className="status unpaid">❌ Unpaid</span>}
                           </td>
                         </tr>
