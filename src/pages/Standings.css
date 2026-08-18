@@ -1,0 +1,30 @@
+.standings-outer {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.standings-scale-box {
+  width: 1000px;
+  height: 850px;
+}
+
+.standings-frame {
+  width: 1000px;
+  height: 850px;
+  border: 0;
+}
+
+/* Shrink the embedded sheet on phones so less zooming/scrolling is needed by default.
+   Pinch-to-zoom is also enabled site-wide now if they want to zoom in further. */
+@media (max-width: 768px) {
+  .standings-scale-box {
+    width: 500px;
+    height: 425px;
+  }
+
+  .standings-frame {
+    transform: scale(0.5);
+    transform-origin: top left;
+  }
+}
