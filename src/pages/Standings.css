@@ -26,7 +26,12 @@
     max-width: 100vw;
     max-height: 70vh;
     overflow: auto;
-    -webkit-overflow-scrolling: touch;
+    /* Deliberately no -webkit-overflow-scrolling: touch here. That
+       legacy property forces its own GPU-composited scroll layer,
+       which is a known source of the scroll boundary getting "stuck"
+       or inconsistent on content whose size changes dynamically (like
+       our zoom control) — and native overflow scrolling has had
+       momentum by default since iOS 13 without it. */
     justify-content: flex-start;
     /* Stop Chrome from treating overscroll at the edge of this
        container as its own edge-swipe back/forward or pull-to-refresh
