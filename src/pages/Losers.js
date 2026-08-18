@@ -18,7 +18,7 @@ const losers = [
   { year: 2022, name: 'Matt Welsch ......... 6-22. Shoveling Horse Shit in a TuTu', banner: loser2022 },
   { year: 2023, name: 'Matt Welsch 9-19. Cleaning Pool in a TuTu', banner: loser2023 },
   { year: 2024, name: 'Don Debone 9-19. Playing Golf in a Tutu', banner: loser2024 },
-  { year: 2025, name: 'Ryan Shaw 5-23. Picutre Pending', banner: loser2025 },
+  { year: 2025, name: 'Ryan Shaw 5-23. Mowing Yard wearing a TuTu', banner: loser2025 },
 ];
 
 const Losers = () => {
