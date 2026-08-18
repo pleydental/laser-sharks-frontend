@@ -40,19 +40,24 @@
   }
 
   .standings-scale-box {
-    width: 3000px;
-    height: 850px;
-    /* Zoom level itself is set inline by the finger-icon controls in
+    /* Generously oversized in both directions so the real sheet
+       (which runs wider AND taller than earlier estimates — the
+       right edge was still unreachable at 3000px, and rows were
+       getting cut off at 850px tall) never needs its own internal
+       iframe scroll in either axis; only this wrapper scrolls.
+       Zoom level itself is set inline by the finger-icon controls in
        Standings.js. Uses CSS zoom rather than transform: scale() —
        zoom changes the box's actual layout size, so the scrollable
        wrapper's max-scroll bound stays correct as the level changes,
        whereas transform's separate visual bounding box was leaving
        the scroll boundary stale/inconsistent near the right edge. */
+    width: 4500px;
+    height: 1800px;
   }
 
   .standings-frame {
-    width: 3000px;
-    height: 850px;
+    width: 4500px;
+    height: 1800px;
   }
 }
 
