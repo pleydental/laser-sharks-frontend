@@ -14,7 +14,7 @@ const lines = [
   "2022: Scham – Added a flex position (WR/TE/RB)",
   "2023: Shaw – Winner from previous year chooses draft position; down line from there",
   "2024: Scham – Cornell Rule: During the draft order picking, if current draftee does not respond within 12hrs, they automatically get the lowest pick left and the draft order picking resumes with the next up",
-  "2025: Fischer - Waiting on Rule",
+  "2025: Fischer - Added Defense 🤮",
 ];
 
 function RuleLine({ text }) {

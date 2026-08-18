@@ -96,6 +96,26 @@ const Rules = () => {
               </ul>
             </td>
           </tr>
+          <tr>
+            <th colSpan="3">Defense</th>
+          </tr>
+          <tr>
+            <td colSpan="3">
+              <ul>
+                <li>Kick and Punt Return Touchdowns: 6 pts</li>
+                <li>Points Allowed 0 points: 10 pts</li>
+                <li>Points Allowed 1-6 points: 7 pts</li>
+                <li>Points Allowed 7-13 points: 4 pts</li>
+                <li>Points Allowed 14-20 points: 1 pt</li>
+                <li>Points Allowed 21+ points: 0 pts</li>
+                <li>Sack: 1 pt</li>
+                <li>Interception: 2 pts</li>
+                <li>Fumble Recovery: 2 pts</li>
+                <li>Touchdown: 6 pts</li>
+                <li>Safety: 2 pts</li>
+              </ul>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
