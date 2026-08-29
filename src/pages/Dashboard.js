@@ -203,6 +203,11 @@ const Dashboard = () => {
                                       style={{ width: '32px', height: '32px', verticalAlign: 'middle', marginLeft: '6px' }}
                                     />
                                   )}
+                                  {entry.paidVia && !paidViaIcons[entry.paidVia] && (
+                                    <span style={{ marginLeft: '6px', fontSize: '0.85rem' }}>
+                                      ({entry.paidVia})
+                                    </span>
+                                  )}
                                 </span>
                               )
                               : <span className="status unpaid">❌ Unpaid</span>}
