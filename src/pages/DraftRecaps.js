@@ -268,7 +268,7 @@ const RECAPS = {
           could work but Skattebo will likely have an arm ripped off doing
           competitive arm wrestling and Brock Purdy is on the 49ers and we all
           know how well they take care of their players. Can’t wait to see who the
-          new champ is this year :) Kristen I think agrees with me.
+          new champ is this year 😉 Kristen I think agrees with me.
         </p>
         <img src={recap2026Fischer} alt="Kristen Stewart reaction to Champ" className="recap-inline-img" loading="lazy" />
         <p><em>Totes agree</em></p>
@@ -382,7 +382,7 @@ const RECAPS = {
         <h3>DD — Double D’s — Draft Spot 10 — Yahoo Grade D</h3>
         <p>
           DD went from double D’s to triple D’s because he got a D from the 10 spot.
-          It’s to bad Yahoo is a robot otherwise it would realize 3 D’s are better
+          It’s too bad Yahoo is a robot otherwise it would realize 3 D’s are better
           than 2. He went Puca, Brown, Waddle, Burrow, Price and Kraft. Gross.
           Smells like my draft. Hell, I am just glad he was able to make it to the
           draft this year so I just want to say good job sir. Good depth, one K one
