@@ -154,12 +154,273 @@ import recap2016Img10 from "../assets/recap-images/2016RC-image-10.png";
 import recap2016Img11 from "../assets/recap-images/2016RC-image-11.png";
 import recap2016Img12 from "../assets/recap-images/2016RC-image-12.png";
 
+// ===================== 2026 assets =====================
+import recap2026HotBalls from "../assets/recap-images/2026RC-hotballs.gif";
+import recap2026Debo1 from "../assets/recap-images/2026RC-debo-1.mp4";
+import recap2026Debo2 from "../assets/recap-images/2026RC-debo-2.mp4";
+import recap2026BeerSlap from "../assets/recap-images/2026RC-beerslap.jpg";
+import recap2026Fireworks from "../assets/recap-images/2026RC-fireworks.mp4";
+import recap2026Mark from "../assets/recap-images/2026RC-mark.png";
+import recap2026Fischer from "../assets/recap-images/2026RC-fischer.png";
+import recap2026Debo from "../assets/recap-images/2026RC-debo.png";
+import recap2026Scham from "../assets/recap-images/2026RC-scham.png";
+import recap2026Jd from "../assets/recap-images/2026RC-jd.png";
+import recap2026Marcello from "../assets/recap-images/2026RC-marcello.png";
+import recap2026Shaw from "../assets/recap-images/2026RC-shaw.png";
+import recap2026Mish from "../assets/recap-images/2026RC-mish.png";
+import recap2026Gus from "../assets/recap-images/2026RC-gus.png";
+import recap2026Mccool from "../assets/recap-images/2026RC-mccool.png";
+import recap2026Dd from "../assets/recap-images/2026RC-dd.png";
+import recap2026Matt from "../assets/recap-images/2026RC-matt.png";
+import recap2026Outro1 from "../assets/recap-images/2026RC-outro-1.gif";
+import recap2026Outro2 from "../assets/recap-images/2026RC-outro-2.gif";
+import recap2026Outro3 from "../assets/recap-images/2026RC-outro-3.mp4";
 
-// Years 2016..2025 (desc)
-const YEARS = Array.from({ length: 2025 - 2016 + 1 }, (_, i) => 2016 + i).reverse();
+
+// Years 2016..2026 (desc)
+const YEARS = Array.from({ length: 2026 - 2016 + 1 }, (_, i) => 2016 + i).reverse();
 
 // ===================== DATA: RECAPS =====================
 const RECAPS = {
+  "2026": {
+    images: [],
+    videos: [],
+    notes: (
+      <section className="recap-writeup">
+        <h2>Hot Balls Season 11 Draft Recap</h2>
+
+        <p>
+          We had a decent turnout this year, Champ, McCool, Mark, JD, Debo and DD
+          with a rare appearance and plenty of others stopped by here and there
+          throughout the day and night. The highlights of the night were hot
+          balls, fireworks and lots of meat.
+        </p>
+
+        <img src={recap2026HotBalls} alt="Hot balls" className="recap-inline-img" loading="lazy" />
+
+        <p>
+          My kids talked me into trying a hot ball (2,200,000 scofield units)
+          today and I can confirm it feels like this.
+        </p>
+
+        <p>
+          Champ and Debo, however, ate the most. Debo had 20+ and Champ wasn’t too
+          far behind. Here are the videos
+        </p>
+
+        <video className="recap-inline-video" controls playsInline preload="metadata">
+          <source src={recap2026Debo1} type="video/mp4" />
+        </video>
+        <video className="recap-inline-video" controls playsInline preload="metadata">
+          <source src={recap2026Debo2} type="video/mp4" />
+        </video>
+
+        <p>
+          We also have a new tradition of sorts, slapping beers out of Debo’s or
+          JD’s or my hands. Somehow I escaped it this year and it was just JD and
+          Debo. JD was taking a piss and he told me he was wondering when someone
+          would slap a beer out of hands, he then walked outside and Debo slapped
+          the beer out of his hand. Then JD threw beer in his eye, this hurt him
+          somehow more than 66,000,000 cumulative scofield units. Debo is now JD’s
+          favorite brother.
+        </p>
+
+        <img src={recap2026BeerSlap} alt="Beer slap aftermath" className="recap-inline-img" loading="lazy" />
+
+        <p>
+          And finally, I meant to do this last year for Fischer’s rookie debut. He
+          likes to do intepretive dance with roman candles with Coming To America
+          by Neil Diamond in the background. Well I remembered this year and he did
+          not dissapoint.
+        </p>
+
+        <video className="recap-inline-video" controls playsInline preload="metadata">
+          <source src={recap2026Fireworks} type="video/mp4" />
+        </video>
+
+        <p>
+          Oh ya, this is supposed to be the draft recap and draft grades. My bad,
+          here we go. Like in the past, I have asked someone else to grade the
+          drafts. My research this year consisted of printing 30 pages of fantasy
+          football analysis the morning of the draft that I didn’t read and used
+          as a mouse pad. Since JD and I were just in Forks, Washington the town
+          Twilight was based in, I thought I would ask Kristen Stewart.
+        </p>
+
+        <h3>Mark — unfollowbobo — Draft Spot 2 — Yahoo Grade A+</h3>
+        <p>
+          Mark led the pack with an A+ grade from Yahoo from the #2 spot. It’s a
+          freaking solid team, I had to double check a couple of times to make
+          sure unfollowbobo was actually Mark. Bijan, Nico, Josh Allen, D’Andre
+          Swift and DJ Moore were his first 5 picks. He also got a top Defense
+          later on and has plenty of depth. I think Kristen likes it but I can’t
+          tell.
+        </p>
+        <img src={recap2026Mark} alt="Kristen Stewart reaction to Mark" className="recap-inline-img" loading="lazy" />
+        <p><em>Ooooh girl, stop it</em></p>
+
+        <h3>Champ / Fischer — Dice Roll Aaron — Draft Spot 1 — Yahoo Grade A+</h3>
+        <p>
+          Champ got the 2nd highest Yahoo grade with an A+ as well. He had the #1
+          pick and went with Gibbs, Pickens, Javonte, Skattebo and McClaurin. He
+          waited on QB and got Purdy then he got 2 more QB’s after that. 2 kickers
+          and 2 defenses. His weakest positions are WR and TE. On paper this team
+          could work but Skattebo will likely have an arm ripped off doing
+          competitive arm wrestling and Brock Purdy is on the 49ers and we all
+          know how well they take care of their players. Can’t wait to see who the
+          new champ is this year :) Kristen I think agrees with me.
+        </p>
+        <img src={recap2026Fischer} alt="Kristen Stewart reaction to Champ" className="recap-inline-img" loading="lazy" />
+        <p><em>Totes agree</em></p>
+
+        <h3>Debo — Happy Hour — Draft Spot 5 — Yahoo Grade B+</h3>
+        <p>
+          Debo got the 3rd highest grade with a B+, he drafted from the 5 spot. He
+          went Amon-Ra, Jeanty, Olave, Jacobs and Odunze. He took his QB in the
+          7th with Daniels and his TE right after that with Kelce (I thought he
+          retired after Taylor Swift got him pregnant). Then he hit up another QB
+          and two top defenses and then and then 2 more TE’s. I’m not sure if this
+          was before or after he fried his brain and asshole with hot balls. His
+          weakness is RB as he only has 4 of them. And his RB2 is facing legal
+          problems and a possible suspension. Yikes. Kristen, let him have it girl.
+        </p>
+        <img src={recap2026Debo} alt="Kristen Stewart reaction to Debo" className="recap-inline-img" loading="lazy" />
+        <p><em>Man this bitch is stone cold</em></p>
+
+        <h3>Scham-Balls — Team Steiners — Draft Spot 4 — Yahoo Grade B</h3>
+        <p>
+          Former, former, former champ Scham-Balls got a B from the 4 spot. He
+          started off with Chase, rookie Jeremiyah love, DeVonta Smith, Lamar
+          Jackson and then David Montgomery. Two tight ends after that, LaPorta and
+          Pitts. He took his kicker and defense in the 10th and 11th rounds
+          instead of building depth but he did that in the remainder of the rounds.
+          I don’t know, I can’t talk smack, the dude has won 3 times. Maybe Kristen
+          can give an unbiased opinion.
+        </p>
+        <img src={recap2026Scham} alt="Kristen Stewart reaction to Scham-Balls" className="recap-inline-img" loading="lazy" />
+        <p><em>I don’t even know what that means</em></p>
+
+        <h3>JD — Pound It Noggin — Draft Spot 3 — Yahoo Grade: top 6</h3>
+        <p>
+          JD made it into the top 6 grades this year somehow from the #3 spot. He
+          went Taylor, London, AJ Brown, Etienne and took Caleb Williams in the
+          5th. Fairly balanced draft after that just picking up one of each DEF and
+          K and building depth instead. My only concern is he has one TE and it is
+          Dallas Goedert. Could be a problem. Kristen?
+        </p>
+        <img src={recap2026Jd} alt="Kristen Stewart reaction to JD" className="recap-inline-img" loading="lazy" />
+        <p><em>Jesus lady settle down</em></p>
+
+        <h3>Marcello — Slippery Jack — Draft Spot 12 — Yahoo Grade C</h3>
+        <p>
+          Marcello opted for the #12 draft spot and ended up with a C grade. He
+          concentrated on RB and WR the first 6 rounds (Lamb, Walker III, Rice,
+          McMillan, Burden and Tuten. Then he took his QB Herbert. He ended up with
+          KIttle as his TE and he should be great except for the 49ers injury
+          curse. I mean c’mon, their freakin coach got injured in the preseason. He
+          did pick up a backup TE thankfully and 2 backup QB’s. He waited all the
+          way until the 16th and 17th rounds to pick up his DEF and K. Mad respect
+          bro.
+        </p>
+        <img src={recap2026Marcello} alt="Kristen Stewart reaction to Marcello" className="recap-inline-img" loading="lazy" />
+        <p><em>Damn tootin</em></p>
+
+        <h3>Shaw-Balls — Kenny Powers — Yahoo Grade C-</h3>
+        <p>
+          Former, former champ Shaw-balls had his wife Tiffany pay his dues and
+          draft for him as well apparently. He gets a C- from Yahoo. Well shit, I
+          wrote that before I looked at his team and its actually mostly solid I
+          think. Barkley, Jefferson, Flowers, Wilson, Irving and Hurts. He has lots
+          of WR talent and depth but is pretty weak at RB. His TE is Mark Andrews
+          who I also thought was retired after he got pregnant by a pop star. He
+          waited until the last 3 rounds to pick his kicker and defenses. I’m torn.
+          Kristen how ‘bout you?
+        </p>
+        <img src={recap2026Shaw} alt="Kristen Stewart reaction to Shaw-Balls" className="recap-inline-img" loading="lazy" />
+        <p><em>Ya Kristen I know, right?</em></p>
+
+        <h3>Mish — Da Mish — Draft Spot 11 — Yahoo Grade D+</h3>
+        <p>
+          Your Mish got a D+, I mean I had a friends 15 year old son giving me
+          advice and it made sense at the time but now I don’t know. I wasn’t even
+          that drunk yet. I had the #11 spot. I started off with Achane and
+          Hampton, got my WR’s with Higgins and Watson. Took Tyler Warren as my TE.
+          I have Trevor Lawrence as my QB which worked out pretty well for Fischer
+          last year. I took my K and DEF in the 13th and 14th instead of the last 2
+          rounds. I have a backup QB which I almost never do. I’m not sure if I
+          actually drafted this team or not. This might actually work out! Kristen?!
+          Do you like it?!
+        </p>
+        <img src={recap2026Mish} alt="Kristen Stewart reaction to Mish" className="recap-inline-img" loading="lazy" />
+        <p><em>I going to put some hot balls in her mouth, that should perk her right up</em></p>
+
+        <h3>Gus — Prison Panther — Draft Spot 8 — Yahoo Grade D</h3>
+        <p>
+          Gus is usually a regular at the draft but sadly he couldn’t make it. He
+          drafted from the 8 spot and got a D. He started with JSN, King Henry,
+          Nabers, TE Loveland, Davante Adams and Stevenson. He nabbed Preskott in
+          the 7th and he might have been the first to take a kicker in the 10th.
+          He’s got decent depth but if this ends up being the year Henry falls off
+          a cliff he is screwed because the rest of his RB’s are trash. I don’t
+          know about this one Gussy poo. Kristen, how do you feel about Gussy-poo?
+        </p>
+        <img src={recap2026Gus} alt="Kristen Stewart reaction to Gus" className="recap-inline-img" loading="lazy" />
+        <p><em>Don’t worry guys, he’s used to it</em></p>
+
+        <h3>McCool — HingleMcCringleberry — Draft Spot 6 — Yahoo Grade D</h3>
+        <p>
+          McCool came in right behind Gus like usual with a solid D from the 6
+          spot. He started off with CMAC, Bowers, Hall, Egbuka and Judkins. He’s
+          got good depth after that and I love the Bowers pick. He’s got good depth
+          as well, 2 defenses meh but only one kicker, loving that too. Overall I
+          think this is a decent team so long as McCaffrey stays healthy. If not,
+          buh bye. Kristen?
+        </p>
+        <img src={recap2026Mccool} alt="Kristen Stewart reaction to McCool" className="recap-inline-img" loading="lazy" />
+        <p><em>Its ok baby, you just need some McHotBalls</em></p>
+
+        <h3>DD — Double D’s — Draft Spot 10 — Yahoo Grade D</h3>
+        <p>
+          DD went from double D’s to triple D’s because he got a D from the 10 spot.
+          It’s to bad Yahoo is a robot otherwise it would realize 3 D’s are better
+          than 2. He went Puca, Brown, Waddle, Burrow, Price and Kraft. Gross.
+          Smells like my draft. Hell, I am just glad he was able to make it to the
+          draft this year so I just want to say good job sir. Good depth, one K one
+          DEF like a sane person. Kristen?
+        </p>
+        <img src={recap2026Dd} alt="Kristen Stewart reaction to DD" className="recap-inline-img" loading="lazy" />
+        <p><em>I’ve never seen her react this way, wow, just wow. You got that Pittsburg Cignetti special sauce</em></p>
+
+        <h3>Welsch / Matt — smakdown — Draft Spot 7 — Yahoo Grade D-</h3>
+        <p>
+          Welsch caught me before the draft with a good joke on GroupMe. Well done
+          Matt. He drafted from the 7th spot and ended up with the worst Yahoo
+          grade at D-. Lets see why. Alright he went Cook, Williams, McBride, his
+          first WR in the 4th with McConkey, Drake Maye in the 5th, his WR2 in the
+          6th with Parker Washington. Ok, I don’t see a problem here. He’s got a
+          good defense and good kicker without backups for them, thats fine by me
+          too. Huh, well I like the team. Kristen?
+        </p>
+        <img src={recap2026Matt} alt="Kristen Stewart reaction to Welsch" className="recap-inline-img" loading="lazy" />
+        <p><em>Gasp! Is she being sarcastic or was I?!</em></p>
+
+        <p>
+          Alright fellas, another successful draft in the books. Thank you all for
+          being a part of this league, thanks to those that came out to get stupid
+          with me and sorry to those that couldn’t make it. Good luck this year and
+          may the best defense win!
+        </p>
+        <p><strong>-Mish out bitches!</strong></p>
+
+        <img src={recap2026Outro1} alt="2026 draft outro" className="recap-inline-img" loading="lazy" />
+        <img src={recap2026Outro2} alt="2026 draft outro" className="recap-inline-img" loading="lazy" />
+        <p><em>Well if you say so</em></p>
+        <video className="recap-inline-video" autoPlay loop muted playsInline preload="metadata">
+          <source src={recap2026Outro3} type="video/mp4" />
+        </video>
+      </section>
+    ),
+  },
   "2025": {
     images: [],
     videos: [],
@@ -1471,7 +1732,7 @@ function RecapContent({ year }) {
 
 function YearPager({ year, onPick }) {
   const min = 2016;
-  const max = 2025;
+  const max = 2026;
   const prevYear = year - 1;
   const nextYear = year + 1;
   const hasPrev = prevYear >= min;
@@ -1507,8 +1768,8 @@ export default function DraftRecaps() {
   const location = useLocation();
 
   const selectedYear = useMemo(() => {
-    const y = yearParam || "2025";
-    return YEARS.includes(Number(y)) ? y : "2025";
+    const y = yearParam || "2026";
+    return YEARS.includes(Number(y)) ? y : "2026";
     }, [yearParam]);
 
   const handlePickYear = (y) => {
