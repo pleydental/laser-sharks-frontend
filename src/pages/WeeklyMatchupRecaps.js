@@ -4092,7 +4092,7 @@ function Recap2026Week1() {
       <p>
         <strong className="glow-green">Matt</strong> vs. <strong className="glow-green">Mish</strong><br />
         135 to 132<br />
-        Mediocraty at its best
+        Mediocrity at its best
       </p>
       <Gif src={w1_2026loop6} alt="Week 1 — Matt vs Mish" />
 
