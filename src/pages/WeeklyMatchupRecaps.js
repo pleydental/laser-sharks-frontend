@@ -1,6 +1,6 @@
 // src/pages/WeeklyMatchupRecaps.js
 import React, { useMemo } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import middleFingerBtn from "../assets/middle-finger-button.png";
 
 // 🔁 Week 1 GIFs (placed in: src/assets/weekly-recaps)
@@ -245,6 +245,15 @@ import week17Loop4 from "../assets/weekly-recaps/week-17-loop-4.gif";
 import week17Loop5 from "../assets/weekly-recaps/week-17-loop-5.gif";
 import week17TutuBanner from "../assets/weekly-recaps/week-17-tutubanner.gif";
 
+// 🗓 2026 WEEK 1 MEDIA
+import w1_2026loop1 from "../assets/weekly-recaps/2026-week-1-loop-1.webp";
+import w1_2026loop2 from "../assets/weekly-recaps/2026-week-1-loop-2.webp";
+import w1_2026loop3 from "../assets/weekly-recaps/2026-week-1-loop-3.webp";
+import w1_2026loop4 from "../assets/weekly-recaps/2026-week-1-loop-4.webp";
+import w1_2026loop5 from "../assets/weekly-recaps/2026-week-1-loop-5.webp";
+import w1_2026loop6 from "../assets/weekly-recaps/2026-week-1-loop-6.webp";
+import w1_2026loop7 from "../assets/weekly-recaps/2026-week-1-loop-7.webp";
+
 
 
 function formatTime(secs) {
@@ -337,7 +346,7 @@ const Arrow = ({ dir, change }) => {
 
 
 
-const YEARS = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]; // add more years later
+const YEARS = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]; // add more years later
 const WEEKS = Array.from({ length: 16 }, (_, i) => i + 1); // 1..16
 
 // small helper to keep GIFs centered and not huge
@@ -4011,8 +4020,120 @@ const Recap2025Week16 = () => {
 
 
    
+/** ---- 2026 WEEK 1 CONTENT ---- */
+function Recap2026Week1() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 1 — Madison Beer Edition</h2>
+
+      <p>
+        <Link to="/standings">View Current Standings</Link>
+      </p>
+
+      <p>
+        Ok gents here is the week 1 matchup recap. I am sorry but I do not have time to do the write-up
+        you deserve this week. <strong className="glow-green">JD</strong> requested a Madison Beer themed
+        write-up and I am a man of the people and try to give them what they want so here you go!
+      </p>
+
+      <p>
+        Here is a summary of the week, <strong className="glow-green">Mark</strong> got high score with 179
+        points. So it is bizzarro world apparently and this season is going to be all kinds of f'd up.{" "}
+        <strong className="glow-green">McCool</strong> gets low score with 91pts.{" "}
+        <strong className="glow-green">Shaw</strong> made the top 6 in points but lost to the #2 high score,{" "}
+        <strong className="glow-green">TuTu queen</strong> can't be happy about that.{" "}
+        <strong className="glow-green">Champ</strong> starts off 2-0 but with an average performance. If I
+        didn't mention your name then you should try harder this week to get my attention.
+      </p>
+
+      <h3>High Score</h3>
+      <p>
+        <strong className="glow-green">Mark</strong> vs. <strong className="glow-green">McCool</strong><br />
+        179 to 91<br />
+        Yes, <strong className="glow-green">Mark</strong> bent him over hard
+      </p>
+      <Gif src={w1_2026loop1} alt="Week 1 — Mark vs McCool" />
+
+      <h3>Second and Third Highest Score</h3>
+      <p>
+        <strong className="glow-green">Debo</strong> vs. <strong className="glow-green">Shaw-Balls</strong><br />
+        177 to 168<br />
+        Two powerhouses but only one bitch.
+      </p>
+      <Gif src={w1_2026loop2} alt="Week 1 — Debo vs Shaw-Balls" />
+
+      <h3>Fourth Highest Score</h3>
+      <p>
+        <strong className="glow-green">JD</strong> vs. <strong className="glow-green">Gus</strong><br />
+        162 to 135<br />
+        Solid start for <strong className="glow-green">JD</strong>, <strong className="glow-green">Gus</strong> has
+        nothing to be worried about….yet
+      </p>
+      <Gif src={w1_2026loop3} alt="Week 1 — JD vs Gus" />
+
+      <h3>Fifth Highest Score</h3>
+      <p>
+        <strong className="glow-green">Champ</strong> vs. former Champ (x3){" "}
+        <strong className="glow-green">Scham-Balls</strong><br />
+        141 to 109<br />
+        Meh
+      </p>
+      <Gif src={w1_2026loop4} alt="Week 1 — Champ vs Scham-Balls" />
+
+      <h3>6th Highest Score</h3>
+      <p>
+        <strong className="glow-green">Marcello</strong> vs. <strong className="glow-green">DD</strong><br />
+        136 to 98<br />
+        These are words that I have typed.
+      </p>
+      <Gif src={w1_2026loop5} alt="Week 1 — Marcello vs DD" />
+
+      <h3>Others</h3>
+      <p>
+        <strong className="glow-green">Matt</strong> vs. <strong className="glow-green">Mish</strong><br />
+        135 to 132<br />
+        Mediocraty at its best
+      </p>
+      <Gif src={w1_2026loop6} alt="Week 1 — Matt vs Mish" />
+
+      <p className="signoff">-<strong className="glow-green">Mish Out</strong></p>
+      <Gif src={w1_2026loop7} alt="Week 1 — sign off" />
+    </article>
+  );
+}
+
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
+
+  if (y === "2026") {
+    const w = Number(week);
+    return (
+      <section className="recap-content">
+        <h2>{y} Weekly Matchup Recaps</h2>
+        <p>Select a week below to view the recap. (1–16). Week 17 goes to the championship recap.</p>
+
+        <WeekButtons year={y} activeWeek={week} onPickWeek={onPickWeek} />
+
+        {w >= 1 && w <= 16 ? (
+          <>
+            <div style={{ marginTop: "1.25rem" }}>
+              <h3>Week {w} Recap</h3>
+            </div>
+
+            {w === 1 ? (
+              <Recap2026Week1 />
+            ) : (
+              <p>
+                <em>No recap yet. Don’t worry, you probably sucked balls.</em>
+              </p>
+            )}
+
+            <PrevNextNav year={y} week={week} onPickWeek={onPickWeek} />
+          </>
+        ) : null}
+      </section>
+    );
+  }
 
   if (y !== "2025") {
     return (
