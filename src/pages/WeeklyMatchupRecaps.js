@@ -254,6 +254,20 @@ import w1_2026loop5 from "../assets/weekly-recaps/2026-week-1-loop-5.webp";
 import w1_2026loop6 from "../assets/weekly-recaps/2026-week-1-loop-6.webp";
 import w1_2026loop7 from "../assets/weekly-recaps/2026-week-1-loop-7.webp";
 
+// 🗓 2026 WEEK 2 MEDIA
+import w2_2026loop1 from "../assets/weekly-recaps/2026-week-2-loop-1.webp";
+import w2_2026loop2 from "../assets/weekly-recaps/2026-week-2-loop-2.webp";
+import w2_2026loop3 from "../assets/weekly-recaps/2026-week-2-loop-3.webp";
+import w2_2026loop4 from "../assets/weekly-recaps/2026-week-2-loop-4.webp";
+import w2_2026loop5 from "../assets/weekly-recaps/2026-week-2-loop-5.webp";
+import w2_2026loop6 from "../assets/weekly-recaps/2026-week-2-loop-6.webp";
+import w2_2026loop7 from "../assets/weekly-recaps/2026-week-2-loop-7.webp";
+import w2_2026loop8 from "../assets/weekly-recaps/2026-week-2-loop-8.webp";
+import w2_2026loop9 from "../assets/weekly-recaps/2026-week-2-loop-9.webp";
+import w2_2026loop10 from "../assets/weekly-recaps/2026-week-2-loop-10.webp";
+import w2_2026loop11 from "../assets/weekly-recaps/2026-week-2-loop-11.webp";
+import w2_2026loop12 from "../assets/weekly-recaps/2026-week-2-loop-12.webp";
+
 
 
 function formatTime(secs) {
@@ -4102,6 +4116,157 @@ function Recap2026Week1() {
   );
 }
 
+/** ---- 2026 WEEK 2 CONTENT ---- */
+function Recap2026Week2() {
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 2 Laser Sharks Recap</h2>
+
+      <p>
+        <Link to="/standings">View Current Standings</Link>
+      </p>
+
+      <p>
+        Alright folks, I have managed to finally catch up for the most part with my life and have a bit of
+        time to attempt to entertain you. Lets get to it.
+      </p>
+      <Gif src={w2_2026loop1} alt="Week 2 — intro" />
+
+      <p>
+        I am not really sure what happened in week 1 so week 2 is the new week 1 this week but next week will
+        be the normal week again.
+      </p>
+      <Gif src={w2_2026loop2} alt="Week 2 — new week 1" />
+
+      <p>
+        The high score of the week goes to Mr. <strong className="glow-green">Gus</strong>, he only had one last year so lets hope this is the first
+        of many. He just missed a top 6 score last week and if it wasn’t for that he would be in 1st place.
+      </p>
+      <Gif src={w2_2026loop3} alt="Week 2 — Gus high score" />
+
+      <p>
+        Similar story for <strong className="glow-green">Debo</strong>, he is our point leader but he lost his matchup to <strong className="glow-green">Marcello</strong> so he is merely #2.
+        <strong className="glow-green">JD</strong> went from 3rd highest score last week to lowest score this week, can’t wait to find out how that
+        happened!
+      </p>
+
+      <p>
+        Our reigning <strong className="glow-green">champ</strong> is off to a slow start compared to last year and he doesn’t have Rashee Rice
+        waiting in the wings this time to boost him later in the season.
+      </p>
+      <Gif src={w2_2026loop4} alt="Week 2 — Champ slow start" />
+
+      <p>
+        Despite <strong className="glow-green">Shaw-Balls</strong> pure enjoyment of posing in a TuTu he doesn’t seem like he will be repeating the
+        worst manager bit this year.
+      </p>
+      <Gif src={w2_2026loop5} alt="Week 2 — Shaw-Balls TuTu" />
+
+      <p>
+        <strong className="glow-green">Mark</strong> is off to a hot start with high score last week and he won his head to head matchup this week.
+        <strong className="glow-green">Marcello</strong> is first place with two solid back to back weeks.
+      </p>
+
+      <p>
+        The rest of us are on the struggle bus and I would say the last place TuTu trophy might come down to
+        <strong className="glow-green">DD</strong> and <strong className="glow-green">DD</strong>. He is a solid 37 points behind <strong className="glow-green">Scham-Balls</strong>. That being said, I am also 0-4 and have a solid
+        chance at this esteemed honor.
+      </p>
+      <Gif src={w2_2026loop6} alt="Week 2 — struggle bus" />
+
+      <p>Alright, time to see how all this shit went down….</p>
+
+      <h3>MATCHUPS:</h3>
+
+      <h3>High Score Matchup</h3>
+      <p>
+        <strong className="glow-green">Gus</strong> (3-1) 167.86 VS. <strong className="glow-green">Matt</strong> (1-3) 118.62
+      </p>
+      <p>
+        Ah yes I see now. <strong className="glow-green">Gus</strong> had JSN, Dak AND Davante Adams. 3 of the highest scores of the week, that
+        certainly helps! Unfortunately, he had a piece of the NYG collapse with Dart and Nabers both getting
+        hurt. Hopefully for <strong className="glow-green">Gus</strong>, whatever garbage the giants are able to scrounge up at QB will be good enough
+        for Nabers once he returns. Oh shit, <strong className="glow-green">Gus</strong> had Aubrey too with a smooth 16pts at the K position.
+      </p>
+      <p>
+        <strong className="glow-green">Matt</strong> had some flashes he didn’t have 3 players over 35pts like <strong className="glow-green">Gus</strong> did. Drake Maye is his QB and I
+        honestly thought he was going to be good again this year but that hasn’t been the case. I’m guessing
+        he is going to start Goff this week instead of Maye but we’ll see. He is solid everywhere else but he
+        did just lose Alec Pierce for God knows how long.
+      </p>
+      <p>
+        <strong>Summary:</strong> Belt to Ass
+      </p>
+      <Gif src={w2_2026loop7} alt="Week 2 — Gus vs Matt" />
+
+      <h3>Second and Fifth Highest Score Matchup</h3>
+      <p>
+        <strong className="glow-green">McCool</strong> (2-2) 157.88 VS. <strong className="glow-green">Scham-Balls</strong> (1-3) 130.60
+      </p>
+      <p>
+        Decent matchup here, two of the top 6 high scores with <strong className="glow-green">McCool</strong> coming out on top. <strong className="glow-green">McCool</strong> took a chance
+        drafting Mahomes and it paid off this week, thankfully it was against the Colts, of-fucking-course it
+        was against the Colts. He also took a chance with CMC and that is paying off. His WR core is garbage
+        and he got a stupid 21 points from NE Defense.
+      </p>
+      <p>
+        <strong className="glow-green">Scham-Balls</strong> had a respectable top 6 score but pulled an unfortunate matchup this week. His RB’s are
+        trash but his WR’s are so so nice. It’s hard to win though with a 16 point differential between yours
+        and your opponents K and DEF combo.
+      </p>
+      <Gif src={w2_2026loop8} alt="Week 2 — McCool vs Scham-Balls" />
+
+      <h3>Third and Fourth Highest Score Matchup</h3>
+      <p>
+        <strong className="glow-green">Marcello</strong> (4-0) 141.58 VS. <strong className="glow-green">Debo</strong> (3-1) 137.94
+      </p>
+      <p>
+        Alright this was some good shit right here. Two powerhouses, best record and highest points head to
+        head. Both QB’s shat the bed. <strong className="glow-green">Debo</strong>’s QB Daniels’ elbow looked like one of those inflatable gumby things
+        outside of a car dealership. That sucks. <strong className="glow-green">Marcello</strong> is rolling with Walker, why TF did SEA get rid of
+        him??? I’m looking at the matchup and trying to find some weaknesses but in the end I think <strong className="glow-green">Debo</strong>’s
+        RB’s just let him down. Oh shit!!! I just looked at <strong className="glow-green">Debo</strong>’s bench and his backup QB is Dart, holy hell,
+        bro that sucks. At least you got to eat 100 Carolina Reaper cheese balls at the draft, so not a
+        completely wasted season.
+      </p>
+      <Gif src={w2_2026loop9} alt="Week 2 — Marcello vs Debo" />
+
+      <h3>Sixth Highest Score Matchup</h3>
+      <p>
+        <strong className="glow-green">Shaw-Balls</strong> (3-1) 126.46 VS. <strong className="glow-green">Mish</strong> (0-4) 120.5
+      </p>
+      <p>
+        This one came down to the wire with the Colts and Chiefs game. If I remember right I was favored most
+        of the weekend but <strong className="glow-green">Matt</strong> had Harrison Butker, yes a kicker, my favorite position. I at least had Xavior
+        Worthy so I thought I had it in the bag. Nope, fucking nope. Worthy got me a respectable 13 points and
+        Butker got 17. Not sure what else to say about this matchup other than Congrats <strong className="glow-green">Matt</strong>!
+      </p>
+      <Gif src={w2_2026loop10} alt="Week 2 — Shaw-Balls vs Mish" />
+
+      <h3>Barely worth mentioning matchup</h3>
+      <p>
+        <strong className="glow-green">Fischer</strong> (3-1) 123.28 VS. <strong className="glow-green">JD</strong> (2-2) 87.92
+      </p>
+      <p>
+        I normally gloss over this matchup because I get tired of thinking but I gots to know how <strong className="glow-green">JD</strong> went from
+        force to be reckoned with to a little bitch all in one week. Ahh I see now, <strong className="glow-green">JD</strong> had Caleb Williams in
+        the barnburner CHI vs. MIN game, Caleb got carted off in that game. JT got him 30 points so thats
+        good, no one else scored over 10 points in the rest of his matchup. Looks like his TE got hurt too. My
+        favorite part of this whole matchup though, is Mr. Defense defender himself only got 2 points from his
+        defense, bahahahahahah.
+      </p>
+      <Gif src={w2_2026loop11} alt="Week 2 — Fischer vs JD" />
+
+      <p>
+        Alright thats week 2, not my best work but thats what I got right now. Onwards and upwards friends!!
+      </p>
+
+      <p className="signoff">-<strong className="glow-green">Mish Out</strong></p>
+      <Gif src={w2_2026loop12} alt="Week 2 — sign off" />
+    </article>
+  );
+}
+
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
 
@@ -4122,6 +4287,8 @@ function YearlyRecap({ year, week, onPickWeek }) {
 
             {w === 1 ? (
               <Recap2026Week1 />
+            ) : w === 2 ? (
+              <Recap2026Week2 />
             ) : (
               <p>
                 <em>No recap yet. Don’t worry, you probably sucked balls.</em>
