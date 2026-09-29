@@ -1043,7 +1043,7 @@ function Recap2025Week5() {
           Record: <strong className="glow-green">JD</strong> 2–8 | <strong className="glow-green">Marcello</strong> 7–3 <Arrow dir="down" change="1" /><br />
           <strong className="glow-green">JD</strong> was losing badly, many people said he couldn’t win. I never believed it.
           He came back—big comeback—absolutely crushed <strong className="glow-green">Marcello</strong>, who quite frankly looked terrible.
-          Sleepy <strong className="glow-green">Marcello</strong> didn’t even show up. <strong className="glow-green">JD</strong>’s performance was beautiful, just beautiful.
+          Sleepy <strong className="glow-green">Marcello</strong> didn’t even show up. <strong className="glow-green">JD’s</strong> performance was beautiful, just beautiful.
         </p>
 
         <div className="recap-gif"><img src={w5gif4} alt="Week 5 GIF 4" /></div>
@@ -1052,7 +1052,7 @@ function Recap2025Week5() {
         <p>
           Record: <strong className="glow-green">Mish</strong> 4–6 <Arrow dir="up" change="1" /> | <strong className="glow-green">Welsch</strong> 3–7 <Arrow dir="down" change="3" /><br />
           Biggie Pauls—he’s tough, he’s strong, he’s got that winning mentality. Tremendous victory.
-          <strong className="glow-green">Welsch</strong>’s team? Not good. They call it a team, I call it a total disaster.
+          <strong className="glow-green">Welsch’s</strong> team? Not good. They call it a team, I call it a total disaster.
           Many people are saying it might be one of the worst-run rosters in league history. Sad!
         </p>
 
@@ -1071,7 +1071,7 @@ function Recap2025Week5() {
         <h4><strong className="glow-green">Debo</strong> (143.82 6th highest) def. <strong className="glow-green">Shaw</strong> (109.64)</h4>
         <p>
           Record: <strong className="glow-green">Debo</strong> 10–0 <Arrow dir="up" change="1" /> | <strong className="glow-green">Shaw</strong> 0–10<br />
-          <strong className="glow-green">Debo</strong>’s undefeated—just like I was in 2016, folks. He’s got the best team, maybe ever, and everyone knows it. Total domination.
+          <strong className="glow-green">Debo’s</strong> undefeated—just like I was in 2016, folks. He’s got the best team, maybe ever, and everyone knows it. Total domination.
           <strong className="glow-green">Shaw</strong>? Terrible season. Zero wins, zero leadership, zero clue. He’s the Jeb Bush of fantasy football—low energy!
         </p>
 
@@ -2636,7 +2636,7 @@ function Recap2025Week12() {
       </p>
       <p>
         -<strong className="glow-green">Mish</strong> dropped his 4th loss in a row and he is just sad.{" "}
-        <strong className="glow-green">Mish</strong>’s season is basically a slow-motion car crash where the driver is
+        <strong className="glow-green">Mish’s</strong> season is basically a slow-motion car crash where the driver is
         screaming “fuuuuuuuuuuuuuuuuuuuuuuuuuuu” while the steering wheel isn’t even attached to anything.
       </p>
 
@@ -2709,7 +2709,7 @@ function Recap2025Week12() {
         has 3 Miami players, not sure that is much worse than 3 Bears but it’s working out much better for him than me.
       </p>
       <p>
-        -<strong className="glow-green">Gus</strong>’s mid-season magic has faded and I think it might be over for him. He
+        -<strong className="glow-green">Gus’s</strong> mid-season magic has faded and I think it might be over for him. He
         left some points on the bench but not sure it would have made much of a difference, I would check but I don’t want
         to math right now. At this point <strong className="glow-green">Gus</strong> is basically the fantasy version of a
         horror movie sequel: technically still going, but everybody knows how it ends.
@@ -2778,7 +2778,7 @@ function Recap2025Week12() {
         Relevant matchup for both. Two wins keeps <strong className="glow-green">Mark</strong>&apos;s playoff hopes alive.
         Luckily <strong className="glow-green">JD</strong> and <strong className="glow-green">Welsch</strong> are playing
         each other this week, so that helps <strong className="glow-green">Mark</strong> either way because at least one of
-        them will get a loss or two. Two wins makes <strong className="glow-green">Mish</strong>’s playoff hopes akin to a
+        them will get a loss or two. Two wins makes <strong className="glow-green">Mish’s</strong> playoff hopes akin to a
         rusty sharp spoon digging out my own appendix hoping it doesn’t kill me.
       </p>
 
@@ -3630,20 +3630,20 @@ const Recap2025Week15 = () => {
       </h2>
 
       <p>
-        <strong className="glow-green">JD</strong>’s hopes and dreams were
+        <strong className="glow-green">JD’s</strong> hopes and dreams were
         crushed Sunday night. By then{" "}
         <strong className="glow-green">JD</strong> was only alive because of T
         Henderson and J Chase and yes, his kicker, we’ll come back to this
-        later. <strong className="glow-green">Mark</strong>’s team was balanced
+        later. <strong className="glow-green">Mark’s</strong> team was balanced
         and he got decent enough production from everyone to make it through,
         3rd highest point total in the Championship bracket.{" "}
         <strong className="glow-green">JD</strong> was texting me bitching about{" "}
-        <strong className="glow-green">Mark</strong>’s kicker outscoring Dak
+        <strong className="glow-green">Mark’s</strong> kicker outscoring Dak
         Sunday night and then went into full on melt down mode, I thought he
         might fly out to Dallas and let Dak know how much of widdle bitch he
         was. <strong className="glow-green">JD</strong> forgot to mention his own
         kicker got 18 points.{" "}
-        <strong className="glow-green">JD</strong>’s team was fun to watch this
+        <strong className="glow-green">JD’s</strong> team was fun to watch this
         year, great cum back story just like his championship year, but any way,
         buh bye cowboy.
       </p>
@@ -3690,7 +3690,7 @@ const Recap2025Week15 = () => {
         <strong className="glow-green">Mark</strong> came out of last week
         smelling like roses but now he is matched up against the league point
         leader and 1st rounds high score…guy…person…I forgot{" "}
-        <strong className="glow-green">Fischer</strong>’s pronouns, my bad.
+        <strong className="glow-green">Fischer’s</strong> pronouns, my bad.
         Again, <strong className="glow-green">Fischer</strong> is the obvious
         favorite here but I’ve seen some crazy things. Undefeated teams losing
         their first playoff matchup, 6th seeds having their best game of the
@@ -3748,7 +3748,7 @@ const Recap2025Week15 = () => {
       <p>
         <strong className="glow-green">DD</strong> played{" "}
         <strong className="glow-green">Shaw-Balls</strong> and won by 40 points.
-        This was <strong className="glow-green">DD</strong>’s best performance
+        This was <strong className="glow-green">DD’s</strong> best performance
         since week 12, but too little too late. He is now safe from a 2nd TuTu.
       </p>
 
@@ -3774,7 +3774,7 @@ const Recap2025Week15 = () => {
         points and <strong className="glow-green">Mark</strong> sniffs glue and
         passes out. <strong className="glow-green">Shaw-Balls</strong> somehow
         puts it all together and gets high score for the week, fulfilling{" "}
-        <strong className="glow-green">Gus</strong>’s lifelong dream of sending
+        <strong className="glow-green">Gus’s</strong> lifelong dream of sending
         TuTu photos to his friends.
       </p>
 
@@ -3887,7 +3887,7 @@ const Recap2025Week16 = () => {
       <p>
         <strong className="glow-green">Mark</strong> blew it. But even if he had his best week{" "}
         <strong className="glow-green">Fischer</strong> still would have spanked him right on{" "}
-        <strong className="glow-green">Mark</strong>’s man diaper as he likes to do.{" "}
+        <strong className="glow-green">Mark’s</strong> man diaper as he likes to do.{" "}
         <strong className="glow-green">Fischer</strong> has managed to make it to the championship and is doing so in a dominant
         fashion.
       </p>
@@ -3924,9 +3924,9 @@ const Recap2025Week16 = () => {
       <p>
         The only thing left to write about is the “winner” of the season 10 LASER SHARK TUTU BRACKET!!! To no one’s surprise this
         prestigious honor belongs to <strong className="glow-green">Shaw-Balls</strong>. Send me your address and I’ll mail it to
-        you. I would see if you could borrow <strong className="glow-green">DD</strong>’s personal TuTu. The only problem is, is if
+        you. I would see if you could borrow <strong className="glow-green">DD’s</strong> personal TuTu. The only problem is, is if
         there were such a thing as a TuTu that looked homeless and just found out it contracted AIDS AND alopecia at the same time.
-        If there ever was a TuTu that qualified, <strong className="glow-green">DD</strong>’s TuTu would qualify. I’ll send you a
+        If there ever was a TuTu that qualified, <strong className="glow-green">DD’s</strong> TuTu would qualify. I’ll send you a
         real nice one Clark.
       </p>
 
@@ -4233,10 +4233,10 @@ function Recap2026Week2() {
       </p>
       <p>
         Alright this was some good shit right here. Two powerhouses, best record and highest points head to
-        head. Both QB’s shat the bed. <strong className="glow-green">Debo</strong>’s QB Daniels’ elbow looked like one of those inflatable gumby things
+        head. Both QB’s shat the bed. <strong className="glow-green">Debo’s</strong> QB Daniels’ elbow looked like one of those inflatable gumby things
         outside of a car dealership. That sucks. <strong className="glow-green">Marcello</strong> is rolling with Walker, why TF did SEA get rid of
-        him??? I’m looking at the matchup and trying to find some weaknesses but in the end I think <strong className="glow-green">Debo</strong>’s
-        RB’s just let him down. Oh shit!!! I just looked at <strong className="glow-green">Debo</strong>’s bench and his backup QB is Dart, holy hell,
+        him??? I’m looking at the matchup and trying to find some weaknesses but in the end I think <strong className="glow-green">Debo’s</strong>
+        RB’s just let him down. Oh shit!!! I just looked at <strong className="glow-green">Debo’s</strong> bench and his backup QB is Dart, holy hell,
         bro that sucks. At least you got to eat 100 Carolina Reaper cheese balls at the draft, so not a
         completely wasted season.
       </p>
@@ -4373,7 +4373,7 @@ function Recap2026Week3() {
         Patriot, so fuck him.
       </p>
       <p>
-        {g("JD")}'s roster is Alderaan: AJ Brown, Caleb Williams, Dallas Goedert, and now Mike Evans and
+        {g("JD's")} roster is Alderaan: AJ Brown, Caleb Williams, Dallas Goedert, and now Mike Evans and
         Travis Etienne. He should be space dust after his week 2 nut punch, yet here he is at .500. Some
         bright spots, and many, many, many dark ones.
       </p>
@@ -4399,7 +4399,7 @@ function Recap2026Week3() {
         <strong>Zeroth Law:</strong> The bench shall never be used, for the good of all humanity.
       </p>
       <p>
-        Speaking of benches, {g("Shaw-Balls")}' bench nearly outscored his starters, and his best player was
+        Speaking of benches, {g("Shaw-Balls'")} bench nearly outscored his starters, and his best player was
         a Jet. JJetta got hurt too. He's still in the hunt, and we'll call this a disturbance in the Force.
       </p>
       <p>Sucks to be you {g("Shaw-Balls")}.</p>
@@ -4417,9 +4417,9 @@ function Recap2026Week3() {
       <h3>Week 3 Awards</h3>
       <ul>
         <li><strong>Kwisatz Haderach:</strong> {g("Champ")}, 193 points. He has seen the future.</li>
-        <li><strong>Order 66:</strong> {g("Mish")}'s Achane, who betrayed me in three separate leagues.</li>
+        <li><strong>Order 66:</strong> {g("Mish's")} Achane, who betrayed me in three separate leagues.</li>
         <li><strong>The Snap:</strong> {g("JD")}, who has lost half his roster.</li>
-        <li><strong>Mechazilla Catch:</strong> {g("Mark")}'s backup QB, 39 points caught from the bench.</li>
+        <li><strong>Mechazilla Catch:</strong> {g("Mark's")} backup QB, 39 points caught from the bench.</li>
         <li><strong>Fought Thanos Solo:</strong> {g("McCool")}, who had a good week and ran into a guy holding the Gibbs Stone.</li>
       </ul>
 
