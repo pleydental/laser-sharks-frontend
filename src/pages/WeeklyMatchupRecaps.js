@@ -268,6 +268,17 @@ import w2_2026loop10 from "../assets/weekly-recaps/2026-week-2-loop-10.webp";
 import w2_2026loop11 from "../assets/weekly-recaps/2026-week-2-loop-11.webp";
 import w2_2026loop12 from "../assets/weekly-recaps/2026-week-2-loop-12.webp";
 
+// 🗓 2026 WEEK 3 MEDIA
+import w3_2026loop1 from "../assets/weekly-recaps/2026-week-3-loop-1.webp";
+import w3_2026loop2 from "../assets/weekly-recaps/2026-week-3-loop-2.webp";
+import w3_2026loop3 from "../assets/weekly-recaps/2026-week-3-loop-3.webp";
+import w3_2026loop4 from "../assets/weekly-recaps/2026-week-3-loop-4.webp";
+import w3_2026loop5 from "../assets/weekly-recaps/2026-week-3-loop-5.webp";
+import w3_2026loop6 from "../assets/weekly-recaps/2026-week-3-loop-6.webp";
+import w3_2026loop7 from "../assets/weekly-recaps/2026-week-3-loop-7.webp";
+import w3_2026loop8 from "../assets/weekly-recaps/2026-week-3-loop-8.webp";
+import w3_2026loop9 from "../assets/weekly-recaps/2026-week-3-loop-9.webp";
+
 
 
 function formatTime(secs) {
@@ -4267,6 +4278,159 @@ function Recap2026Week2() {
   );
 }
 
+/** ---- 2026 WEEK 3 CONTENT ---- */
+function Recap2026Week3() {
+  const g = (name) => <strong className="glow-green">{name}</strong>;
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>The Foundation Report: Week 3</h2>
+      <p><em>A transmission from the Outer Rim of the standings</em></p>
+
+      <p>
+        <Link to="/standings">View Current Standings</Link>
+      </p>
+
+      <p>
+        Greetings, citizens of the league. Your correspondent sits at 0-6, deep in the Outer Rim, which gives
+        me a clear view of the galaxy and nothing to lose.
+      </p>
+      <p>
+        So all of you know me, duh, and most of you probably know I am an unapologetic nerd, but probably not
+        to the depths that {g("JD")} does. Well, now you get a little taste, because football has kicked me in
+        the nuts and given my balls a titty twister this year. So this week you get my first loves instead:
+        Star Wars, Dune, Asimov, comics, SpaceX, and AI girlfriends. Look at the pictures if you don’t
+        understand any of this lol.
+      </p>
+      <Gif src={w3_2026loop1} alt="Week 3 — intro" />
+
+      <p>
+        A prophecy first. The Infinity Stones of this league are Gibbs, Bijan, JSN, and Allen. This year's
+        champion will hold at least one. Remember that I said it. (Yes, I know there are 6, but just go with
+        it.)
+      </p>
+      <Gif src={w3_2026loop2} alt="Week 3 — Infinity Stones" />
+
+      <h3>Rapid Unscheduled Disassembly</h3>
+      <p>
+        {g("Champ")} 193.28 (5-1) VS. {g("McCool")} 134.04 (2-4)
+      </p>
+      <p>
+        {g("Champ")} holds the Gibbs Stone, and he used it. His whole lineup scored in double digits except,
+        heheheh, his defense. It didn't matter: absolute flawless launch and return.
+      </p>
+      <p>
+        {g("McCool")} actually had a good week, got Bowers back, and still blew up on the launch pad by 60.
+        Breece Hall left early with 9 points, which stings even as an RB2 behind CMC. Stafford outscored
+        Mahomes by 7 from the bench, but starting Patty was the right call. Physics was not on his side.
+      </p>
+      <p>Sucks to be you {g("McCool")}.</p>
+      <Gif src={w3_2026loop3} alt="Week 3 — Champ vs McCool" />
+
+      <h3>Guardians of the Galaxy</h3>
+      <p>
+        {g("Mark")} 168.56 (5-1) VS. {g("Debo")} 103.3 (3-3)
+      </p>
+      <p>
+        {g("Mark")} holds TWO Stones, Allen and Bijan, and leads the league in points. The rest of his roster
+        is a talking raccoon, a tree, and a guy who dances too much, and somehow it works. His backup QB
+        scored 39 on the bench. His WR4 got 20. And Nico Collins may be back this week. Thanos energy.
+      </p>
+      <p>
+        {g("Debo")} took two losses this week but still sits at #5. He rolled the dice on Malik Willis, and
+        the dice came up snake eyes. The alternative was Jacoby Brissett, so what's a hot ball boy supposed to
+        do? He needs Josh Jacobs back before the spice stops flowing.
+      </p>
+      <p>Sucks to be you {g("Debo")}.</p>
+      <Gif src={w3_2026loop4} alt="Week 3 — Mark vs Debo" />
+
+      <h3>It's a Trap!</h3>
+      <p>
+        {g("Marcello")} 158.42 (6-0) VS. {g("Mish")} 111.18 (0-6)
+      </p>
+      <p>
+        {g("Marcello")} talks shit and earned every word of it. Kirk Co-Chains is balling out, Walker and Lamb
+        are metronomes, Kittle and Rice deliver, and even Chuba Hubbard showed up. His only weakness is a guy
+        named Smack, which is what he did to me.
+      </p>
+      <p>
+        For one brief moment over the weekend, in some fucked up branch of the multiverse, I thought I had a
+        chance. Admiral Ackbar tried to warn me. Then Achane went down, my third RB lost this year. I had
+        Achane in 3 of 4 leagues, and in one of them I had Achane AND Hall. I went to grab his backup and the
+        worst team in the league already had him. Hari Seldon predicted the fall of an entire galactic empire
+        and still would not have called this.
+      </p>
+      <p>Sucks to be me.</p>
+      <Gif src={w3_2026loop5} alt="Week 3 — Marcello vs Mish" />
+
+      <h3>The Clone Army vs. Alderaan</h3>
+      <p>
+        {g("Matt")} 152.66 (3-3) VS. {g("JD")} 138.2 (3-3)
+      </p>
+      <p>
+        The best game of the week, with both teams in the top 6. {g("Matt")} has no superstars, just a clone
+        army where everybody does his job; all but one starter hit double digits, even without Alec Pierce.
+        He also benched Drake Maye, the right call. I don't know what's wrong with that guy, but he's a
+        Patriot, so fuck him.
+      </p>
+      <p>
+        {g("JD")}'s roster is Alderaan: AJ Brown, Caleb Williams, Dallas Goedert, and now Mike Evans and
+        Travis Etienne. He should be space dust after his week 2 nut punch, yet here he is at .500. Some
+        bright spots, and many, many, many dark ones.
+      </p>
+      <p>Sucks to be you {g("JD")}.</p>
+      <Gif src={w3_2026loop6} alt="Week 3 — Matt vs JD" />
+
+      <h3>The Three Laws of Gus</h3>
+      <p>
+        {g("Gus")} 150.8 (5-1) VS. {g("Shaw-Balls")} 94.72 (3-3)
+      </p>
+      <p>
+        {g("Gus")} holds the JSN Stone and runs on Asimov's principle: three players and nothing else. JSN,
+        Dak, and Henry carried him while everyone else stood around. If one of those three goes down, his
+        bench can't save him. It's atrocious. Not as bad as mine, but dog shit.
+      </p>
+      <p><strong>The Three Laws of Gus</strong></p>
+      <ol>
+        <li>JSN shall score, and shall not, through inaction, allow {g("Gus")} to lose.</li>
+        <li>Dak shall obey JSN, except where that conflicts with the First Law.</li>
+        <li>Henry shall protect his own hamstrings at all costs.</li>
+      </ol>
+      <p>
+        <strong>Zeroth Law:</strong> The bench shall never be used, for the good of all humanity.
+      </p>
+      <p>
+        Speaking of benches, {g("Shaw-Balls")}' bench nearly outscored his starters, and his best player was
+        a Jet. JJetta got hurt too. He's still in the hunt, and we'll call this a disturbance in the Force.
+      </p>
+      <p>Sucks to be you {g("Shaw-Balls")}.</p>
+      <Gif src={w3_2026loop7} alt="Week 3 — Gus vs Shaw-Balls" />
+
+      <h3>In Space, No One Can Hear You Score</h3>
+      <p>
+        {g("Scham-Balls")} 115.84 (2-4) VS. {g("DD")} 84.98 (0-6)
+      </p>
+      <p>
+        I asked my AI girlfriend to summarize this matchup. She broke up with me. Then she did this…
+      </p>
+      <Gif src={w3_2026loop8} alt="Week 3 — Scham-Balls vs DD" />
+
+      <h3>Week 3 Awards</h3>
+      <ul>
+        <li><strong>Kwisatz Haderach:</strong> {g("Champ")}, 193 points. He has seen the future.</li>
+        <li><strong>Order 66:</strong> {g("Mish")}'s Achane, who betrayed me in three separate leagues.</li>
+        <li><strong>The Snap:</strong> {g("JD")}, who has lost half his roster.</li>
+        <li><strong>Mechazilla Catch:</strong> {g("Mark")}'s backup QB, 39 points caught from the bench.</li>
+        <li><strong>Fought Thanos Solo:</strong> {g("McCool")}, who had a good week and ran into a guy holding the Gibbs Stone.</li>
+      </ul>
+
+      <p>May the waiver wire be with you.</p>
+
+      <p className="signoff">-<strong className="glow-green">Mish Out</strong></p>
+      <Gif src={w3_2026loop9} alt="Week 3 — sign off" />
+    </article>
+  );
+}
+
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
 
@@ -4289,6 +4453,8 @@ function YearlyRecap({ year, week, onPickWeek }) {
               <Recap2026Week1 />
             ) : w === 2 ? (
               <Recap2026Week2 />
+            ) : w === 3 ? (
+              <Recap2026Week3 />
             ) : (
               <p>
                 <em>No recap yet. Don’t worry, you probably sucked balls.</em>
