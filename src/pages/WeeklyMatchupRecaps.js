@@ -4453,7 +4453,7 @@ function Recap2026Week4() {
       </p>
 
       <p>
-        What a week!! Suddenly Laser Sharks went from no hope for the bottom 2 to anything is possible.
+        What a week!! Suddenly Laser Sharks went from no hope for the bottom 2, to anything is possible.
         Thanks to injuries and bye weeks (yes, those are starting already), the only one that really should
         consider themselves safe is {g("Marcello")}. Your resident basement dwellers this season ({g("Mish")}{" "}
         and {g("DD")}) both made it into the top 6 with 2 wins each. {g("Mark")}, {g("Gus")}, and{" "}
