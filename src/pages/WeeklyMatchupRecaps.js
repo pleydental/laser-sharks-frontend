@@ -286,6 +286,7 @@ import w4_2026loop3 from "../assets/weekly-recaps/2026-week-4-loop-3.webp";
 import w4_2026loop4 from "../assets/weekly-recaps/2026-week-4-loop-4.webp";
 import w4_2026loop5 from "../assets/weekly-recaps/2026-week-4-loop-5.webp";
 import w4_2026loop6 from "../assets/weekly-recaps/2026-week-4-loop-6.webp";
+import w4_2026loop7 from "../assets/weekly-recaps/2026-week-4-loop-7.webp";
 import w4_2026loop8 from "../assets/weekly-recaps/2026-week-4-loop-8.webp";
 
 
@@ -4452,7 +4453,7 @@ function Recap2026Week4() {
       </p>
 
       <p>
-        What a week!! Suddenly the Laser Sharks went from no hope for the bottom 2 to anything is possible.
+        What a week!! Suddenly Laser Sharks went from no hope for the bottom 2 to anything is possible.
         Thanks to injuries and bye weeks (yes, those are starting already), the only one that really should
         consider themselves safe is {g("Marcello")}. Your resident basement dwellers this season ({g("Mish")}{" "}
         and {g("DD")}) both made it into the top 6 with 2 wins each. {g("Mark")}, {g("Gus")}, and{" "}
@@ -4496,7 +4497,7 @@ function Recap2026Week4() {
       <p>
         {g("McCool")}, {g("McCool")}, {g("McCool")}. What can I say buddy, you lost in the special olympics.
         You are 1 week away from replacing me and {g("DD")} in the basement. You even benefited from Kamara’s
-        freak 2 tuddy game. In a year where WR is the deepest I have ever seen, you’ve managed to get the worst
+        freak 2 tuddy game. In a year where the depth at WR is the deepest I have ever seen, you’ve managed to get the worst
         of them. I think you’ll be fine though; of the teams in the bottom 6 you have the 2nd highest point
         total, so keep on truckin.
       </p>
@@ -4551,6 +4552,7 @@ function Recap2026Week4() {
       </p>
       <p>These are the words that I typed about these matchups, that is all.</p>
       <Gif src={w4_2026loop6} alt="Week 4 — the balls" />
+      <Gif src={w4_2026loop7} alt="Week 4 — the balls, part 2" />
 
       <p>BYE weeks are here, hooorah!</p>
 
