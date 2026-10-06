@@ -279,6 +279,15 @@ import w3_2026loop7 from "../assets/weekly-recaps/2026-week-3-loop-7.webp";
 import w3_2026loop8 from "../assets/weekly-recaps/2026-week-3-loop-8.webp";
 import w3_2026loop9 from "../assets/weekly-recaps/2026-week-3-loop-9.webp";
 
+// 🗓 2026 WEEK 4 MEDIA
+import w4_2026loop1 from "../assets/weekly-recaps/2026-week-4-loop-1.webp";
+import w4_2026loop2 from "../assets/weekly-recaps/2026-week-4-loop-2.webp";
+import w4_2026loop3 from "../assets/weekly-recaps/2026-week-4-loop-3.webp";
+import w4_2026loop4 from "../assets/weekly-recaps/2026-week-4-loop-4.webp";
+import w4_2026loop5 from "../assets/weekly-recaps/2026-week-4-loop-5.webp";
+import w4_2026loop6 from "../assets/weekly-recaps/2026-week-4-loop-6.webp";
+import w4_2026loop8 from "../assets/weekly-recaps/2026-week-4-loop-8.webp";
+
 
 
 function formatTime(secs) {
@@ -4431,6 +4440,126 @@ function Recap2026Week3() {
   );
 }
 
+/** ---- 2026 WEEK 4 CONTENT ---- */
+function Recap2026Week4() {
+  const g = (name) => <strong className="glow-green">{name}</strong>;
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 4 Write-Up</h2>
+
+      <p>
+        <Link to="/standings">View Current Standings</Link>
+      </p>
+
+      <p>
+        What a week!! Suddenly the Laser Sharks went from no hope for the bottom 2 to anything is possible.
+        Thanks to injuries and bye weeks (yes, those are starting already), the only one that really should
+        consider themselves safe is {g("Marcello")}. Your resident basement dwellers this season ({g("Mish")}{" "}
+        and {g("DD")}) both made it into the top 6 with 2 wins each. {g("Mark")}, {g("Gus")}, and{" "}
+        {g("Champ")} all suffered losses this week, opening up the leaderboard for some major moves.
+      </p>
+      <Gif src={w4_2026loop1} alt="Week 4 — intro" />
+
+      <p>Let's get to it.</p>
+
+      <h3>High Score and 3rd High Score Matchup</h3>
+      <p>
+        {g("Marcello")} 218 VS. {g("Gus")} 145
+      </p>
+      <p>
+        Holy…shit. 218 points by {g("Marcello")} is ridonkulous. He’s riding with Kirk CoChains, Walker and
+        Lamb as his consistent top studs. But then he gets a cool 46 from Tetairoa McMillan like a boss. Did I
+        mention he got a zero burger from Rashee Rice? I mean, wtf?! Pure domination.
+      </p>
+      <p>
+        I feel bad for {g("Gus")}, he had another great week but got an L in this matchup. He is still 3rd in
+        the standings and 3rd in points so he is just fine, but dayum! Everybody in double digits for him
+        except his DEF and Davante Adams. He’s got to be happy that Malik Nabers is finally showing some signs
+        of life. He is used to JSN and Henry going off for him, but they got a measly 28pts combined, ho hum.
+        Well, that’s just the way it goes, somebody has to lose.
+      </p>
+      <Gif src={w4_2026loop2} alt="Week 4 — Marcello vs Gus" />
+
+      <h3>Second Highest Score Matchup</h3>
+      <p>
+        {g("DD")} 171 VS. {g("McCool")} 129
+      </p>
+      <p>
+        {g("DD")} finally is showing some signs of life, mainly due to some patience and waiver wire moves. He
+        finally got Puka back and he dropped 29 points for him. He picked up Emmanuel Wilson at some point and
+        that gave him 27 points. The rest of his squad did great with the exception of his TE. He even has
+        Monangai and Charbonnet on the bench. Monangai looks to be flipping Swift for the lead role in Chicago,
+        and Charbonnet, when back, will likely replace Wilson for him in a nice clean swap. Don’t sleep on{" "}
+        {g("DD")} folks, he’s already worn the TuTu once, and with the exception of {g("Shaw-Balls")}, no one
+        wants to do that twice.
+      </p>
+      <p>
+        {g("McCool")}, {g("McCool")}, {g("McCool")}. What can I say buddy, you lost in the special olympics.
+        You are 1 week away from replacing me and {g("DD")} in the basement. You even benefited from Kamara’s
+        freak 2 tuddy game. In a year where WR is the deepest I have ever seen, you’ve managed to get the worst
+        of them. I think you’ll be fine though; of the teams in the bottom 6 you have the 2nd highest point
+        total, so keep on truckin.
+      </p>
+      <Gif src={w4_2026loop3} alt="Week 4 — DD vs McCool" />
+
+      <h3>Fourth and Sixth Highest Score Matchup</h3>
+      <p>
+        {g("Mish")} 140 VS. {g("Mark")} 131
+      </p>
+      <p>
+        That’s right, your {g("Mish")} finally got some wins. I was sweatin Monday night though. Thankfully
+        Atlanta shmoked New Orleans and they decided to put their other B Robinson in the game at the end to
+        score 2 of their 5 rushing TDs. My team is still trash, I need some things to happen that I wouldn’t
+        feel right wishing for to make my team relevant. I might be able to sneak into the playoffs but we’ll
+        see.
+      </p>
+      <p>
+        Despite the loss, {g("Mark’s")} team is still solid and he doesn’t have anything to worry about, but he
+        does have a weak spot in Swift. His value seems to be on the decline as Monangai’s rises on the Bears.
+        Maybe he should start both of his B Robinsons?! He got the dreaded zero from his defense. I got 8
+        points, so he still would have lost by 1.56 points if we didn’t have the position, so he can’t even
+        blame {g("Fischer")} for the loss.
+      </p>
+      <Gif src={w4_2026loop4} alt="Week 4 — Mish vs Mark" />
+
+      <h3>Fifth Highest Score Matchup</h3>
+      <p>
+        {g("Welsch")} 137 VS. {g("Champ")} 123
+      </p>
+      <p>
+        {g("Welsch")} has strung together two great back to back weeks. This week he put our {g("Champ")} in
+        his place. He would have scored more but his usually consistent point machine, Parker Washington, had
+        an off week. He’s been rolling with Goff because of Drake Maye’s horrible start, but Maye went off for
+        34 points. Doesn’t matter, he still got 2 wins.
+      </p>
+      <p>
+        {g("Champ")} is fine. He had a decent week with some hiccups. Gibbs scored under 20 fantasy points for
+        the first time this year. He took the risk and started McLaurin despite questionable reports leading
+        up to the game and he ended up with a zero. His bench scored 98 points, more than {g("JD’s")} entire
+        starting lineup, so he’ll be fine for week 5 as he’s not affected by the bye week. You did great{" "}
+        {g("Champ")}, just ask Jill.
+      </p>
+      <Gif src={w4_2026loop5} alt="Week 4 — Welsch vs Champ" />
+
+      <p>We have two 🤢🤢🤢🤢🤢🤮🤮🤮🤮🤮 matchups this week and the balls came out on top!</p>
+
+      <p>
+        {g("Scham-Balls")} 115 VS. {g("Debo")} 111
+      </p>
+      <p>
+        {g("Shaw-Balls")} 106 VS. {g("JD")} 96
+      </p>
+      <p>These are the words that I typed about these matchups, that is all.</p>
+      <Gif src={w4_2026loop6} alt="Week 4 — the balls" />
+
+      <p>BYE weeks are here, hooorah!</p>
+
+      <p className="signoff">-<strong className="glow-green">Mish Out</strong></p>
+      <Gif src={w4_2026loop8} alt="Week 4 — sign off" />
+    </article>
+  );
+}
+
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
 
@@ -4455,6 +4584,8 @@ function YearlyRecap({ year, week, onPickWeek }) {
               <Recap2026Week2 />
             ) : w === 3 ? (
               <Recap2026Week3 />
+            ) : w === 4 ? (
+              <Recap2026Week4 />
             ) : (
               <p>
                 <em>No recap yet. Don’t worry, you probably sucked balls.</em>
