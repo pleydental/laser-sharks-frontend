@@ -1,5 +1,5 @@
 // src/pages/WeeklyMatchupRecaps.js
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import middleFingerBtn from "../assets/middle-finger-button.png";
 
@@ -4704,9 +4704,18 @@ function YearlyRecap({ year, week, onPickWeek }) {
   );
 }
 
+// Newest write-up — bare /weekly-matchup-recaps (navbar link) lands here. Bump when a new week is posted.
+const LATEST_RECAP = { year: "2026", week: 4 };
+
 export default function WeeklyMatchupRecaps() {
   const { year: yearParam, week: weekParam } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!yearParam) {
+      navigate(`/weekly-matchup-recaps/${LATEST_RECAP.year}/week/${LATEST_RECAP.week}`, { replace: true });
+    }
+  }, [yearParam, navigate]);
 
   const selectedYear = useMemo(() => {
     const y = yearParam || "2025";
