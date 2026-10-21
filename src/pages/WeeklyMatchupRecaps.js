@@ -4607,7 +4607,7 @@ function Recap2026Week6() {
         himself competing for a TuTu instead of a trophy.
       </p>
       <p>
-        {g("Marcello")} is riding the Cubba and Walker train, 2 of the best RB’s not named Gibbs or Robinson
+        {g("Marcello")} is riding the Chubba and Walker train, 2 of the best RB’s not named Gibbs or Robinson
         this year. His flex is Tuten who is also having a monster year. I have no idea what happened last week
         but it doesn’t matter anymore, this team is dominant. This is his 2nd high score of the year.
       </p>
