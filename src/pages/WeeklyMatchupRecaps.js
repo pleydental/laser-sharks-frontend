@@ -289,6 +289,15 @@ import w4_2026loop6 from "../assets/weekly-recaps/2026-week-4-loop-6.webp";
 import w4_2026loop7 from "../assets/weekly-recaps/2026-week-4-loop-7.webp";
 import w4_2026loop8 from "../assets/weekly-recaps/2026-week-4-loop-8.webp";
 
+// 🗓 2026 WEEK 6 MEDIA
+import w6_2026loop1 from "../assets/weekly-recaps/2026-week-6-loop-1.webp";
+import w6_2026loop2 from "../assets/weekly-recaps/2026-week-6-loop-2.webp";
+import w6_2026loop3 from "../assets/weekly-recaps/2026-week-6-loop-3.webp";
+import w6_2026loop4 from "../assets/weekly-recaps/2026-week-6-loop-4.webp";
+import w6_2026loop5 from "../assets/weekly-recaps/2026-week-6-loop-5.webp";
+import w6_2026loop6 from "../assets/weekly-recaps/2026-week-6-loop-6.webp";
+import w6_2026loop7 from "../assets/weekly-recaps/2026-week-6-loop-7.webp";
+
 
 
 function formatTime(secs) {
@@ -4562,6 +4571,121 @@ function Recap2026Week4() {
   );
 }
 
+/** ---- 2026 WEEK 6 CONTENT ---- */
+function Recap2026Week6() {
+  const g = (name) => <strong className="glow-green">{name}</strong>;
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 6 Laser Sharks Recap</h2>
+
+      <p>
+        <Link to="/standings">View Current Standings</Link>
+      </p>
+
+      <p>Sorry for missing week 5, I am not sure how that happened.</p>
+
+      <p>
+        {g("Welsch")} got the high score in week 5 with a very close matchup against {g("Shaw-Balls")}, who had
+        the 3rd highest score. {g("Gus")} had the 2nd highest score with a win over {g("Mark")}, who had the 6th
+        highest score. Sucks to be {g("Shaw")} and {g("Mark")} heheheh. That leaves myself and {g("JD")} with
+        the remaining top 6 scores, we took care of biznass against {g("Scham-Balls")} and {g("Marcello")}.
+        These were {g("Marcello’s")} first two losses and he did it in a big way, getting the lowest score of
+        the week and let me check something here….um yup thats right…the lowest score from anyone this year
+        yet. {g("Marcello")} is a honey badger though, and he don’t give a fuck.
+      </p>
+      <Gif src={w6_2026loop1} alt="Week 6 — honey badger" />
+
+      <p>So on to week 6 we go.</p>
+
+      <h3>High Score Matchup and Fifth High Score Matchup</h3>
+      <p>
+        {g("Marcello")} 187 VS. {g("Welsch")} 131
+      </p>
+      <p>
+        These two are having a great year so far. I know it’s only week 6 but {g("Marcello")} all but has the
+        playoffs locked up. {g("Welsch")} is looking good but a few missteps like the rest of us and he can find
+        himself competing for a TuTu instead of a trophy.
+      </p>
+      <p>
+        {g("Marcello")} is riding the Cubba and Walker train, 2 of the best RB’s not named Gibbs or Robinson
+        this year. His flex is Tuten who is also having a monster year. I have no idea what happened last week
+        but it doesn’t matter anymore, this team is dominant. This is his 2nd high score of the year.
+      </p>
+      <p>
+        {g("Welsch")} went a spell with Drake Maye shitting the bed, but he is potty trained now and back to
+        producing for him. His biggest weakness is probably Kyren Williams. I bet he, and everyone else that
+        drafted any Chargers players this year, are getting pretty.fucking.annoyed. {g("Welsch")} is sitting
+        pretty at 3rd place and has a high score under his belt.
+      </p>
+      <Gif src={w6_2026loop2} alt="Week 6 — Marcello vs Welsch" />
+
+      <h3>Second High Score Matchup</h3>
+      <p>
+        {g("McCool")} 152 VS. {g("Mish")} 88
+      </p>
+      <p>
+        {g("McCool")} isn’t having a bad year but his team has been pretty inconsistent. He has a solid core of
+        players with Stafford, McCaffrey and Bowers. McCaffrey had a good week but he isn’t the juggernaut he
+        has been in the past. The surprise of the year is that his RB2 Kamara is actually relevant. Lets hope
+        that keeps going for him.
+      </p>
+      <p>
+        Well I don’t know what to say about my team. My best RB is Ollie Gordon, yes thats right, and he was on
+        bye. My 3rd best WR, Tee Higgins, yes thats right, was also on bye. And everyone else underperformed on
+        my team. I was probably doomed from the start and I have all but given up hope of a playoff run. I am
+        comfortably in 11th place and I am in striking distance of the top 6 but it will take a miracle.
+      </p>
+      <Gif src={w6_2026loop3} alt="Week 6 — McCool vs Mish" />
+
+      <h3>Third High Score and 6th High Score Matchup</h3>
+      <p>
+        {g("DD")} 134 VS. {g("Debo")} 118
+      </p>
+      <p>
+        Well, {g("DD")} ate some cocaine frosted Wheaties and has been making a push lately. He has gone 5-1
+        since week 3. He has made some decent waiver wire moves and he got Puka back. His #1 RB and #1 QB were
+        on bye this week and he still managed to get the W and a top 6 spot. He’s got Jadarian Price and
+        Charbonnet waiting in the wings and if he can keep winning without them, he could make a decent
+        playoff run.
+      </p>
+      <p>
+        {g("Debo")} is having a rough time and he has slipped in the standings. There is just no consistency
+        and no super star on his team. His best player this week was Tyler Shough and he was on the bench.
+        Amon-Ra was on a bye and he gets Jacobs back soon so everyone is waiting to see if it was worth holding
+        on to him this whole time. Me thinks…
+      </p>
+      <Gif src={w6_2026loop4} alt="Week 6 — DD vs Debo" />
+
+      <h3>Fourth High Score Matchup</h3>
+      <p>
+        {g("Gus")} 133 VS. {g("Scham-Balls")} 112
+      </p>
+      <p>
+        {g("Gus")} is sitting pretty at the #2 spot, not too far behind {g("Marcello")} in total points either.
+        He could easily take the #1 spot in week 7 if {g("Marcello")} slips up. He handed {g("Scham-Balls")}{" "}
+        another devastating loss. {g("Gus")} already had JSN doing JSN things, but now Nabers is all of a
+        sudden relevant again despite the slow start. {g("Gus’s")} team was already good but it is better now.
+      </p>
+      <p>
+        {g("Scham-Balls")} is not doing very well. He has dropped all the way down to 12th place and has lowest
+        points by a wide margin. It might come down to me and him for the TuTu but I’m hoping {g("DD")},{" "}
+        {g("JD")}, or {g("Debo")} become interested soon, they are all knocking on the door.
+      </p>
+      <Gif src={w6_2026loop5} alt="Week 6 — Gus vs Scham-Balls" />
+
+      <h3>Barely Worth Mentioning Matchup</h3>
+      <p>
+        {g("Shaw-Balls")} 114 VS. {g("Champ")} 98
+      </p>
+      <p>You know the drill.</p>
+      <Gif src={w6_2026loop6} alt="Week 6 — Shaw-Balls vs Champ" />
+
+      <p className="signoff">-{g("Mish Out!")}</p>
+      <Gif src={w6_2026loop7} alt="Week 6 — sign off" />
+    </article>
+  );
+}
+
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
 
@@ -4588,6 +4712,8 @@ function YearlyRecap({ year, week, onPickWeek }) {
               <Recap2026Week3 />
             ) : w === 4 ? (
               <Recap2026Week4 />
+            ) : w === 6 ? (
+              <Recap2026Week6 />
             ) : (
               <p>
                 <em>No recap yet. Don’t worry, you probably sucked balls.</em>
@@ -4705,7 +4831,7 @@ function YearlyRecap({ year, week, onPickWeek }) {
 }
 
 // Newest write-up — bare /weekly-matchup-recaps (navbar link) lands here. Bump when a new week is posted.
-const LATEST_RECAP = { year: "2026", week: 4 };
+const LATEST_RECAP = { year: "2026", week: 6 };
 
 export default function WeeklyMatchupRecaps() {
   const { year: yearParam, week: weekParam } = useParams();
