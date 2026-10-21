@@ -4613,7 +4613,7 @@ function Recap2026Week6() {
       </p>
       <p>
         {g("Welsch")} went a spell with Drake Maye shitting the bed, but he is potty trained now and back to
-        producing for him. His biggest weakness is probably Kyren Williams. I bet he, and everyone else that
+        producing for him. His biggest weakness is probably Ladd McConkey. I bet he, and everyone else that
         drafted any Chargers players this year, are getting pretty.fucking.annoyed. {g("Welsch")} is sitting
         pretty at 3rd place and has a high score under his belt.
       </p>
