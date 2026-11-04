@@ -297,6 +297,14 @@ import w6_2026loop4 from "../assets/weekly-recaps/2026-week-6-loop-4.webp";
 import w6_2026loop5 from "../assets/weekly-recaps/2026-week-6-loop-5.webp";
 import w6_2026loop6 from "../assets/weekly-recaps/2026-week-6-loop-6.webp";
 import w6_2026loop7 from "../assets/weekly-recaps/2026-week-6-loop-7.webp";
+import w8_2026loop1 from "../assets/weekly-recaps/2026-week-8-loop-1.webp";
+import w8_2026loop2 from "../assets/weekly-recaps/2026-week-8-loop-2.webp";
+import w8_2026loop3 from "../assets/weekly-recaps/2026-week-8-loop-3.webp";
+import w8_2026loop4 from "../assets/weekly-recaps/2026-week-8-loop-4.webp";
+import w8_2026loop5 from "../assets/weekly-recaps/2026-week-8-loop-5.webp";
+import w8_2026loop6 from "../assets/weekly-recaps/2026-week-8-loop-6.webp";
+import w8_2026loop7 from "../assets/weekly-recaps/2026-week-8-loop-7.webp";
+import w8_2026loop8 from "../assets/weekly-recaps/2026-week-8-loop-8.webp";
 
 
 
@@ -4686,6 +4694,127 @@ function Recap2026Week6() {
   );
 }
 
+/** ---- 2026 WEEK 7 & 8 CONTENT ---- */
+function Recap2026Week8() {
+  const g = (name) => <strong className="glow-green">{name}</strong>;
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 7 &amp; 8 Laser Sharks Recap: The Streaking Edition</h2>
+
+      <p>
+        <Link to="/standings">View Current Standings</Link>
+      </p>
+
+      <p>So a lot can happen in 2 weeks I guess. Let’s call this the streaking edition.</p>
+      <Gif src={w8_2026loop1} alt="Weeks 7 & 8 — the streaking edition" />
+
+      <p>Speaking of streaks…</p>
+      <p>I don’t want to get too far ahead, but after week 8:</p>
+      <ul>
+        <li>{g("DD")} is on a 6 game winning streak.</li>
+        <li>{g("Debo")} is on a 5 game losing streak.</li>
+        <li>{g("Scham-Balls")} hasn’t won since week 3, that’s a nine game losing streak.</li>
+        <li>{g("Shaw-Balls")} has lost 4 in a row.</li>
+        <li>{g("Marcello")} has won 6 in a row.</li>
+      </ul>
+
+      <p>
+        {g("Champ")} got the high score in week 7 (that is his 2nd), and that was followed by {g("Marcello")},{" "}
+        {g("Gus")}, {g("JD")}, {g("McCool")} and yes, {g("DD")}. They all got 2 wins with the exception of{" "}
+        {g("McCool")}, who lost his head to head matchup with {g("Gus")}. Congrats {g("Champ")}!
+      </p>
+      <Gif src={w8_2026loop2} alt="Week 7 — congrats Champ" />
+
+      <h3>Week 8 Recaps</h3>
+
+      <h3>High Score and 4th High Score Matchup</h3>
+      <p>
+        {g("Marcello")} 160.78 VS. {g("Champ")} 141.40
+      </p>
+      <p>
+        I’d call this future champ versus former champ, but there are several future champ contenders here.
+        For now though, {g("Marcello")} is sitting pretty at the top spot. I mean his bench outscored{" "}
+        {g("Scham-Balls")} this week 😆. You suck {g("Scham-Balls")} hahahahaha. Anyoo, {g("Marcello’s")} team
+        did some fun stuff and he scored lotsa lotsa lotsa points.
+      </p>
+      <p>
+        {g("Champ")} isn’t nearly as dominant as he was last year but he’s still doing well with 2 high scores,
+        like I mentioned earlier. He managed to make it into the top 6 while getting less than 3 points from
+        Purdy and Metcalf combined. I mean WTF, why can’t I do that?? He got 19 points from his fucking
+        defense so that’s probably part of it.
+      </p>
+      <Gif src={w8_2026loop3} alt="Week 8 — Marcello vs Champ" />
+
+      <h3>Second High Score Matchup</h3>
+      <p>
+        {g("Mark")} 160.66 VS. {g("Shaw-Balls")} 106.96
+      </p>
+      <p>
+        {g("Mark")}, like the previous two, is a frequent attendee of these top 6 matchups, though he took a
+        break the last 2 weeks and has dropped down to 4th place. He’s still rolling with Allen and Bijan, and
+        Swift as your RB2 ain’t too shabby. Bijan didn’t even have a good week and {g("Mark")} just missed the
+        high score by 0.12 points.
+      </p>
+      <p>
+        Well, if your last name is “-Balls” you are not having a very good year. This is surprising as they
+        have 5 championships between them. When Lamar and his backup QB both got injured, that left Zay
+        Flowers with zero points. He also had Chris Godwin. Did you guys hear about this game? Tampa Bay threw
+        the ball 3 times and there were zero completions. Do you know what else there was zero of??? Zero
+        points by Chris Godwin. Bad luck brother.
+      </p>
+      <Gif src={w8_2026loop4} alt="Week 8 — Mark vs Shaw-Balls" />
+
+      <h3>Third High Score and 5th High Score Matchup</h3>
+      <p>
+        {g("DD")} 145.08 VS. {g("Gus")} 138.6
+      </p>
+      <p>
+        Like I said earlier, {g("DD")} is on a roll. {g("Gus")}, our #2 ranked team thus far, tried to put him
+        in his place but {g("DD")} is just too hot right now. And lucky…ya, he is the one that had Joe Burrow
+        with a Joe Cool 55 points by himself. {g("DD")} also had a goose egg from Tucker but it didn’t matter,
+        3rd highest points in week 8 washes that stink right off.
+      </p>
+      <p>
+        This is just a mere speedbump for {g("Gus")}. He is fine. He has JSN and he did the smart thing and
+        started whatever defense was playing against the Colts. He got a nice round 20 points from the Jags in
+        this one. Good for you buddy.
+      </p>
+      <Gif src={w8_2026loop5} alt="Week 8 — DD vs Gus" />
+
+      <h3>Sixth High Score Matchup and Irrelevant High Score Matchup</h3>
+      <p>
+        {g("Matt")} 134.56 VS. {g("Scham-Balls")} 93.80
+      </p>
+      <p>
+        {g("Matt")} has been hangin’ around the top this whole season and sits at 3rd place. He was fortunate
+        to get matched up with one of the -Balls brothers and got the easy win. He also got a monster
+        performance from his defense with 18 points by the Bucs. His kicker went on IR but I could give 2
+        shits about this sentence and the previous sentence. {g("Matt")} doesn’t have any big stars on his
+        team but he is still gettin’ it done.
+      </p>
+      <p>What about {g("Scham-Balls")} you say? Well, this gif sums it up.</p>
+      <Gif src={w8_2026loop6} alt="Week 8 — Scham-Balls" />
+
+      <h3>Barely Worth Mentioning Matchups</h3>
+      <p>
+        {g("Mish")} 126.5 VS. {g("Debo")} 124.46
+      </p>
+      <p>I mean, me and {g("Debo")} kind of still have hope, but not really.</p>
+      <p>
+        {g("JD")} 113.98 VS. {g("McCool")} 101.78
+      </p>
+      <p>
+        These two are battling it out for mediocrity. They have been hovering around the playoff barrier for
+        most of the season and can’t seem to break through.
+      </p>
+      <Gif src={w8_2026loop7} alt="Week 8 — JD vs McCool" />
+
+      <p className="signoff">-{g("Mish Out")}</p>
+      <Gif src={w8_2026loop8} alt="Week 8 — sign off" />
+    </article>
+  );
+}
+
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
 
@@ -4714,6 +4843,8 @@ function YearlyRecap({ year, week, onPickWeek }) {
               <Recap2026Week4 />
             ) : w === 6 ? (
               <Recap2026Week6 />
+            ) : w === 7 || w === 8 ? (
+              <Recap2026Week8 />
             ) : (
               <p>
                 <em>No recap yet. Don’t worry, you probably sucked balls.</em>
@@ -4831,7 +4962,7 @@ function YearlyRecap({ year, week, onPickWeek }) {
 }
 
 // Newest write-up — bare /weekly-matchup-recaps (navbar link) lands here. Bump when a new week is posted.
-const LATEST_RECAP = { year: "2026", week: 6 };
+const LATEST_RECAP = { year: "2026", week: 8 };
 
 export default function WeeklyMatchupRecaps() {
   const { year: yearParam, week: weekParam } = useParams();
