@@ -305,6 +305,13 @@ import w8_2026loop5 from "../assets/weekly-recaps/2026-week-8-loop-5.webp";
 import w8_2026loop6 from "../assets/weekly-recaps/2026-week-8-loop-6.webp";
 import w8_2026loop7 from "../assets/weekly-recaps/2026-week-8-loop-7.webp";
 import w8_2026loop8 from "../assets/weekly-recaps/2026-week-8-loop-8.webp";
+import w9_2026loop1 from "../assets/weekly-recaps/2026-week-9-loop-1.webp";
+import w9_2026loop2 from "../assets/weekly-recaps/2026-week-9-loop-2.webp";
+import w9_2026loop3 from "../assets/weekly-recaps/2026-week-9-loop-3.webp";
+import w9_2026loop4 from "../assets/weekly-recaps/2026-week-9-loop-4.webp";
+import w9_2026loop5 from "../assets/weekly-recaps/2026-week-9-loop-5.webp";
+import w9_2026loop6 from "../assets/weekly-recaps/2026-week-9-loop-6.webp";
+import w9_2026loop7 from "../assets/weekly-recaps/2026-week-9-loop-7.webp";
 
 
 
@@ -4815,6 +4822,125 @@ function Recap2026Week8() {
   );
 }
 
+/** ---- 2026 WEEK 9 CONTENT ---- */
+function Recap2026Week9() {
+  const g = (name) => <strong className="glow-green">{name}</strong>;
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 9 Laser Sharks Recap</h2>
+
+      <p>
+        <Link to="/standings">View Current Standings</Link>
+      </p>
+
+      <p>
+        A quick note on the standings. Fellas, this is all still up for grabs. We have 5 weeks left until the
+        playoffs, that is 10 wins or 10 losses or some combination. Not even {g("Marcello")} has clinched a
+        playoff spot yet but I mean, c’mon, he basically has. {g("Champ")}, {g("Welsch")}, {g("Mark")},{" "}
+        {g("DD")}, or {g("JD")} could all easily fall out of the top 6 in just 2 of those weeks. Same with the
+        bottom 6, except {g("Debo")} of course, he is fucked. {g("Scham-Balls")} isn’t out but he is currently
+        being tea-bagged by your {g("Mish")} and {g("Shaw-Balls")} so he’ll probably do what he can to stay
+        there.
+      </p>
+      <Gif src={w9_2026loop1} alt="Week 9 — standings check" />
+
+      <p>On to the week 9 matchups.</p>
+
+      <h3>High Score Matchup</h3>
+      <p>
+        {g("Marcello")} 186 VS. {g("Mark")} 109
+      </p>
+      <p>
+        This is {g("Marcello’s")} 4th high score of the year. He has made his money back and is now playing
+        with house money. He got 72 points from Lamb and Walker and everyone else was mostly average, well,
+        his kicker got him 16 points. No major injuries except for Burden, but his bench is plenty deep enough
+        to not miss him.
+      </p>
+      <p>
+        {g("Mark")} had a hot start to the year and has been pretty inconsistent of late. He’s also pulled some
+        tough matchups. This week though he just shat the bed, his 2nd worst performance of the year. He had
+        Allen last night in that terrible terrible terrible game against the inept Minnesota offense. His #2
+        RB was on bye so that is part of it, but he also has 2 players on IR that are set to return soon.
+        They are Doubs and Bigsby and should be the missing pieces he needs to get back on track.
+      </p>
+      <p>WTF</p>
+      <Gif src={w9_2026loop2} alt="Week 9 — WTF" />
+
+      <h3>Second High Score and Fourth High Score Matchup</h3>
+      <p>
+        {g("JD")} 149 VS. {g("DD")} 138
+      </p>
+      <p>
+        These two are battling it out for that 6th playoff spot. We’ll call this matchup the former cum back
+        king versus the current cum back king.
+      </p>
+      <p>
+        {g("JD")} was able to cum out on top in this one. {g("DD")} was running a train lately but {g("JD")}{" "}
+        shot his load when {g("DD")} was least expecting. Speaking of taking loads, Caleb Williams has been
+        great for {g("JD")} and the Bears but he wasn’t even the star in this lineup. Golden of the Packers
+        gave {g("JD")} the edge job he needed to push past {g("DD")}.
+      </p>
+      <p>
+        {g("DD")} received a lot of loads this week. Not only did he get a top 6 score and lose, but the highly
+        competent Rams coaching staff had Nacua in on the last play of what I understood to be an already won
+        game, and now Nacua is likely out for the fantasy year. Time will tell if {g("DD")} can stay on top of
+        this run or if he goes back to being a bottom. Here is a helpful exercise just in case.
+      </p>
+      <Gif src={w9_2026loop3} alt="Week 9 — JD vs DD" />
+
+      <h3>Third High Score and Fifth High Score Matchup</h3>
+      <p>
+        {g("Champ")} 141 VS. {g("Mish")} 125
+      </p>
+      <p>
+        {g("Champ")} is still rolling, and like I said about everyone not named {g("Gus")} or {g("Marcello")},
+        a few good weeks and he is in, a couple bad weeks and he’ll be fighting to make the playoffs. No
+        worries this week though as he got the two dubs. His WR room is looking shaky though, so from what
+        I’ve seen so far {g("Champ")} might be at the biggest risk of falling off. He’s got plenty of good
+        pieces to make up for it so he’ll likely be fine. He could have gotten the top score but he left CJ
+        Stroud’s 47 points on the bench.
+      </p>
+      <p>
+        I am confused as to why I am in the top 6. I had my usual dog-shit performance from my players.
+        Christian Watson and Tee Higgins I think are responsible for 75% of my points this season and I am not
+        even joking. I actually had a shot at winning this one but I left Jordan Love’s 43 points on the bench
+        and played Trans Lawrence instead.
+      </p>
+      <Gif src={w9_2026loop4} alt="Week 9 — Champ vs Mish" />
+
+      <h3>Sixth High Score Matchup (my favorite of the year, the Balls-Bowl)</h3>
+      <p>
+        {g("Scham-Balls")} 123 VS. {g("Shaw-Balls")} 118
+      </p>
+      <p>
+        This would normally be in the barely worth mentioning category but a lot of people struggled this
+        week and {g("Scham-Balls")} was able to sneak into the top 6. His only great performances were by
+        Chase and his kicker.
+      </p>
+      <p>
+        {g("Shaw-Balls")} also only had two great performances, Bryce Young and Bucky Irving. Everyone else was
+        in the single digits. Both of deez nutz are cupping hope in their hands and hoping for a shot.
+      </p>
+      <Gif src={w9_2026loop5} alt="Week 9 — the Balls-Bowl" />
+
+      <h3>Stanky Ass Garbage Dump Matchup of the Week</h3>
+      <p>
+        {g("Gus")} 122 VS. {g("Debo")} 101
+      </p>
+      <p>
+        {g("Gus")} is just visiting but {g("Debo")} is starting to get comfy here. {g("Debo")} started the
+        Ravens defense against the Jaguars so I think he might actually be dead. Someone should check on him.
+      </p>
+      <Gif src={w9_2026loop6} alt="Week 9 — Gus vs Debo" />
+
+      <p>Alright, I gotta go take care of something.</p>
+
+      <p className="signoff">-{g("Mish Out")}</p>
+      <Gif src={w9_2026loop7} alt="Week 9 — sign off" />
+    </article>
+  );
+}
+
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
 
@@ -4845,6 +4971,8 @@ function YearlyRecap({ year, week, onPickWeek }) {
               <Recap2026Week6 />
             ) : w === 7 || w === 8 ? (
               <Recap2026Week8 />
+            ) : w === 9 ? (
+              <Recap2026Week9 />
             ) : (
               <p>
                 <em>No recap yet. Don’t worry, you probably sucked balls.</em>
@@ -4962,7 +5090,7 @@ function YearlyRecap({ year, week, onPickWeek }) {
 }
 
 // Newest write-up — bare /weekly-matchup-recaps (navbar link) lands here. Bump when a new week is posted.
-const LATEST_RECAP = { year: "2026", week: 8 };
+const LATEST_RECAP = { year: "2026", week: 9 };
 
 export default function WeeklyMatchupRecaps() {
   const { year: yearParam, week: weekParam } = useParams();
