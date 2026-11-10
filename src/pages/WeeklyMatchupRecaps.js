@@ -4863,7 +4863,6 @@ function Recap2026Week9() {
         RB was on bye so that is part of it, but he also has 2 players on IR that are set to return soon.
         They are Doubs and Bigsby and should be the missing pieces he needs to get back on track.
       </p>
-      <p>WTF</p>
       <Gif src={w9_2026loop2} alt="Week 9 — WTF" />
 
       <h3>Second High Score and Fourth High Score Matchup</h3>
