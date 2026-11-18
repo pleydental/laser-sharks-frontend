@@ -312,6 +312,14 @@ import w9_2026loop4 from "../assets/weekly-recaps/2026-week-9-loop-4.webp";
 import w9_2026loop5 from "../assets/weekly-recaps/2026-week-9-loop-5.webp";
 import w9_2026loop6 from "../assets/weekly-recaps/2026-week-9-loop-6.webp";
 import w9_2026loop7 from "../assets/weekly-recaps/2026-week-9-loop-7.webp";
+import w10_2026loop1 from "../assets/weekly-recaps/2026-week-10-loop-1.webp";
+import w10_2026loop2 from "../assets/weekly-recaps/2026-week-10-loop-2.webp";
+import w10_2026loop3 from "../assets/weekly-recaps/2026-week-10-loop-3.webp";
+import w10_2026loop4 from "../assets/weekly-recaps/2026-week-10-loop-4.webp";
+import w10_2026loop5 from "../assets/weekly-recaps/2026-week-10-loop-5.webp";
+import w10_2026loop6 from "../assets/weekly-recaps/2026-week-10-loop-6.webp";
+import w10_2026loop7 from "../assets/weekly-recaps/2026-week-10-loop-7.webp";
+import w10_2026loop8 from "../assets/weekly-recaps/2026-week-10-loop-8.webp";
 
 
 
@@ -4940,6 +4948,113 @@ function Recap2026Week9() {
   );
 }
 
+function Recap2026Week10() {
+  const g = (name) => <strong className="glow-green">{name}</strong>;
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 10 Laser Sharks Recap</h2>
+
+      <p>
+        <Link to="/standings">View Current Standings</Link>
+      </p>
+
+      <p>
+        Ok, so we have four more weeks until the playoffs: eight wins and eight losses. Everyone technically
+        still has a shot at the playoffs. {g("Mark")}, {g("Matt")}, and {g("JD")} would have to get 8 losses for{" "}
+        {g("Debo")} to make it in, and {g("Debo")} would have to win all eight. Same with {g("Scham-Balls")}, but
+        with a one loss/win wiggle margin. {g("Shaw-Balls")} and your {g("Mish")} could still make it, but we
+        would need to go 8-0, 7-1, or 6-2 and hope {g("Mark")}/{g("Matt")}/{g("JD")} forget to set their
+        lineups. Everyone else has a decent shot at it. So good luck, fuckwads.
+      </p>
+      <Gif src={w10_2026loop1} alt="Week 10 — playoff math" />
+
+      <h3>High Score and Fifth High Score Matchup of the Week</h3>
+      <p>
+        {g("Champ")} 201 VS. {g("Mark")} 146
+      </p>
+      <p>
+        We had two heavy hitters in this one, but {g("Champ")} came out on top. He had 90 points between Gibbs
+        and Pickens. That Dallas vs. SF game was crazy and {g("Champ")} benefited from Purdy and Pickens in this
+        one.
+      </p>
+      <p>
+        {g("Mark")} had a respectable week but is barely hanging on to his playoff seat; he got passed by{" "}
+        {g("DD")} this week. He’s still got all the pieces, but his bench has more red than prom night.
+      </p>
+      <Gif src={w10_2026loop2} alt="Week 10 — Champ vs Mark" />
+
+      <h3>Second High Score Matchup of the Week</h3>
+      <p>
+        {g("McCool")} 181 VS. {g("Shaw-Balls")} 122
+      </p>
+      <p>
+        {g("McCool")} needed this week badly; any other week he probably would have had the high score. He got
+        93 points from Mahomes and McCaffrey alone. He even got a goose egg from his WR2, and he has a guy named
+        Jism on his bench… oh wait, that’s Chism. {g("McCool")} needs a couple more weeks like this to get his
+        playoff spot.
+      </p>
+      <p>
+        {g("Shaw-Balls")} had a week. No one overperformed and he had a couple of players that underperformed, a
+        recipe for failure in this league.
+      </p>
+      <Gif src={w10_2026loop3} alt="Week 10 — McCool vs Shaw-Balls" />
+
+      <h3>Third High Score Matchup of the Week</h3>
+      <p>
+        {g("Gus")} 161 VS. {g("Mish")} 110
+      </p>
+      <p>
+        {g("Gus")} is still doing {g("Gus")} things. He is sitting nice and comfy in 2nd place. He gave me my
+        most recent pounding. He had Prescott and JSN and they got him 79 points between the two of them.
+      </p>
+      <p>
+        My team sucks. My best players were Trans Lawrence and the Vikings defense. I’m stuck.
+      </p>
+      <Gif src={w10_2026loop4} alt="Week 10 — Gus vs Mish" />
+
+      <h3>Fourth High Score Matchup of the Week</h3>
+      <p>
+        {g("DD")} 152 VS. {g("Matt")} 102
+      </p>
+      <p>
+        Our cum back king did it again and he’s moved up to 4th place. Burrow has been on a tear for him lately
+        and he finally got a breakout performance from Chase Brown. Everyone else was meh, but he does have
+        David Montgomery coming back soon and Monangai waiting to make an impact. I think {g("DD")} might get
+        the WW award this year.
+      </p>
+      <p>
+        {g("Matt")} did not have a good week and he lost his QB for a bit. He does have Goff on the bench, so he
+        should be able to recover fine.
+      </p>
+      <Gif src={w10_2026loop5} alt="Week 10 — DD vs Matt" />
+
+      <h3>Sixth High Score Matchup of the Week</h3>
+      <p>
+        {g("Marcello")} 138 VS. {g("Scham-Balls")} 129
+      </p>
+      <p>
+        {g("Marcello")} is a little further down the list than in weeks past, but he still gets the two dubs.
+        And he did this with his RB1 getting him zero points.
+      </p>
+      <p>
+        {g("Scham-Balls")} is still flailing in the bottom 4 with the rest of us stanky ass sharks. Half of his
+        points came from 2 players and he still didn’t crack the top 6. Nuff said.
+      </p>
+      <Gif src={w10_2026loop6} alt="Week 10 — Marcello vs Scham-Balls" />
+
+      <h3>Barely Worth Mentioning Matchup of the Week</h3>
+      <p>
+        {g("JD")} 133 VS. {g("Debo")} 97
+      </p>
+      <p>Lol, losers.</p>
+      <Gif src={w10_2026loop7} alt="Week 10 — JD vs Debo" />
+
+      <p className="signoff">-{g("Mish Out")}</p>
+      <Gif src={w10_2026loop8} alt="Week 10 — sign off" />
+    </article>
+  );
+}
+
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
 
@@ -4972,6 +5087,8 @@ function YearlyRecap({ year, week, onPickWeek }) {
               <Recap2026Week8 />
             ) : w === 9 ? (
               <Recap2026Week9 />
+            ) : w === 10 ? (
+              <Recap2026Week10 />
             ) : (
               <p>
                 <em>No recap yet. Don’t worry, you probably sucked balls.</em>
@@ -5089,7 +5206,7 @@ function YearlyRecap({ year, week, onPickWeek }) {
 }
 
 // Newest write-up — bare /weekly-matchup-recaps (navbar link) lands here. Bump when a new week is posted.
-const LATEST_RECAP = { year: "2026", week: 9 };
+const LATEST_RECAP = { year: "2026", week: 10 };
 
 export default function WeeklyMatchupRecaps() {
   const { year: yearParam, week: weekParam } = useParams();
