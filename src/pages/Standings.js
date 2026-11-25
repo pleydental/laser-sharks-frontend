@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './Standings.css';
 import fingerBtn from '../assets/middle-finger-button.png';
 
+// Native Google Sheet "LaserSharks FF 2016-2026" (File > Share > Publish to web, auto-republish on).
+// Edits to the sheet show up here automatically; no site rebuild needed.
 const SHEET_URL =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vR98GtillaGjARBvQYGBHbS5B66Y8uqI7wtQQwEp1j_kF4nDc1TMRWGJJ0hNrdAvw/pubhtml';
+  'https://docs.google.com/spreadsheets/d/e/2PACX-1vQIsdn3hIujMwF-E-bOEv1Y3iZ2oipVftptdRnlWMDkXs_lsCoQdL5P6gPO2EvGuIML-a2dx1qWvTN6/pubhtml';
 
 const DEFAULT_ZOOM = 0.65;
 const MIN_ZOOM = 0.25;
