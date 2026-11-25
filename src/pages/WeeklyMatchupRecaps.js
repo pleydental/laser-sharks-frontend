@@ -320,6 +320,20 @@ import w10_2026loop5 from "../assets/weekly-recaps/2026-week-10-loop-5.webp";
 import w10_2026loop6 from "../assets/weekly-recaps/2026-week-10-loop-6.webp";
 import w10_2026loop7 from "../assets/weekly-recaps/2026-week-10-loop-7.webp";
 import w10_2026loop8 from "../assets/weekly-recaps/2026-week-10-loop-8.webp";
+import w11_2026loop1 from "../assets/weekly-recaps/2026-week-11-loop-1.webp";
+import w11_2026loop2 from "../assets/weekly-recaps/2026-week-11-loop-2.webp";
+import w11_2026loop3 from "../assets/weekly-recaps/2026-week-11-loop-3.webp";
+import w11_2026loop4 from "../assets/weekly-recaps/2026-week-11-loop-4.webp";
+import w11_2026loop5 from "../assets/weekly-recaps/2026-week-11-loop-5.webp";
+import w11_2026loop6 from "../assets/weekly-recaps/2026-week-11-loop-6.webp";
+import w11_2026loop7 from "../assets/weekly-recaps/2026-week-11-loop-7.webp";
+import w11_2026loop8 from "../assets/weekly-recaps/2026-week-11-loop-8.webp";
+import w11_2026loop9 from "../assets/weekly-recaps/2026-week-11-loop-9.webp";
+import w11_2026loop10 from "../assets/weekly-recaps/2026-week-11-loop-10.webp";
+import w11_2026loop11 from "../assets/weekly-recaps/2026-week-11-loop-11.webp";
+import w11_2026loop12 from "../assets/weekly-recaps/2026-week-11-loop-12.webp";
+import w11_2026loop13 from "../assets/weekly-recaps/2026-week-11-loop-13.webp";
+import w11_2026loop14 from "../assets/weekly-recaps/2026-week-11-loop-14.webp";
 
 
 
@@ -5055,6 +5069,41 @@ function Recap2026Week10() {
   );
 }
 
+function Recap2026Week11() {
+  const g = (name) => <strong className="glow-green">{name}</strong>;
+  return (
+    <article style={{ marginTop: "1.25rem" }}>
+      <h2>Week 11 Laser Sharks Recap</h2>
+
+      <p>
+        <Link to="/standings">View Current Standings</Link>
+      </p>
+
+      <p>
+        Well fellas, I didn’t really have time to do a write-up, but I wanted to give you something, so here it
+        is. This actually took me more time than I thought it would. Hope you enjoy. Oh, {g("JD")} got high
+        score, some crazy stuff happened in the standings, and I still suck.
+      </p>
+      <Gif src={w11_2026loop1} alt="Week 11 — gif 1" />
+      <Gif src={w11_2026loop2} alt="Week 11 — gif 2" />
+      <Gif src={w11_2026loop3} alt="Week 11 — gif 3" />
+      <Gif src={w11_2026loop4} alt="Week 11 — gif 4" />
+      <Gif src={w11_2026loop5} alt="Week 11 — gif 5" />
+      <Gif src={w11_2026loop6} alt="Week 11 — gif 6" />
+      <Gif src={w11_2026loop7} alt="Week 11 — gif 7" />
+      <Gif src={w11_2026loop8} alt="Week 11 — gif 8" />
+      <Gif src={w11_2026loop9} alt="Week 11 — gif 9" />
+      <Gif src={w11_2026loop10} alt="Week 11 — gif 10" />
+      <Gif src={w11_2026loop11} alt="Week 11 — gif 11" />
+      <Gif src={w11_2026loop12} alt="Week 11 — gif 12" />
+      <Gif src={w11_2026loop13} alt="Week 11 — gif 13" />
+      <Gif src={w11_2026loop14} alt="Week 11 — gif 14" />
+
+      <p className="signoff">-{g("Mish Out")}</p>
+    </article>
+  );
+}
+
 function YearlyRecap({ year, week, onPickWeek }) {
   const y = String(year);
 
@@ -5089,6 +5138,8 @@ function YearlyRecap({ year, week, onPickWeek }) {
               <Recap2026Week9 />
             ) : w === 10 ? (
               <Recap2026Week10 />
+            ) : w === 11 ? (
+              <Recap2026Week11 />
             ) : (
               <p>
                 <em>No recap yet. Don’t worry, you probably sucked balls.</em>
@@ -5206,7 +5257,7 @@ function YearlyRecap({ year, week, onPickWeek }) {
 }
 
 // Newest write-up — bare /weekly-matchup-recaps (navbar link) lands here. Bump when a new week is posted.
-const LATEST_RECAP = { year: "2026", week: 10 };
+const LATEST_RECAP = { year: "2026", week: 11 };
 
 export default function WeeklyMatchupRecaps() {
   const { year: yearParam, week: weekParam } = useParams();
