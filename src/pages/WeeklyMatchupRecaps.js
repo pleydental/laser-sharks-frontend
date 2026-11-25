@@ -334,6 +334,8 @@ import w11_2026loop11 from "../assets/weekly-recaps/2026-week-11-loop-11.webp";
 import w11_2026loop12 from "../assets/weekly-recaps/2026-week-11-loop-12.webp";
 import w11_2026loop13 from "../assets/weekly-recaps/2026-week-11-loop-13.webp";
 import w11_2026loop14 from "../assets/weekly-recaps/2026-week-11-loop-14.webp";
+import w11_2026loop15 from "../assets/weekly-recaps/2026-week-11-loop-15.webp";
+import w11_2026loop16 from "../assets/weekly-recaps/2026-week-11-loop-16.webp";
 
 
 
@@ -5098,6 +5100,8 @@ function Recap2026Week11() {
       <Gif src={w11_2026loop12} alt="Week 11 — gif 12" />
       <Gif src={w11_2026loop13} alt="Week 11 — gif 13" />
       <Gif src={w11_2026loop14} alt="Week 11 — gif 14" />
+      <Gif src={w11_2026loop15} alt="Week 11 — gif 15" />
+      <Gif src={w11_2026loop16} alt="Week 11 — gif 16" />
 
       <p className="signoff">-{g("Mish Out")}</p>
     </article>
